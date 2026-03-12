@@ -2,6 +2,7 @@ import React, { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Spin } from 'antd';
 import MainLayout from './components/Layout/MainLayout';
+import ScrollToTop from './components/ScrollToTop';
 import HomePage from './pages/HomePage';
 import CorporatePage from './pages/CorporatePage';
 import ServicesPage from './pages/ServicesPage';
@@ -19,6 +20,7 @@ const LoadingFallback = () => (
 function App() {
     return (
         <Suspense fallback={<LoadingFallback />}>
+            <ScrollToTop />
             <MainLayout>
                 <Routes>
                     <Route path="/" element={<HomePage />} />
