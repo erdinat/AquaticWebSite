@@ -1,0 +1,290 @@
+/* ===== BlackBoxPage Styles ===== */
+
+/* --- Special Hero --- */
+.blackbox-hero {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 140px 24px 80px;
+    overflow: hidden;
+}
+
+.blackbox-hero-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, #0a0a0a 0%, #001529 30%, #003a8c 60%, #0050b3 100%);
+    z-index: 0;
+}
+
+.blackbox-hero-glow {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 80, 179, 0.2) 0%, transparent 60%);
+    z-index: 1;
+    animation: pulse 4s ease-in-out infinite;
+}
+
+.blackbox-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 700px;
+}
+
+.blackbox-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 76, 79, 0.15);
+    border: 1px solid rgba(255, 76, 79, 0.3);
+    border-radius: 50px;
+    padding: 8px 20px;
+    color: #ff7875;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-bottom: 24px;
+    backdrop-filter: blur(10px);
+}
+
+.blackbox-hero-title {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+}
+
+.blackbox-hero-subtitle {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- 3D Black Box Visualization --- */
+.blackbox-visual {
+    position: relative;
+    z-index: 2;
+    margin-top: 50px;
+    perspective: 800px;
+}
+
+.blackbox-3d {
+    width: 200px;
+    height: 120px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(-15deg) rotateY(-25deg);
+    animation: float 6s ease-in-out infinite;
+}
+
+.blackbox-face {
+    position: absolute;
+    border: 1px solid rgba(255, 100, 50, 0.3);
+}
+
+.blackbox-face.front {
+    width: 200px;
+    height: 120px;
+    background: linear-gradient(145deg, #ff6b35 0%, #ff4500 50%, #cc3700 100%);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 40px rgba(255, 69, 0, 0.3), inset 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.blackbox-face.top {
+    width: 200px;
+    height: 40px;
+    background: linear-gradient(145deg, #ff8c55, #ff6b35);
+    transform: rotateX(90deg) translateZ(0px) translateY(-20px);
+    transform-origin: bottom;
+    border-radius: 6px 6px 0 0;
+}
+
+.blackbox-face.right {
+    width: 40px;
+    height: 120px;
+    background: linear-gradient(145deg, #cc3700, #aa2d00);
+    transform: rotateY(90deg) translateZ(200px) translateX(-20px);
+    transform-origin: left;
+    border-radius: 0 6px 6px 0;
+}
+
+.blackbox-label {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 0.15em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.blackbox-sublabel {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.2em;
+    margin-top: 4px;
+}
+
+/* --- Specs Section --- */
+.blackbox-specs-section {
+    background: var(--color-white);
+}
+
+.specs-table-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.specs-table .ant-table-cell {
+    padding: 18px 20px !important;
+}
+
+.specs-table .ant-table-row:hover td {
+    background: var(--color-primary-bg) !important;
+}
+
+/* --- Features Section --- */
+.features-section {
+    background: var(--color-bg-light);
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 24px 0 0;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 0;
+    font-size: 0.95rem;
+    color: var(--color-text);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.feature-item:last-child {
+    border-bottom: none;
+}
+
+/* Specs Highlight Grid */
+.specs-highlight-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.spec-highlight-card {
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+    padding: 28px 20px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
+    transition: all var(--transition-normal);
+}
+
+.spec-highlight-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.spec-highlight-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.spec-highlight-value {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-dark);
+    margin-bottom: 4px;
+}
+
+.spec-highlight-label {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+/* --- CTA --- */
+.blackbox-cta-section {
+    padding: 80px 24px;
+    background: var(--gradient-dark);
+}
+
+.blackbox-cta-section .cta-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 28px;
+}
+
+/* Reveal */
+.blackbox-page .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.blackbox-page .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .blackbox-hero {
+        min-height: 70vh;
+        padding-top: 120px;
+    }
+
+    .blackbox-hero-title {
+        font-size: 2.5rem;
+    }
+
+    .blackbox-3d {
+        transform: rotateX(-10deg) rotateY(-20deg) scale(0.85);
+    }
+
+    .specs-highlight-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .spec-highlight-card {
+        padding: 20px 16px;
+    }
+
+    .spec-highlight-value {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .blackbox-hero-title {
+        font-size: 2rem;
+    }
+}

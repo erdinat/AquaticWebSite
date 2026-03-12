@@ -1,0 +1,296 @@
+{
+    "nav": {
+        "home": "Ana Sayfa",
+        "corporate": "Kurumsal",
+        "services": "Hizmetler",
+        "products": "Ürünler",
+        "blackbox": "Milli Kara Kutu",
+        "contact": "İletişim"
+    },
+    "hero": {
+        "title": "AQUATIC",
+        "slogan": "Teknolojik Gözünüz",
+        "subtitle": "Savunma sanayiinden denizciliğe, elektronikten makine mühendisliğine kadar geniş bir yelpazede yenilikçi çözümler sunuyoruz.",
+        "cta": "Hizmetlerimizi Keşfedin",
+        "ctaContact": "Bizimle İletişime Geçin"
+    },
+    "stats": {
+        "experience": "Yıllık Deneyim",
+        "projects": "Tamamlanan Proje",
+        "clients": "Mutlu Müşteri",
+        "countries": "Ülke"
+    },
+    "servicesPreview": {
+        "title": "Hizmet Alanlarımız",
+        "subtitle": "Geniş bir yelpazede profesyonel mühendislik çözümleri sunuyoruz.",
+        "defence": {
+            "title": "Savunma Sanayi",
+            "desc": "Sualtı robotları, akustik sistemler ve torpido konnektörleri ile savunma sektörüne yenilikçi çözümler."
+        },
+        "electronics": {
+            "title": "Elektronik & Otomasyon",
+            "desc": "Transformatör imalat makineleri ve PCB tasarımlarıyla endüstriyel otomasyon çözümleri."
+        },
+        "machinery": {
+            "title": "Makina",
+            "desc": "3D tasarım ve talaşlı imalat parkuruyla hassas mühendislik."
+        },
+        "maritime": {
+            "title": "Denizcilik",
+            "desc": "Boru donatım ve gemi makine faaliyetleriyle denizcilik sektörüne destek."
+        }
+    },
+    "corporate": {
+        "title": "Kurumsal",
+        "subtitle": "Hakkımızda, şirket profilimiz ve kalite değerlerimiz.",
+        "history": {
+            "title": "Hakkımızda",
+            "subtitle": "Türk Savunma Sanayiinde Yerli Güç",
+            "p1": "AQUATIC Elektronik Makina Otomasyon Savunma Sanayi Tic. Ltd. Şti., Kocaeli Gölcük merkezli ve İstanbul Teknopark şubesiyle faaliyet gösteren yüksek teknolojili bir mühendislik firmasıdır. Savunma sanayi altyapısına uygun donanımlı ve tecrübeli mühendis kadromuzla kritik projelerde öncü roller üstleniyoruz.",
+            "p2": "Özellikle su altı teknolojileri, MIL-STD ürün geliştirme, donanım mühendisliği ve gömülü yazılım alanlarındaki uzmanlığımızla yerli ve milli sistemlerin üretimine katkı sağlıyoruz. Geleceğin yenilikçi projeleri için en güvenilir çözüm ortağınız olmaya devam edeceğiz.",
+            "founded": "Kuruluş Yılı",
+            "projects": "Tamamlanan Proje",
+            "timeline": {
+                "2019": "Aquatic'in Kocaeli'de kurulması",
+                "2020": "Savunma sanayi projelerine başlanması",
+                "2021": "Elektronik ve otomasyon alanında genişleme",
+                "2022": "Milli Kara Kutu projesine katılım",
+                "2023": "İstanbul ofisinin açılması",
+                "2024": "Uluslararası projelere adım",
+                "2025": "Büyüme ve yeni teknoloji yatırımları"
+            }
+        },
+        "visionMission": {
+            "title": "Vizyon & Misyon",
+            "subtitle": "Geleceği Şekillendiren Teknolojiler",
+            "desc": "Sualtı ve savunma sanayi alanlarında yerli üretim gücünü artırarak küresel bir oyuncu olmayı hedefliyoruz.",
+            "visionTitle": "Vizyonumuz",
+            "visionText": "Sualtı ve savunma teknolojilerinde tamamen yerli ve milli çözümler sunan dünya çapında bir marka olmak. Yenilikçiliği merkeze alarak, ülkemizin teknolojik bağımsızlığına katkı sağlayan kritik sistemlerin lider üreticisi konumuna ulaşmak.",
+            "missionTitle": "Misyonumuz",
+            "missionText": "Müşterilerimizin ihtiyaçlarına en uygun, yüksek kaliteli ve güvenilir mühendislik çözümleri sunarak ulusal ve uluslararası projelerde değer yaratmak."
+        },
+        "values": {
+            "title": "Kalite Değerlerimiz",
+            "subtitle": "Ödün Vermediğimiz Değerler",
+            "innovation": "Yenilikçilik",
+            "innovationDesc": "Sürekli araştırma ve geliştirme ile sektördeki en son teknolojileri takip ediyoruz.",
+            "reliability": "Güvenilirlik",
+            "reliabilityDesc": "Projelerimizde zamanında teslimat ve kalite güvencesi sağlıyoruz.",
+            "expertise": "Uzmanlık",
+            "expertiseDesc": "Alanında uzman mühendis kadromuzla profesyonel çözümler sunuyoruz.",
+            "sustainability": "Sürdürülebilirlik",
+            "sustainabilityDesc": "Çevreye duyarlı ve sürdürülebilir üretim süreçlerini benimsiyoruz."
+        },
+        "bank": {
+            "title": "Banka Hesap Bilgilerimiz",
+            "subtitle": "Kuveyt Türk Hesapları",
+            "desc": "Aşağıdaki hesap bilgilerinden TL, Euro ve USD ödemelerinizi güvenle gerçekleştirebilirsiniz.",
+            "tlAccount": "TL Hesabı",
+            "eurAccount": "Euro Hesabı",
+            "usdAccount": "USD Hesabı",
+            "branchName": "Şube Adı",
+            "branchCode": "Şube Kodu"
+        },
+        "faq": {
+            "title": "Sıkça Sorulan Sorular",
+            "subtitle": "Merak Edilenler",
+            "desc": "Hizmetlerimiz, çalışma modelimiz ve satış sonrası destek hakkında en çok merak edilen soruları derledik.",
+            "items": {
+                "1": {
+                    "question": "Hangi sektörlere hizmet veriyorsunuz?",
+                    "answer": "Savunma sanayi, elektronik & otomasyon, makina ve denizcilik başta olmak üzere farklı sektörlerde mühendislik çözümleri sunuyoruz."
+                },
+                "2": {
+                    "question": "Projelerinizde nasıl bir çalışma modeli izliyorsunuz?",
+                    "answer": "Öncelikle ihtiyacı analiz ediyor, ardından fizibilite ve tasarım aşamalarını tamamlayıp prototip, test ve seri üretim adımlarına geçiyoruz. Tüm süreç boyunca müşterilerimizi düzenli olarak bilgilendiriyoruz."
+                },
+                "3": {
+                    "question": "Ürün ve sistemleriniz için servis / bakım hizmeti veriyor musunuz?",
+                    "answer": "Evet. Kurulum sonrası garanti süreci, periyodik bakım ve gerektiğinde yerinde servis hizmetleri sağlıyoruz."
+                },
+                "4": {
+                    "question": "Yurtdışı projelerle de çalışıyor musunuz?",
+                    "answer": "Evet, uygun lisans ve mevzuat çerçevesinde uluslararası projelerde de görev alıyoruz."
+                }
+            }
+        }
+    },
+    "services": {
+        "title": "Hizmet Gruplarımız",
+        "subtitle": "Farklı sektörlere özel, kapsamlı mühendislik çözümleri sunuyoruz.",
+        "defence": {
+            "title": "Savunma Sanayi",
+            "desc": "Savunma sanayi alanında kritik teknolojiler geliştiriyor, milli projelere katkı sağlıyoruz.",
+            "items": {
+                "underwater": {
+                    "title": "Sualtı Robotları (ROV/AUV)",
+                    "desc": "Askeri ve sivil amaçlı sualtı keşif, gözetleme ve müdahale robotları tasarım ve üretimi."
+                },
+                "acoustic": {
+                    "title": "Akustik Sistemler",
+                    "desc": "Sualtı akustik sensör, sonar ve haberleşme sistemleri geliştirme ve entegrasyonu."
+                },
+                "torpedo": {
+                    "title": "Torpido Konnektörleri",
+                    "desc": "MIL-STD standartlarına uygun, yüksek güvenilirlikli torpido konnektör tasarım ve üretimi."
+                }
+            }
+        },
+        "electronics": {
+            "title": "Elektronik & Otomasyon",
+            "desc": "Endüstriyel otomasyon ve elektronik sistemler alanında uzman çözümler.",
+            "items": {
+                "transformer": {
+                    "title": "Transformatör İmalat Makineleri",
+                    "desc": "Yüksek verimli transformatör sarım, kesim ve montaj makineleri tasarım ve üretimi."
+                },
+                "pcb": {
+                    "title": "PCB Tasarım ve Üretim",
+                    "desc": "Çok katmanlı, yüksek frekanslı PCB tasarımı ve prototip üretimi."
+                }
+            }
+        },
+        "machinery": {
+            "title": "Makina",
+            "desc": "Hassas mühendislik ve imalat çözümleri ile üretim süreçlerinizi güçlendiriyoruz.",
+            "items": {
+                "design3d": {
+                    "title": "3D Tasarım",
+                    "desc": "SolidWorks, CATIA ve AutoCAD ile profesyonel 3D modelleme ve mühendislik tasarımı."
+                },
+                "cnc": {
+                    "title": "Talaşlı İmalat",
+                    "desc": "CNC torna, freze ve 5 eksen işleme merkezleriyle hassas parça üretimi."
+                }
+            }
+        },
+        "maritime": {
+            "title": "Denizcilik",
+            "desc": "Denizcilik sektörü için kapsamlı mühendislik ve teknik destek hizmetleri.",
+            "items": {
+                "pipe": {
+                    "title": "Boru Donatım",
+                    "desc": "Gemi ve endüstriyel tesisler için boru sistemleri tasarımı, imalatı ve montajı."
+                },
+                "shipMachine": {
+                    "title": "Gemi Makine Faaliyetleri",
+                    "desc": "Ana makine, jeneratör bakım-onarım ve revizyon hizmetleri."
+                }
+            }
+        }
+    },
+    "products": {
+        "title": "Ürünlerimiz",
+        "subtitle": "Kritik görevler için tasarlanmış yüksek performanslı sualtı teknolojileri",
+        "items": {
+            "camera": {
+                "title": "Sualtı Kamerası",
+                "desc": "Zorlu sualtı koşullarında yüksek çözünürlüklü görüntüleme sağlayan, basınca dayanıklı endüstriyel kamera sistemleri."
+            },
+            "light": {
+                "title": "Sualtı Aydınlatma",
+                "desc": "Derin deniz operasyonları için özel olarak tasarlanmış, yüksek lümenli ve enerji verimli LED aydınlatma üniteleri."
+            },
+            "monitor": {
+                "title": "Operatör Monitörü",
+                "desc": "ROV kontrol istasyonları için güneş ışığında okunabilir, suya ve toza dayanıklı endüstriyel ekranlar."
+            },
+            "harness": {
+                "title": "Bağlantı ve Kablolama (Harness)",
+                "desc": "Sualtı sistemleri için yüksek güvenilirlikli, basınca ve korozyona dayanıklı özel kablo donanımları."
+            },
+            "portableUnit": {
+                "title": "Taşınabilir Kontrol Ünitesi",
+                "desc": "Sualtı araçlarının saha operasyonları için entegre ekranlı, ergonomik ve taşınabilir kontrol çantaları."
+            },
+            "pressureVessel": {
+                "title": "Basınç Hücreleri",
+                "desc": "Denizaltı ve ROV elektroniklerini derinlik basıncından koruyan, özel alaşımlı sızdırmaz basınç kapları."
+            }
+        }
+    },
+    "blackbox": {
+        "title": "Milli Kara Kutu",
+        "subtitle": "Türkiye'nin İlk Yerli ve Milli Kara Kutusu",
+        "description": "Aquatic, Türkiye'nin ilk yerli ve milli kara kutu projesinde yer alarak, ülkemizin savunma sanayindeki bağımsızlık hedeflerine katkıda bulunmaktadır. Bu kritik teknoloji, en zorlu koşullara dayanıklı olacak şekilde tasarlanmıştır.",
+        "specTitle": "Teknik Özellikler",
+        "specs": {
+            "temperature": {
+                "label": "Sıcaklık Dayanımı",
+                "value": "1100°C",
+                "desc": "30 dakika boyunca"
+            },
+            "pressure": {
+                "label": "Su Basıncı Dayanımı",
+                "value": "6000 metre",
+                "desc": "Deniz tabanı basıncına dayanıklı"
+            },
+            "impact": {
+                "label": "Darbe Dayanımı",
+                "value": "3400g",
+                "desc": "Yüksek şok dayanımı"
+            },
+            "recording": {
+                "label": "Kayıt Süresi",
+                "value": "25 saat",
+                "desc": "Kesintisiz veri kaydı"
+            },
+            "beacon": {
+                "label": "Sualtı İşaret Verici",
+                "value": "90 gün",
+                "desc": "Pinger çalışma süresi"
+            },
+            "standard": {
+                "label": "Standart",
+                "value": "ED-112A",
+                "desc": "EUROCAE Sertifikasyonu"
+            }
+        },
+        "features": {
+            "title": "Öne Çıkan Özellikler",
+            "list": [
+                "Tamamen yerli ve milli tasarım",
+                "EUROCAE ED-112A standartlarına uygunluk",
+                "Yüksek sıcaklık ve basınç dayanımı",
+                "Uzun süreli veri kayıt kapasitesi",
+                "Sualtı konum belirleme sistemi",
+                "Kolay entegrasyon ve bakım"
+            ]
+        },
+        "cta": "Detaylı Bilgi İçin İletişime Geçin"
+    },
+    "contact": {
+        "title": "İletişim",
+        "subtitle": "Projeleriniz için bizimle iletişime geçin. Size en kısa sürede dönüş yapacağız.",
+        "formTitle": "Bize Yazın",
+        "name": "Adınız Soyadınız",
+        "email": "E-posta Adresiniz",
+        "phone": "Telefon Numaranız",
+        "subject": "Konu",
+        "message": "Mesajınız",
+        "send": "Mesaj Gönder",
+        "sending": "Gönderiliyor...",
+        "success": "Mesajınız başarıyla gönderildi!",
+        "error": "Bir hata oluştu. Lütfen tekrar deneyin.",
+        "locationsTitle": "Lokasyonlarımız",
+        "kocaeli": {
+            "title": "Kocaeli Ofis",
+            "address": "Şehitler Mah. Barbaros Hayrettin Cad. No:90/A Gölcük/Kocaeli/Türkiye",
+            "phone": "+90 262 412 24 42",
+            "email": "bilgi@aquatic.com.tr"
+        },
+        "istanbul": {
+            "title": "İstanbul Ofis",
+            "address": "İstanbul, Türkiye",
+            "phone": "+90 542 308 41 42",
+            "email": "bilgi@aquatic.com.tr"
+        }
+    },
+    "footer": {
+        "description": "Savunma sanayi, elektronik, makina ve denizcilik alanlarında yenilikçi mühendislik çözümleri.",
+        "quickLinks": "Hızlı Bağlantılar",
+        "contactInfo": "İletişim Bilgileri",
+        "rights": "Tüm hakları saklıdır.",
+        "address": "Şehitler Mah. Barbaros Hayrettin Cad. No:90/A Gölcük/Kocaeli"
+    }
+}

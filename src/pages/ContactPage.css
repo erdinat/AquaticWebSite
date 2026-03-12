@@ -1,0 +1,129 @@
+/* ===== ContactPage Styles ===== */
+
+/* Reuse page-hero from CorporatePage.css */
+
+.contact-content-section {
+    background: var(--color-bg);
+}
+
+/* Contact Form Wrapper */
+.contact-form-wrapper {
+    padding: 40px 36px;
+}
+
+.contact-form-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 28px;
+}
+
+.contact-input {
+    border-radius: var(--radius-sm) !important;
+    border: 1px solid var(--color-border) !important;
+    font-size: 14px !important;
+    padding: 12px 16px !important;
+    transition: all var(--transition-normal) !important;
+}
+
+.contact-input:not(textarea) {
+    height: 52px !important;
+}
+
+.contact-input:focus,
+.contact-input:hover {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 2px rgba(0, 80, 179, 0.08) !important;
+}
+
+.contact-submit-btn {
+    height: 52px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: var(--radius-sm) !important;
+}
+
+/* Locations */
+.locations-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 24px;
+}
+
+.location-card {
+    border-radius: var(--radius-md) !important;
+    border: 1px solid var(--color-border) !important;
+    transition: all var(--transition-normal) !important;
+}
+
+.location-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: var(--shadow-lg) !important;
+    border-color: rgba(0, 80, 179, 0.15) !important;
+}
+
+.location-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.location-emoji {
+    font-size: 28px;
+}
+
+.location-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin: 0;
+}
+
+.location-details {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.location-detail {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+/* Map Container */
+.map-container-large {
+    width: 100%;
+    margin-top: 40px;
+    background: var(--color-bg);
+}
+
+.map-container-large iframe {
+    filter: grayscale(20%) contrast(1.1);
+}
+
+/* Reveal */
+.contact-page .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-page .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-form-wrapper {
+        padding: 28px 20px;
+    }
+}

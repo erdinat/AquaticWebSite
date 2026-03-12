@@ -1,0 +1,23 @@
+{
+  "name": "aquatic-website",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^6.1.0",
+    "@emailjs/browser": "^4.4.1",
+    "@vitejs/plugin-react": "^5.1.4",
+    "antd": "^6.3.2",
+    "i18next": "^25.8.17",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-i18next": "^16.5.7",
+    "react-router-dom": "^7.13.1",
+    "vite": "^7.3.1"
+  }
+}
