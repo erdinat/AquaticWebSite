@@ -199,6 +199,29 @@ body {
   }
 }
 
+/* Particle effects */
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: float var(--duration, 4s) ease-in-out infinite;
+}
+
+.particle:nth-child(even) {
+  width: 2px;
+  height: 2px;
+  background: rgba(0, 180, 216, 0.4);
+}
+
 /* Animation utility classes */
 .animate-fadeInUp {
   animation: fadeInUp 0.7s var(--transition-normal) both;

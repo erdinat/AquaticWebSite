@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import BackgroundParticles from '../components/BackgroundParticles';
 import { useLocation } from 'react-router-dom';
 import { Row, Col, Card, Timeline, Collapse } from 'antd';
 import {
@@ -62,6 +63,7 @@ const CorporatePage = () => {
             {/* Page Hero - Premium Look */}
             <section className="page-hero">
                 <div className="page-hero-bg" />
+                <BackgroundParticles count={15} />
                 <div
                     className="page-hero-overlay"
                     style={{ backgroundImage: `url(${imgHero})` }}

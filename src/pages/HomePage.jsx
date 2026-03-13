@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import BackgroundParticles from '../components/BackgroundParticles';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { Row, Col, Button, Card } from 'antd';
@@ -202,14 +203,7 @@ const HomePage = () => {
                     <div className="hero-wave hero-wave-2" />
                     <div className="hero-wave hero-wave-3" />
                     <div className="hero-particles">
-                        {Array.from({ length: 20 }).map((_, i) => (
-                            <div key={i} className="particle" style={{
-                                left: `${Math.random() * 100}%`,
-                                top: `${Math.random() * 100}%`,
-                                animationDelay: `${Math.random() * 5}s`,
-                                animationDuration: `${3 + Math.random() * 4}s`,
-                            }} />
-                        ))}
+                        <BackgroundParticles count={20} />
                     </div>
                 </div>
 
