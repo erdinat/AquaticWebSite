@@ -210,6 +210,11 @@
         }
     },
     "blackbox": {
+        "hero": {
+            "badge": "AQUATIC blackbox",
+            "title": "Milli Kara Kutu",
+            "subtitle": "Türkiye'nin havacılık ve denizaltı platformları için yüksek mukavemetli veri kayıt sistemi."
+        },
         "title": "Milli Kara Kutu",
         "subtitle": "Türkiye'nin İlk Yerli ve Milli Kara Kutusu",
         "description": "Aquatic, Türkiye'nin ilk yerli ve milli kara kutu projesinde yer alarak, ülkemizin savunma sanayindeki bağımsızlık hedeflerine katkıda bulunmaktadır. Bu kritik teknoloji, en zorlu koşullara dayanıklı olacak şekilde tasarlanmıştır.",

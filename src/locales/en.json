@@ -210,6 +210,11 @@
         }
     },
     "blackbox": {
+        "hero": {
+            "badge": "AQUATIC blackbox",
+            "title": "National Black Box",
+            "subtitle": "High-durability data recording system for Turkey's aviation and submarine platforms."
+        },
         "title": "National Black Box",
         "subtitle": "Turkey's First Domestic and National Black Box",
         "description": "Aquatic contributes to Turkey's defense industry independence goals by participating in the country's first domestic and national black box project. This critical technology is designed to withstand the most extreme conditions.",
