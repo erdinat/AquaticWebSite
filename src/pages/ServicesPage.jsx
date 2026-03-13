@@ -135,20 +135,19 @@ const ServicesPage = () => {
 
     return (
         <div className="services-page">
-            {/* Page Hero */}
+            {/* Page Hero - Premium Look */}
             <section className="page-hero">
+                <div className="page-hero-bg" />
                 <div
-                    className="page-hero-bg"
-                    style={{
-                        backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${imgHero})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center'
-                    }}
+                    className="page-hero-overlay"
+                    style={{ backgroundImage: `url(${imgHero})` }}
                 />
+                <div className="page-hero-glow" />
                 <div className="container page-hero-content">
                     <h1 className="page-hero-title animate-fadeInUp">{t('services.title')}</h1>
                     <p className="page-hero-subtitle animate-fadeInUp delay-1">{t('services.subtitle')}</p>
                 </div>
+                <div className="page-hero-wave" />
             </section>
 
             {/* Services Tabs */}

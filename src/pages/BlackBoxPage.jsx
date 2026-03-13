@@ -99,42 +99,36 @@ const BlackBoxPage = () => {
 
     return (
         <div className="blackbox-page">
-            {/* Page Hero */}
+            {/* Page Hero - Premium Look */}
             <section className="page-hero">
+                <div className="page-hero-bg" />
                 <div
-                    className="page-hero-bg"
-                    style={{
-                        backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${imgHero})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center'
-                    }}
+                    className="page-hero-overlay"
+                    style={{ backgroundImage: `url(${imgHero})` }}
                 />
-                <div className="blackbox-hero-glow" />
-                <div className="container blackbox-hero-content">
+                <div className="page-hero-glow" />
+
+                <div className="container page-hero-content">
                     <div className="blackbox-badge animate-fadeInDown">
-                        <SafetyCertificateOutlined /> {t('blackbox.subtitle')}
+                        <SafetyCertificateOutlined /> {t('blackbox.hero.badge')}
                     </div>
-                    <h1 className="blackbox-hero-title animate-fadeInUp delay-1">
-                        {t('blackbox.title')}
-                    </h1>
-                    <p className="blackbox-hero-subtitle animate-fadeInUp delay-2">
-                        {t('blackbox.description')}
-                    </p>
-                </div>
+                    <h1 className="page-hero-title animate-fadeInUp">{t('blackbox.hero.title')}</h1>
+                    <p className="page-hero-subtitle animate-fadeInUp delay-1">{t('blackbox.hero.subtitle')}</p>
 
-                {/* 3D-like black box visualization */}
-                <div className="blackbox-visual animate-scaleIn delay-3">
-                    <div className="blackbox-3d">
-                        <div className="blackbox-face front">
-                            <div className="blackbox-label">AQUATIC</div>
-                            <div className="blackbox-sublabel">FDR / CVR</div>
+                    {/* 3D Visual remains within the premium hero */}
+                    <div className="blackbox-visual animate-scaleIn delay-2">
+                        <div className="blackbox-3d">
+                            <div className="blackbox-face front">
+                                <span className="blackbox-label">AQUATIC</span>
+                                <span className="blackbox-sublabel">BLACK BOX</span>
+                            </div>
+                            <div className="blackbox-face top"></div>
+                            <div className="blackbox-face right"></div>
                         </div>
-                        <div className="blackbox-face top" />
-                        <div className="blackbox-face right" />
                     </div>
                 </div>
+                <div className="page-hero-wave" />
             </section>
-
             {/* Specs Table Section */}
             <section className="section blackbox-specs-section">
                 <div className="container">
