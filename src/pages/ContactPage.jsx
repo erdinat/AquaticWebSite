@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import BackgroundParticles from '../components/BackgroundParticles';
 import { Row, Col, Form, Input, Button, Card, message } from 'antd';
 import {
     SendOutlined,
@@ -8,6 +9,7 @@ import {
     MailOutlined,
     LoadingOutlined,
 } from '@ant-design/icons';
+import imgHero from '../assets/images/iletisim.png';
 import './ContactPage.css';
 
 const { TextArea } = Input;
@@ -89,13 +91,20 @@ const ContactPage = () => {
 
     return (
         <div className="contact-page">
-            {/* Page Hero */}
+            {/* Page Hero - Premium Look */}
             <section className="page-hero">
                 <div className="page-hero-bg" />
+                <BackgroundParticles count={15} />
+                <div
+                    className="page-hero-overlay"
+                    style={{ backgroundImage: `url(${imgHero})` }}
+                />
+                <div className="page-hero-glow" />
                 <div className="container page-hero-content">
                     <h1 className="page-hero-title animate-fadeInUp">{t('contact.title')}</h1>
                     <p className="page-hero-subtitle animate-fadeInUp delay-1">{t('contact.subtitle')}</p>
                 </div>
+                <div className="page-hero-wave" />
             </section>
 
             {/* Contact Content */}
