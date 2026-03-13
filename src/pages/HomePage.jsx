@@ -184,13 +184,23 @@ const HomePage = () => {
         },
     ];
 
-    /* Brands Data (duplicated for infinite scroll effect) */
-    const brandImages = [
-        brandAslan, brandBilgem, brandDalgakiran, brandEms, brandErve,
-        brandGolcuk, brandTrc, brandTubitak, brandRef1, brandRef3,
-        brandRef4, brandRef5, brandRef7
+    /* Brands Data with names for accessibility */
+    const marqueeBrands = [
+        { name: 'Aslan Çimento', image: brandAslan },
+        { name: 'BİLGEM', image: brandBilgem },
+        { name: 'Dalgakıran', image: brandDalgakiran },
+        { name: 'EMS', image: brandEms },
+        { name: 'ERVE', image: brandErve },
+        { name: 'Gölcük Belediyesi', image: brandGolcuk },
+        { name: 'TRC', image: brandTrc },
+        { name: 'TÜBİTAK SAGE', image: brandTubitak },
+        { name: 'Reference 1', image: brandRef1 },
+        { name: 'Reference 3', image: brandRef3 },
+        { name: 'Reference 4', image: brandRef4 },
+        { name: 'Reference 5', image: brandRef5 },
+        { name: 'Reference 7', image: brandRef7 }
     ];
-    const allBrands = [...brandImages, ...brandImages]; // Duplicate for seamless marquee
+    const allBrands = [...marqueeBrands, ...marqueeBrands]; // Duplicate for seamless marquee
 
     return (
         <div className="home-page">
@@ -285,7 +295,7 @@ const HomePage = () => {
                                     </div>
                                     <h3 className="service-preview-title">{service.title}</h3>
                                     <p className="service-preview-desc">{service.desc}</p>
-                                    <div className="service-link">
+                                    <div className="service-link" aria-label={t('hero.cta')}>
                                         <ArrowRightOutlined />
                                     </div>
                                 </div>
@@ -349,7 +359,7 @@ const HomePage = () => {
                         <div className="brands-marquee">
                             {allBrands.map((brand, index) => (
                                 <div key={index} className="brand-logo-wrapper glass-card">
-                                    <img src={brand} alt={`Referans ${index}`} className="brand-logo" />
+                                    <img src={brand.image} alt={brand.name} className="brand-logo" />
                                 </div>
                             ))}
                         </div>

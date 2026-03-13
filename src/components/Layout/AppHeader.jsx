@@ -153,6 +153,7 @@ const AppHeader = () => {
                 <Button
                     className="mobile-menu-btn"
                     type="text"
+                    aria-label="Toggle mobile menu"
                     icon={<MenuOutlined style={{ fontSize: 22, color: textColor }} />}
                     onClick={() => setDrawerOpen(true)}
                     style={{ display: 'none' }}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://aquatic.com.tr/</loc>
+    <lastmod>2024-03-14</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://aquatic.com.tr/corporate</loc>
+    <lastmod>2024-03-14</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://aquatic.com.tr/services</loc>
+    <lastmod>2024-03-14</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://aquatic.com.tr/products</loc>
+    <lastmod>2024-03-14</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://aquatic.com.tr/blackbox</loc>
+    <lastmod>2024-03-14</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://aquatic.com.tr/contact</loc>
+    <lastmod>2024-03-14</lastmod>
+    <priority>0.80</priority>
+  </url>
+</urlset>
