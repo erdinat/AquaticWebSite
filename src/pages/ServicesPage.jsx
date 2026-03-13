@@ -97,7 +97,7 @@ const ServicesPage = () => {
         children: (
             <div className="service-tab-content">
                 {/* Banner image */}
-                <div className="service-group-banner reveal">
+                <div className="service-group-banner">
                     <img src={group.image} alt={t(`services.${group.key}.title`)} />
                     <div className="service-group-banner-overlay" style={{ background: `linear-gradient(135deg, ${group.color}CC, ${group.color}88)` }}>
                         <div className="service-group-icon">
@@ -113,7 +113,7 @@ const ServicesPage = () => {
                     {group.items.map((item, idx) => (
                         <Col xs={24} sm={12} md={8} key={item}>
                             <Card
-                                className="service-item-card reveal"
+                                className="service-item-card"
                                 style={{ animationDelay: `${idx * 0.1}s` }}
                                 hoverable
                             >
