@@ -16,14 +16,14 @@ import {
     ControlOutlined,
     SettingOutlined,
 } from '@ant-design/icons';
-import imgHero from '../assets/images/hizmetler.jpg';
+import imgHero from '../assets/images/hizmetler.webp';
 import './ServicesPage.css';
 
 /* Optimized images */
-import imgDefence from '../assets/images/savunmasanayi.jpg';
-import imgElectronics from '../assets/images/elektrik.jpg';
-import imgMachinery from '../assets/images/makina.jpg';
-import imgMaritime from '../assets/images/denizcilik.jpg';
+import imgDefence from '../assets/images/savunmasanayi.webp';
+import imgElectronics from '../assets/images/elektrik.webp';
+import imgMachinery from '../assets/images/makina.webp';
+import imgMaritime from '../assets/images/denizcilik.webp';
 
 const ServicesPage = () => {
     const { t } = useTranslation();

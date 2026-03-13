@@ -14,7 +14,7 @@ import {
     CheckCircleOutlined,
     ArrowRightOutlined,
 } from '@ant-design/icons';
-import imgHero from '../assets/images/millikarakutu.jpg';
+import imgHero from '../assets/images/millikarakutu.webp';
 import './BlackBoxPage.css';
 
 const BlackBoxPage = () => {

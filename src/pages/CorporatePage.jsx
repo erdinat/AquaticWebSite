@@ -16,7 +16,7 @@ import {
     BankOutlined,
     QuestionCircleOutlined,
 } from '@ant-design/icons';
-import imgHero from '../assets/images/kurumsal.jpg';
+import imgHero from '../assets/images/kurumsal.webp';
 import './CorporatePage.css';
 
 const CorporatePage = () => {

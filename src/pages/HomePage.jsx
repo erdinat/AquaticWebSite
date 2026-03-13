@@ -17,34 +17,34 @@ import {
 import './HomePage.css';
 
 /* Optimized images */
-import imgDefence from '../assets/images/savunmasanayi.jpg';
-import imgElectronics from '../assets/images/elektrik.jpg';
-import imgMachinery from '../assets/images/makina.jpg';
-import imgMaritime from '../assets/images/denizcilik.jpg';
-import imgHeroBg from '../assets/images/anasayfa.jpg';
-import brandAslan from '../assets/images/brands/aslan-cimento.jpg';
-import brandBilgem from '../assets/images/brands/bilgem.jpg';
-import brandDalgakiran from '../assets/images/brands/dalgakiran.jpg';
-import brandEms from '../assets/images/brands/ems.png';
-import brandErve from '../assets/images/brands/erve.png';
-import brandGolcuk from '../assets/images/brands/golcuk-belediye.jpg';
-import brandTrc from '../assets/images/brands/trc.jpg';
-import brandTubitak from '../assets/images/brands/tubitak-sage.jpg';
-import prodCamera from '../assets/images/products/camera.jpg';
-import prodHarness from '../assets/images/products/harness.jpeg';
-import prodLight from '../assets/images/products/light.jpg';
-import prodMonitor from '../assets/images/products/monitor.jpg';
-import prodPortableUnit from '../assets/images/products/portable-unit.jpg';
-import prodPortableUnit2 from '../assets/images/products/portable-unit2.jpg';
-import prodPressureVessel from '../assets/images/products/pressure-vessel.png';
+import imgDefence from '../assets/images/savunmasanayi.webp';
+import imgElectronics from '../assets/images/elektrik.webp';
+import imgMachinery from '../assets/images/makina.webp';
+import imgMaritime from '../assets/images/denizcilik.webp';
+import imgHeroBg from '../assets/images/anasayfa.webp';
+import brandAslan from '../assets/images/brands/aslan-cimento.webp';
+import brandBilgem from '../assets/images/brands/bilgem.webp';
+import brandDalgakiran from '../assets/images/brands/dalgakiran.webp';
+import brandEms from '../assets/images/brands/ems.webp';
+import brandErve from '../assets/images/brands/erve.webp';
+import brandGolcuk from '../assets/images/brands/golcuk-belediye.webp';
+import brandTrc from '../assets/images/brands/trc.webp';
+import brandTubitak from '../assets/images/brands/tubitak-sage.webp';
+import prodCamera from '../assets/images/products/camera.webp';
+import prodHarness from '../assets/images/products/harness.webp';
+import prodLight from '../assets/images/products/light.webp';
+import prodMonitor from '../assets/images/products/monitor.webp';
+import prodPortableUnit from '../assets/images/products/portable-unit.webp';
+import prodPortableUnit2 from '../assets/images/products/portable-unit2.webp';
+import prodPressureVessel from '../assets/images/products/pressure-vessel.webp';
 
 /* Brand Images */
 
-import brandRef1 from '../assets/images/brands/ref1.jpg';
-import brandRef3 from '../assets/images/brands/ref3.jpg';
-import brandRef4 from '../assets/images/brands/ref4.jpg';
-import brandRef5 from '../assets/images/brands/ref5.jpg';
-import brandRef7 from '../assets/images/brands/ref7.jpg';
+import brandRef1 from '../assets/images/brands/ref1.webp';
+import brandRef3 from '../assets/images/brands/ref3.webp';
+import brandRef4 from '../assets/images/brands/ref4.webp';
+import brandRef5 from '../assets/images/brands/ref5.webp';
+import brandRef7 from '../assets/images/brands/ref7.webp';
 
 const HomePage = () => {
     const { t } = useTranslation();

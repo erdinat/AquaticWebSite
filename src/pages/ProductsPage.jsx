@@ -2,16 +2,16 @@ import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import BackgroundParticles from '../components/BackgroundParticles';
 import { Row, Col, Card } from 'antd';
-import imgHero from '../assets/images/products.jpg';
+import imgHero from '../assets/images/products.webp';
 import './ProductsPage.css';
 
 /* Product Images */
-import imgCamera from '../assets/images/products/camera.jpg';
-import imgLight from '../assets/images/products/light.jpg';
-import imgMonitor from '../assets/images/products/monitor.jpg';
-import imgHarness from '../assets/images/products/harness.jpeg';
-import imgPortableUnit from '../assets/images/products/portable-unit.jpg';
-import imgPressureVessel from '../assets/images/products/pressure-vessel.png';
+import imgCamera from '../assets/images/products/camera.webp';
+import imgLight from '../assets/images/products/light.webp';
+import imgMonitor from '../assets/images/products/monitor.webp';
+import imgHarness from '../assets/images/products/harness.webp';
+import imgPortableUnit from '../assets/images/products/portable-unit.webp';
+import imgPressureVessel from '../assets/images/products/pressure-vessel.webp';
 
 const ProductsPage = () => {
     const { t } = useTranslation();

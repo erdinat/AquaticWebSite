@@ -13,7 +13,7 @@ import {
     SafetyCertificateOutlined,
     MailOutlined,
 } from '@ant-design/icons';
-import AquaticLogo from '../../assets/images/logo.png';
+import AquaticLogo from '../../assets/images/logo.webp';
 
 const { Header } = Layout;
 

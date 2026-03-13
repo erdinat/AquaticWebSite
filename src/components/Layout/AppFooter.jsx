@@ -8,7 +8,7 @@ import {
     MailOutlined,
     RightOutlined,
 } from '@ant-design/icons';
-import AquaticLogo from '../../assets/images/logo.png';
+import AquaticLogo from '../../assets/images/logo.webp';
 
 const AppFooter = () => {
     const { t } = useTranslation();

@@ -9,7 +9,7 @@ import {
     MailOutlined,
     LoadingOutlined,
 } from '@ant-design/icons';
-import imgHero from '../assets/images/iletisim.jpg';
+import imgHero from '../assets/images/iletisim.webp';
 import './ContactPage.css';
 
 const { TextArea } = Input;
