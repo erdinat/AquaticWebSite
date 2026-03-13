@@ -20,10 +20,10 @@ import imgHero from '../assets/images/hizmetler.png';
 import './ServicesPage.css';
 
 /* Real images from aquatic.com.tr */
-import imgDefence from '../assets/images/service-divers.jpg';
-import imgElectronics from '../assets/images/service-cable.jpg';
-import imgMachinery from '../assets/images/service-underwater.jpg';
-import imgMaritime from '../assets/images/slider1.jpg';
+import imgDefence from '../assets/images/savunmasanayi.png';
+import imgElectronics from '../assets/images/elektrik.png';
+import imgMachinery from '../assets/images/makina.png';
+import imgMaritime from '../assets/images/denizcilik.png';
 
 const ServicesPage = () => {
     const { t } = useTranslation();
