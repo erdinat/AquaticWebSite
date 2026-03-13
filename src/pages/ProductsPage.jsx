@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import BackgroundParticles from '../components/BackgroundParticles';
 import { Row, Col, Card } from 'antd';
-import imgHero from '../assets/images/products.png';
+import imgHero from '../assets/images/products.jpg';
 import './ProductsPage.css';
 
 /* Product Images */

@@ -16,12 +16,12 @@ import {
 } from '@ant-design/icons';
 import './HomePage.css';
 
-/* Real images from aquatic.com.tr */
-import imgDefence from '../assets/images/savunmasanayi.png';
-import imgElectronics from '../assets/images/elektrik.png';
-import imgMachinery from '../assets/images/makina.png';
-import imgMaritime from '../assets/images/denizcilik.png';
-import imgHeroBg from '../assets/images/anasayfa.png';
+/* Optimized images */
+import imgDefence from '../assets/images/savunmasanayi.jpg';
+import imgElectronics from '../assets/images/elektrik.jpg';
+import imgMachinery from '../assets/images/makina.jpg';
+import imgMaritime from '../assets/images/denizcilik.jpg';
+import imgHeroBg from '../assets/images/anasayfa.jpg';
 import brandAslan from '../assets/images/brands/aslan-cimento.jpg';
 import brandBilgem from '../assets/images/brands/bilgem.jpg';
 import brandDalgakiran from '../assets/images/brands/dalgakiran.jpg';
