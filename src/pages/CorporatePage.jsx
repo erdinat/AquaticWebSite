@@ -15,6 +15,7 @@ import {
     BankOutlined,
     QuestionCircleOutlined,
 } from '@ant-design/icons';
+import imgHero from '../assets/images/kurumsal.png';
 import './CorporatePage.css';
 
 const CorporatePage = () => {
@@ -60,7 +61,14 @@ const CorporatePage = () => {
         <div className="corporate-page">
             {/* Page Hero */}
             <section className="page-hero">
-                <div className="page-hero-bg" />
+                <div
+                    className="page-hero-bg"
+                    style={{
+                        backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${imgHero})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center'
+                    }}
+                />
                 <div className="container page-hero-content">
                     <h1 className="page-hero-title animate-fadeInUp">{t('corporate.title')}</h1>
                     <p className="page-hero-subtitle animate-fadeInUp delay-1">{t('corporate.subtitle')}</p>

@@ -13,6 +13,7 @@ import {
     CheckCircleOutlined,
     ArrowRightOutlined,
 } from '@ant-design/icons';
+import imgHero from '../assets/images/millikarakutu.png';
 import './BlackBoxPage.css';
 
 const BlackBoxPage = () => {
@@ -98,9 +99,16 @@ const BlackBoxPage = () => {
 
     return (
         <div className="blackbox-page">
-            {/* Page Hero - Special showcase style */}
-            <section className="blackbox-hero">
-                <div className="blackbox-hero-bg" />
+            {/* Page Hero */}
+            <section className="page-hero">
+                <div
+                    className="page-hero-bg"
+                    style={{
+                        backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${imgHero})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center'
+                    }}
+                />
                 <div className="blackbox-hero-glow" />
                 <div className="container blackbox-hero-content">
                     <div className="blackbox-badge animate-fadeInDown">

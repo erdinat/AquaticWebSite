@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Row, Col, Card } from 'antd';
+import imgHero from '../assets/images/products.png';
 import './ProductsPage.css';
 
 /* Product Images */
@@ -41,7 +42,14 @@ const ProductsPage = () => {
         <div className="products-page">
             {/* Page Hero */}
             <section className="page-hero">
-                <div className="page-hero-bg" />
+                <div
+                    className="page-hero-bg"
+                    style={{
+                        backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${imgHero})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center'
+                    }}
+                />
                 <div className="container page-hero-content">
                     <h1 className="page-hero-title animate-fadeInUp">{t('products.title')}</h1>
                     <p className="page-hero-subtitle animate-fadeInUp delay-1">{t('products.subtitle')}</p>

@@ -15,6 +15,7 @@ import {
     ControlOutlined,
     SettingOutlined,
 } from '@ant-design/icons';
+import imgHero from '../assets/images/hizmetler.png';
 import './ServicesPage.css';
 
 /* Real images from aquatic.com.tr */
@@ -136,7 +137,14 @@ const ServicesPage = () => {
         <div className="services-page">
             {/* Page Hero */}
             <section className="page-hero">
-                <div className="page-hero-bg" />
+                <div
+                    className="page-hero-bg"
+                    style={{
+                        backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${imgHero})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center'
+                    }}
+                />
                 <div className="container page-hero-content">
                     <h1 className="page-hero-title animate-fadeInUp">{t('services.title')}</h1>
                     <p className="page-hero-subtitle animate-fadeInUp delay-1">{t('services.subtitle')}</p>

@@ -20,7 +20,7 @@ import imgDefence from '../assets/images/service-divers.jpg';
 import imgElectronics from '../assets/images/service-cable.jpg';
 import imgMachinery from '../assets/images/service-underwater.jpg';
 import imgMaritime from '../assets/images/slider1.jpg';
-import imgHeroBg from '../assets/images/mega1.jpg';
+import imgHeroBg from '../assets/images/anasayfa.png';
 import brandAslan from '../assets/images/brands/aslan-cimento.jpg';
 import brandBilgem from '../assets/images/brands/bilgem.jpg';
 import brandDalgakiran from '../assets/images/brands/dalgakiran.jpg';
