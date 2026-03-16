@@ -1,5 +1,5 @@
 import React from 'react'
-// CI/CD Deployment Trigger - Final Attempt (Credentials Fixed)
+// CI/CD Deployment Trigger - Dual Domain Verification (KZ & TR)
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { ConfigProvider } from 'antd';
