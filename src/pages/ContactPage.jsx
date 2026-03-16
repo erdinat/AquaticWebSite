@@ -20,10 +20,10 @@ const { TextArea } = Input;
  * To activate EmailJS, replace the placeholder constants below.
  */
 
-/* EmailJS Configuration - Replace with your own credentials */
-const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
-const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+/* EmailJS Configuration - Active */
+const EMAILJS_SERVICE_ID = 'service_16f5qja';
+const EMAILJS_TEMPLATE_ID = 'template_d4i0t08';
+const EMAILJS_PUBLIC_KEY = 'KTWen6neGfldnhB2D';
 
 const ContactPage = () => {
     const { t } = useTranslation();
@@ -48,18 +48,16 @@ const ContactPage = () => {
     const handleSubmit = async (values) => {
         setLoading(true);
         try {
-            // EmailJS integration - uncomment when credentials are set
-            // const emailjs = await import('@emailjs/browser');
-            // await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-            //   from_name: values.name,
-            //   from_email: values.email,
-            //   phone: values.phone,
-            //   subject: values.subject,
-            //   message: values.message,
-            // }, EMAILJS_PUBLIC_KEY);
+            // EmailJS integration - Active
+            const emailjs = await import('@emailjs/browser');
+            await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+                from_name: values.name,
+                from_email: values.email,
+                phone: values.phone,
+                subject: values.subject,
+                message: values.message,
+            }, EMAILJS_PUBLIC_KEY);
 
-            // Simulate for now
-            await new Promise((resolve) => setTimeout(resolve, 1500));
             message.success(t('contact.success'));
             form.resetFields();
         } catch (error) {
