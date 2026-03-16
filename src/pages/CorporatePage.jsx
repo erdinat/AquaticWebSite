@@ -215,7 +215,7 @@ const CorporatePage = () => {
                 <div className="container">
                     <Row gutter={[32, 32]}>
                         {/* Bank accounts */}
-                        <Col xs={24} md={12}>
+                        <Col span={24}>
                             <div className="reveal">
                                 <div className="section-label">
                                     <BankOutlined /> {t('corporate.bank.title')}
@@ -252,7 +252,7 @@ const CorporatePage = () => {
                         </Col>
 
                         {/* FAQ */}
-                        <Col xs={24} md={12}>
+                        <Col span={24}>
                             <div className="reveal" style={{ animationDelay: '0.2s' }}>
                                 <div className="section-label">
                                     <QuestionCircleOutlined /> {t('corporate.faq.title')}
