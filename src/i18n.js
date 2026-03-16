@@ -18,8 +18,8 @@ i18n
     .use(initReactI18next)
     .init({
         resources,
-        lng: localStorage.getItem('aquatic-lang') || 'tr', // Default to Turkish
-        fallbackLng: 'tr',
+        lng: localStorage.getItem('aquatic-lang') || 'kk', // Default to Kazakh
+        fallbackLng: 'kk',
         interpolation: {
             escapeValue: false, // React already handles XSS
         },

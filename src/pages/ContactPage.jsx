@@ -87,6 +87,14 @@ const ContactPage = () => {
             phone: t('contact.istanbul.phone'),
             email: t('contact.istanbul.email'),
         },
+        {
+            key: 'almaty',
+            icon: '🏔️',
+            title: t('contact.almaty.title'),
+            address: t('contact.almaty.address'),
+            phone: t('contact.almaty.phone'),
+            email: t('contact.almaty.email'),
+        },
     ];
 
     return (

@@ -287,6 +287,12 @@
             "address": "Стамбұл, Түркия",
             "phone": "+90 542 308 41 42",
             "email": "bilgi@aquatic.com.tr"
+        },
+        "almaty": {
+            "title": "Алматы кеңсесі (Қазақстан)",
+            "address": "Алматы қаласы, Медеу ауданы, Самал-2 ықшамауданы",
+            "phone": "+7 XXX XXX XX XX",
+            "email": "bilgi@aquatic.com.tr"
         }
     },
     "footer": {
