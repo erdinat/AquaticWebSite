@@ -303,5 +303,15 @@
         "contactInfo": "Contact Information",
         "rights": "All rights reserved.",
         "address": "Şehitler Mah. Barbaros Hayrettin Cad. No:90/A Gölcük/Kocaeli"
+    },
+    "brands": {
+        "title": "Brands We Work With",
+        "subtitle": "Selected institutions we are a trusted solution partner for in defense, industry, and the public sector."
+    },
+    "popularProducts": {
+        "title": "Our Popular Products",
+        "subtitle": "Some of our most in-demand solutions in defense, underwater systems, electronics, and machinery.",
+        "viewAll": "View All",
+        "topSeller": "Top Seller"
     }
 }

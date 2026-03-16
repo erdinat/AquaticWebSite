@@ -310,14 +310,14 @@ const HomePage = () => {
                 <div className="container">
                     <div className="section-header-split reveal">
                         <div className="header-split-left">
-                            <h2 className="section-title" style={{ textAlign: 'left', marginBottom: 8 }}>Popüler Ürünlerimiz</h2>
+                            <h2 className="section-title" style={{ textAlign: 'left', marginBottom: 8 }}>{t('popularProducts.title')}</h2>
                             <p className="section-subtitle" style={{ textAlign: 'left', margin: 0, maxWidth: 500 }}>
-                                Savunma sanayi, sualtı sistemleri, elektronik ve makine alanlarında en çok talep gören çözümlerimizden bazıları.
+                                {t('popularProducts.subtitle')}
                             </p>
                         </div>
                         <div className="header-split-right">
                             <Button type="default" size="large" onClick={() => navigate('/products')} className="view-all-btn">
-                                Tümünü İncele <ArrowRightOutlined />
+                                {t('popularProducts.viewAll')} <ArrowRightOutlined />
                             </Button>
                         </div>
                     </div>
@@ -328,7 +328,7 @@ const HomePage = () => {
                                 <div className="premium-product-card" onClick={() => navigate('/products')}>
                                     <div className="premium-product-image">
                                         {product.image && <img src={product.image} alt={product.name} />}
-                                        <div className="premium-product-badge">Top Seller</div>
+                                        <div className="premium-product-badge">{t('popularProducts.topSeller')}</div>
                                     </div>
                                     <div className="premium-product-content">
                                         <div className="premium-product-category">{product.category}</div>
@@ -351,9 +351,9 @@ const HomePage = () => {
             {/* ===== BRANDS / REFERENCES ===== */}
             <section className="section brands-section">
                 <div className="container">
-                    <h2 className="section-title reveal">Birlikte Çalıştığımız Markalar</h2>
+                    <h2 className="section-title reveal">{t('brands.title')}</h2>
                     <p className="section-subtitle reveal">
-                        Savunma sanayi, endüstri ve kamu tarafında güvenilir çözüm ortağı olduğumuz seçili kurumlar.
+                        {t('brands.subtitle')}
                     </p>
                     <div className="brands-marquee-container reveal">
                         <div className="brands-marquee">

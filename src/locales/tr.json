@@ -47,7 +47,7 @@
             "title": "Hakkımızda",
             "subtitle": "Türk Savunma Sanayiinde Yerli Güç",
             "p1": "AQUATIC Elektronik Makina Otomasyon Savunma Sanayi Tic. Ltd. Şti., Kocaeli Gölcük merkezli ve İstanbul Teknopark şubesiyle faaliyet gösteren yüksek teknolojili bir mühendislik firmasıdır. Savunma sanayi altyapısına uygun donanımlı ve tecrübeli mühendis kadromuzla kritik projelerde öncü roller üstleniyoruz.",
-            "p2": "Özellikle su altı teknolojileri, MIL-STD ürün geliştirme, donanım mühendisliği ve gömülü yazılım alanlarındaki uzmanlığımızla yerli ve milli sistemlerin üretimine katkı sağlıyoruz. Geleceğin yenilikçi projeleri için en güvenilir çözüm ortağınız olmaya devam edeceğiz.",
+            "p2": "Özellikle su altı teknolojileri, MIL-STD product development, donanım mühendisliği ve gömülü yazılım alanlarındaki uzmanlığımızla yerli ve milli sistemlerin üretimine katkı sağlıyoruz. Geleceğin yenilikçi projeleri için en güvenilir çözüm ortağınız olmaya devam edeceğiz.",
             "founded": "Kuruluş Yılı",
             "projects": "Tamamlanan Proje",
             "timeline": {
@@ -303,5 +303,15 @@
         "contactInfo": "İletişim Bilgileri",
         "rights": "Tüm hakları saklıdır.",
         "address": "Şehitler Mah. Barbaros Hayrettin Cad. No:90/A Gölcük/Kocaeli"
+    },
+    "brands": {
+        "title": "Birlikte Çalıştığımız Markalar",
+        "subtitle": "Savunma sanayi, endüstri ve kamu tarafında güvenilir çözüm ortağı olduğumuz seçili kurumlar."
+    },
+    "popularProducts": {
+        "title": "Popüler Ürünlerimiz",
+        "subtitle": "Savunma sanayi, sualtı sistemleri, elektronik ve makine alanlarında en çok talep gören çözümlerimizden bazıları.",
+        "viewAll": "Tümünü İncele",
+        "topSeller": "En Çok Satan"
     }
 }
