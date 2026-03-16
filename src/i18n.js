@@ -14,11 +14,22 @@ const resources = {
     ru: { translation: ru },
 };
 
+// Domain-based default language detection
+const getInitialLanguage = () => {
+    const saved = localStorage.getItem('aquatic-lang');
+    if (saved) return saved;
+
+    const hostname = window.location.hostname;
+    if (hostname.includes('.tr')) return 'tr';
+    if (hostname.includes('.kz')) return 'kk';
+    return 'kk'; // Fallback to Kazakh
+};
+
 i18n
     .use(initReactI18next)
     .init({
         resources,
-        lng: localStorage.getItem('aquatic-lang') || 'kk', // Default to Kazakh
+        lng: getInitialLanguage(),
         fallbackLng: 'kk',
         interpolation: {
             escapeValue: false, // React already handles XSS
