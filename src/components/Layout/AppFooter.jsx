@@ -18,6 +18,7 @@ const AppFooter = () => {
         { label: t('nav.corporate'), path: '/corporate' },
         { label: t('nav.services'), path: '/services' },
         { label: t('nav.blackbox'), path: '/blackbox' },
+        { label: t('nav.careers'), path: '/careers' },
         { label: t('nav.contact'), path: '/contact' },
     ];
 

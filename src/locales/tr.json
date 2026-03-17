@@ -5,6 +5,7 @@
         "services": "Hizmetler",
         "products": "Ürünler",
         "blackbox": "Milli Kara Kutu",
+        "careers": "Kariyer",
         "contact": "İletişim"
     },
     "hero": {
@@ -313,5 +314,24 @@
         "subtitle": "Savunma sanayi, sualtı sistemleri, elektronik ve makine alanlarında en çok talep gören çözümlerimizden bazıları.",
         "viewAll": "Tümünü İncele",
         "topSeller": "En Çok Satan"
+    },
+    "careers": {
+        "title": "Kariyer",
+        "subtitle": "Aquatic Ailesine Katılın",
+        "whyJoin": {
+            "title": "Neden Aquatic?",
+            "desc": "Yüksek teknoloji projelerinde yer alarak kariyerinizi bir üst seviyeye taşıyın. Geleceğin teknolojilerini birlikte inşa edelim."
+        },
+        "application": {
+            "title": "Genel Başvuru",
+            "desc": "Şu an açık bir pozisyon olmasa bile, yeteneklerinize güveniyorsanız özgeçmişinizi bize iletebilirsiniz."
+        },
+        "form": {
+            "notice": "Başvurularınız gizlilik prensibiyle değerlendirilir.",
+            "position": "Pozisyon / Departman",
+            "cv": "CV / Özgeçmiş Yükle",
+            "cvHint": "PDF veya DOCX formatında dosya yükleyin (Maks. 500KB)",
+            "cvError": "Lütfen CV dosyanızı yükleyin"
+        }
     }
 }

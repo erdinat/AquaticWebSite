@@ -1,0 +1,138 @@
+/* CareersPage Styling */
+
+.careers-page .careers-hero-overlay {
+    background-image: url('../assets/images/kariyer.webp');
+}
+
+.premium-careers-card {
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    box-shadow: 0 10px 30px rgba(0, 21, 41, 0.04);
+    height: 100%;
+    padding: 32px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.premium-careers-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 80, 179, 0.12);
+    border-color: rgba(0, 80, 179, 0.1);
+}
+
+.career-card-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.premium-careers-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--color-dark);
+}
+
+.premium-careers-card p {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Application Section */
+.application-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.application-info-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    background: rgba(0, 80, 179, 0.05);
+    border-radius: 12px;
+    margin-top: 24px;
+}
+
+.info-icon {
+    color: var(--color-primary);
+    font-size: 18px;
+}
+
+.application-info-box p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+.application-form-wrapper {
+    padding: 40px;
+    border-radius: 24px;
+    position: relative;
+}
+
+.premium-submit-btn {
+    height: 54px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    background: var(--gradient-primary);
+    border: none;
+    box-shadow: 0 8px 16px rgba(0, 80, 179, 0.2);
+}
+
+.premium-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(0, 80, 179, 0.3);
+}
+
+/* Common Reveal Animation (reused) */
+.careers-page .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.careers-page .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.max-800 {
+    max-width: 800px;
+}
+
+.centered {
+    margin: 0 auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .application-form-wrapper {
+        padding: 24px;
+    }
+}

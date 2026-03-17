@@ -8,6 +8,7 @@ import CorporatePage from './pages/CorporatePage';
 import ServicesPage from './pages/ServicesPage';
 import ProductsPage from './pages/ProductsPage';
 import BlackBoxPage from './pages/BlackBoxPage';
+import CareersPage from './pages/CareersPage';
 import ContactPage from './pages/ContactPage';
 
 /* Loading fallback */
@@ -28,6 +29,7 @@ function App() {
                     <Route path="/services" element={<ServicesPage />} />
                     <Route path="/products" element={<ProductsPage />} />
                     <Route path="/blackbox" element={<BlackBoxPage />} />
+                    <Route path="/careers" element={<CareersPage />} />
                     <Route path="/contact" element={<ContactPage />} />
                 </Routes>
             </MainLayout>

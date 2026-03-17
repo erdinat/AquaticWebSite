@@ -5,6 +5,7 @@
         "services": "Services",
         "products": "Products",
         "blackbox": "National Black Box",
+        "careers": "Careers",
         "contact": "Contact"
     },
     "hero": {
@@ -313,5 +314,24 @@
         "subtitle": "Some of our most in-demand solutions in defense, underwater systems, electronics, and machinery.",
         "viewAll": "View All",
         "topSeller": "Top Seller"
+    },
+    "careers": {
+        "title": "Careers",
+        "subtitle": "Join the Aquatic Family",
+        "whyJoin": {
+            "title": "Why Aquatic?",
+            "desc": "Take your career to the next level by participating in high-tech projects. Let's build the technologies of the future together."
+        },
+        "application": {
+            "title": "General Application",
+            "desc": "Even if there's no open position right now, if you are confident in your skills, you can send us your resume."
+        },
+        "form": {
+            "notice": "Your applications are evaluated with privacy principles.",
+            "position": "Position / Department",
+            "cv": "Upload CV / Resume",
+            "cvHint": "Upload file in PDF or DOCX format (Max. 500KB)",
+            "cvError": "Please upload your CV file"
+        }
     }
 }
