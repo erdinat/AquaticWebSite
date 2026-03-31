@@ -115,10 +115,10 @@ const ProductsPage = () => {
 
                             return (
                                 <Col xs={24} sm={12} md={8} key={product.id}>
+                                    <div className="reveal" style={{ height: '100%' }}>
                                     <Card
                                         hoverable
-                                        className={`product-card reveal${isExpanded ? ' product-card--expanded' : ''}`}
-                                        style={{ animationDelay: `${index * 0.1}s` }}
+                                        className={`product-card${isExpanded ? ' product-card--expanded' : ''}`}
                                         cover={
                                             <div className="product-image-wrapper">
                                                 <img
@@ -175,6 +175,7 @@ const ProductsPage = () => {
                                             </div>
                                         )}
                                     </Card>
+                                    </div>
                                 </Col>
                             );
                         })}
