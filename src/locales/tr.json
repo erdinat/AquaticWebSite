@@ -186,27 +186,69 @@
         "items": {
             "camera": {
                 "title": "Sualtı Kamerası",
-                "desc": "Zorlu sualtı koşullarında yüksek çözünürlüklü görüntüleme sağlayan, basınca dayanıklı endüstriyel kamera sistemleri."
+                "desc": "Zorlu sualtı koşullarında yüksek çözünürlüklü görüntüleme sağlayan, basınca dayanıklı endüstriyel kamera sistemleri.",
+                "expandTitle": "Sualtı Kamera Sistemleri",
+                "viewMore": "Detayları Gör",
+                "viewLess": "Daha Az Göster",
+                "subcategories": ["ROV Kameraları", "Gözetleme Kameraları", "Stereo / 3D Kameralar", "Termal Görüntüleme"],
+                "specsTitle": "Teknik Özellikler",
+                "specs": { "resolution": "Çözünürlük", "sensor": "Sensör", "depth": "Derinlik Dayanımı", "interface": "Arayüz", "housing": "Muhafaza" }
             },
             "light": {
                 "title": "Sualtı Aydınlatma",
-                "desc": "Derin deniz operasyonları için özel olarak tasarlanmış, yüksek lümenli ve enerji verimli LED aydınlatma üniteleri."
+                "desc": "Derin deniz operasyonları için özel olarak tasarlanmış, yüksek lümenli ve enerji verimli LED aydınlatma üniteleri.",
+                "expandTitle": "Sualtı Aydınlatma Sistemleri",
+                "viewMore": "Detayları Gör",
+                "viewLess": "Daha Az Göster",
+                "subcategories": ["LED Spot Işıklar", "Geniş Alan Aydınlatma", "Stroboskop Sistemleri", "Kızılötesi Aydınlatma"],
+                "specsTitle": "Teknik Özellikler",
+                "specs": { "depth": "Derinlik Dayanımı", "lumen": "Işık Şiddeti", "power": "Güç", "colorTemp": "Renk Sıcaklığı", "housing": "Muhafaza" }
             },
             "monitor": {
                 "title": "Operatör Monitörü",
-                "desc": "ROV kontrol istasyonları için güneş ışığında okunabilir, suya ve toza dayanıklı endüstriyel ekranlar."
+                "desc": "ROV kontrol istasyonları için güneş ışığında okunabilir, suya ve toza dayanıklı endüstriyel ekranlar.",
+                "expandTitle": "Operatör Monitör Sistemleri",
+                "viewMore": "Detayları Gör",
+                "viewLess": "Daha Az Göster",
+                "subcategories": ["Masaüstü Kontrol Monitörleri", "Rack-mount Ekranlar", "Taşınabilir Panel PC", "Dokunmatik Kontrol Panelleri"],
+                "specsTitle": "Teknik Özellikler",
+                "specs": { "size": "Ekran Boyutu", "brightness": "Parlaklık", "protection": "Koruma Sınıfı", "input": "Giriş", "temp": "Çalışma Sıcaklığı" }
             },
             "harness": {
                 "title": "Bağlantı ve Kablolama (Harness)",
-                "desc": "Sualtı sistemleri için yüksek güvenilirlikli, basınca ve korozyona dayanıklı özel kablo donanımları."
+                "desc": "Sualtı sistemleri için yüksek güvenilirlikli, basınca ve korozyona dayanıklı özel kablo donanımları.",
+                "expandTitle": "Sualtı Kablolama Sistemleri",
+                "viewMore": "Detayları Gör",
+                "viewLess": "Daha Az Göster",
+                "subcategories": ["Torpido Konnektör Kabloları", "ROV Umbilikal Kabloları", "Sualtı Konnektörleri", "Özel Harness Montajları"],
+                "specsTitle": "Teknik Özellikler",
+                "specs": {
+                    "depth": "Derinlik Dayanımı",
+                    "conductors": "İletken Sayısı",
+                    "standard": "Standart",
+                    "material": "Kılıf Malzemesi",
+                    "temp": "Çalışma Sıcaklığı"
+                }
             },
             "portableUnit": {
                 "title": "Taşınabilir Kontrol Ünitesi",
-                "desc": "Sualtı araçlarının saha operasyonları için entegre ekranlı, ergonomik ve taşınabilir kontrol çantaları."
+                "desc": "Sualtı araçlarının saha operasyonları için entegre ekranlı, ergonomik ve taşınabilir kontrol çantaları.",
+                "expandTitle": "Taşınabilir Kontrol Sistemleri",
+                "viewMore": "Detayları Gör",
+                "viewLess": "Daha Az Göster",
+                "subcategories": ["ROV Kontrol Çantaları", "Saha Test Üniteleri", "Entegre Joystick Sistemleri", "Acil Durum Kontrol Kitleri"],
+                "specsTitle": "Teknik Özellikler",
+                "specs": { "display": "Ekran", "battery": "Batarya", "protection": "Koruma Sınıfı", "interface": "Arayüz", "weight": "Ağırlık" }
             },
             "pressureVessel": {
                 "title": "Basınç Hücreleri",
-                "desc": "Denizaltı ve ROV elektroniklerini derinlik basıncından koruyan, özel alaşımlı sızdırmaz basınç kapları."
+                "desc": "Denizaltı ve ROV elektroniklerini derinlik basıncından koruyan, özel alaşımlı sızdırmaz basınç kapları.",
+                "expandTitle": "Basınç Hücresi Sistemleri",
+                "viewMore": "Detayları Gör",
+                "viewLess": "Daha Az Göster",
+                "subcategories": ["Elektronik Muhafaza Silindirleri", "Konnektör Flanşlı Kaplar", "Özel Ölçü Muhafazalar", "Test ve Kalibrasyon Kapları"],
+                "specsTitle": "Teknik Özellikler",
+                "specs": { "depth": "Derinlik Dayanımı", "material": "Malzeme", "sealing": "Sızdırmazlık", "standard": "Standart", "maxTemp": "Maks. Sıcaklık" }
             }
         }
     },

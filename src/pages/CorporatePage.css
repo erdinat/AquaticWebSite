@@ -21,7 +21,7 @@
 /* --- Content Titles --- */
 .content-title {
     font-family: var(--font-display);
-    font-size: 2rem;
+    font-size: var(--font-size-h2);
     font-weight: 700;
     color: var(--color-dark);
     margin-bottom: 20px;
@@ -29,7 +29,7 @@
 }
 
 .content-text {
-    font-size: 1rem;
+    font-size: var(--font-size-body);
     color: var(--color-text-secondary);
     line-height: 1.9;
 }
@@ -69,14 +69,14 @@
 
 .timeline-year {
     font-family: var(--font-display);
-    font-size: 1.4rem;
+    font-size: var(--font-size-h3);
     font-weight: 700;
     color: var(--color-primary);
     margin: 0 0 8px 0;
 }
 
 .timeline-text {
-    font-size: 0.95rem;
+    font-size: var(--font-size-body-sm);
     color: var(--color-text-secondary);
     line-height: 1.6;
     margin: 0;
@@ -113,7 +113,7 @@
 
 .stat-num {
     font-family: var(--font-display);
-    font-size: 2.2rem;
+    font-size: var(--font-size-h1);
     font-weight: 700;
     line-height: 1;
     color: var(--color-dark);
@@ -121,7 +121,7 @@
 }
 
 .stat-label {
-    font-size: 0.85rem;
+    font-size: var(--font-size-body-sm);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -176,14 +176,14 @@
 
 .vm-premium-title {
     font-family: var(--font-display);
-    font-size: 1.5rem;
+    font-size: var(--font-size-h3);
     font-weight: 700;
     color: var(--color-dark);
     margin: 0 0 16px 0;
 }
 
 .vm-premium-text {
-    font-size: 1rem;
+    font-size: var(--font-size-body);
     color: var(--color-text-secondary);
     line-height: 1.8;
     margin: 0;
@@ -228,14 +228,14 @@
 
 .value-premium-title {
     font-family: var(--font-display);
-    font-size: 1.15rem;
+    font-size: var(--font-size-h3);
     font-weight: 700;
     color: var(--color-dark);
     margin: 0 0 12px 0;
 }
 
 .value-premium-desc {
-    font-size: 0.95rem;
+    font-size: var(--font-size-body-sm);
     color: var(--color-text-secondary);
     line-height: 1.6;
     margin: 0;
@@ -249,14 +249,14 @@
 }
 
 .bank-title {
-    font-size: 0.95rem;
+    font-size: var(--font-size-body-sm);
     font-weight: 700;
     color: var(--color-dark);
     margin-bottom: 8px;
 }
 
 .bank-text {
-    font-size: 0.9rem;
+    font-size: var(--font-size-body-sm);
     color: var(--color-text-secondary);
     line-height: 1.8;
 }
@@ -281,12 +281,12 @@
 
 .faq-collapse .ant-collapse-header {
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: var(--font-size-body-sm);
     background: #fff;
 }
 
 .faq-answer {
-    font-size: 0.9rem;
+    font-size: var(--font-size-body-sm);
     color: var(--color-text-secondary);
     line-height: 1.7;
 }

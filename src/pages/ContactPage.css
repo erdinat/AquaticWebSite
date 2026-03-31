@@ -13,7 +13,7 @@
 
 .contact-form-title {
     font-family: var(--font-display);
-    font-size: 1.5rem;
+    font-size: var(--font-size-h2);
     font-weight: 600;
     color: var(--color-dark);
     margin-bottom: 28px;
@@ -28,7 +28,7 @@
 }
 
 .contact-input:not(textarea) {
-    height: 52px !important;
+    height: var(--btn-height-lg) !important;
 }
 
 .contact-input:focus,
@@ -38,7 +38,7 @@
 }
 
 .contact-submit-btn {
-    height: 52px !important;
+    height: var(--btn-height-lg) !important;
     font-size: 16px !important;
     font-weight: 600 !important;
     border-radius: var(--radius-sm) !important;
@@ -47,7 +47,7 @@
 /* Locations */
 .locations-title {
     font-family: var(--font-display);
-    font-size: 1.5rem;
+    font-size: var(--font-size-h2);
     font-weight: 600;
     color: var(--color-dark);
     margin-bottom: 24px;
@@ -78,7 +78,7 @@
 
 .location-title {
     font-family: var(--font-display);
-    font-size: 1.1rem;
+    font-size: var(--font-size-body);
     font-weight: 600;
     color: var(--color-dark);
     margin: 0;
@@ -94,7 +94,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 0.9rem;
+    font-size: var(--font-size-body-sm);
     color: var(--color-text-secondary);
 }
 

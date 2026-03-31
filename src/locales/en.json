@@ -186,27 +186,69 @@
         "items": {
             "camera": {
                 "title": "Underwater Camera",
-                "desc": "Pressure-resistant industrial camera systems providing high-resolution imaging in harsh underwater conditions."
+                "desc": "Pressure-resistant industrial camera systems providing high-resolution imaging in harsh underwater conditions.",
+                "expandTitle": "Underwater Camera Systems",
+                "viewMore": "View Details",
+                "viewLess": "Show Less",
+                "subcategories": ["ROV Cameras", "Surveillance Cameras", "Stereo / 3D Cameras", "Thermal Imaging"],
+                "specsTitle": "Technical Specifications",
+                "specs": { "resolution": "Resolution", "sensor": "Sensor", "depth": "Depth Rating", "interface": "Interface", "housing": "Housing" }
             },
             "light": {
                 "title": "Underwater Lighting",
-                "desc": "High-lumen and energy-efficient LED lighting units specifically designed for deep-sea operations."
+                "desc": "High-lumen and energy-efficient LED lighting units specifically designed for deep-sea operations.",
+                "expandTitle": "Underwater Lighting Systems",
+                "viewMore": "View Details",
+                "viewLess": "Show Less",
+                "subcategories": ["LED Spot Lights", "Wide-Area Illumination", "Strobe Systems", "Infrared Lighting"],
+                "specsTitle": "Technical Specifications",
+                "specs": { "depth": "Depth Rating", "lumen": "Luminosity", "power": "Power", "colorTemp": "Color Temperature", "housing": "Housing" }
             },
             "monitor": {
                 "title": "Operator Monitor",
-                "desc": "Sunlight-readable, water and dust-resistant industrial displays designed for ROV control stations."
+                "desc": "Sunlight-readable, water and dust-resistant industrial displays designed for ROV control stations.",
+                "expandTitle": "Operator Monitor Systems",
+                "viewMore": "View Details",
+                "viewLess": "Show Less",
+                "subcategories": ["Desktop Control Monitors", "Rack-mount Displays", "Portable Panel PC", "Touch Control Panels"],
+                "specsTitle": "Technical Specifications",
+                "specs": { "size": "Display Size", "brightness": "Brightness", "protection": "Protection Class", "input": "Input", "temp": "Operating Temperature" }
             },
             "harness": {
                 "title": "Harness & Cabling",
-                "desc": "High-reliability, pressure and corrosion-resistant special cable assemblies for underwater systems."
+                "desc": "High-reliability, pressure and corrosion-resistant special cable assemblies for underwater systems.",
+                "expandTitle": "Underwater Cabling Systems",
+                "viewMore": "View Details",
+                "viewLess": "Show Less",
+                "subcategories": ["Torpedo Connector Cables", "ROV Umbilical Cables", "Underwater Connectors", "Custom Harness Assemblies"],
+                "specsTitle": "Technical Specifications",
+                "specs": {
+                    "depth": "Depth Rating",
+                    "conductors": "Conductors",
+                    "standard": "Standard",
+                    "material": "Jacket Material",
+                    "temp": "Operating Temperature"
+                }
             },
             "portableUnit": {
                 "title": "Portable Control Unit",
-                "desc": "Ergonomic and portable control cases with integrated displays for field operations of underwater vehicles."
+                "desc": "Ergonomic and portable control cases with integrated displays for field operations of underwater vehicles.",
+                "expandTitle": "Portable Control Systems",
+                "viewMore": "View Details",
+                "viewLess": "Show Less",
+                "subcategories": ["ROV Control Cases", "Field Test Units", "Integrated Joystick Systems", "Emergency Control Kits"],
+                "specsTitle": "Technical Specifications",
+                "specs": { "display": "Display", "battery": "Battery", "protection": "Protection Class", "interface": "Interface", "weight": "Weight" }
             },
             "pressureVessel": {
                 "title": "Pressure Vessels",
-                "desc": "Special alloy sealed pressure vessels protecting submarine and ROV electronics from depth pressure."
+                "desc": "Special alloy sealed pressure vessels protecting submarine and ROV electronics from depth pressure.",
+                "expandTitle": "Pressure Vessel Systems",
+                "viewMore": "View Details",
+                "viewLess": "Show Less",
+                "subcategories": ["Electronic Housing Cylinders", "Connector Flanged Vessels", "Custom-Size Enclosures", "Test & Calibration Vessels"],
+                "specsTitle": "Technical Specifications",
+                "specs": { "depth": "Depth Rating", "material": "Material", "sealing": "Sealing", "standard": "Standard", "maxTemp": "Max Temperature" }
             }
         }
     },

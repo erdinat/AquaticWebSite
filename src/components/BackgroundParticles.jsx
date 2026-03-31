@@ -2,7 +2,7 @@ import React from 'react';
 
 const BackgroundParticles = ({ count = 20 }) => {
     return (
-        <div className="hero-particles">
+        <div className="hero-particles" aria-hidden="true">
             {Array.from({ length: count }).map((_, i) => (
                 <div
                     key={i}

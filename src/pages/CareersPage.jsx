@@ -37,14 +37,19 @@ const CareersPage = () => {
             let cvData = null;
             if (values.cv && values.cv[0]) {
                 const file = values.cv[0].originFileObj;
-                cvData = await new Promise((resolve) => {
+                cvData = await new Promise((resolve, reject) => {
                     const reader = new FileReader();
                     reader.readAsDataURL(file);
-                    reader.onload = () => resolve(reader.result);
+                    reader.onload = () => {
+                        // EmailJS attachments usually expect the base64 string without the data:URL prefix
+                        const base64String = reader.result.split(',')[1];
+                        resolve(base64String);
+                    };
+                    reader.onerror = (err) => reject(err);
                 });
             }
 
-            // EmailJS integration - Careers Template
+            // EmailJS integration
             const emailjs = await import('@emailjs/browser');
             await emailjs.send(
                 'service_16f5qja',
@@ -55,7 +60,7 @@ const CareersPage = () => {
                     phone: values.phone,
                     subject: 'Kariyer Başvurusu: ' + values.name,
                     message: `Pozisyon: ${values.position}\n\nMesaj: ${values.message}`,
-                    cv_file: cvData, // Attachment key for EmailJS template
+                    cv_file: cvData,
                 },
                 'KTWen6neGfldnhB2D'
             );
@@ -63,8 +68,10 @@ const CareersPage = () => {
             message.success(t('contact.success'));
             form.resetFields();
         } catch (error) {
-            console.error('Email Error:', error);
-            message.error(t('contact.error'));
+            console.error('Submission Detailed Error:', error);
+            // If the error has a text property (EmailJS error message), show it
+            const errorMsg = error?.text || t('contact.error');
+            message.error(errorMsg);
         } finally {
             setLoading(false);
         }
@@ -222,9 +229,9 @@ const CareersPage = () => {
                                             action="/upload-dummy" 
                                             maxCount={1}
                                             beforeUpload={(file) => {
-                                                const isLt500K = file.size / 1024 < 500;
-                                                if (!isLt500K) {
-                                                    message.error(t('careers.form.cvHint'));
+                                                const isLt40K = file.size / 1024 < 40;
+                                                if (!isLt40K) {
+                                                    message.error("EmailJS ücretsiz sürüm sınırı nedeniyle dosya 40KB'dan küçük olmalıdır. (Daha büyük dosyalar için ücretli plan veya farklı depolama gerekir)");
                                                 }
                                                 return false; // Prevent auto upload
                                             }}

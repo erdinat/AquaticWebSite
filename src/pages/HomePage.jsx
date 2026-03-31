@@ -209,9 +209,9 @@ const HomePage = () => {
                 {/* Animated background */}
                 <div className="hero-bg">
                     <div className="hero-bg-image" style={{ backgroundImage: `url(${imgHeroBg})` }} />
-                    <div className="hero-wave hero-wave-1" />
-                    <div className="hero-wave hero-wave-2" />
-                    <div className="hero-wave hero-wave-3" />
+                    <div className="hero-wave hero-wave-1" aria-hidden="true" />
+                    <div className="hero-wave hero-wave-2" aria-hidden="true" />
+                    <div className="hero-wave hero-wave-3" aria-hidden="true" />
                     <div className="hero-particles">
                         <BackgroundParticles count={20} />
                     </div>
@@ -252,7 +252,7 @@ const HomePage = () => {
                 </div>
 
                 {/* Scroll indicator */}
-                <div className="scroll-indicator animate-fadeIn delay-6">
+                <div className="scroll-indicator animate-fadeIn delay-6" aria-hidden="true">
                     <div className="scroll-line" />
                 </div>
             </section>

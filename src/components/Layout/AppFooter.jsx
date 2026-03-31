@@ -40,7 +40,7 @@ const AppFooter = () => {
                                     }}
                                 />
                             </div>
-                            <p style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, fontSize: 14 }}>
+                            <p style={{ color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, fontSize: 14 }}>
                                 {t('footer.description')}
                             </p>
                         </div>
@@ -65,7 +65,7 @@ const AppFooter = () => {
                                     <Link
                                         to={link.path}
                                         style={{
-                                            color: 'rgba(255,255,255,0.7)',
+                                            color: 'rgba(255,255,255,0.85)',
                                             textDecoration: 'none',
                                             fontSize: 14,
                                             display: 'flex',
@@ -96,15 +96,15 @@ const AppFooter = () => {
                             {t('footer.contactInfo')}
                         </h4>
                         <Space direction="vertical" size={16}>
-                            <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10, color: 'rgba(255,255,255,0.7)', fontSize: 14 }}>
+                            <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10, color: 'rgba(255,255,255,0.85)', fontSize: 14 }}>
                                 <EnvironmentOutlined style={{ marginTop: 3, color: 'var(--color-accent-light)' }} />
                                 <span>{t('footer.address')}</span>
                             </div>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'rgba(255,255,255,0.7)', fontSize: 14 }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'rgba(255,255,255,0.85)', fontSize: 14 }}>
                                 <PhoneOutlined style={{ color: 'var(--color-accent-light)' }} />
                                 <span>+90 262 412 24 42</span>
                             </div>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'rgba(255,255,255,0.7)', fontSize: 14 }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'rgba(255,255,255,0.85)', fontSize: 14 }}>
                                 <MailOutlined style={{ color: 'var(--color-accent-light)' }} />
                                 <span>bilgi@aquatic.com.tr</span>
                             </div>
@@ -115,7 +115,7 @@ const AppFooter = () => {
                 <Divider style={{ borderColor: 'rgba(255,255,255,0.1)', margin: '40px 0 20px' }} />
 
                 {/* Copyright */}
-                <div style={{ textAlign: 'center', color: 'rgba(255,255,255,0.45)', fontSize: 13 }}>
+                <div style={{ textAlign: 'center', color: 'rgba(255,255,255,0.7)', fontSize: 13 }}>
                     © {new Date().getFullYear()} Aquatic. {t('footer.rights')}
                 </div>
             </div>

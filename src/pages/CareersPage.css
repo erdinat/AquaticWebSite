@@ -37,14 +37,14 @@
 
 .premium-careers-card h3 {
     font-family: var(--font-display);
-    font-size: 1.25rem;
+    font-size: var(--font-size-h3);
     font-weight: 700;
     margin-bottom: 12px;
     color: var(--color-dark);
 }
 
 .premium-careers-card p {
-    font-size: 0.95rem;
+    font-size: var(--font-size-body-sm);
     color: var(--color-text-secondary);
     line-height: 1.6;
     margin: 0;
@@ -73,7 +73,7 @@
 
 .application-info-box p {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: var(--font-size-body-sm);
     color: var(--color-text-secondary);
 }
 
@@ -84,10 +84,10 @@
 }
 
 .premium-submit-btn {
-    height: 54px;
+    height: var(--btn-height-lg);
     border-radius: 12px;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: var(--font-size-body);
     background: var(--gradient-primary);
     border: none;
     box-shadow: 0 8px 16px rgba(0, 80, 179, 0.2);
