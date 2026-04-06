@@ -52,8 +52,8 @@ const CareersPage = () => {
             // EmailJS integration
             const emailjs = await import('@emailjs/browser');
             await emailjs.send(
-                'service_16f5qja',
-                'template_d4i0t08',
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
                 {
                     from_name: values.name,
                     from_email: values.email,
@@ -62,7 +62,7 @@ const CareersPage = () => {
                     message: `Pozisyon: ${values.position}\n\nMesaj: ${values.message}`,
                     cv_file: cvData,
                 },
-                'KTWen6neGfldnhB2D'
+                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
             );
 
             message.success(t('contact.success'));
@@ -228,12 +228,20 @@ const CareersPage = () => {
                                             name="cv" 
                                             action="/upload-dummy" 
                                             maxCount={1}
+                                            accept=".pdf,.doc,.docx"
                                             beforeUpload={(file) => {
+                                                const allowed = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+                                                const isAllowedType = allowed.includes(file.type);
+                                                if (!isAllowedType) {
+                                                    message.error(t('careers.form.cvTypeError'));
+                                                    return Upload.LIST_IGNORE;
+                                                }
                                                 const isLt40K = file.size / 1024 < 40;
                                                 if (!isLt40K) {
-                                                    message.error("EmailJS ücretsiz sürüm sınırı nedeniyle dosya 40KB'dan küçük olmalıdır. (Daha büyük dosyalar için ücretli plan veya farklı depolama gerekir)");
+                                                    message.error(t('careers.form.cvSizeError'));
+                                                    return Upload.LIST_IGNORE;
                                                 }
-                                                return false; // Prevent auto upload
+                                                return false;
                                             }}
                                         >
                                             <p className="ant-upload-drag-icon">

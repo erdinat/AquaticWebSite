@@ -10,6 +10,7 @@ import ProductsPage from './pages/ProductsPage';
 import BlackBoxPage from './pages/BlackBoxPage';
 import CareersPage from './pages/CareersPage';
 import ContactPage from './pages/ContactPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 /* Loading fallback */
 const LoadingFallback = () => (
@@ -31,6 +32,7 @@ function App() {
                     <Route path="/blackbox" element={<BlackBoxPage />} />
                     <Route path="/careers" element={<CareersPage />} />
                     <Route path="/contact" element={<ContactPage />} />
+                    <Route path="*" element={<NotFoundPage />} />
                 </Routes>
             </MainLayout>
         </Suspense>

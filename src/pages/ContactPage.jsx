@@ -20,10 +20,10 @@ const { TextArea } = Input;
  * To activate EmailJS, replace the placeholder constants below.
  */
 
-/* EmailJS Configuration - Active */
-const EMAILJS_SERVICE_ID = 'service_16f5qja';
-const EMAILJS_TEMPLATE_ID = 'template_d4i0t08';
-const EMAILJS_PUBLIC_KEY = 'KTWen6neGfldnhB2D';
+/* EmailJS Configuration */
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 const ContactPage = () => {
     const { t } = useTranslation();

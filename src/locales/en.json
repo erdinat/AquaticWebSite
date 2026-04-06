@@ -373,7 +373,9 @@
             "position": "Position / Department",
             "cv": "Upload CV / Resume",
             "cvHint": "Upload file in PDF or DOCX format (Max. 500KB)",
-            "cvError": "Please upload your CV file"
+            "cvError": "Please upload your CV file",
+            "cvTypeError": "Only PDF or DOCX files are allowed",
+            "cvSizeError": "File size must be less than 40KB"
         }
     }
 }

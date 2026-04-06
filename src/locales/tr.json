@@ -373,7 +373,9 @@
             "position": "Pozisyon / Departman",
             "cv": "CV / Özgeçmiş Yükle",
             "cvHint": "PDF veya DOCX formatında dosya yükleyin (Maks. 500KB)",
-            "cvError": "Lütfen CV dosyanızı yükleyin"
+            "cvError": "Lütfen CV dosyanızı yükleyin",
+            "cvTypeError": "Yalnızca PDF veya DOCX dosyası yükleyebilirsiniz",
+            "cvSizeError": "Dosya boyutu 40KB'dan küçük olmalıdır"
         }
     }
 }
