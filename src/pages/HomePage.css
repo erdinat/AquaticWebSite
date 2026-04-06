@@ -420,13 +420,6 @@
     padding-top: 16px;
 }
 
-.premium-product-price {
-    font-family: var(--font-display);
-    font-size: var(--font-size-h3);
-    font-weight: 700;
-    color: var(--color-dark);
-}
-
 .premium-product-action {
     width: 48px;
     height: 48px;
@@ -572,17 +565,7 @@
     line-height: 1.8;
 }
 
-/* --- Reveal Animation --- */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+/* --- Reveal removed (moved to global index.css) --- */
 
 /* --- Responsive --- */
 @media (max-width: 768px) {

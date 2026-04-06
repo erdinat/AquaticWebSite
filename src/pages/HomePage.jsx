@@ -1,5 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import BackgroundParticles from '../components/BackgroundParticles';
+import { useRevealAnimation } from '../hooks/useRevealAnimation';
+import PageSEO from '../components/common/PageSEO';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { Row, Col, Button, Card } from 'antd';
@@ -52,21 +54,7 @@ const HomePage = () => {
     const statsRef = useRef(null);
 
     /* Intersection observer for animations */
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            },
-            { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
-        );
-
-        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-        return () => observer.disconnect();
-    }, []);
+    useRevealAnimation({ threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
     /* Services preview data */
     const services = [
@@ -130,7 +118,6 @@ const HomePage = () => {
             id: 1,
             name: 'Basınç Kabı',
             category: 'Pressure Vessel',
-            price: '₺2.450.000',
             description: 'Yüksek basınca dayanıklı, sertifikalı basınç kabı tasarım ve üretimi.',
             image: prodPressureVessel,
         },
@@ -138,7 +125,6 @@ const HomePage = () => {
             id: 2,
             name: 'Taşınabilir Ünite',
             category: 'Portable Unit',
-            price: '₺1.150.000',
             description: 'Saha operasyonları için kompakt, dayanıklı taşınabilir güç ve kontrol ünitesi.',
             image: prodPortableUnit,
         },
@@ -146,7 +132,6 @@ const HomePage = () => {
             id: 3,
             name: 'Taşınabilir Ünite 2',
             category: 'Portable Unit',
-            price: '₺1.280.000',
             description: 'Geliştirilmiş bağlantı ve izleme özelliklerine sahip ikinci nesil taşınabilir ünite.',
             image: prodPortableUnit2,
         },
@@ -154,7 +139,6 @@ const HomePage = () => {
             id: 4,
             name: 'Sualtı Kamerası',
             category: 'Camera',
-            price: '₺620.000',
             description: 'Derin su operasyonları için yüksek çözünürlüklü, sualtı kamera sistemi.',
             image: prodCamera,
         },
@@ -162,7 +146,6 @@ const HomePage = () => {
             id: 5,
             name: 'Sualtı Aydınlatma Ünitesi',
             category: 'Light',
-            price: '₺185.000',
             description: 'Düşük güç tüketimli, yüksek parlaklıkta sualtı LED aydınlatma çözümü.',
             image: prodLight,
         },
@@ -170,7 +153,6 @@ const HomePage = () => {
             id: 6,
             name: 'Kontrol Monitörü',
             category: 'Monitor',
-            price: '₺145.000',
             description: 'Sualtı sistemleri ve ROV kontrolleri için endüstriyel monitör.',
             image: prodMonitor,
         },
@@ -178,7 +160,6 @@ const HomePage = () => {
             id: 7,
             name: 'Emniyet Kemer Sistemi',
             category: 'Harness',
-            price: '₺95.000',
             description: 'Sualtı operatörleri için ergonomik ve güvenli emniyet kemer takımı.',
             image: prodHarness,
         },
@@ -204,7 +185,11 @@ const HomePage = () => {
 
     return (
         <div className="home-page">
-            {/* ===== HERO SECTION ===== */}
+            <PageSEO
+                titleKey="nav.home"
+                descriptionKey="hero.subtitle"
+                path="/"
+            />
             <section className="hero-section">
                 {/* Animated background */}
                 <div className="hero-bg">
@@ -335,7 +320,6 @@ const HomePage = () => {
                                         <h3 className="premium-product-title">{product.name}</h3>
                                         <p className="premium-product-desc">{product.description}</p>
                                         <div className="premium-product-footer">
-                                            <span className="premium-product-price">{product.price}</span>
                                             <div className="premium-product-action">
                                                 <ArrowRightOutlined />
                                             </div>
