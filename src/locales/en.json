@@ -90,7 +90,8 @@
             "eurAccount": "EUR Account",
             "usdAccount": "USD Account",
             "branchName": "Branch Name",
-            "branchCode": "Branch Code"
+            "branchCode": "Branch Code",
+            "copied": "Copied!"
         },
         "faq": {
             "title": "Frequently Asked Questions",
@@ -332,6 +333,11 @@
         "sending": "Sending...",
         "success": "Your message has been sent successfully!",
         "error": "An error occurred. Please try again.",
+        "emailInvalid": "Invalid email address",
+        "required": "This field is required",
+        "address": "Address",
+        "hours": "Working Hours",
+        "hoursValue": "Mon – Fri, 09:00 – 18:00",
         "locationsTitle": "Our Locations",
         "kocaeli": {
             "title": "Kocaeli Office",
@@ -380,6 +386,13 @@
             "title": "General Application",
             "desc": "Even if there's no open position right now, if you are confident in your skills, you can send us your resume."
         },
+        "steps": {
+            "title": "Application Process",
+            "apply": "Fill Application Form",
+            "cv": "Upload Your CV",
+            "review": "Initial Review",
+            "interview": "Interview"
+        },
         "form": {
             "notice": "Your applications are evaluated with privacy principles.",
             "position": "Position / Department",
@@ -388,6 +401,11 @@
             "cvError": "Please upload your CV file",
             "cvTypeError": "Only PDF or DOCX files are allowed",
             "cvSizeError": "File size must be less than 40KB"
+        },
+        "email": {
+            "subjectPrefix": "Career Application",
+            "positionLabel": "Position",
+            "messageLabel": "Message"
         }
     }
 }

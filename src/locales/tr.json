@@ -90,7 +90,8 @@
             "eurAccount": "Euro Hesabı",
             "usdAccount": "USD Hesabı",
             "branchName": "Şube Adı",
-            "branchCode": "Şube Kodu"
+            "branchCode": "Şube Kodu",
+            "copied": "Kopyalandı!"
         },
         "faq": {
             "title": "Sıkça Sorulan Sorular",
@@ -344,6 +345,11 @@
         "sending": "Gönderiliyor...",
         "success": "Mesajınız başarıyla gönderildi!",
         "error": "Bir hata oluştu. Lütfen tekrar deneyin.",
+        "emailInvalid": "Geçersiz e-posta adresi",
+        "required": "Bu alan zorunludur",
+        "address": "Adres",
+        "hours": "Çalışma Saatleri",
+        "hoursValue": "Pzt – Cuma, 09:00 – 18:00",
         "locationsTitle": "Lokasyonlarımız",
         "kocaeli": {
             "title": "Kocaeli Ofis",
@@ -392,6 +398,13 @@
             "title": "Genel Başvuru",
             "desc": "Şu an açık bir pozisyon olmasa bile, yeteneklerinize güveniyorsanız özgeçmişinizi bize iletebilirsiniz."
         },
+        "steps": {
+            "title": "Başvuru Süreci",
+            "apply": "Başvuru Formunu Doldur",
+            "cv": "CV'ni Yükle",
+            "review": "Ön Değerlendirme",
+            "interview": "Mülakat"
+        },
         "form": {
             "notice": "Başvurularınız gizlilik prensibiyle değerlendirilir.",
             "position": "Pozisyon / Departman",
@@ -400,6 +413,11 @@
             "cvError": "Lütfen CV dosyanızı yükleyin",
             "cvTypeError": "Yalnızca PDF veya DOCX dosyası yükleyebilirsiniz",
             "cvSizeError": "Dosya boyutu 40KB'dan küçük olmalıdır"
+        },
+        "email": {
+            "subjectPrefix": "Kariyer Başvurusu",
+            "positionLabel": "Pozisyon",
+            "messageLabel": "Mesaj"
         }
     }
 }

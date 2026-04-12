@@ -47,7 +47,7 @@ const ContactPage = () => {
             }, EMAILJS_PUBLIC_KEY);
             message.success(t('contact.success'));
             form.resetFields();
-        } catch (error) {
+        } catch {
             message.error(t('contact.error'));
         } finally {
             setLoading(false);
@@ -127,15 +127,15 @@ const ContactPage = () => {
                                     <div className="contact-info-item">
                                         <div className="contact-info-icon"><EnvironmentOutlined /></div>
                                         <div>
-                                            <div className="contact-info-label">{t('contact.address', 'Adres')}</div>
+                                            <div className="contact-info-label">{t('contact.address')}</div>
                                             <div className="contact-info-value">{t('contact.kocaeli.address')}</div>
                                         </div>
                                     </div>
                                     <div className="contact-info-item">
                                         <div className="contact-info-icon"><ClockCircleOutlined /></div>
                                         <div>
-                                            <div className="contact-info-label">{t('contact.hours', 'Çalışma Saatleri')}</div>
-                                            <div className="contact-info-value">Pzt – Cuma, 09:00 – 18:00</div>
+                                            <div className="contact-info-label">{t('contact.hours')}</div>
+                                            <div className="contact-info-value">{t('contact.hoursValue')}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -156,7 +156,7 @@ const ContactPage = () => {
                                         <Form.Item
                                             label={t('contact.name')}
                                             name="name"
-                                            rules={[{ required: true, message: t('contact.name') }]}
+                                            rules={[{ required: true, message: t('contact.required') }]}
                                         >
                                             <Input
                                                 placeholder={t('contact.name')}
@@ -170,8 +170,8 @@ const ContactPage = () => {
                                             label={t('contact.email')}
                                             name="email"
                                             rules={[
-                                                { required: true, message: t('contact.email') },
-                                                { type: 'email', message: 'Geçersiz e-posta' },
+                                                { required: true, message: t('contact.required') },
+                                                { type: 'email', message: t('contact.emailInvalid') },
                                             ]}
                                         >
                                             <Input
@@ -196,7 +196,7 @@ const ContactPage = () => {
                                         <Form.Item
                                             label={t('contact.subject')}
                                             name="subject"
-                                            rules={[{ required: true, message: t('contact.subject') }]}
+                                            rules={[{ required: true, message: t('contact.required') }]}
                                         >
                                             <Input
                                                 placeholder={t('contact.subject')}
@@ -208,7 +208,7 @@ const ContactPage = () => {
                                 <Form.Item
                                     label={t('contact.message')}
                                     name="message"
-                                    rules={[{ required: true, message: t('contact.message') }]}
+                                    rules={[{ required: true, message: t('contact.required') }]}
                                 >
                                     <TextArea
                                         rows={5}

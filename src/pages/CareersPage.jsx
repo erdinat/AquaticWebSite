@@ -56,8 +56,8 @@ const CareersPage = () => {
                     from_name: values.name,
                     from_email: values.email,
                     phone: values.phone,
-                    subject: 'Kariyer Başvurusu: ' + values.name,
-                    message: `Pozisyon: ${values.position}\n\nMesaj: ${values.message}`,
+                    subject: `${t('careers.email.subjectPrefix')}: ${values.name}`,
+                    message: `${t('careers.email.positionLabel')}: ${values.position}\n\n${t('careers.email.messageLabel')}: ${values.message}`,
                     cv_file: cvData,
                 },
                 import.meta.env.VITE_EMAILJS_PUBLIC_KEY
@@ -98,10 +98,10 @@ const CareersPage = () => {
     ];
 
     const steps = [
-        { icon: <FileTextOutlined />, label: t('careers.steps.apply', 'Başvuru Formunu Doldur') },
-        { icon: <InboxOutlined />,    label: t('careers.steps.cv',    'CV\'ni Yükle') },
-        { icon: <SolutionOutlined />, label: t('careers.steps.review','Ön Değerlendirme') },
-        { icon: <TeamOutlined />,     label: t('careers.steps.interview', 'Mülakat') },
+        { icon: <FileTextOutlined />, label: t('careers.steps.apply') },
+        { icon: <InboxOutlined />,    label: t('careers.steps.cv') },
+        { icon: <SolutionOutlined />, label: t('careers.steps.review') },
+        { icon: <TeamOutlined />,     label: t('careers.steps.interview') },
     ];
 
     return (
@@ -159,7 +159,7 @@ const CareersPage = () => {
                                 <p className="careers-sidebar-desc">{t('careers.application.desc')}</p>
 
                                 <div className="careers-steps">
-                                    <div className="careers-steps-title">{t('careers.steps.title', 'Başvuru Süreci')}</div>
+                                    <div className="careers-steps-title">{t('careers.steps.title')}</div>
                                     {steps.map((step, idx) => (
                                         <div className="careers-step" key={idx}>
                                             <div className="careers-step-circle">
@@ -194,7 +194,7 @@ const CareersPage = () => {
                                         <Form.Item
                                             label={t('contact.name')}
                                             name="name"
-                                            rules={[{ required: true, message: t('contact.error') }]}
+                                            rules={[{ required: true, message: t('contact.required') }]}
                                         >
                                             <Input
                                                 placeholder={t('contact.name')}
@@ -207,7 +207,10 @@ const CareersPage = () => {
                                         <Form.Item
                                             label={t('contact.email')}
                                             name="email"
-                                            rules={[{ required: true, type: 'email', message: t('contact.error') }]}
+                                            rules={[
+                                                { required: true, message: t('contact.required') },
+                                                { type: 'email', message: t('contact.emailInvalid') },
+                                            ]}
                                         >
                                             <Input
                                                 placeholder={t('contact.email')}
@@ -230,9 +233,9 @@ const CareersPage = () => {
                                     </Col>
                                     <Col xs={24} sm={12}>
                                         <Form.Item
-                                            label={t('careers.form.position', 'Başvurulan Pozisyon')}
+                                            label={t('careers.form.position')}
                                             name="position"
-                                            rules={[{ required: true, message: t('contact.error') }]}
+                                            rules={[{ required: true, message: t('contact.required') }]}
                                         >
                                             <Input
                                                 placeholder={t('careers.form.position')}
@@ -246,7 +249,7 @@ const CareersPage = () => {
                                 <Form.Item
                                     label={t('contact.message')}
                                     name="message"
-                                    rules={[{ required: true, message: t('contact.error') }]}
+                                    rules={[{ required: true, message: t('contact.required') }]}
                                 >
                                     <Input.TextArea
                                         rows={4}

@@ -279,7 +279,7 @@ const CorporatePage = () => {
                                             </button>
                                         </div>
                                         {copiedIban === acc.id && (
-                                            <p className="bank-copy-feedback">Kopyalandı!</p>
+                                            <p className="bank-copy-feedback">{t('corporate.bank.copied')}</p>
                                         )}
                                         <div className="bank-branch-row">
                                             <span>{t('corporate.bank.branchCode')}: <strong>{acc.branchCode}</strong></span>

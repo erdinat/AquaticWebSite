@@ -10,7 +10,7 @@ const BASE_URL = 'https://aquaticdefense.com'; // gerçek domain ile değiştiri
 /**
  * PageSEO
  * Reusable SEO component for dynamic title, meta description,
- * Open Graph and hreflang tags per page.
+ * Open Graph and hrefLang tags per page.
  *
  * @param {string} titleKey        - i18n key for the page title  (e.g. 'nav.corporate')
  * @param {string} descriptionKey  - i18n key for the meta description
@@ -55,11 +55,11 @@ const PageSEO = ({
             <meta name="twitter:image" content={ogImage} />
 
             {/* Hreflang – multi-language */}
-            <link rel="alternate" hreflang="tr" href={`${BASE_URL}/tr${path}`} />
-            <link rel="alternate" hreflang="en" href={`${BASE_URL}/en${path}`} />
-            <link rel="alternate" hreflang="ru" href={`${BASE_URL}/ru${path}`} />
-            <link rel="alternate" hreflang="kk" href={`${BASE_URL}/kk${path}`} />
-            <link rel="alternate" hreflang="x-default" href={`${BASE_URL}${path}`} />
+            <link rel="alternate" hrefLang="tr" href={`${BASE_URL}/tr${path}`} />
+            <link rel="alternate" hrefLang="en" href={`${BASE_URL}/en${path}`} />
+            <link rel="alternate" hrefLang="ru" href={`${BASE_URL}/ru${path}`} />
+            <link rel="alternate" hrefLang="kk" href={`${BASE_URL}/kk${path}`} />
+            <link rel="alternate" hrefLang="x-default" href={`${BASE_URL}${path}`} />
         </Helmet>
     );
 };

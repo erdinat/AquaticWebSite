@@ -22,5 +22,5 @@ export const useRevealAnimation = ({ threshold = 0.1, rootMargin = '0px' } = {})
         elements.forEach((el) => observer.observe(el));
 
         return () => observer.disconnect();
-    }, [threshold]);
+    }, [threshold, rootMargin]);
 };
