@@ -20,7 +20,7 @@
   --color-text-secondary: #4a5568;
   --color-text-muted: #6b7280;
   --color-border: #e8ecf1;
-  --color-bg: #f5f7fa;
+  --color-bg: #f4f7ff;
   --color-bg-light: #fafbfc;
   --color-white: #ffffff;
 
@@ -291,6 +291,21 @@ body {
 .section {
   padding: var(--section-padding);
   position: relative;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+  padding: 6px 14px;
+  background: var(--color-primary-bg);
+  border-radius: 50px;
 }
 
 .section-title {

@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { ConfigProvider } from 'antd';
+import { HelmetProvider } from 'react-helmet-async';
 import App from './App';
+import ErrorBoundary from './components/ErrorBoundary';
 import './i18n';
 import './index.css';
 
@@ -21,10 +23,14 @@ const theme = {
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <BrowserRouter>
-            <ConfigProvider theme={theme}>
-                <App />
-            </ConfigProvider>
-        </BrowserRouter>
+        <ErrorBoundary>
+            <HelmetProvider>
+                <BrowserRouter>
+                    <ConfigProvider theme={theme}>
+                        <App />
+                    </ConfigProvider>
+                </BrowserRouter>
+            </HelmetProvider>
+        </ErrorBoundary>
     </React.StrictMode>
 );

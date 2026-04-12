@@ -148,6 +148,10 @@
                 "pcb": {
                     "title": "PCB Design & Production",
                     "desc": "Multi-layer, high-frequency PCB design and prototype production."
+                },
+                "automation": {
+                    "title": "PLC & SCADA Systems",
+                    "desc": "Industrial PLC programming, SCADA interface development, and field automation integration."
                 }
             }
         },
@@ -162,6 +166,10 @@
                 "cnc": {
                     "title": "CNC Machining",
                     "desc": "Precision part production with CNC turning, milling, and 5-axis machining centers."
+                },
+                "welding": {
+                    "title": "Welding & Mechanical Assembly",
+                    "desc": "TIG/MIG welding, hardening, and precision mechanical assembly services."
                 }
             }
         },
@@ -176,6 +184,10 @@
                 "shipMachine": {
                     "title": "Ship Machinery Operations",
                     "desc": "Main engine, auxiliary engine maintenance-repair and overhaul services."
+                },
+                "shipElectrical": {
+                    "title": "Ship Electrical Systems",
+                    "desc": "Power distribution panels, cable installation, and electrical system maintenance and repair services."
                 }
             }
         }
@@ -256,7 +268,7 @@
         "hero": {
             "badge": "AQUATIC blackbox",
             "title": "National Black Box",
-            "subtitle": "High-durability data recording system for Turkey's aviation and submarine platforms."
+            "subtitle": "High-strength data recording system for Turkey's aviation, surface and submarine platforms under harsh environmental conditions."
         },
         "title": "National Black Box",
         "subtitle": "Turkey's First Domestic and National Black Box",

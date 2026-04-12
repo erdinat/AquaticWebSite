@@ -1,7 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import BackgroundParticles from '../components/BackgroundParticles';
-import { Tabs, Row, Col, Card } from 'antd';
+import { useLocation, useNavigate } from 'react-router-dom';
+import PageHero from '../components/common/PageHero';
+import { useRevealAnimation } from '../hooks/useRevealAnimation';
+import PageSEO from '../components/common/PageSEO';
+import { Row, Col } from 'antd';
 import {
     RocketOutlined,
     ThunderboltOutlined,
@@ -15,11 +18,14 @@ import {
     ScissorOutlined,
     ControlOutlined,
     SettingOutlined,
+    ArrowRightOutlined,
+    DashboardOutlined,
+    DeploymentUnitOutlined,
+    BulbOutlined,
 } from '@ant-design/icons';
 import imgHero from '../assets/images/hizmetler.webp';
 import './ServicesPage.css';
 
-/* Optimized images */
 import imgDefence from '../assets/images/savunmasanayi.webp';
 import imgElectronics from '../assets/images/elektrik.webp';
 import imgMachinery from '../assets/images/makina.webp';
@@ -27,142 +33,173 @@ import imgMaritime from '../assets/images/denizcilik.webp';
 
 const ServicesPage = () => {
     const { t } = useTranslation();
+    const location = useLocation();
+    const navigate = useNavigate();
+    const [activeTab, setActiveTab] = useState('defence');
 
-    /* Reveal animations */
     useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) entry.target.classList.add('visible');
-                });
-            },
-            { threshold: 0.1 }
-        );
-        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-        return () => observer.disconnect();
-    }, []);
+        const hash = location.hash.replace('#', '');
+        const validKeys = ['defence', 'electronics', 'machinery', 'maritime'];
+        if (validKeys.includes(hash)) setActiveTab(hash);
+    }, [location.hash]);
 
-    /* Service item icons */
+    useRevealAnimation();
+
     const iconMap = {
         underwater: <RadarChartOutlined />,
         acoustic: <AudioOutlined />,
         torpedo: <ApiOutlined />,
         transformer: <BuildOutlined />,
         pcb: <LayoutOutlined />,
+        automation: <DashboardOutlined />,
         design3d: <ScissorOutlined />,
         cnc: <ControlOutlined />,
+        welding: <DeploymentUnitOutlined />,
         pipe: <SettingOutlined />,
         shipMachine: <ToolOutlined />,
+        shipElectrical: <BulbOutlined />,
     };
 
-    /* Tab data for 4 service groups */
     const serviceGroups = [
         {
             key: 'defence',
             icon: <RocketOutlined />,
             color: '#0050b3',
+            gradient: 'linear-gradient(135deg, #0050b3, #003a8c)',
             items: ['underwater', 'acoustic', 'torpedo'],
             image: imgDefence,
         },
         {
             key: 'electronics',
             icon: <ThunderboltOutlined />,
-            color: '#00b4d8',
-            items: ['transformer', 'pcb'],
+            color: '#0077b6',
+            gradient: 'linear-gradient(135deg, #0077b6, #00b4d8)',
+            items: ['transformer', 'pcb', 'automation'],
             image: imgElectronics,
         },
         {
             key: 'machinery',
             icon: <ToolOutlined />,
-            color: '#0077b6',
-            items: ['design3d', 'cnc'],
+            color: '#005f73',
+            gradient: 'linear-gradient(135deg, #005f73, #0a9396)',
+            items: ['design3d', 'cnc', 'welding'],
             image: imgMachinery,
         },
         {
             key: 'maritime',
             icon: <CompassOutlined />,
             color: '#003a8c',
-            items: ['pipe', 'shipMachine'],
+            gradient: 'linear-gradient(135deg, #003a8c, #0050b3)',
+            items: ['pipe', 'shipMachine', 'shipElectrical'],
             image: imgMaritime,
         },
     ];
 
-    const tabItems = serviceGroups.map((group) => ({
-        key: group.key,
-        label: (
-            <span className="service-tab-label">
-                {group.icon} {t(`services.${group.key}.title`)}
-            </span>
-        ),
-        children: (
-            <div className="service-tab-content">
-                {/* Banner image */}
-                <div className="service-group-banner">
-                    <img src={group.image} alt={t(`services.${group.key}.title`)} />
-                    <div className="service-group-banner-overlay" style={{ background: `linear-gradient(135deg, ${group.color}CC, ${group.color}88)` }}>
-                        <div className="service-group-icon">
-                            {group.icon}
-                        </div>
-                        <h3 className="service-group-title">{t(`services.${group.key}.title`)}</h3>
-                        <p className="service-group-desc">{t(`services.${group.key}.desc`)}</p>
-                    </div>
-                </div>
-
-                {/* Service items */}
-                <Row gutter={[24, 24]} style={{ marginTop: 32 }}>
-                    {group.items.map((item, idx) => (
-                        <Col xs={24} sm={12} md={8} key={item}>
-                            <Card
-                                className="service-item-card"
-                                style={{ animationDelay: `${idx * 0.1}s` }}
-                                hoverable
-                            >
-                                <div className="service-item-icon" style={{ color: group.color }}>
-                                    {iconMap[item]}
-                                </div>
-                                <h4 className="service-item-title">
-                                    {t(`services.${group.key}.items.${item}.title`)}
-                                </h4>
-                                <p className="service-item-desc">
-                                    {t(`services.${group.key}.items.${item}.desc`)}
-                                </p>
-                            </Card>
-                        </Col>
-                    ))}
-                </Row>
-            </div>
-        ),
-    }));
+    const activeGroup = serviceGroups.find(g => g.key === activeTab);
 
     return (
         <div className="services-page">
-            {/* Page Hero - Premium Look */}
-            <section className="page-hero">
-                <div className="page-hero-bg" />
-                <BackgroundParticles count={15} />
-                <div
-                    className="page-hero-overlay"
-                    style={{ backgroundImage: `url(${imgHero})` }}
-                />
-                <div className="page-hero-glow" />
-                <div className="container page-hero-content">
-                    <h1 className="page-hero-title animate-fadeInUp">{t('services.title')}</h1>
-                    <p className="page-hero-subtitle animate-fadeInUp delay-1">{t('services.subtitle')}</p>
-                </div>
-                <div className="page-hero-wave" />
-            </section>
+            <PageSEO
+                titleKey="nav.services"
+                descriptionKey="servicesPreview.subtitle"
+                path="/services"
+            />
+            <PageHero
+                title={t('services.title')}
+                subtitle={t('services.subtitle')}
+                bgImage={imgHero}
+            />
 
-            {/* Services Tabs */}
             <section className="section services-tabs-section">
                 <div className="container">
-                    <Tabs
-                        defaultActiveKey="defence"
-                        items={tabItems}
-                        size="large"
-                        centered
-                        animated={{ inkBar: true, tabPane: true }}
-                        className="services-tabs"
-                    />
+
+                    {/* ── Tab Selector ── */}
+                    <div className="svc-tab-selector reveal">
+                        {serviceGroups.map(group => (
+                            <button
+                                key={group.key}
+                                className={`svc-tab-btn${activeTab === group.key ? ' active' : ''}`}
+                                style={{ '--tab-color': group.color }}
+                                onClick={() => setActiveTab(group.key)}
+                            >
+                                <span className="svc-tab-icon">{group.icon}</span>
+                                <span className="svc-tab-text">{t(`services.${group.key}.title`)}</span>
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* ── Content Panel ── */}
+                    {activeGroup && (
+                        <div className="svc-content reveal">
+                            <Row gutter={[40, 40]} align="stretch">
+
+                                {/* Left: Info card */}
+                                <Col xs={24} lg={10}>
+                                    <div
+                                        className="svc-info-panel"
+                                        style={{ '--panel-color': activeGroup.color, '--panel-gradient': activeGroup.gradient }}
+                                    >
+                                        <div className="svc-info-image">
+                                            <img src={activeGroup.image} alt={t(`services.${activeGroup.key}.title`)} loading="lazy" />
+                                            <div className="svc-info-overlay" />
+                                        </div>
+                                        <div className="svc-info-body">
+                                            <div className="svc-info-icon-badge">
+                                                {activeGroup.icon}
+                                            </div>
+                                            <h3 className="svc-info-title">
+                                                {t(`services.${activeGroup.key}.title`)}
+                                            </h3>
+                                            <p className="svc-info-desc">
+                                                {t(`services.${activeGroup.key}.desc`)}
+                                            </p>
+                                            <button
+                                                className="svc-info-cta"
+                                                onClick={() => navigate('/contact')}
+                                            >
+                                                İletişime Geç <ArrowRightOutlined />
+                                            </button>
+                                        </div>
+                                    </div>
+                                </Col>
+
+                                {/* Right: Service item rows */}
+                                <Col xs={24} lg={14}>
+                                    <div className="svc-items-list">
+                                        {activeGroup.items.map((item, idx) => (
+                                            <div
+                                                className="svc-item-row"
+                                                key={item}
+                                                style={{
+                                                    '--item-color': activeGroup.color,
+                                                    animationDelay: `${idx * 0.08}s`,
+                                                }}
+                                            >
+                                                <div className="svc-item-num">
+                                                    {String(idx + 1).padStart(2, '0')}
+                                                </div>
+                                                <div className="svc-item-icon-box">
+                                                    {iconMap[item]}
+                                                </div>
+                                                <div className="svc-item-body">
+                                                    <h4 className="svc-item-title">
+                                                        {t(`services.${activeGroup.key}.items.${item}.title`)}
+                                                    </h4>
+                                                    <p className="svc-item-desc">
+                                                        {t(`services.${activeGroup.key}.items.${item}.desc`)}
+                                                    </p>
+                                                </div>
+                                                <div className="svc-item-arrow">
+                                                    <ArrowRightOutlined />
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </Col>
+                            </Row>
+                        </div>
+                    )}
+
                 </div>
             </section>
         </div>

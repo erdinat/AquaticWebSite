@@ -1,10 +1,9 @@
-import React, { useRef } from 'react';
 import BackgroundParticles from '../components/BackgroundParticles';
 import { useRevealAnimation } from '../hooks/useRevealAnimation';
 import PageSEO from '../components/common/PageSEO';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { Row, Col, Button, Card } from 'antd';
+import { Row, Col, Button } from 'antd';
 import {
     RocketOutlined,
     ThunderboltOutlined,
@@ -15,6 +14,13 @@ import {
     GlobalOutlined,
     ProjectOutlined,
     CalendarOutlined,
+    TrophyOutlined,
+    SafetyCertificateOutlined,
+    FileTextOutlined,
+    StarOutlined,
+    AppstoreOutlined,
+    ShoppingOutlined,
+    ApartmentOutlined,
 } from '@ant-design/icons';
 import './HomePage.css';
 
@@ -23,7 +29,7 @@ import imgDefence from '../assets/images/savunmasanayi.webp';
 import imgElectronics from '../assets/images/elektrik.webp';
 import imgMachinery from '../assets/images/makina.webp';
 import imgMaritime from '../assets/images/denizcilik.webp';
-import imgHeroBg from '../assets/images/anasayfa.webp';
+import imgHeroBg from '../assets/images/products/main.webp';
 import brandAslan from '../assets/images/brands/aslan-cimento.webp';
 import brandBilgem from '../assets/images/brands/bilgem.webp';
 import brandDalgakiran from '../assets/images/brands/dalgakiran.webp';
@@ -51,7 +57,6 @@ import brandRef7 from '../assets/images/brands/ref7.webp';
 const HomePage = () => {
     const { t } = useTranslation();
     const navigate = useNavigate();
-    const statsRef = useRef(null);
 
     /* Intersection observer for animations */
     useRevealAnimation({ threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
@@ -98,18 +103,6 @@ const HomePage = () => {
         { icon: <ProjectOutlined />, value: '150+', label: t('stats.projects') },
         { icon: <TeamOutlined />, value: '50+', label: t('stats.clients') },
         { icon: <GlobalOutlined />, value: '5+', label: t('stats.countries') },
-    ];
-
-    /* Brands / references */
-    const brands = [
-        { id: 1, name: 'Aslan Çimento', image: brandAslan },
-        { id: 2, name: 'BİLGEM', image: brandBilgem },
-        { id: 3, name: 'Dalgakıran', image: brandDalgakiran },
-        { id: 4, name: 'EMS', image: brandEms },
-        { id: 5, name: 'ERVE', image: brandErve },
-        { id: 6, name: 'Gölcük Belediyesi', image: brandGolcuk },
-        { id: 7, name: 'TRC', image: brandTrc },
-        { id: 8, name: 'TÜBİTAK SAGE', image: brandTubitak },
     ];
 
     /* Popular products (static demo data) */
@@ -183,6 +176,44 @@ const HomePage = () => {
     ];
     const allBrands = [...marqueeBrands, ...marqueeBrands]; // Duplicate for seamless marquee
 
+    /* News — static data (GNews API key removed for security — needs backend proxy) */
+    const newsItems = [
+        {
+            id: 's1',
+            tag: 'Savunma Sanayi',
+            date: 'Nisan 2025',
+            title: 'IDEF 2025\'te Yeni Nesil Sualtı Konnektör Serisi Tanıtıldı',
+            desc: 'Aquatic Elektronik, IDEF 2025 fuarında 6000m derinlik dayanımlı yeni konnektör serisini kamuoyuyla paylaştı.',
+            url: null,
+        },
+        {
+            id: 's2',
+            tag: 'Uluslararası',
+            date: 'Ocak 2025',
+            title: 'Kazakistan\'da Yeni Ofis Açılışı',
+            desc: 'Aquatic Elektronik, Orta Asya pazarına açılmak amacıyla Kazakistan\'da temsilcilik ofisi kurdu.',
+            url: null,
+        },
+        {
+            id: 's3',
+            tag: 'Teknoloji',
+            date: 'Kasım 2024',
+            title: 'Yerli Kara Kutu Projesi Test Aşamasını Tamamladı',
+            desc: 'Türkiye\'nin ilk yerli havacılık kara kutu projesi kapsamında geliştirilen sistem, zorlu çevre koşulları testlerini başarıyla geçti.',
+            url: null,
+        },
+    ];
+
+    /* Milestones / references */
+    const milestones = [
+        { id: 1, icon: <GlobalOutlined />, year: '2025', title: 'Kazakistan Açılışı', desc: 'Orta Asya pazarına giriş ve bölgesel ortaklıkların kurulması.' },
+        { id: 2, icon: <TrophyOutlined />, year: '2025', title: 'IDEF Ürün Lansmanı', desc: 'Yeni nesil sualtı konnektör serisinin uluslararası tanıtımı.' },
+        { id: 3, icon: <RocketOutlined />, year: '2024', title: 'Yerli Kara Kutu', desc: 'Türkiye\'nin ilk yerli kara kutu projesinde aktif tasarım ve üretim rolü.' },
+        { id: 4, icon: <SafetyCertificateOutlined />, year: '2023', title: 'Uluslararası Sertifikasyon', desc: 'Ürün gamının uluslararası standartlara uygunluk belgesinin alınması.' },
+        { id: 5, icon: <FileTextOutlined />, year: '2023', title: 'Savunma Tedarikçisi', desc: 'Yerli savunma sanayii projelerinde stratejik tedarikçi konumuna geçiş.' },
+        { id: 6, icon: <StarOutlined />, year: '2022', title: 'İlk Sualtı Sistemi', desc: 'Türk deniz kuvvetleri için ilk yerli sualtı elektronik sisteminin teslimi.' },
+    ];
+
     return (
         <div className="home-page">
             <PageSEO
@@ -243,7 +274,7 @@ const HomePage = () => {
             </section>
 
             {/* ===== STATS SECTION ===== */}
-            <section className="stats-section" ref={statsRef}>
+            <section id="home-stats" className="stats-section">
                 <div className="container">
                     <Row gutter={[24, 24]} justify="center">
                         {stats.map((stat, index) => (
@@ -260,16 +291,21 @@ const HomePage = () => {
             </section>
 
             {/* ===== SERVICES PREVIEW ===== */}
-            <section className="section services-preview-section">
+            <section id="home-services" className="section services-preview-section">
                 <div className="container">
-                    <h2 className="section-title reveal">{t('servicesPreview.title')}</h2>
-                    <p className="section-subtitle reveal">{t('servicesPreview.subtitle')}</p>
+                    <div className="section-header-split reveal">
+                        <div>
+                            <span className="section-label"><AppstoreOutlined /> Hizmetlerimiz</span>
+                            <h2 className="section-title" style={{ textAlign: 'left', marginBottom: 8 }}>{t('servicesPreview.title')}</h2>
+                            <p className="section-subtitle" style={{ textAlign: 'left', margin: 0, maxWidth: 500 }}>{t('servicesPreview.subtitle')}</p>
+                        </div>
+                    </div>
                     <Row gutter={[24, 24]}>
                         {services.map((service, index) => (
                             <Col xs={24} sm={12} md={6} key={service.key}>
                                 <div
-                                    className={`service-preview-card glass-card reveal`}
-                                    style={{ animationDelay: `${index * 0.1}s` }}
+                                    className={`service-preview-card reveal`}
+                                    style={{ animationDelay: `${index * 0.1}s`, '--card-accent': service.color }}
                                     onClick={() => navigate('/services')}
                                 >
                                     <div className="service-card-image">
@@ -291,10 +327,11 @@ const HomePage = () => {
             </section>
 
             {/* ===== POPULAR PRODUCTS ===== */}
-            <section className="section products-section">
+            <section id="home-products" className="section products-section">
                 <div className="container">
                     <div className="section-header-split reveal">
                         <div className="header-split-left">
+                            <span className="section-label"><ShoppingOutlined /> Ürünlerimiz</span>
                             <h2 className="section-title" style={{ textAlign: 'left', marginBottom: 8 }}>{t('popularProducts.title')}</h2>
                             <p className="section-subtitle" style={{ textAlign: 'left', margin: 0, maxWidth: 500 }}>
                                 {t('popularProducts.subtitle')}
@@ -332,13 +369,77 @@ const HomePage = () => {
                 </div>
             </section>
 
-            {/* ===== BRANDS / REFERENCES ===== */}
-            <section className="section brands-section">
+            {/* ===== REFERENCES / MILESTONES SECTION ===== */}
+            <section id="home-milestones" className="section references-section">
                 <div className="container">
-                    <h2 className="section-title reveal">{t('brands.title')}</h2>
-                    <p className="section-subtitle reveal">
-                        {t('brands.subtitle')}
-                    </p>
+                    <div className="reveal">
+                        <span className="section-label"><ApartmentOutlined /> Referanslar</span>
+                        <h2 className="section-title" style={{ textAlign: 'left', marginBottom: 8 }}>Önemli Kilometre Taşları</h2>
+                        <p className="section-subtitle" style={{ textAlign: 'left', margin: '0 0 40px', maxWidth: 500 }}>
+                            Ürün lansmanları, uluslararası açılışlar ve stratejik iş birlikleri
+                        </p>
+                    </div>
+                    <div className="references-grid">
+                        {milestones.map(m => (
+                            <div className="milestone-card reveal" key={m.id}>
+                                <div className="milestone-icon">{m.icon}</div>
+                                <div className="milestone-year">{m.year}</div>
+                                <div className="milestone-title">{m.title}</div>
+                                <div className="milestone-desc">{m.desc}</div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* ===== NEWS SECTION ===== */}
+            <section id="home-news" className="section news-section">
+                <div className="container">
+                    <div className="section-header-split reveal">
+                        <div>
+                            <span className="section-label"><FileTextOutlined /> Haberler</span>
+                            <h2 className="section-title" style={{ textAlign: 'left', marginBottom: 8 }}>Son Gelişmeler</h2>
+                            <p className="section-subtitle" style={{ textAlign: 'left', margin: 0, maxWidth: 500 }}>
+                                Sektördeki en güncel haberler ve gelişmeler
+                            </p>
+                        </div>
+                    </div>
+                    <Row gutter={[24, 24]} style={{ marginTop: 40 }}>
+                        {newsItems.map(item => {
+                            const Tag = item.url ? 'a' : 'div';
+                            const linkProps = item.url ? { href: item.url, target: '_blank', rel: 'noopener noreferrer' } : {};
+                            return (
+                                <Col xs={24} md={8} key={item.id}>
+                                    <Tag {...linkProps} className="news-card reveal">
+                                        <div className="news-card-inner">
+                                            <span className="news-card-tag">{item.tag}</span>
+                                            <div className="news-card-date">{item.date}</div>
+                                            <h3 className="news-card-title">{item.title}</h3>
+                                            <p className="news-card-desc">{item.desc}</p>
+                                            {item.url && (
+                                                <div className="news-card-arrow">
+                                                    <ArrowRightOutlined /> Devamını Oku
+                                                </div>
+                                            )}
+                                        </div>
+                                    </Tag>
+                                </Col>
+                            );
+                        })}
+                    </Row>
+                </div>
+            </section>
+
+            {/* ===== BRANDS / REFERENCES ===== */}
+            <section id="home-brands" className="section brands-section">
+                <div className="container">
+                    <div className="reveal">
+                        <span className="section-label"><TeamOutlined /> Markalar & Referanslar</span>
+                        <h2 className="section-title" style={{ textAlign: 'left', marginBottom: 8 }}>{t('brands.title')}</h2>
+                        <p className="section-subtitle" style={{ textAlign: 'left', margin: '0 0 40px', maxWidth: 500 }}>
+                            {t('brands.subtitle')}
+                        </p>
+                    </div>
                     <div className="brands-marquee-container reveal">
                         <div className="brands-marquee">
                             {allBrands.map((brand, index) => (
@@ -351,23 +452,6 @@ const HomePage = () => {
                 </div>
             </section>
 
-            {/* ===== CTA SECTION ===== */}
-            <section className="cta-section">
-                <div className="container" style={{ textAlign: 'center' }}>
-                    <h2 className="cta-title reveal">{t('hero.slogan')}</h2>
-                    <p className="cta-subtitle reveal">{t('hero.subtitle')}</p>
-                    <div className="reveal" style={{ animationDelay: '0.3s' }}>
-                        <Button
-                            type="primary"
-                            size="large"
-                            icon={<ArrowRightOutlined />}
-                            onClick={() => navigate('/contact')}
-                        >
-                            {t('hero.ctaContact')}
-                        </Button>
-                    </div>
-                </div>
-            </section>
         </div>
     );
 };

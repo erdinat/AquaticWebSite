@@ -148,6 +148,10 @@
                 "pcb": {
                     "title": "PCB Tasarım ve Üretim",
                     "desc": "Çok katmanlı, yüksek frekanslı PCB tasarımı ve prototip üretimi."
+                },
+                "automation": {
+                    "title": "PLC & SCADA Sistemleri",
+                    "desc": "Endüstriyel PLC programlama, SCADA arayüz geliştirme ve saha otomasyon entegrasyonu."
                 }
             }
         },
@@ -162,6 +166,10 @@
                 "cnc": {
                     "title": "Talaşlı İmalat",
                     "desc": "CNC torna, freze ve 5 eksen işleme merkezleriyle hassas parça üretimi."
+                },
+                "welding": {
+                    "title": "Kaynak & Mekanik Montaj",
+                    "desc": "TIG/MIG kaynak, sertleştirme ve hassas mekanik montaj hizmetleri."
                 }
             }
         },
@@ -176,6 +184,10 @@
                 "shipMachine": {
                     "title": "Gemi Makine Faaliyetleri",
                     "desc": "Ana makine, jeneratör bakım-onarım ve revizyon hizmetleri."
+                },
+                "shipElectrical": {
+                    "title": "Gemi Elektrik Sistemleri",
+                    "desc": "Enerji dağıtım panoları, kablo tesisatı ve elektrik sistemleri bakım-onarım hizmetleri."
                 }
             }
         }
@@ -183,6 +195,18 @@
     "products": {
         "title": "Ürünlerimiz",
         "subtitle": "Kritik görevler için tasarlanmış yüksek performanslı sualtı teknolojileri",
+        "filterTitle": "Kategoriler",
+        "noProducts": "Bu kategoride henüz ürün bulunmuyor.",
+        "viewMore": "Detayları Göster",
+        "viewLess": "Daha Az Göster",
+        "specsTitle": "Teknik Özellikler",
+        "categories": {
+            "all": "Tüm Ürünler",
+            "subseaConnectors": "Sualtı Konnektörleri",
+            "underwaterCameras": "Sualtı Kameraları",
+            "subseaLights": "Sualtı Aydınlatma ve Lazer",
+            "rovAccessories": "ROV Aksesuarları"
+        },
         "items": {
             "camera": {
                 "title": "Sualtı Kamerası",
@@ -256,7 +280,7 @@
         "hero": {
             "badge": "AQUATIC blackbox",
             "title": "Milli Kara Kutu",
-            "subtitle": "Türkiye'nin havacılık ve denizaltı platformları için yüksek mukavemetli veri kayıt sistemi."
+            "subtitle": "Türkiye'nin havacılık, deniz üstü ve denizaltı platformları, zorlu ortam koşulları için yüksek mukavemetli veri kayıt sistemi."
         },
         "title": "Milli Kara Kutu",
         "subtitle": "Türkiye'nin İlk Yerli ve Milli Kara Kutusu",

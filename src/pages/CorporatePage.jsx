@@ -1,8 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import BackgroundParticles from '../components/BackgroundParticles';
 import { useLocation } from 'react-router-dom';
-import { Row, Col, Card, Timeline, Collapse } from 'antd';
+import PageHero from '../components/common/PageHero';
+import { useRevealAnimation } from '../hooks/useRevealAnimation';
+import PageSEO from '../components/common/PageSEO';
+import { Row, Col, Timeline, Collapse } from 'antd';
 import {
     BulbOutlined,
     SafetyCertificateOutlined,
@@ -12,9 +14,12 @@ import {
     EyeOutlined,
     AimOutlined,
     TrophyOutlined,
-    ClockCircleOutlined,
     BankOutlined,
     QuestionCircleOutlined,
+    CopyOutlined,
+    CheckOutlined,
+    PlusOutlined,
+    MinusOutlined,
 } from '@ant-design/icons';
 import imgHero from '../assets/images/kurumsal.webp';
 import './CorporatePage.css';
@@ -22,22 +27,53 @@ import './CorporatePage.css';
 const CorporatePage = () => {
     const { t } = useTranslation();
     const location = useLocation();
+    const [copiedIban, setCopiedIban] = useState(null);
+
+    const copyIban = async (iban, id) => {
+        try {
+            await navigator.clipboard.writeText(iban.replace(/\s/g, ''));
+            setCopiedIban(id);
+            setTimeout(() => setCopiedIban(null), 2000);
+        } catch {
+            // Clipboard API not available (e.g. HTTP context)
+        }
+    };
+
+    const bankAccounts = [
+        {
+            id: 'tl',
+            currency: '₺',
+            currencyLabel: t('corporate.bank.tlAccount'),
+            bank: 'KUVEYT TÜRK',
+            iban: 'TR00 0000 0000 0000 0000 0000 00',
+            branchCode: '0000',
+            branchName: 'GÖLCÜK / KOCAELİ',
+            color: '#0050b3',
+        },
+        {
+            id: 'eur',
+            currency: '€',
+            currencyLabel: t('corporate.bank.eurAccount'),
+            bank: 'KUVEYT TÜRK',
+            iban: 'TR00 0000 0000 0000 0000 0000 00',
+            branchCode: '0000',
+            branchName: 'GÖLCÜK / KOCAELİ',
+            color: '#003a8c',
+        },
+        {
+            id: 'usd',
+            currency: '$',
+            currencyLabel: t('corporate.bank.usdAccount'),
+            bank: 'KUVEYT TÜRK',
+            iban: 'TR00 0000 0000 0000 0000 0000 00',
+            branchCode: '0000',
+            branchName: 'GÖLCÜK / KOCAELİ',
+            color: '#0077b6',
+        },
+    ];
 
     /* Scroll-triggered reveal animations */
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) entry.target.classList.add('visible');
-                });
-            },
-            { threshold: 0.1 }
-        );
-        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-        return () => observer.disconnect();
-    }, []);
-
-
+    useRevealAnimation();
 
     /* Scroll to section based on hash (from header dropdown) */
     useEffect(() => {
@@ -60,24 +96,19 @@ const CorporatePage = () => {
 
     return (
         <div className="corporate-page">
-            {/* Page Hero - Premium Look */}
-            <section className="page-hero">
-                <div className="page-hero-bg" />
-                <BackgroundParticles count={15} />
-                <div
-                    className="page-hero-overlay"
-                    style={{ backgroundImage: `url(${imgHero})` }}
-                />
-                <div className="page-hero-glow" />
-                <div className="container page-hero-content">
-                    <h1 className="page-hero-title animate-fadeInUp">{t('corporate.title')}</h1>
-                    <p className="page-hero-subtitle animate-fadeInUp delay-1">{t('corporate.subtitle')}</p>
-                </div>
-                <div className="page-hero-wave" />
-            </section>
+            <PageSEO
+                titleKey="nav.corporate"
+                descriptionKey="corporate.subtitle"
+                path="/corporate"
+            />
+            <PageHero 
+                title={t('corporate.title')} 
+                subtitle={t('corporate.subtitle')} 
+                bgImage={imgHero} 
+            />
 
             {/* ===== ABOUT HISTORY ===== */}
-            <section id="corp-history" className="section bg-white">
+            <section id="corp-history" className="section">
                 <div className="container">
                     <Row gutter={[64, 40]} align="middle">
                         <Col xs={24} lg={12} className="reveal">
@@ -158,7 +189,7 @@ const CorporatePage = () => {
             </section>
 
             {/* ===== QUALITY VALUES ===== */}
-            <section className="section bg-white">
+            <section id="corp-values" className="section">
                 <div className="container">
                     <div className="section-header-split reveal">
                         <div className="header-split-left">
@@ -210,67 +241,91 @@ const CorporatePage = () => {
                 </div>
             </section>
 
-            {/* Bank Accounts & FAQ */}
-            <section className="section" id="corp-bank-faq" style={{ background: 'var(--color-bg-light)' }}>
+            {/* ===== BANK ACCOUNTS ===== */}
+            <section className="section bank-section" id="corp-bank-faq">
                 <div className="container">
-                    <Row gutter={[32, 32]}>
-                        {/* Bank accounts */}
-                        <Col span={24}>
-                            <div className="reveal">
-                                <div className="section-label">
-                                    <BankOutlined /> {t('corporate.bank.title')}
+                    <div className="reveal" style={{ textAlign: 'center', marginBottom: 48 }}>
+                        <span className="section-label"><BankOutlined /> {t('corporate.bank.title')}</span>
+                        <h2 className="content-title" style={{ marginTop: 16 }}>{t('corporate.bank.subtitle')}</h2>
+                        <p className="content-text" style={{ maxWidth: 560, margin: '0 auto' }}>
+                            {t('corporate.bank.desc')}
+                        </p>
+                    </div>
+                    <Row gutter={[24, 24]}>
+                        {bankAccounts.map((acc, idx) => (
+                            <Col xs={24} md={8} key={acc.id}>
+                                <div className="bank-card-premium reveal" style={{ animationDelay: `${idx * 0.1}s` }}>
+                                    <div className="bank-card-header" style={{ background: acc.color }}>
+                                        <div className="bank-currency-circle">{acc.currency}</div>
+                                        <div>
+                                            <div className="bank-currency-name">{acc.currencyLabel}</div>
+                                            <div className="bank-name-text">{acc.bank}</div>
+                                        </div>
+                                    </div>
+                                    <div className="bank-card-body">
+                                        <p className="bank-company-name">
+                                            AQUATİC ELEKTRONİK MAKİNA OTOMASYON SAVUNMA SANAYİ TİC. LTD. ŞTİ.
+                                        </p>
+                                        <div className="bank-iban-label">IBAN</div>
+                                        <div className="bank-iban-row">
+                                            <span className="bank-iban-number">{acc.iban}</span>
+                                            <button
+                                                className={`bank-copy-btn${copiedIban === acc.id ? ' copied' : ''}`}
+                                                onClick={() => copyIban(acc.iban, acc.id)}
+                                                title="IBAN Kopyala"
+                                                aria-label="IBAN Kopyala"
+                                            >
+                                                {copiedIban === acc.id ? <CheckOutlined /> : <CopyOutlined />}
+                                            </button>
+                                        </div>
+                                        {copiedIban === acc.id && (
+                                            <p className="bank-copy-feedback">Kopyalandı!</p>
+                                        )}
+                                        <div className="bank-branch-row">
+                                            <span>{t('corporate.bank.branchCode')}: <strong>{acc.branchCode}</strong></span>
+                                            <span className="bank-dot">•</span>
+                                            <span>{acc.branchName}</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <h2 className="content-title">{t('corporate.bank.subtitle')}</h2>
-                                <p className="content-text" style={{ marginBottom: 24 }}>
-                                    {t('corporate.bank.desc')}
-                                </p>
-                                <div className="bank-card glass-card">
-                                    <h4 className="bank-title">{t('corporate.bank.tlAccount')}</h4>
-                                    <p className="bank-text">
-                                        KUVEYT TÜRK TL, AQUATIC ELEKTRONİK MAKİNA OTOMASYON SAVUNMA SANAYİ TİC. LTD. ŞTİ.<br />
-                                        <span className="bank-label">IBAN:</span> <span className="bank-iban">TR00 0000 0000 0000 0000 0000 00</span><br />
-                                        <span className="bank-label">{t('corporate.bank.branchCode')}:</span> 0000 / <span className="bank-label">{t('corporate.bank.branchName')}:</span> GÖLCÜK / KOCAELİ
-                                    </p>
-                                </div>
-                                <div className="bank-card glass-card">
-                                    <h4 className="bank-title">{t('corporate.bank.eurAccount')}</h4>
-                                    <p className="bank-text">
-                                        KUVEYT TÜRK EURO, AQUATIC ELEKTRONİK MAKİNA OTOMASYON SAVUNMA SANAYİ TİC. LTD. ŞTİ.<br />
-                                        <span className="bank-label">IBAN:</span> <span className="bank-iban">TR00 0000 0000 0000 0000 0000 00</span><br />
-                                        <span className="bank-label">{t('corporate.bank.branchCode')}:</span> 0000 / <span className="bank-label">{t('corporate.bank.branchName')}:</span> GÖLCÜK / KOCAELİ
-                                    </p>
-                                </div>
-                                <div className="bank-card glass-card">
-                                    <h4 className="bank-title">{t('corporate.bank.usdAccount')}</h4>
-                                    <p className="bank-text">
-                                        KUVEYT TÜRK USD, AQUATIC ELEKTRONİK MAKİNA OTOMASYON SAVUNMA SANAYİ TİC. LTD. ŞTİ.<br />
-                                        <span className="bank-label">IBAN:</span> <span className="bank-iban">TR00 0000 0000 0000 0000 0000 00</span><br />
-                                        <span className="bank-label">{t('corporate.bank.branchCode')}:</span> 0000 / <span className="bank-label">{t('corporate.bank.branchName')}:</span> GÖLCÜK / KOCAELİ
-                                    </p>
-                                </div>
-                            </div>
-                        </Col>
+                            </Col>
+                        ))}
+                    </Row>
+                </div>
+            </section>
 
-                        {/* FAQ */}
-                        <Col span={24}>
-                            <div className="reveal" style={{ animationDelay: '0.2s' }}>
-                                <div className="section-label">
-                                    <QuestionCircleOutlined /> {t('corporate.faq.title')}
-                                </div>
-                                <h2 className="content-title">{t('corporate.faq.subtitle')}</h2>
-                                <p className="content-text" style={{ marginBottom: 24 }}>
-                                    {t('corporate.faq.desc')}
-                                </p>
-                                <Collapse
-                                    accordion
-                                    className="faq-collapse"
-                                    items={['1', '2', '3', '4'].map((key) => ({
-                                        key: key,
-                                        label: t(`corporate.faq.items.${key}.question`),
-                                        children: <p className="faq-answer">{t(`corporate.faq.items.${key}.answer`)}</p>,
-                                    }))}
-                                />
-                            </div>
+            {/* ===== FAQ ===== */}
+            <section id="corp-faq" className="section faq-section">
+                <div className="container">
+                    <Row gutter={[64, 40]} align="top">
+                        <Col xs={24} lg={8} className="reveal">
+                            <span className="section-label"><QuestionCircleOutlined /> {t('corporate.faq.title')}</span>
+                            <h2 className="content-title" style={{ marginTop: 16, textAlign: 'left' }}>
+                                {t('corporate.faq.subtitle')}
+                            </h2>
+                            <p className="content-text">{t('corporate.faq.desc')}</p>
+                        </Col>
+                        <Col xs={24} lg={16} className="reveal" style={{ animationDelay: '0.15s' }}>
+                            <Collapse
+                                accordion
+                                className="faq-collapse"
+                                expandIcon={({ isActive }) =>
+                                    isActive ? <MinusOutlined className="faq-expand-icon" /> : <PlusOutlined className="faq-expand-icon" />
+                                }
+                                expandIconPosition="end"
+                                items={['1', '2', '3', '4'].map((key) => ({
+                                    key,
+                                    label: (
+                                        <span className="faq-question">
+                                            <span className="faq-num">{key.padStart(2, '0')}</span>
+                                            {t(`corporate.faq.items.${key}.question`)}
+                                        </span>
+                                    ),
+                                    children: (
+                                        <p className="faq-answer">{t(`corporate.faq.items.${key}.answer`)}</p>
+                                    ),
+                                }))}
+                            />
                         </Col>
                     </Row>
                 </div>

@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import BackgroundParticles from '../components/BackgroundParticles';
 import { useNavigate } from 'react-router-dom';
+import PageHero from '../components/common/PageHero';
+import { useRevealAnimation } from '../hooks/useRevealAnimation';
+import PageSEO from '../components/common/PageSEO';
 import { Row, Col, Table, Button, Tag } from 'antd';
 import {
     SafetyCertificateOutlined,
@@ -22,18 +24,7 @@ const BlackBoxPage = () => {
     const navigate = useNavigate();
 
     /* Reveal animations */
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) entry.target.classList.add('visible');
-                });
-            },
-            { threshold: 0.1 }
-        );
-        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-        return () => observer.disconnect();
-    }, []);
+    useRevealAnimation();
 
     /* Specs icon mapping */
     const specIcons = {
@@ -100,37 +91,31 @@ const BlackBoxPage = () => {
 
     return (
         <div className="blackbox-page">
-            {/* Page Hero - Premium Look */}
-            <section className="page-hero">
-                <div className="page-hero-bg" />
-                <BackgroundParticles count={15} />
-                <div
-                    className="page-hero-overlay"
-                    style={{ backgroundImage: `url(${imgHero})` }}
-                />
-                <div className="page-hero-glow" />
-
-                <div className="container page-hero-content">
-                    <div className="blackbox-badge animate-fadeInDown">
-                        <SafetyCertificateOutlined /> {t('blackbox.hero.badge')}
-                    </div>
-                    <h1 className="page-hero-title animate-fadeInUp">{t('blackbox.hero.title')}</h1>
-                    <p className="page-hero-subtitle animate-fadeInUp delay-1">{t('blackbox.hero.subtitle')}</p>
-
-                    {/* 3D Visual remains within the premium hero */}
-                    <div className="blackbox-visual animate-scaleIn delay-2">
-                        <div className="blackbox-3d">
-                            <div className="blackbox-face front">
-                                <span className="blackbox-label">AQUATIC</span>
-                                <span className="blackbox-sublabel">BLACK BOX</span>
-                            </div>
-                            <div className="blackbox-face top"></div>
-                            <div className="blackbox-face right"></div>
+            <PageSEO
+                titleKey="nav.blackbox"
+                descriptionKey="blackbox.hero.subtitle"
+                path="/blackbox"
+            />
+            <PageHero 
+                title={t('blackbox.hero.title')} 
+                subtitle={t('blackbox.hero.subtitle')} 
+                bgImage={imgHero} 
+            >
+                <div className="blackbox-badge animate-fadeInDown" style={{ marginBottom: 24 }}>
+                    <SafetyCertificateOutlined /> {t('blackbox.hero.badge')}
+                </div>
+                {/* 3D Visual remains within the premium hero */}
+                <div className="blackbox-visual animate-scaleIn delay-2">
+                    <div className="blackbox-3d">
+                        <div className="blackbox-face front">
+                            <span className="blackbox-label">AQUATIC</span>
+                            <span className="blackbox-sublabel">BLACK BOX</span>
                         </div>
+                        <div className="blackbox-face top"></div>
+                        <div className="blackbox-face right"></div>
                     </div>
                 </div>
-                <div className="page-hero-wave" />
-            </section>
+            </PageHero>
             {/* Specs Table Section */}
             <section className="section blackbox-specs-section">
                 <div className="container">

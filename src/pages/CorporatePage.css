@@ -130,8 +130,7 @@
 
 /* --- Premium Vision/Mission Cards --- */
 .vision-mission-section {
-    background: radial-gradient(circle at top right, rgba(0, 180, 216, 0.05), transparent 60%),
-        linear-gradient(180deg, var(--color-bg) 0%, #fafdff 100%);
+    background: #f4f7ff;
     position: relative;
     overflow: hidden;
     padding-top: 80px;
@@ -241,67 +240,262 @@
     margin: 0;
 }
 
-/* --- Bank cards --- */
-.bank-card {
-    margin-bottom: 16px;
-    padding: 18px 20px 16px;
-    border-radius: var(--radius-md);
+/* ===== BANK SECTION ===== */
+.bank-section {
+    background: #f4f7ff;
 }
 
-.bank-title {
-    font-size: var(--font-size-body-sm);
+.bank-card-premium {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 8px 32px rgba(0, 21, 41, 0.06);
+    background: #ffffff;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.bank-card-premium:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 48px rgba(0, 50, 150, 0.14);
+}
+
+.bank-card-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 22px 24px;
+    color: #fff;
+}
+
+.bank-currency-circle {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 800;
+    font-family: var(--font-display);
+    flex-shrink: 0;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.bank-currency-name {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    opacity: 0.92;
+}
+
+.bank-name-text {
+    font-size: 11px;
+    opacity: 0.7;
+    margin-top: 2px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.bank-card-body {
+    padding: 22px 24px 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.bank-company-name {
+    font-size: 11px;
+    color: var(--color-text-muted);
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 0 0 18px 0;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.bank-iban-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-text-muted);
+    margin-bottom: 8px;
+}
+
+.bank-iban-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f4f7ff;
+    border: 1px solid rgba(0, 80, 179, 0.1);
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 8px;
+}
+
+.bank-iban-number {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
     font-weight: 700;
     color: var(--color-dark);
-    margin-bottom: 8px;
+    letter-spacing: 0.06em;
+    flex: 1;
 }
 
-.bank-text {
-    font-size: var(--font-size-body-sm);
-    color: var(--color-text-secondary);
-    line-height: 1.8;
+.bank-copy-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(0, 80, 179, 0.08);
+    color: var(--color-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
 }
 
-.bank-label {
+.bank-copy-btn:hover {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.bank-copy-btn.copied {
+    background: #52c41a;
+    color: #fff;
+}
+
+.bank-copy-feedback {
+    font-size: 11px;
+    color: #52c41a;
     font-weight: 600;
+    margin: 0 0 8px 0;
+}
+
+.bank-branch-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--color-text-muted);
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--color-border);
+    flex-wrap: wrap;
+}
+
+.bank-branch-row strong {
     color: var(--color-dark);
 }
 
-.bank-iban {
-    font-weight: 600;
-    letter-spacing: 0.04em;
+.bank-dot {
+    color: var(--color-border);
+    font-size: 16px;
 }
 
-/* --- FAQ --- */
+/* ===== FAQ SECTION ===== */
+.faq-section {
+    background: #f4f7ff;
+}
+
+.faq-collapse {
+    background: transparent !important;
+    border: none !important;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
 .faq-collapse .ant-collapse-item {
-    border-radius: var(--radius-md);
-    margin-bottom: 8px;
+    border-radius: 14px !important;
     overflow: hidden;
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--color-border) !important;
+    background: #ffffff !important;
+    transition: all 0.25s ease !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+}
+
+.faq-collapse .ant-collapse-item:hover {
+    border-color: rgba(0, 80, 179, 0.2) !important;
+    box-shadow: 0 6px 24px rgba(0, 80, 179, 0.06) !important;
+}
+
+.faq-collapse .ant-collapse-item-active {
+    border-color: rgba(0, 80, 179, 0.25) !important;
+    box-shadow: 0 8px 28px rgba(0, 80, 179, 0.08) !important;
 }
 
 .faq-collapse .ant-collapse-header {
-    font-weight: 600;
+    padding: 20px 24px !important;
+    background: transparent !important;
+    align-items: center !important;
+}
+
+.faq-collapse .ant-collapse-item-active .ant-collapse-header {
+    background: linear-gradient(90deg, rgba(0, 80, 179, 0.03), transparent) !important;
+}
+
+.faq-collapse .ant-collapse-content {
+    border-top: 1px solid var(--color-border) !important;
+    background: #fafbff !important;
+}
+
+.faq-collapse .ant-collapse-content-box {
+    padding: 20px 24px !important;
+}
+
+.faq-question {
+    display: flex;
+    align-items: center;
+    gap: 14px;
     font-size: var(--font-size-body-sm);
-    background: #fff;
+    font-weight: 600;
+    color: var(--color-dark);
+}
+
+.faq-num {
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--color-primary);
+    background: rgba(0, 80, 179, 0.08);
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    letter-spacing: 0.02em;
+}
+
+.ant-collapse-item-active .faq-num {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.faq-expand-icon {
+    font-size: 13px !important;
+    color: var(--color-primary) !important;
 }
 
 .faq-answer {
     font-size: var(--font-size-body-sm);
     color: var(--color-text-secondary);
-    line-height: 1.7;
+    line-height: 1.8;
+    margin: 0;
+    padding-left: 46px;
 }
 
-/* --- Reveal (reused from HomePage) --- */
-.corporate-page .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.corporate-page .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+/* --- Reveal removed (moved to global index.css) --- */
 
 /* --- Responsive --- */
 @media (max-width: 768px) {

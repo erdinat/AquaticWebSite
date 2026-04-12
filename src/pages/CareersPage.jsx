@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import BackgroundParticles from '../components/BackgroundParticles';
-import { Row, Col, Card, Form, Input, Button, Upload, message } from 'antd';
+import PageHero from '../components/common/PageHero';
+import { useRevealAnimation } from '../hooks/useRevealAnimation';
+import PageSEO from '../components/common/PageSEO';
+import { Row, Col, Form, Input, Button, Upload, message } from 'antd';
 import {
     RocketOutlined,
     HeatMapOutlined,
@@ -9,7 +11,17 @@ import {
     SendOutlined,
     CheckCircleOutlined,
     TrophyOutlined,
+    GlobalOutlined,
+    FileTextOutlined,
+    SolutionOutlined,
+    TeamOutlined,
+    StarOutlined,
+    LoadingOutlined,
+    InboxOutlined,
+    PhoneOutlined,
+    MailOutlined,
 } from '@ant-design/icons';
+import imgHero from '../assets/images/kariyer.webp';
 import './CareersPage.css';
 
 const CareersPage = () => {
@@ -17,21 +29,12 @@ const CareersPage = () => {
     const [form] = Form.useForm();
     const [loading, setLoading] = useState(false);
 
-    /* Scroll-triggered reveal animations */
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) entry.target.classList.add('visible');
-                });
-            },
-            { threshold: 0.1 }
-        );
-        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-        return () => observer.disconnect();
-    }, []);
+    useRevealAnimation();
 
     const handleSubmit = async (values) => {
+        // Honeypot: if bot fills hidden field, silently reject
+        if (values.website) return;
+
         setLoading(true);
         try {
             let cvData = null;
@@ -40,16 +43,11 @@ const CareersPage = () => {
                 cvData = await new Promise((resolve, reject) => {
                     const reader = new FileReader();
                     reader.readAsDataURL(file);
-                    reader.onload = () => {
-                        // EmailJS attachments usually expect the base64 string without the data:URL prefix
-                        const base64String = reader.result.split(',')[1];
-                        resolve(base64String);
-                    };
+                    reader.onload = () => resolve(reader.result.split(',')[1]);
                     reader.onerror = (err) => reject(err);
                 });
             }
 
-            // EmailJS integration
             const emailjs = await import('@emailjs/browser');
             await emailjs.send(
                 import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -68,8 +66,6 @@ const CareersPage = () => {
             message.success(t('contact.success'));
             form.resetFields();
         } catch (error) {
-            console.error('Submission Detailed Error:', error);
-            // If the error has a text property (EmailJS error message), show it
             const errorMsg = error?.text || t('contact.error');
             message.error(errorMsg);
         } finally {
@@ -77,196 +73,246 @@ const CareersPage = () => {
         }
     };
 
+    const benefits = [
+        {
+            num: '01',
+            icon: <HeatMapOutlined />,
+            title: t('corporate.values.innovation'),
+            desc: t('corporate.values.innovationDesc'),
+            color: '#0050b3',
+        },
+        {
+            num: '02',
+            icon: <TrophyOutlined />,
+            title: t('corporate.values.expertise'),
+            desc: t('corporate.values.expertiseDesc'),
+            color: '#003a8c',
+        },
+        {
+            num: '03',
+            icon: <GlobalOutlined />,
+            title: t('corporate.values.sustainability'),
+            desc: t('corporate.values.sustainabilityDesc'),
+            color: '#0077b6',
+        },
+    ];
+
+    const steps = [
+        { icon: <FileTextOutlined />, label: t('careers.steps.apply', 'Başvuru Formunu Doldur') },
+        { icon: <InboxOutlined />,    label: t('careers.steps.cv',    'CV\'ni Yükle') },
+        { icon: <SolutionOutlined />, label: t('careers.steps.review','Ön Değerlendirme') },
+        { icon: <TeamOutlined />,     label: t('careers.steps.interview', 'Mülakat') },
+    ];
+
     return (
         <div className="careers-page">
-            {/* Page Hero */}
-            <section className="page-hero">
-                <div className="page-hero-bg" />
-                <BackgroundParticles count={15} />
-                <div className="page-hero-overlay careers-hero-overlay" />
-                <div className="page-hero-glow" />
-                <div className="container page-hero-content">
-                    <h1 className="page-hero-title animate-fadeInUp">{t('careers.title')}</h1>
-                    <p className="page-hero-subtitle animate-fadeInUp delay-1">{t('careers.subtitle')}</p>
-                </div>
-                <div className="page-hero-wave" />
-            </section>
+            <PageSEO
+                titleKey="nav.careers"
+                descriptionKey="careers.subtitle"
+                path="/careers"
+            />
+            <PageHero
+                title={t('careers.title')}
+                subtitle={t('careers.subtitle')}
+                bgImage={imgHero}
+            />
 
-            {/* Why Aquatic Section */}
-            <section className="section bg-white">
+            {/* ===== WHY JOIN ===== */}
+            <section className="section careers-benefits-section">
                 <div className="container">
-                    <div className="section-header reveal text-center">
-                        <span className="section-label"><RocketOutlined /> {t('careers.whyJoin.title')}</span>
-                        <h2 className="content-title">{t('careers.whyJoin.title')}</h2>
-                        <p className="content-text max-800 centered">
-                            {t('careers.whyJoin.desc')}
-                        </p>
+                    <div className="careers-section-header reveal">
+                        <span className="careers-label"><RocketOutlined /> {t('careers.whyJoin.title')}</span>
+                        <h2 className="careers-title">{t('careers.whyJoin.title')}</h2>
+                        <p className="careers-desc">{t('careers.whyJoin.desc')}</p>
                     </div>
 
-                    <Row gutter={[24, 24]} className="reveal">
-                        {[
-                            {
-                                icon: <HeatMapOutlined />,
-                                title: t('corporate.values.innovation'),
-                                desc: t('corporate.values.innovationDesc'),
-                                color: '#005f73'
-                            },
-                            {
-                                icon: <TrophyOutlined />,
-                                title: t('corporate.values.expertise'),
-                                desc: t('corporate.values.expertiseDesc'),
-                                color: '#0a9396'
-                            },
-                            {
-                                icon: <CheckCircleOutlined />,
-                                title: t('corporate.values.reliability'),
-                                desc: t('corporate.values.reliabilityDesc'),
-                                color: '#94d2bd'
-                            }
-                        ].map((item, idx) => (
+                    <Row gutter={[28, 28]}>
+                        {benefits.map((b, idx) => (
                             <Col xs={24} md={8} key={idx}>
-                                <Card className="premium-careers-card">
-                                    <div className="career-card-icon" style={{ color: item.color, background: `${item.color}15` }}>
-                                        {item.icon}
+                                <div
+                                    className="benefit-card reveal"
+                                    style={{ animationDelay: `${idx * 0.1}s` }}
+                                >
+                                    <div className="benefit-num">{b.num}</div>
+                                    <div className="benefit-icon-wrap" style={{ background: b.color }}>
+                                        {b.icon}
                                     </div>
-                                    <h3>{item.title}</h3>
-                                    <p>{item.desc}</p>
-                                </Card>
+                                    <h3 className="benefit-title">{b.title}</h3>
+                                    <p className="benefit-desc">{b.desc}</p>
+                                </div>
                             </Col>
                         ))}
                     </Row>
                 </div>
             </section>
 
-            {/* Application Form Section */}
-            <section className="section bg-light-gradient application-section">
+            {/* ===== APPLICATION FORM ===== */}
+            <section className="careers-form-section">
                 <div className="container">
-                    <Row gutter={[48, 48]} align="middle">
-                        <Col xs={24} lg={10} className="reveal">
-                            <span className="section-label"><UserAddOutlined /> {t('careers.application.title')}</span>
-                            <h2 className="content-title">{t('careers.application.title')}</h2>
-                            <p className="content-text" style={{ marginBottom: 32 }}>
-                                {t('careers.application.desc')}
-                            </p>
-                            <div className="application-info-box">
-                                <CheckCircleOutlined className="info-icon" />
-                                <p>{t('careers.form.notice')}</p>
-                            </div>
-                        </Col>
+                    <div className="careers-form-grid reveal">
 
-                        <Col xs={24} lg={14} className="reveal delay-1">
-                            <div className="application-form-wrapper glass-card">
-                                <Form
-                                    form={form}
-                                    layout="vertical"
-                                    onFinish={handleSubmit}
-                                    className="premium-form"
+                        {/* LEFT: Sidebar */}
+                        <div className="careers-sidebar">
+                            <div className="careers-sidebar-inner">
+                                <span className="careers-sidebar-label"><UserAddOutlined /> {t('careers.application.title')}</span>
+                                <h2 className="careers-sidebar-heading">{t('careers.application.title')}</h2>
+                                <p className="careers-sidebar-desc">{t('careers.application.desc')}</p>
+
+                                <div className="careers-steps">
+                                    <div className="careers-steps-title">{t('careers.steps.title', 'Başvuru Süreci')}</div>
+                                    {steps.map((step, idx) => (
+                                        <div className="careers-step" key={idx}>
+                                            <div className="careers-step-circle">
+                                                <span className="careers-step-num">{idx + 1}</span>
+                                            </div>
+                                            {idx < steps.length - 1 && <div className="careers-step-line" />}
+                                            <div className="careers-step-content">
+                                                <div className="careers-step-icon">{step.icon}</div>
+                                                <span className="careers-step-label">{step.label}</span>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                <div className="careers-notice">
+                                    <CheckCircleOutlined className="careers-notice-icon" />
+                                    <p>{t('careers.form.notice')}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* RIGHT: Form */}
+                        <div className="careers-form-panel">
+                            <Form
+                                form={form}
+                                layout="vertical"
+                                onFinish={handleSubmit}
+                                className="careers-form"
+                            >
+                                <Row gutter={20}>
+                                    <Col xs={24} sm={12}>
+                                        <Form.Item
+                                            label={t('contact.name')}
+                                            name="name"
+                                            rules={[{ required: true, message: t('contact.error') }]}
+                                        >
+                                            <Input
+                                                placeholder={t('contact.name')}
+                                                className="careers-input"
+                                                prefix={<StarOutlined className="input-icon" />}
+                                            />
+                                        </Form.Item>
+                                    </Col>
+                                    <Col xs={24} sm={12}>
+                                        <Form.Item
+                                            label={t('contact.email')}
+                                            name="email"
+                                            rules={[{ required: true, type: 'email', message: t('contact.error') }]}
+                                        >
+                                            <Input
+                                                placeholder={t('contact.email')}
+                                                className="careers-input"
+                                                prefix={<MailOutlined className="input-icon" />}
+                                            />
+                                        </Form.Item>
+                                    </Col>
+                                </Row>
+
+                                <Row gutter={20}>
+                                    <Col xs={24} sm={12}>
+                                        <Form.Item label={t('contact.phone')} name="phone">
+                                            <Input
+                                                placeholder={t('contact.phone')}
+                                                className="careers-input"
+                                                prefix={<PhoneOutlined className="input-icon" />}
+                                            />
+                                        </Form.Item>
+                                    </Col>
+                                    <Col xs={24} sm={12}>
+                                        <Form.Item
+                                            label={t('careers.form.position', 'Başvurulan Pozisyon')}
+                                            name="position"
+                                            rules={[{ required: true, message: t('contact.error') }]}
+                                        >
+                                            <Input
+                                                placeholder={t('careers.form.position')}
+                                                className="careers-input"
+                                                prefix={<SolutionOutlined className="input-icon" />}
+                                            />
+                                        </Form.Item>
+                                    </Col>
+                                </Row>
+
+                                <Form.Item
+                                    label={t('contact.message')}
+                                    name="message"
+                                    rules={[{ required: true, message: t('contact.error') }]}
                                 >
-                                    <Row gutter={16}>
-                                        <Col xs={24} sm={12}>
-                                            <Form.Item
-                                                name="name"
-                                                label={t('contact.name')}
-                                                rules={[{ required: true, message: t('contact.error') }]}
-                                            >
-                                                <Input placeholder={t('contact.name')} />
-                                            </Form.Item>
-                                        </Col>
-                                        <Col xs={24} sm={12}>
-                                            <Form.Item
-                                                name="email"
-                                                label={t('contact.email')}
-                                                rules={[
-                                                    { required: true, type: 'email', message: t('contact.error') }
-                                                ]}
-                                            >
-                                                <Input placeholder={t('contact.email')} />
-                                            </Form.Item>
-                                        </Col>
-                                    </Row>
+                                    <Input.TextArea
+                                        rows={4}
+                                        placeholder={t('contact.message')}
+                                        className="careers-input"
+                                    />
+                                </Form.Item>
 
-                                    <Row gutter={16}>
-                                        <Col xs={24} sm={12}>
-                                            <Form.Item
-                                                name="phone"
-                                                label={t('contact.phone')}
-                                            >
-                                                <Input placeholder={t('contact.phone')} />
-                                            </Form.Item>
-                                        </Col>
-                                        <Col xs={24} sm={12}>
-                                            <Form.Item
-                                                name="position"
-                                                label={t('nav.careers')}
-                                                rules={[{ required: true }]}
-                                            >
-                                                <Input placeholder={t('careers.form.position')} />
-                                            </Form.Item>
-                                        </Col>
-                                    </Row>
-
-                                    <Form.Item
-                                        name="message"
-                                        label={t('contact.message')}
-                                        rules={[{ required: true }]}
-                                    >
-                                        <Input.TextArea rows={4} placeholder={t('contact.message')} />
-                                    </Form.Item>
-
-                                    <Form.Item
+                                <Form.Item
+                                    name="cv"
+                                    label={t('careers.form.cv')}
+                                    extra={t('careers.form.cvHint')}
+                                    valuePropName="fileList"
+                                    getValueFromEvent={(e) => Array.isArray(e) ? e : e?.fileList}
+                                    rules={[{ required: true, message: t('careers.form.cvError') }]}
+                                >
+                                    <Upload.Dragger
                                         name="cv"
-                                        label={t('careers.form.cv')}
-                                        extra={t('careers.form.cvHint')}
-                                        valuePropName="fileList"
-                                        getValueFromEvent={(e) => {
-                                            if (Array.isArray(e)) return e;
-                                            return e && e.fileList;
+                                        action="/upload-dummy"
+                                        maxCount={1}
+                                        accept=".pdf,.doc,.docx"
+                                        className="careers-dragger"
+                                        beforeUpload={(file) => {
+                                            const allowed = [
+                                                'application/pdf',
+                                                'application/msword',
+                                                'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                                            ];
+                                            if (!allowed.includes(file.type)) {
+                                                message.error(t('careers.form.cvTypeError'));
+                                                return Upload.LIST_IGNORE;
+                                            }
+                                            if (file.size / 1024 >= 40) {
+                                                message.error(t('careers.form.cvSizeError'));
+                                                return Upload.LIST_IGNORE;
+                                            }
+                                            return false;
                                         }}
-                                        rules={[{ required: true, message: t('careers.form.cvError') }]}
                                     >
-                                        <Upload.Dragger 
-                                            name="cv" 
-                                            action="/upload-dummy" 
-                                            maxCount={1}
-                                            accept=".pdf,.doc,.docx"
-                                            beforeUpload={(file) => {
-                                                const allowed = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
-                                                const isAllowedType = allowed.includes(file.type);
-                                                if (!isAllowedType) {
-                                                    message.error(t('careers.form.cvTypeError'));
-                                                    return Upload.LIST_IGNORE;
-                                                }
-                                                const isLt40K = file.size / 1024 < 40;
-                                                if (!isLt40K) {
-                                                    message.error(t('careers.form.cvSizeError'));
-                                                    return Upload.LIST_IGNORE;
-                                                }
-                                                return false;
-                                            }}
-                                        >
-                                            <p className="ant-upload-drag-icon">
-                                                <UserAddOutlined />
-                                            </p>
-                                            <p className="ant-upload-text">{t('careers.form.cv')}</p>
-                                        </Upload.Dragger>
-                                    </Form.Item>
+                                        <div className="dragger-content">
+                                            <div className="dragger-icon"><InboxOutlined /></div>
+                                            <p className="dragger-text">{t('careers.form.cv')}</p>
+                                            <p className="dragger-hint">PDF, DOC, DOCX · Maks. 40KB</p>
+                                        </div>
+                                    </Upload.Dragger>
+                                </Form.Item>
 
-                                    <Form.Item style={{ marginBottom: 0, marginTop: 24 }}>
-                                        <Button
-                                            type="primary"
-                                            htmlType="submit"
-                                            icon={<SendOutlined />}
-                                            loading={loading}
-                                            className="premium-submit-btn"
-                                            block
-                                        >
-                                            {t('contact.send')}
-                                        </Button>
-                                    </Form.Item>
-                                </Form>
-                            </div>
-                        </Col>
-                    </Row>
+                                {/* Honeypot field — hidden from real users, bots fill it */}
+                                <Form.Item name="website" style={{ display: 'none' }} aria-hidden="true">
+                                    <Input tabIndex={-1} autoComplete="off" />
+                                </Form.Item>
+                                <Form.Item style={{ marginBottom: 0, marginTop: 8 }}>
+                                    <Button
+                                        type="primary"
+                                        htmlType="submit"
+                                        icon={loading ? <LoadingOutlined /> : <SendOutlined />}
+                                        loading={loading}
+                                        block
+                                        className="careers-submit-btn"
+                                    >
+                                        {loading ? t('contact.sending') : t('contact.send')}
+                                    </Button>
+                                </Form.Item>
+                            </Form>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>

@@ -90,7 +90,7 @@
 
 /* --- Specs Section --- */
 .blackbox-specs-section {
-    background: var(--color-white);
+    background: #f4f7ff;
 }
 
 .specs-table-wrapper {
@@ -111,7 +111,7 @@
 
 /* --- Features Section --- */
 .features-section {
-    background: var(--color-bg-light);
+    background: #f4f7ff;
 }
 
 .features-list {
@@ -189,17 +189,7 @@
     margin-bottom: 28px;
 }
 
-/* Reveal */
-.blackbox-page .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.blackbox-page .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+/* --- Reveal removed (moved to global index.css) --- */
 
 /* Responsive */
 @media (max-width: 768px) {

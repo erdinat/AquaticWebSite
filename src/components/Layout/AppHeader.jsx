@@ -12,6 +12,17 @@ import {
     ShoppingOutlined,
     SafetyCertificateOutlined,
     MailOutlined,
+    BarChartOutlined,
+    ToolOutlined,
+    StarOutlined,
+    FileTextOutlined,
+    TeamOutlined,
+    HistoryOutlined,
+    AimOutlined,
+    TrophyOutlined,
+    QuestionCircleOutlined,
+    DownOutlined,
+    RocketOutlined,
 } from '@ant-design/icons';
 import AquaticLogo from '../../assets/images/logo.webp';
 
@@ -45,11 +56,65 @@ const AppHeader = () => {
         localStorage.setItem('aquatic-lang', lang);
     };
 
+    /* Scroll to section helper */
+    const scrollToSection = (path, hash) => {
+        if (location.pathname === path) {
+            const el = document.getElementById(hash);
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+            navigate(path);
+            setTimeout(() => {
+                const el = document.getElementById(hash);
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 400);
+        }
+    };
+
+    /* Home dropdown sections */
+    const homeDropdownItems = [
+        { key: 'home-stats',      icon: <BarChartOutlined />,          label: 'İstatistikler' },
+        { key: 'home-services',   icon: <ToolOutlined />,              label: 'Hizmetler' },
+        { key: 'home-products',   icon: <ShoppingOutlined />,          label: 'Öne Çıkan Ürünler' },
+        { key: 'home-milestones', icon: <StarOutlined />,              label: 'Kilometre Taşları' },
+        { key: 'home-news',       icon: <FileTextOutlined />,          label: 'Son Haberler' },
+        { key: 'home-brands',     icon: <TeamOutlined />,              label: 'Markalar & Referanslar' },
+    ].map(item => ({
+        ...item,
+        label: <span onClick={() => scrollToSection('/', item.key)}>{item.label}</span>,
+    }));
+
+    /* Corporate dropdown sections */
+    const corporateDropdownItems = [
+        { key: 'corp-history',  icon: <HistoryOutlined />,            label: 'Tarihçemiz' },
+        { key: 'corp-vision',   icon: <AimOutlined />,                label: 'Vizyon & Misyon' },
+        { key: 'corp-values',   icon: <TrophyOutlined />,             label: 'Değerlerimiz' },
+        { key: 'corp-bank-faq', icon: <BankOutlined />,               label: 'Banka Bilgileri' },
+        { key: 'corp-faq',      icon: <QuestionCircleOutlined />,     label: 'Sık Sorulan Sorular' },
+    ].map(item => ({
+        ...item,
+        label: <span onClick={() => scrollToSection('/corporate', item.key)}>{item.label}</span>,
+    }));
+
+    /* Services dropdown */
+    const servicesDropdownItems = [
+        { key: 'defence',    icon: <RocketOutlined />,        label: 'Savunma Sanayi' },
+        { key: 'electronics',icon: <AppstoreOutlined />,      label: 'Elektronik & Otomasyon' },
+        { key: 'machinery',  icon: <ToolOutlined />,          label: 'Makina' },
+        { key: 'maritime',   icon: <SafetyCertificateOutlined />, label: 'Denizcilik' },
+    ].map(item => ({
+        ...item,
+        label: (
+            <span onClick={() => navigate(`/services#${item.key}`)}>
+                {item.label}
+            </span>
+        ),
+    }));
+
     /* Navigation items */
     const navItems = [
-        { key: '/', label: t('nav.home'), icon: <HomeOutlined /> },
-        { key: '/corporate', label: t('nav.corporate'), icon: <BankOutlined /> },
-        { key: '/services', label: t('nav.services'), icon: <AppstoreOutlined /> },
+        { key: '/', label: t('nav.home'), icon: <HomeOutlined />, dropdown: homeDropdownItems },
+        { key: '/corporate', label: t('nav.corporate'), icon: <BankOutlined />, dropdown: corporateDropdownItems },
+        { key: '/services', label: t('nav.services'), icon: <AppstoreOutlined />, dropdown: servicesDropdownItems },
         { key: '/products', label: t('nav.products'), icon: <ShoppingOutlined /> },
         { key: '/blackbox', label: t('nav.blackbox'), icon: <SafetyCertificateOutlined /> },
         { key: '/contact', label: t('nav.contact'), icon: <MailOutlined /> },
@@ -112,8 +177,26 @@ const AppHeader = () => {
                         mode="horizontal"
                         selectedKeys={[location.pathname]}
                         items={navItems.map((item) => {
-
-
+                            if (item.dropdown) {
+                                return {
+                                    key: item.key,
+                                    label: (
+                                        <Dropdown
+                                            menu={{ items: item.dropdown }}
+                                            placement="bottomLeft"
+                                            arrow
+                                        >
+                                            <span
+                                                onClick={() => navigate(item.key)}
+                                                style={{ color: textColor, transition: 'color 0.3s', display: 'flex', alignItems: 'center', gap: 4, cursor: 'pointer' }}
+                                            >
+                                                {item.label}
+                                                <DownOutlined style={{ fontSize: 10, opacity: 0.7 }} />
+                                            </span>
+                                        </Dropdown>
+                                    ),
+                                };
+                            }
                             return {
                                 key: item.key,
                                 label: (
@@ -175,17 +258,38 @@ const AppHeader = () => {
                 styles={{ body: { padding: 0 } }}
             >
                 <Menu
-                    mode="vertical"
+                    mode="inline"
                     selectedKeys={[location.pathname]}
-                    items={navItems.map((item) => ({
-                        key: item.key,
-                        icon: item.icon,
-                        label: item.label,
-                        onClick: () => {
-                            navigate(item.key);
-                            setDrawerOpen(false);
-                        },
-                    }))}
+                    items={navItems.map((item) => {
+                        if (item.dropdown) {
+                            return {
+                                key: item.key,
+                                icon: item.icon,
+                                label: item.label,
+                                children: item.dropdown.map(sub => ({
+                                    key: sub.key,
+                                    icon: sub.icon,
+                                    label: (
+                                        <span onClick={() => {
+                                            scrollToSection(item.key, sub.key);
+                                            setDrawerOpen(false);
+                                        }}>
+                                            {sub.label.props.children}
+                                        </span>
+                                    ),
+                                })),
+                            };
+                        }
+                        return {
+                            key: item.key,
+                            icon: item.icon,
+                            label: item.label,
+                            onClick: () => {
+                                navigate(item.key);
+                                setDrawerOpen(false);
+                            },
+                        };
+                    })}
                     style={{ border: 'none', fontSize: 16 }}
                 />
                 <div style={{ padding: '20px 24px', borderTop: '1px solid var(--color-border)' }}>

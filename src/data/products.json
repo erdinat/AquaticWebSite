@@ -6,7 +6,7 @@
     "categoryId": "underwater-cameras",
     "shortDescription": "6000m depth-rated digital zoom camera with titanium housing, sapphire lens and 10× optical zoom for deep-sea ROV operations.",
     "isPremium": true,
-    "images": ["/src/assets/images/products/camera.webp"],
+    "images": ["/images/products/LHC-370 Underwater Digital Zooming.jpg"],
     "specs": {
       "Depth Rating": "6000m",
       "Resolution": "2560×1440",
@@ -25,7 +25,7 @@
     "categoryId": "underwater-cameras",
     "shortDescription": "1000m depth HD underwater camera with POM housing and 1920×1440 resolution. Autofocus enabled, suitable for ROV and subsea surveillance.",
     "isPremium": false,
-    "images": ["/src/assets/images/products/camera.webp"],
+    "images": ["/images/products/LHC-350 High.jpg"],
     "specs": {
       "Depth Rating": "1000m",
       "Resolution": "1920×1440",
@@ -43,7 +43,7 @@
     "categoryId": "subsea-lights-lasers",
     "shortDescription": "Compact 1000m-rated subsea LED light with 16W power consumption and 100° coverage angle for underwater applications.",
     "isPremium": false,
-    "images": ["/src/assets/images/products/light.webp"],
+    "images": ["/images/products/LHL-401 Underwater light.jpg"],
     "specs": {
       "Depth Rating": "1000m",
       "Power Consumption": "16W",
@@ -61,7 +61,7 @@
     "categoryId": "subsea-connectors",
     "shortDescription": "High-reliability metal shell underwater connector for subsea robots. Available in 3, 4, 6, and 8 contact configurations with superior corrosion resistance.",
     "isPremium": true,
-    "images": ["/src/assets/images/products/camera.webp"],
+    "images": ["/images/products/Metal Shell 55.jpg"],
     "specs": {
       "Depth Rating": "6000m",
       "Material": "316L Stainless Steel / Titanium",
@@ -80,7 +80,7 @@
     "categoryId": "subsea-connectors",
     "shortDescription": "Compact metal shell subsea connector with 4 and 6 contact options. Pressure-balanced construction for deep-water equipment.",
     "isPremium": false,
-    "images": ["/src/assets/images/products/camera.webp"],
+    "images": ["/images/products/IE55 Metal Shell.jpg"],
     "specs": {
       "Depth Rating": "6000m",
       "Material": "316L Stainless Steel / Titanium",
@@ -98,7 +98,7 @@
     "categoryId": "subsea-connectors",
     "shortDescription": "Multi-channel fiber optic underwater connector for subsea ROV tethers. IP68 protection, ceramic contacts, >1000 Mbit/s data rate.",
     "isPremium": true,
-    "images": ["/src/assets/images/products/camera.webp"],
+    "images": ["/images/products/Lanhe LH-M Fiber Optic Series.jpg"],
     "specs": {
       "Depth Rating": "6000m",
       "Material": "316L SS / Titanium",
@@ -116,7 +116,7 @@
     "categoryId": "subsea-connectors",
     "shortDescription": "Space-saving right-angle micro underwater connector designed for AUVs.",
     "isPremium": false,
-    "images": ["/src/assets/images/products/camera.webp"],
+    "images": ["/images/products/Right Angle 7:9:12.jpg"],
     "specs": {
       "Depth Rating": "3000m",
       "Material": "Rubber / PEEK",
@@ -130,7 +130,7 @@
     "categoryId": "subsea-connectors",
     "shortDescription": "Low Profile Molded (LPM) connector for versatile subsea applications.",
     "isPremium": false,
-    "images": ["/src/assets/images/products/camera.webp"],
+    "images": ["/images/products/camera.webp"],
     "specs": {
       "Depth Rating": "3000m",
       "Material": "Rubber Molded",
@@ -144,7 +144,7 @@
     "categoryId": "subsea-connectors",
     "shortDescription": "Standard Rubber Molded series connector with 6 contacts.",
     "isPremium": true,
-    "images": ["/src/assets/images/products/camera.webp"],
+    "images": ["/images/products/RM Series 6.jpg"],
     "specs": {
       "Depth Rating": "4000m",
       "Material": "Neoprene Rubber",
@@ -159,7 +159,7 @@
     "categoryId": "subsea-connectors",
     "shortDescription": "Compact RM series for essential power delivery.",
     "isPremium": false,
-    "images": ["/src/assets/images/products/camera.webp"],
+    "images": ["/images/products/RM Series 2-4.jpg"],
     "specs": {
       "Depth Rating": "4000m",
       "Material": "Neoprene Rubber",
@@ -174,7 +174,7 @@
     "categoryId": "subsea-connectors",
     "shortDescription": "Hybrid connector providing 4 fiber+4 power or 2 fiber+6 power connections. ST/LC/FC/SC pigtail options for deep-sea ROV and AUV.",
     "isPremium": true,
-    "images": ["/src/assets/images/products/camera.webp"],
+    "images": ["/images/products/Optic Series 4F4E:2F6E.jpg"],
     "specs": {
       "Depth Rating": "6000m",
       "Material": "316L SS / Titanium",

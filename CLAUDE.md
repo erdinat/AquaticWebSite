@@ -1,13 +1,13 @@
 # CLAUDE.md — Aquatic Elektronik Web Sitesi
 
 > React 19 + Vite 7 + Ant Design 6 + i18next (TR/EN/KK/RU) + EmailJS  
-> Son analiz: 6 Nisan 2026
+> Son güncelleme: 6 Nisan 2026
 
 ---
 
 ## Proje Özeti
 
-Kurumsal web sitesi. 7 sayfa, tek repo, FTP ile cPanel'e deploy.
+Kurumsal web sitesi. 8 sayfa (7 ana + 404), tek repo, FTP ile cPanel'e deploy.
 
 | Alan | Detay |
 |------|-------|
@@ -15,6 +15,7 @@ Kurumsal web sitesi. 7 sayfa, tek repo, FTP ile cPanel'e deploy.
 | UI | Ant Design 6, CSS Custom Properties (design tokens) |
 | i18n | i18next — TR, EN, KK, RU (`src/locales/*.json`) |
 | Form | EmailJS (`@emailjs/browser`) — Contact + Careers |
+| SEO | `react-helmet-async` + `PageSEO` component |
 | Deploy | `npm run build` → `dist/` → `aquatic_deploy.zip` → cPanel/FTP |
 | Repo | https://github.com/erdinat/AquaticWebSite |
 
@@ -29,6 +30,34 @@ Kurumsal web sitesi. 7 sayfa, tek repo, FTP ile cPanel'e deploy.
 | `/blackbox` | `BlackBoxPage.jsx` | Kara Kutu ürün detay sayfası |
 | `/careers` | `CareersPage.jsx` | Açık pozisyonlar, CV upload (EmailJS) |
 | `/contact` | `ContactPage.jsx` | İletişim formu (EmailJS), harita |
+| `*` | `NotFoundPage.jsx` | 404 hata sayfası (noindex) |
+
+---
+
+## Mimari Yapı
+
+```
+src/
+├── components/
+│   ├── common/
+│   │   ├── PageHero.jsx        ← Tüm alt sayfa hero bölümlerini yönetir
+│   │   └── PageSEO.jsx         ← Tüm sayfalara dinamik SEO sağlar
+│   ├── Layout/
+│   │   ├── MainLayout.jsx
+│   │   └── AppHeader.jsx
+│   ├── BackgroundParticles.jsx
+│   ├── ErrorBoundary.jsx       ← App-level hata yakalayıcı
+│   └── ScrollToTop.jsx
+├── hooks/
+│   └── useRevealAnimation.js   ← IntersectionObserver custom hook
+├── pages/                      ← Tüm sayfalar React.lazy() ile yükleniyor
+├── locales/                    ← tr.json, en.json, ru.json, kk.json
+├── assets/
+├── App.jsx                     ← Route tanımları + lazy imports + Suspense
+├── main.jsx                    ← ErrorBoundary > HelmetProvider > BrowserRouter > App
+├── i18n.js
+└── index.css                   ← Global design tokens + .reveal animasyonu
+```
 
 ---
 
@@ -51,33 +80,51 @@ Kurumsal web sitesi. 7 sayfa, tek repo, FTP ile cPanel'e deploy.
 
 ---
 
-## Bilinen Sorunlar & Öncelikler
+## ✅ Tamamlanan İyileştirmeler
 
-### 🔴 HIGH — Hemen Yapılmalı
+### 🔴 HIGH — Çözüldü
 
-1. **`index.html`'de `<title>` yok** — SEO için kritik
-2. **EmailJS key'leri hardcode** — `ContactPage.jsx:24-26`, `CareersPage.jsx:54-55` → `.env` dosyasına taşı
-3. **CV upload — dosya tipi kontrolü yok** — `.exe` bile yüklenebilir (`CareersPage.jsx:229`)
-4. **404 sayfası yok** — Tanımsız route'lar boş sayfa gösteriyor
-5. **Error Boundary yok** — Herhangi render hatası beyaz ekran yapar
+| # | Sorun | Çözüm | Tarih |
+|---|-------|-------|-------|
+| 1 | `index.html`'de `<title>` yoktu | `<title>` tag eklendi | 6 Nis 2026 |
+| 2 | EmailJS key'leri hardcode idi | `.env` dosyasına taşındı, `import.meta.env.VITE_EMAILJS_*` kullanılıyor | 6 Nis 2026 |
+| 3 | CV upload'da dosya tipi kontrolü yoktu | `beforeUpload` ile MIME type + boyut validasyonu eklendi | 6 Nis 2026 |
+| 4 | 404 sayfası yoktu | `NotFoundPage.jsx` oluşturuldu, `App.jsx`'te `path="*"` ile catch-all route | 6 Nis 2026 |
+| 5 | Error Boundary yoktu | `ErrorBoundary.jsx` class component — beyaz ekran yerine zarif hata UI'ı | 6 Nis 2026 |
+
+### 🟡 MEDIUM — Çözüldü
+
+| # | Sorun | Çözüm | Tarih |
+|---|-------|-------|-------|
+| 6 | IntersectionObserver 7 sayfada kopyalanmıştı | `useRevealAnimation` custom hook oluşturuldu | 6 Nis 2026 |
+| 7 | Page Hero JSX 6 sayfada tekrarlanıyordu | `PageHero` common component çıkarıldı | 6 Nis 2026 |
+| 8 | `.reveal` CSS her sayfada tekrarlanıyordu | Tüm sayfa bazlı kopyalar silindi, sadece `index.css`'te kaldı | 6 Nis 2026 |
+| 10 | React.lazy() yoktu, tüm sayfalar eager load | Route-level code splitting uygulandı (`App.jsx`) | 6 Nis 2026 |
+| 14 | Dinamik `<title>` ve meta tag yoktu | `react-helmet-async` + `PageSEO` component — 8 sayfada aktif | 6 Nis 2026 |
+
+---
+
+## ⚠️ Hâlâ Eksik Olan Konular
 
 ### 🟡 MEDIUM — Yakın Vadede
 
-6. **DRY ihlali: IntersectionObserver** — 7 sayfada birebir aynı kod (`useRevealAnimation` hook çıkarılmalı)
-7. **DRY ihlali: Page hero** — 6 sayfada birebir aynı JSX (`<PageHero>` bileşeni çıkarılmalı)
-8. **DRY ihlali: `.reveal` CSS** — Her page CSS'inde tekrar var, sadece `index.css`'te yeterliydi
-9. **`aquatic_deploy.zip` + `.DS_Store` git'te** — `.gitignore`'a ekle
-10. **React.lazy() eksik** — Tüm sayfalar eager load
-11. **`vite` ve `@vitejs/plugin-react` `dependencies`'te** — `devDependencies`'a taşı
+| # | Sorun | Açıklama |
+|---|-------|----------|
+| 9 | `aquatic_deploy.zip` + `.DS_Store` git'te | `.gitignore`'a ekle |
+| 11 | `vite` ve `@vitejs/plugin-react` `dependencies`'te | `devDependencies`'a taşı |
+| 18 | Formlara spam koruması yok | reCAPTCHA veya honeypot field ekle (Contact + Careers) |
+| 19 | EmailJS CV boyut limiti (40KB) | Backend API veya AWS S3 ile kalıcı çözüm gerekli |
 
 ### 🟢 LOW — İleride
 
-12. ESLint + Prettier kur
-13. Vitest + React Testing Library (şu an 0 test)
-14. `react-helmet-async` — dinamik `<title>` ve meta tag
-15. `will-change: transform` ekle marquee animasyonuna (`HomePage.css`)
-16. `<img>` elemanlarına `width`/`height` ekle (CLS)
-17. Hero görseli için `<link rel="preload">` (`index.html`)
+| # | Sorun | Açıklama |
+|---|-------|----------|
+| 12 | ESLint + Prettier yok | Kod standardı ve otomatik formatlama |
+| 13 | Test altyapısı yok | Vitest + React Testing Library (şu an 0 test) |
+| 15 | `will-change: transform` eksik | Marquee animasyonuna performans ipucu (`HomePage.css`) |
+| 16 | `<img>` elemanlarında `width`/`height` yok | CLS (Cumulative Layout Shift) sorunu |
+| 17 | Hero görseli için `<link rel="preload">` yok | LCP (Largest Contentful Paint) iyileştirmesi |
+| 20 | `BackgroundParticles.jsx`'te `useMemo` eksik | Her render'da gereksiz yeniden hesaplama |
 
 ---
 
@@ -90,7 +137,7 @@ npm run dev
 # 2. Production build al
 npm run build
 
-# 3. Zip oluştur (dist/ DIŞINDAN değil, İÇİNDEN!)
+# 3. Zip oluştur (dist/ İÇİNDEN!)
 rm aquatic_deploy.zip
 cd dist && zip -r ../aquatic_deploy.zip . && cd ..
 
@@ -105,45 +152,95 @@ git add . && git commit -m "..." && git push origin main
 
 ---
 
+## EmailJS Config
+
+`.env` dosyasında saklı (kaynak kodda YOK):
+
+```
+VITE_EMAILJS_SERVICE_ID=service_*****
+VITE_EMAILJS_TEMPLATE_ID=template_*****
+VITE_EMAILJS_PUBLIC_KEY=*****
+```
+
+`ContactPage.jsx` ve `CareersPage.jsx`'te `import.meta.env.VITE_EMAILJS_*` ile okunuyor.
+
+> ⚠️ `.env` dosyası `.gitignore`'da olmalı — asla repo'ya push'lanmamalı.
+
+---
+
+## SEO Config
+
+`PageSEO.jsx` içindeki `BASE_URL` değişkeni gerçek domain ile güncellenmelidir:
+
+```js
+const BASE_URL = 'https://aquaticdefense.com'; // ← gerçek domain ile değiştir
+```
+
+Her sayfa otomatik olarak şunları set eder:
+- `<title>` — sayfa adı + site adı
+- `<meta description>` — sayfa açıklaması (i18n'den)
+- `<link canonical>` — tekil URL
+- Open Graph + Twitter Card meta tag'leri
+- `hreflang` — tr, en, ru, kk, x-default
+
+---
+
 ## Kritik Dosya Referansları
 
 | Dosya | Önemli Kısım |
 |-------|-------------|
-| `src/index.css` | Tüm design tokens (renkler, font scale, spacing, shadows) |
-| `src/App.jsx` | Route tanımları |
+| `src/index.css` | Tüm design tokens + global `.reveal` animasyonu |
+| `src/App.jsx` | Route tanımları + React.lazy() + Suspense |
+| `src/main.jsx` | ErrorBoundary > HelmetProvider > BrowserRouter > App |
+| `src/hooks/useRevealAnimation.js` | IntersectionObserver custom hook |
+| `src/components/common/PageHero.jsx` | Ortak sayfa hero component'i |
+| `src/components/common/PageSEO.jsx` | Dinamik SEO yönetimi |
+| `src/components/ErrorBoundary.jsx` | App-level hata yakalayıcı |
 | `src/i18n.js` | i18next config |
-| `src/pages/ProductsPage.jsx` | expandedProduct state, toggleExpand, productSpecValues |
 | `src/components/Layout/AppHeader.jsx` | Navigasyon, dil seçici, mobil menü |
-| `src/components/BackgroundParticles.jsx` | Particle animasyonu (useMemo eksik) |
 | `public/.htaccess` | SPA routing için rewrite kuralları |
 
 ---
 
-## EmailJS Config (Güvenlik Notu)
+## Teknik Değerlendirme (12 Nisan 2026)
 
-Şu an hardcode, `.env`'ye taşınmalı:
+| Kriter | 6 Nis | 12 Nis | Not |
+|--------|:-----:|:------:|-----|
+| Proje Yapısı | 7/10 | **7/10** | İyi organize, .gitignore eksikleri düzeltildi |
+| Kod Kalitesi (DRY/SOLID) | 8/10 | **6/10** | DRY ihlalleri, dead code, hardcoded string'ler tespit edildi |
+| Teknik Eksiksizlik | 7/10 | **5/10** | Validation zayıf, error handling yetersiz |
+| Performans | 8/10 | **6/10** | 7.8MB PNG, memoization eksikleri, God Component |
+| Güvenlik | 7/10 | **5/10** | Spam koruması yok, API key client-side'da |
+| Test Coverage | 0/10 | **0/10** | Hâlâ test yok |
+| SEO | 8/10 | **8/10** | Dinamik title, meta, OG, hreflang |
+| Dependency | — | **7/10** | Güncel ama devDep karışık |
+| **Ortalama** | **6.4/10** | **5.5/10** | Daha detaylı analiz ile düşüş |
 
-```
-VITE_EMAILJS_SERVICE_ID=service_16f5qja
-VITE_EMAILJS_TEMPLATE_ID=template_d4i0t08
-VITE_EMAILJS_PUBLIC_KEY=KTWen6neGfldnhB2D
-```
+### Tamamlanan HIGH Aksiyonlar (12 Nisan 2026)
 
-ContactPage.jsx ve CareersPage.jsx'te `import.meta.env.VITE_EMAILJS_*` ile okunmalı.
+- [x] `.gitignore` — `.env`, `*.zip`, `.DS_Store` eklendi
+- [x] `main.png` (7.8MB) silindi — webp zaten mevcut
+- [x] `vite` + `@vitejs/plugin-react` → `devDependencies`'e taşındı
+- [x] Honeypot spam koruması — Contact + Careers formlarına eklendi
+- [x] GNews API key client-side'dan kaldırıldı — static haberlerle devam
+- [x] `HomePage.jsx` dead code temizlendi (`brands` array, `statsRef`)
+- [x] `CorporatePage.jsx` clipboard try/catch eklendi
+- [x] GNews fetch'e HTTP status kontrolü eklendi
 
----
+### Kalan MEDIUM/LOW Aksiyonlar
 
-## Genel Kod Kalitesi (Nisan 2026)
-
-| Kriter | Puan |
-|--------|:----:|
-| Proje Yapısı | 5/10 |
-| Kod Kalitesi (DRY/SOLID) | 5/10 |
-| Error Handling | 3/10 |
-| Performans | 6/10 |
-| Güvenlik | 5/10 |
-| Test Coverage | 0/10 |
-| SEO | 4/10 |
-| **Ortalama** | **4.4/10** |
-
-Çalışan MVP düzeyi. Production-ready olmak için HIGH öncelikli maddeler çözülmeli.
+| # | Sorun | Öncelik |
+|---|-------|---------|
+| 1 | Hardcoded Türkçe string'leri i18n'e taşı | MEDIUM |
+| 2 | `BackgroundParticles`'a `useMemo` ekle | MEDIUM |
+| 3 | Form validation mesajlarını düzelt | MEDIUM |
+| 4 | Product image dosya isimlerini normalize et | MEDIUM |
+| 5 | `.htaccess` duplikat satır sil | MEDIUM |
+| 6 | `useRevealAnimation` dependency array fix | MEDIUM |
+| 7 | `HomePage.jsx`'i alt component'lere böl | MEDIUM |
+| 8 | ESLint + Prettier kur | MEDIUM |
+| 9 | Marquee `will-change: transform` | LOW |
+| 10 | Image `width`/`height` attribute'ları | LOW |
+| 11 | Hero görseli `<link rel="preload">` | LOW |
+| 12 | Font preload (Inter, Outfit) | LOW |
+| 13 | Vitest + ilk test'ler | LOW |

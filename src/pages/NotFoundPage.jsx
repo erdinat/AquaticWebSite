@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Button, Result } from 'antd';
 import { HomeOutlined } from '@ant-design/icons';
+import { Helmet } from 'react-helmet-async';
 
 const NotFoundPage = () => {
     const navigate = useNavigate();
@@ -10,6 +11,10 @@ const NotFoundPage = () => {
 
     return (
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '70vh' }}>
+            <Helmet>
+                <title>404 – Sayfa Bulunamadı | Aquatic</title>
+                <meta name="robots" content="noindex, nofollow" />
+            </Helmet>
             <Result
                 status="404"
                 title="404"
