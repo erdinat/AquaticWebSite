@@ -191,7 +191,7 @@ const HomePage = () => {
             setNewsError(true);
             return;
         }
-        const url = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=defense+technology&language=en&category=technology&size=3`;
+        const url = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=defense+technology&language=en&category=technology&size=10`;
         fetch(url)
             .then((res) => {
                 if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -484,11 +484,11 @@ const HomePage = () => {
                             </p>
                         </div>
                     </div>
-                    <Row gutter={[24, 24]} style={{ marginTop: 40 }}>
+                    <div className="news-marquee-container" style={{ marginTop: 40 }}>
                         {newsLoading ? (
-                            [0, 1, 2].map((i) => (
-                                <Col xs={24} md={8} key={i}>
-                                    <div className="news-skeleton">
+                            <div className="news-marquee-track">
+                                {[0, 1, 2, 3].map((i) => (
+                                    <div className="news-skeleton" key={i}>
                                         <div className="skeleton-line skeleton-tag" />
                                         <div className="skeleton-line skeleton-date" />
                                         <div className="skeleton-line skeleton-title" />
@@ -496,21 +496,19 @@ const HomePage = () => {
                                         <div className="skeleton-line skeleton-desc" />
                                         <div className="skeleton-line skeleton-desc-short" />
                                     </div>
-                                </Col>
-                            ))
+                                ))}
+                            </div>
                         ) : newsError || newsItems.length === 0 ? (
-                            <Col span={24}>
-                                <p style={{ color: 'var(--color-text-muted)' }}>{t('news.error')}</p>
-                            </Col>
+                            <p style={{ color: 'var(--color-text-muted)' }}>{t('news.error')}</p>
                         ) : (
-                            newsItems.map((item) => {
-                                const Tag = item.url ? 'a' : 'div';
-                                const linkProps = item.url
-                                    ? { href: item.url, target: '_blank', rel: 'noopener noreferrer' }
-                                    : {};
-                                return (
-                                    <Col xs={24} md={8} key={item.id}>
-                                        <Tag {...linkProps} className="news-card reveal">
+                            <div className="news-marquee-track">
+                                {[...newsItems, ...newsItems].map((item, idx) => {
+                                    const Tag = item.url ? 'a' : 'div';
+                                    const linkProps = item.url
+                                        ? { href: item.url, target: '_blank', rel: 'noopener noreferrer' }
+                                        : {};
+                                    return (
+                                        <Tag {...linkProps} className="news-card" key={`${item.id}-${idx}`}>
                                             {item.image && (
                                                 <div className="news-card-image">
                                                     <img
@@ -542,11 +540,11 @@ const HomePage = () => {
                                                 )}
                                             </div>
                                         </Tag>
-                                    </Col>
-                                );
-                            })
+                                    );
+                                })}
+                            </div>
                         )}
-                    </Row>
+                    </div>
                 </div>
             </section>
 
