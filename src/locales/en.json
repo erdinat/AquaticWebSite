@@ -472,7 +472,10 @@
     "news": {
         "sectionLabel": "News",
         "title": "Latest Developments",
-        "subtitle": "The most up-to-date news and developments in the industry"
+        "subtitle": "The most up-to-date news and developments in the industry",
+        "readMore": "Read More",
+        "loading": "Loading news...",
+        "error": "Could not load news."
     },
     "popularProducts": {
         "sectionLabel": "Our Products",

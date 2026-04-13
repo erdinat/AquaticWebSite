@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import BackgroundParticles from '../components/BackgroundParticles';
 import { useRevealAnimation } from '../hooks/useRevealAnimation';
 import PageSEO from '../components/common/PageSEO';
@@ -178,33 +179,45 @@ const HomePage = () => {
     ];
     const allBrands = [...marqueeBrands, ...marqueeBrands]; // Duplicate for seamless marquee
 
-    /* News — static data (GNews API key removed for security — needs backend proxy) */
-    const newsItems = [
-        {
-            id: 's1',
-            tag: 'Savunma Sanayi',
-            date: 'Nisan 2025',
-            title: "IDEF 2025'te Yeni Nesil Sualtı Konnektör Serisi Tanıtıldı",
-            desc: 'Aquatic Elektronik, IDEF 2025 fuarında 6000m derinlik dayanımlı yeni konnektör serisini kamuoyuyla paylaştı.',
-            url: null,
-        },
-        {
-            id: 's2',
-            tag: 'Uluslararası',
-            date: 'Ocak 2025',
-            title: "Kazakistan'da Yeni Ofis Açılışı",
-            desc: "Aquatic Elektronik, Orta Asya pazarına açılmak amacıyla Kazakistan'da temsilcilik ofisi kurdu.",
-            url: null,
-        },
-        {
-            id: 's3',
-            tag: 'Teknoloji',
-            date: 'Kasım 2024',
-            title: 'Yerli Kara Kutu Projesi Test Aşamasını Tamamladı',
-            desc: "Türkiye'nin ilk yerli havacılık kara kutu projesi kapsamında geliştirilen sistem, zorlu çevre koşulları testlerini başarıyla geçti.",
-            url: null,
-        },
-    ];
+    /* News — fetched from NewsData.io */
+    const [newsItems, setNewsItems] = useState([]);
+    const [newsLoading, setNewsLoading] = useState(true);
+    const [newsError, setNewsError] = useState(false);
+
+    useEffect(() => {
+        const apiKey = import.meta.env.VITE_NEWSDATA_API_KEY;
+        if (!apiKey) {
+            setNewsLoading(false);
+            setNewsError(true);
+            return;
+        }
+        const url = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=savunma+sanayi+OR+denizcilik+OR+underwater+defense&language=tr,en&category=technology,science&size=3`;
+        fetch(url)
+            .then((res) => {
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                return res.json();
+            })
+            .then((data) => {
+                if (!data.results?.length) throw new Error('no results');
+                setNewsItems(
+                    data.results.map((article, i) => ({
+                        id: `nd-${i}`,
+                        tag: article.category?.[0] ?? 'Teknoloji',
+                        date: article.pubDate
+                            ? new Date(article.pubDate).toLocaleDateString('tr-TR', {
+                                  year: 'numeric',
+                                  month: 'long',
+                              })
+                            : '',
+                        title: article.title ?? '',
+                        desc: article.description ?? '',
+                        url: article.link ?? null,
+                    }))
+                );
+            })
+            .catch(() => setNewsError(true))
+            .finally(() => setNewsLoading(false));
+    }, []);
 
     /* Milestones / references */
     const milestones = [
@@ -469,29 +482,39 @@ const HomePage = () => {
                         </div>
                     </div>
                     <Row gutter={[24, 24]} style={{ marginTop: 40 }}>
-                        {newsItems.map((item) => {
-                            const Tag = item.url ? 'a' : 'div';
-                            const linkProps = item.url
-                                ? { href: item.url, target: '_blank', rel: 'noopener noreferrer' }
-                                : {};
-                            return (
-                                <Col xs={24} md={8} key={item.id}>
-                                    <Tag {...linkProps} className="news-card reveal">
-                                        <div className="news-card-inner">
-                                            <span className="news-card-tag">{item.tag}</span>
-                                            <div className="news-card-date">{item.date}</div>
-                                            <h3 className="news-card-title">{item.title}</h3>
-                                            <p className="news-card-desc">{item.desc}</p>
-                                            {item.url && (
-                                                <div className="news-card-arrow">
-                                                    <ArrowRightOutlined /> Devamını Oku
-                                                </div>
-                                            )}
-                                        </div>
-                                    </Tag>
-                                </Col>
-                            );
-                        })}
+                        {newsLoading ? (
+                            <Col span={24}>
+                                <p style={{ color: 'var(--color-text-muted)' }}>{t('news.loading')}</p>
+                            </Col>
+                        ) : newsError || newsItems.length === 0 ? (
+                            <Col span={24}>
+                                <p style={{ color: 'var(--color-text-muted)' }}>{t('news.error')}</p>
+                            </Col>
+                        ) : (
+                            newsItems.map((item) => {
+                                const Tag = item.url ? 'a' : 'div';
+                                const linkProps = item.url
+                                    ? { href: item.url, target: '_blank', rel: 'noopener noreferrer' }
+                                    : {};
+                                return (
+                                    <Col xs={24} md={8} key={item.id}>
+                                        <Tag {...linkProps} className="news-card reveal">
+                                            <div className="news-card-inner">
+                                                <span className="news-card-tag">{item.tag}</span>
+                                                <div className="news-card-date">{item.date}</div>
+                                                <h3 className="news-card-title">{item.title}</h3>
+                                                <p className="news-card-desc">{item.desc}</p>
+                                                {item.url && (
+                                                    <div className="news-card-arrow">
+                                                        <ArrowRightOutlined /> {t('news.readMore')}
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </Tag>
+                                    </Col>
+                                );
+                            })
+                        )}
                     </Row>
                 </div>
             </section>

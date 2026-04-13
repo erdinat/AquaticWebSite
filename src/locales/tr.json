@@ -472,7 +472,10 @@
     "news": {
         "sectionLabel": "Haberler",
         "title": "Son Gelişmeler",
-        "subtitle": "Sektördeki en güncel haberler ve gelişmeler"
+        "subtitle": "Sektördeki en güncel haberler ve gelişmeler",
+        "readMore": "Devamını Oku",
+        "loading": "Haberler yükleniyor...",
+        "error": "Haberler yüklenemedi."
     },
     "dropdown": {
         "home": {
