@@ -483,9 +483,18 @@ const HomePage = () => {
                     </div>
                     <Row gutter={[24, 24]} style={{ marginTop: 40 }}>
                         {newsLoading ? (
-                            <Col span={24}>
-                                <p style={{ color: 'var(--color-text-muted)' }}>{t('news.loading')}</p>
-                            </Col>
+                            [0, 1, 2].map((i) => (
+                                <Col xs={24} md={8} key={i}>
+                                    <div className="news-skeleton">
+                                        <div className="skeleton-line skeleton-tag" />
+                                        <div className="skeleton-line skeleton-date" />
+                                        <div className="skeleton-line skeleton-title" />
+                                        <div className="skeleton-line skeleton-title-short" />
+                                        <div className="skeleton-line skeleton-desc" />
+                                        <div className="skeleton-line skeleton-desc-short" />
+                                    </div>
+                                </Col>
+                            ))
                         ) : newsError || newsItems.length === 0 ? (
                             <Col span={24}>
                                 <p style={{ color: 'var(--color-text-muted)' }}>{t('news.error')}</p>
