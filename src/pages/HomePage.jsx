@@ -185,12 +185,28 @@ const HomePage = () => {
     const [newsError, setNewsError] = useState(false);
 
     useEffect(() => {
+        const CACHE_KEY = 'aquatic_news_cache';
+        const CACHE_TTL = 6 * 60 * 60 * 1000; // 6 hours
+
+        // Serve from cache if still fresh
+        try {
+            const cached = JSON.parse(localStorage.getItem(CACHE_KEY) ?? 'null');
+            if (cached && Date.now() - cached.ts < CACHE_TTL && cached.items?.length) {
+                setNewsItems(cached.items);
+                setNewsLoading(false);
+                return;
+            }
+        } catch {
+            // corrupt cache — ignore
+        }
+
         const apiKey = (import.meta.env.VITE_NEWSDATA_API_KEY ?? '').trim();
         if (!apiKey) {
             setNewsLoading(false);
             setNewsError(true);
             return;
         }
+
         const baseUrl = (page) =>
             `https://newsdata.io/api/1/news?apikey=${apiKey}&q=defense+OR+military+OR+maritime+OR+naval&language=en&size=10${page ? `&page=${page}` : ''}`;
 
@@ -230,7 +246,14 @@ const HomePage = () => {
                         // page 2 failed — continue with page 1
                     }
                 }
-                setNewsItems(all.map(toCard));
+                const items = all.map(toCard);
+                // Save to cache
+                try {
+                    localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), items }));
+                } catch {
+                    // localStorage full — skip caching
+                }
+                setNewsItems(items);
             })
             .catch(() => setNewsError(true))
             .finally(() => setNewsLoading(false));
