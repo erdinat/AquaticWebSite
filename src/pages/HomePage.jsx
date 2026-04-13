@@ -191,32 +191,46 @@ const HomePage = () => {
             setNewsError(true);
             return;
         }
-        const url = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=defense+technology&language=en&category=technology&size=10`;
-        fetch(url)
+        const baseUrl = (page) =>
+            `https://newsdata.io/api/1/news?apikey=${apiKey}&q=defense+OR+military+OR+maritime+OR+naval&language=en&size=10${page ? `&page=${page}` : ''}`;
+
+        const toCard = (article, i) => ({
+            id: `nd-${i}`,
+            tag: article.category?.[0] ?? 'technology',
+            date: article.pubDate
+                ? new Date(article.pubDate).toLocaleDateString('tr-TR', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                  })
+                : '',
+            title: article.title ?? '',
+            desc: article.description ?? '',
+            url: article.link ?? null,
+            image: article.image_url ?? null,
+            source: article.source_name ?? null,
+        });
+
+        fetch(baseUrl())
             .then((res) => {
                 if (!res.ok) throw new Error(`HTTP ${res.status}`);
                 return res.json();
             })
-            .then((data) => {
+            .then(async (data) => {
                 if (!data.results?.length) throw new Error('no results');
-                setNewsItems(
-                    data.results.map((article, i) => ({
-                        id: `nd-${i}`,
-                        tag: article.category?.[0] ?? 'technology',
-                        date: article.pubDate
-                            ? new Date(article.pubDate).toLocaleDateString('tr-TR', {
-                                  year: 'numeric',
-                                  month: 'long',
-                                  day: 'numeric',
-                              })
-                            : '',
-                        title: article.title ?? '',
-                        desc: article.description ?? '',
-                        url: article.link ?? null,
-                        image: article.image_url ?? null,
-                        source: article.source_name ?? null,
-                    }))
-                );
+                let all = [...data.results];
+                if (data.nextPage) {
+                    try {
+                        const res2 = await fetch(baseUrl(data.nextPage));
+                        if (res2.ok) {
+                            const data2 = await res2.json();
+                            if (data2.results?.length) all = [...all, ...data2.results];
+                        }
+                    } catch {
+                        // page 2 failed — continue with page 1
+                    }
+                }
+                setNewsItems(all.map(toCard));
             })
             .catch(() => setNewsError(true))
             .finally(() => setNewsLoading(false));
