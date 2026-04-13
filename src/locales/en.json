@@ -196,6 +196,31 @@
     "products": {
         "title": "Our Products",
         "subtitle": "High-performance underwater technologies designed for critical missions",
+        "descriptions": {
+            "lhc-370": "6000m depth-rated digital zoom camera with titanium housing, sapphire lens and 10× optical zoom for deep-sea ROV operations.",
+            "lhc-350": "1000m depth HD underwater camera with POM housing and 1920×1440 resolution. Autofocus enabled, suitable for ROV and subsea surveillance.",
+            "lhl-401": "Compact 1000m-rated subsea LED light with 16W power consumption and 100° coverage angle for underwater applications.",
+            "metal-shell-55-series": "High-reliability metal shell underwater connector for subsea robots. Available in 3, 4, 6, and 8 contact configurations with superior corrosion resistance.",
+            "ie55-metal-shell-small": "Compact metal shell subsea connector with 4 and 6 contact options. Pressure-balanced construction for deep-water equipment.",
+            "lh-m-fiber-optic": "Multi-channel fiber optic underwater connector for subsea ROV tethers. IP68 protection, ceramic contacts, >1000 Mbit/s data rate.",
+            "micro-low-profile-right-angle": "Space-saving right-angle micro underwater connector designed for AUVs. Available in 7, 9, and 12 contact options.",
+            "micro-lpm-678": "Low Profile Molded (LPM) connector for versatile subsea applications. Available in 6, 7, and 8 contact configurations.",
+            "rm-series-6": "Standard Rubber Molded series connector with 6 contacts. 4000m depth rating with 10A current rating.",
+            "rm-series-24": "Compact RM series connector for essential power delivery. Available in 2, 3, and 4 contact options.",
+            "fiber-optic-4f4e-2f6e": "Hybrid connector providing 4 fiber+4 power or 2 fiber+6 power connections. ST/LC/FC/SC pigtail options for deep-sea ROV and AUV."
+        },
+        "filterTitle": "Categories",
+        "noProducts": "No products found in this category.",
+        "viewMore": "View Details",
+        "viewLess": "Show Less",
+        "specsTitle": "Technical Specifications",
+        "categories": {
+            "all": "All Products",
+            "subseaConnectors": "Subsea Connectors",
+            "underwaterCameras": "Underwater Cameras",
+            "subseaLights": "Subsea Lighting & Laser",
+            "rovAccessories": "ROV Accessories"
+        },
         "items": {
             "camera": {
                 "title": "Underwater Camera",
@@ -203,9 +228,20 @@
                 "expandTitle": "Underwater Camera Systems",
                 "viewMore": "View Details",
                 "viewLess": "Show Less",
-                "subcategories": ["ROV Cameras", "Surveillance Cameras", "Stereo / 3D Cameras", "Thermal Imaging"],
+                "subcategories": [
+                    "ROV Cameras",
+                    "Surveillance Cameras",
+                    "Stereo / 3D Cameras",
+                    "Thermal Imaging"
+                ],
                 "specsTitle": "Technical Specifications",
-                "specs": { "resolution": "Resolution", "sensor": "Sensor", "depth": "Depth Rating", "interface": "Interface", "housing": "Housing" }
+                "specs": {
+                    "resolution": "Resolution",
+                    "sensor": "Sensor",
+                    "depth": "Depth Rating",
+                    "interface": "Interface",
+                    "housing": "Housing"
+                }
             },
             "light": {
                 "title": "Underwater Lighting",
@@ -213,9 +249,20 @@
                 "expandTitle": "Underwater Lighting Systems",
                 "viewMore": "View Details",
                 "viewLess": "Show Less",
-                "subcategories": ["LED Spot Lights", "Wide-Area Illumination", "Strobe Systems", "Infrared Lighting"],
+                "subcategories": [
+                    "LED Spot Lights",
+                    "Wide-Area Illumination",
+                    "Strobe Systems",
+                    "Infrared Lighting"
+                ],
                 "specsTitle": "Technical Specifications",
-                "specs": { "depth": "Depth Rating", "lumen": "Luminosity", "power": "Power", "colorTemp": "Color Temperature", "housing": "Housing" }
+                "specs": {
+                    "depth": "Depth Rating",
+                    "lumen": "Luminosity",
+                    "power": "Power",
+                    "colorTemp": "Color Temperature",
+                    "housing": "Housing"
+                }
             },
             "monitor": {
                 "title": "Operator Monitor",
@@ -223,9 +270,20 @@
                 "expandTitle": "Operator Monitor Systems",
                 "viewMore": "View Details",
                 "viewLess": "Show Less",
-                "subcategories": ["Desktop Control Monitors", "Rack-mount Displays", "Portable Panel PC", "Touch Control Panels"],
+                "subcategories": [
+                    "Desktop Control Monitors",
+                    "Rack-mount Displays",
+                    "Portable Panel PC",
+                    "Touch Control Panels"
+                ],
                 "specsTitle": "Technical Specifications",
-                "specs": { "size": "Display Size", "brightness": "Brightness", "protection": "Protection Class", "input": "Input", "temp": "Operating Temperature" }
+                "specs": {
+                    "size": "Display Size",
+                    "brightness": "Brightness",
+                    "protection": "Protection Class",
+                    "input": "Input",
+                    "temp": "Operating Temperature"
+                }
             },
             "harness": {
                 "title": "Harness & Cabling",
@@ -233,7 +291,12 @@
                 "expandTitle": "Underwater Cabling Systems",
                 "viewMore": "View Details",
                 "viewLess": "Show Less",
-                "subcategories": ["Torpedo Connector Cables", "ROV Umbilical Cables", "Underwater Connectors", "Custom Harness Assemblies"],
+                "subcategories": [
+                    "Torpedo Connector Cables",
+                    "ROV Umbilical Cables",
+                    "Underwater Connectors",
+                    "Custom Harness Assemblies"
+                ],
                 "specsTitle": "Technical Specifications",
                 "specs": {
                     "depth": "Depth Rating",
@@ -249,9 +312,20 @@
                 "expandTitle": "Portable Control Systems",
                 "viewMore": "View Details",
                 "viewLess": "Show Less",
-                "subcategories": ["ROV Control Cases", "Field Test Units", "Integrated Joystick Systems", "Emergency Control Kits"],
+                "subcategories": [
+                    "ROV Control Cases",
+                    "Field Test Units",
+                    "Integrated Joystick Systems",
+                    "Emergency Control Kits"
+                ],
                 "specsTitle": "Technical Specifications",
-                "specs": { "display": "Display", "battery": "Battery", "protection": "Protection Class", "interface": "Interface", "weight": "Weight" }
+                "specs": {
+                    "display": "Display",
+                    "battery": "Battery",
+                    "protection": "Protection Class",
+                    "interface": "Interface",
+                    "weight": "Weight"
+                }
             },
             "pressureVessel": {
                 "title": "Pressure Vessels",
@@ -259,9 +333,20 @@
                 "expandTitle": "Pressure Vessel Systems",
                 "viewMore": "View Details",
                 "viewLess": "Show Less",
-                "subcategories": ["Electronic Housing Cylinders", "Connector Flanged Vessels", "Custom-Size Enclosures", "Test & Calibration Vessels"],
+                "subcategories": [
+                    "Electronic Housing Cylinders",
+                    "Connector Flanged Vessels",
+                    "Custom-Size Enclosures",
+                    "Test & Calibration Vessels"
+                ],
                 "specsTitle": "Technical Specifications",
-                "specs": { "depth": "Depth Rating", "material": "Material", "sealing": "Sealing", "standard": "Standard", "maxTemp": "Max Temperature" }
+                "specs": {
+                    "depth": "Depth Rating",
+                    "material": "Material",
+                    "sealing": "Sealing",
+                    "standard": "Standard",
+                    "maxTemp": "Max Temperature"
+                }
             }
         }
     },
@@ -367,7 +452,26 @@
     },
     "brands": {
         "title": "Brands We Work With",
-        "subtitle": "Selected institutions we are a trusted solution partner for in defense, industry, and the public sector."
+        "subtitle": "Selected institutions we are a trusted solution partner for in defense, industry, and the public sector.",
+        "sectionLabel": "Brands & References"
+    },
+    "milestones": {
+        "sectionLabel": "References",
+        "title": "Key Milestones",
+        "subtitle": "Product launches, international openings, and strategic partnerships",
+        "items": {
+            "1": { "title": "Kazakhstan Opening", "desc": "Entry into the Central Asian market and establishment of regional partnerships." },
+            "2": { "title": "IDEF Product Launch", "desc": "International introduction of the new-generation subsea connector series." },
+            "3": { "title": "National Black Box", "desc": "Active design and production role in Turkey's first domestic black box project." },
+            "4": { "title": "International Certification", "desc": "Obtaining international standards compliance certificates for the product range." },
+            "5": { "title": "Defense Supplier", "desc": "Transition to strategic supplier status in domestic defense industry projects." },
+            "6": { "title": "First Subsea System", "desc": "Delivery of the first domestic subsea electronic system for the Turkish Navy." }
+        }
+    },
+    "news": {
+        "sectionLabel": "News",
+        "title": "Latest Developments",
+        "subtitle": "The most up-to-date news and developments in the industry"
     },
     "popularProducts": {
         "title": "Our Popular Products",

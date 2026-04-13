@@ -22,18 +22,16 @@ const getInitialLanguage = () => {
     const hostname = window.location.hostname;
     if (hostname.includes('.tr')) return 'tr';
     if (hostname.includes('.kz')) return 'kk';
-    return 'kk'; // Fallback to Kazakh
+    return 'tr'; // Default to Turkish
 };
 
-i18n
-    .use(initReactI18next)
-    .init({
-        resources,
-        lng: getInitialLanguage(),
-        fallbackLng: 'kk',
-        interpolation: {
-            escapeValue: false, // React already handles XSS
-        },
-    });
+i18n.use(initReactI18next).init({
+    resources,
+    lng: getInitialLanguage(),
+    fallbackLng: 'tr',
+    interpolation: {
+        escapeValue: false, // React already handles XSS
+    },
+});
 
 export default i18n;

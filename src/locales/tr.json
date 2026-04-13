@@ -196,6 +196,19 @@
     "products": {
         "title": "Ürünlerimiz",
         "subtitle": "Kritik görevler için tasarlanmış yüksek performanslı sualtı teknolojileri",
+        "descriptions": {
+            "lhc-370": "Titanyum gövde, safir lens ve 10× optik zoom ile 6000m derinlik dayanımlı dijital zoom kamera.",
+            "lhc-350": "POM gövdeli, 1920×1440 çözünürlüklü 1000m derinlik HD sualtı kamerası. Otomatik odaklama destekli, ROV ve sualtı gözetleme için uygundur.",
+            "lhl-401": "16W güç tüketimi ve 100° kapsama açısıyla kompakt 1000m dayanımlı sualtı LED ışığı.",
+            "metal-shell-55-series": "Sualtı robotları için yüksek güvenilirlikli metal gövdeli sualtı konnektörü. 3, 4, 6 ve 8 kontaklı konfigürasyonlar.",
+            "ie55-metal-shell-small": "4 ve 6 kontak seçenekli kompakt metal gövdeli sualtı konnektörü. Derin su ekipmanları için basınç dengeli yapı.",
+            "lh-m-fiber-optic": "Sualtı ROV kabloları için çok kanallı fiber optik konnektör. IP68 koruma, seramik kontaklar, >1000 Mbit/s veri hızı.",
+            "micro-low-profile-right-angle": "AUV'lar için tasarlanmış yer tasarruflu dik açılı mikro sualtı konnektörü. 7, 9 ve 12 kontak seçenekleri.",
+            "micro-lpm-678": "Çok amaçlı sualtı uygulamaları için Düşük Profilli Kalıplı (LPM) konnektör. 6, 7 ve 8 kontak konfigürasyonları.",
+            "rm-series-6": "6 kontaklı standart Kauçuk Kalıplı seri konnektör. 4000m derinlik ve 10A akım kapasitesi.",
+            "rm-series-24": "Temel güç iletimi için kompakt RM serisi konnektör. 2, 3 ve 4 kontak seçenekleri.",
+            "fiber-optic-4f4e-2f6e": "4 fiber+4 güç veya 2 fiber+6 güç bağlantısı sağlayan hibrit konnektör. ST/LC/FC/SC pigtail seçenekleri."
+        },
         "filterTitle": "Kategoriler",
         "noProducts": "Bu kategoride henüz ürün bulunmuyor.",
         "viewMore": "Detayları Göster",
@@ -215,9 +228,20 @@
                 "expandTitle": "Sualtı Kamera Sistemleri",
                 "viewMore": "Detayları Gör",
                 "viewLess": "Daha Az Göster",
-                "subcategories": ["ROV Kameraları", "Gözetleme Kameraları", "Stereo / 3D Kameralar", "Termal Görüntüleme"],
+                "subcategories": [
+                    "ROV Kameraları",
+                    "Gözetleme Kameraları",
+                    "Stereo / 3D Kameralar",
+                    "Termal Görüntüleme"
+                ],
                 "specsTitle": "Teknik Özellikler",
-                "specs": { "resolution": "Çözünürlük", "sensor": "Sensör", "depth": "Derinlik Dayanımı", "interface": "Arayüz", "housing": "Muhafaza" }
+                "specs": {
+                    "resolution": "Çözünürlük",
+                    "sensor": "Sensör",
+                    "depth": "Derinlik Dayanımı",
+                    "interface": "Arayüz",
+                    "housing": "Muhafaza"
+                }
             },
             "light": {
                 "title": "Sualtı Aydınlatma",
@@ -225,9 +249,20 @@
                 "expandTitle": "Sualtı Aydınlatma Sistemleri",
                 "viewMore": "Detayları Gör",
                 "viewLess": "Daha Az Göster",
-                "subcategories": ["LED Spot Işıklar", "Geniş Alan Aydınlatma", "Stroboskop Sistemleri", "Kızılötesi Aydınlatma"],
+                "subcategories": [
+                    "LED Spot Işıklar",
+                    "Geniş Alan Aydınlatma",
+                    "Stroboskop Sistemleri",
+                    "Kızılötesi Aydınlatma"
+                ],
                 "specsTitle": "Teknik Özellikler",
-                "specs": { "depth": "Derinlik Dayanımı", "lumen": "Işık Şiddeti", "power": "Güç", "colorTemp": "Renk Sıcaklığı", "housing": "Muhafaza" }
+                "specs": {
+                    "depth": "Derinlik Dayanımı",
+                    "lumen": "Işık Şiddeti",
+                    "power": "Güç",
+                    "colorTemp": "Renk Sıcaklığı",
+                    "housing": "Muhafaza"
+                }
             },
             "monitor": {
                 "title": "Operatör Monitörü",
@@ -235,9 +270,20 @@
                 "expandTitle": "Operatör Monitör Sistemleri",
                 "viewMore": "Detayları Gör",
                 "viewLess": "Daha Az Göster",
-                "subcategories": ["Masaüstü Kontrol Monitörleri", "Rack-mount Ekranlar", "Taşınabilir Panel PC", "Dokunmatik Kontrol Panelleri"],
+                "subcategories": [
+                    "Masaüstü Kontrol Monitörleri",
+                    "Rack-mount Ekranlar",
+                    "Taşınabilir Panel PC",
+                    "Dokunmatik Kontrol Panelleri"
+                ],
                 "specsTitle": "Teknik Özellikler",
-                "specs": { "size": "Ekran Boyutu", "brightness": "Parlaklık", "protection": "Koruma Sınıfı", "input": "Giriş", "temp": "Çalışma Sıcaklığı" }
+                "specs": {
+                    "size": "Ekran Boyutu",
+                    "brightness": "Parlaklık",
+                    "protection": "Koruma Sınıfı",
+                    "input": "Giriş",
+                    "temp": "Çalışma Sıcaklığı"
+                }
             },
             "harness": {
                 "title": "Bağlantı ve Kablolama (Harness)",
@@ -245,7 +291,12 @@
                 "expandTitle": "Sualtı Kablolama Sistemleri",
                 "viewMore": "Detayları Gör",
                 "viewLess": "Daha Az Göster",
-                "subcategories": ["Torpido Konnektör Kabloları", "ROV Umbilikal Kabloları", "Sualtı Konnektörleri", "Özel Harness Montajları"],
+                "subcategories": [
+                    "Torpido Konnektör Kabloları",
+                    "ROV Umbilikal Kabloları",
+                    "Sualtı Konnektörleri",
+                    "Özel Harness Montajları"
+                ],
                 "specsTitle": "Teknik Özellikler",
                 "specs": {
                     "depth": "Derinlik Dayanımı",
@@ -261,9 +312,20 @@
                 "expandTitle": "Taşınabilir Kontrol Sistemleri",
                 "viewMore": "Detayları Gör",
                 "viewLess": "Daha Az Göster",
-                "subcategories": ["ROV Kontrol Çantaları", "Saha Test Üniteleri", "Entegre Joystick Sistemleri", "Acil Durum Kontrol Kitleri"],
+                "subcategories": [
+                    "ROV Kontrol Çantaları",
+                    "Saha Test Üniteleri",
+                    "Entegre Joystick Sistemleri",
+                    "Acil Durum Kontrol Kitleri"
+                ],
                 "specsTitle": "Teknik Özellikler",
-                "specs": { "display": "Ekran", "battery": "Batarya", "protection": "Koruma Sınıfı", "interface": "Arayüz", "weight": "Ağırlık" }
+                "specs": {
+                    "display": "Ekran",
+                    "battery": "Batarya",
+                    "protection": "Koruma Sınıfı",
+                    "interface": "Arayüz",
+                    "weight": "Ağırlık"
+                }
             },
             "pressureVessel": {
                 "title": "Basınç Hücreleri",
@@ -271,9 +333,20 @@
                 "expandTitle": "Basınç Hücresi Sistemleri",
                 "viewMore": "Detayları Gör",
                 "viewLess": "Daha Az Göster",
-                "subcategories": ["Elektronik Muhafaza Silindirleri", "Konnektör Flanşlı Kaplar", "Özel Ölçü Muhafazalar", "Test ve Kalibrasyon Kapları"],
+                "subcategories": [
+                    "Elektronik Muhafaza Silindirleri",
+                    "Konnektör Flanşlı Kaplar",
+                    "Özel Ölçü Muhafazalar",
+                    "Test ve Kalibrasyon Kapları"
+                ],
                 "specsTitle": "Teknik Özellikler",
-                "specs": { "depth": "Derinlik Dayanımı", "material": "Malzeme", "sealing": "Sızdırmazlık", "standard": "Standart", "maxTemp": "Maks. Sıcaklık" }
+                "specs": {
+                    "depth": "Derinlik Dayanımı",
+                    "material": "Malzeme",
+                    "sealing": "Sızdırmazlık",
+                    "standard": "Standart",
+                    "maxTemp": "Maks. Sıcaklık"
+                }
             }
         }
     },
@@ -379,7 +452,26 @@
     },
     "brands": {
         "title": "Birlikte Çalıştığımız Markalar",
-        "subtitle": "Savunma sanayi, endüstri ve kamu tarafında güvenilir çözüm ortağı olduğumuz seçili kurumlar."
+        "subtitle": "Savunma sanayi, endüstri ve kamu tarafında güvenilir çözüm ortağı olduğumuz seçili kurumlar.",
+        "sectionLabel": "Markalar & Referanslar"
+    },
+    "milestones": {
+        "sectionLabel": "Referanslar",
+        "title": "Önemli Kilometre Taşları",
+        "subtitle": "Ürün lansmanları, uluslararası açılışlar ve stratejik iş birlikleri",
+        "items": {
+            "1": { "title": "Kazakistan Açılışı", "desc": "Orta Asya pazarına giriş ve bölgesel ortaklıkların kurulması." },
+            "2": { "title": "IDEF Ürün Lansmanı", "desc": "Yeni nesil sualtı konnektör serisinin uluslararası tanıtımı." },
+            "3": { "title": "Yerli Kara Kutu", "desc": "Türkiye'nin ilk yerli kara kutu projesinde aktif tasarım ve üretim rolü." },
+            "4": { "title": "Uluslararası Sertifikasyon", "desc": "Ürün gamının uluslararası standartlara uygunluk belgesinin alınması." },
+            "5": { "title": "Savunma Tedarikçisi", "desc": "Yerli savunma sanayii projelerinde stratejik tedarikçi konumuna geçiş." },
+            "6": { "title": "İlk Sualtı Sistemi", "desc": "Türk deniz kuvvetleri için ilk yerli sualtı elektronik sisteminin teslimi." }
+        }
+    },
+    "news": {
+        "sectionLabel": "Haberler",
+        "title": "Son Gelişmeler",
+        "subtitle": "Sektördeki en güncel haberler ve gelişmeler"
     },
     "popularProducts": {
         "title": "Popüler Ürünlerimiz",

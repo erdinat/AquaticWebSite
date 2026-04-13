@@ -118,14 +118,16 @@ const HomePage = () => {
             id: 2,
             name: 'Taşınabilir Ünite',
             category: 'Portable Unit',
-            description: 'Saha operasyonları için kompakt, dayanıklı taşınabilir güç ve kontrol ünitesi.',
+            description:
+                'Saha operasyonları için kompakt, dayanıklı taşınabilir güç ve kontrol ünitesi.',
             image: prodPortableUnit,
         },
         {
             id: 3,
             name: 'Taşınabilir Ünite 2',
             category: 'Portable Unit',
-            description: 'Geliştirilmiş bağlantı ve izleme özelliklerine sahip ikinci nesil taşınabilir ünite.',
+            description:
+                'Geliştirilmiş bağlantı ve izleme özelliklerine sahip ikinci nesil taşınabilir ünite.',
             image: prodPortableUnit2,
         },
         {
@@ -172,7 +174,7 @@ const HomePage = () => {
         { name: 'Reference 3', image: brandRef3 },
         { name: 'Reference 4', image: brandRef4 },
         { name: 'Reference 5', image: brandRef5 },
-        { name: 'Reference 7', image: brandRef7 }
+        { name: 'Reference 7', image: brandRef7 },
     ];
     const allBrands = [...marqueeBrands, ...marqueeBrands]; // Duplicate for seamless marquee
 
@@ -182,7 +184,7 @@ const HomePage = () => {
             id: 's1',
             tag: 'Savunma Sanayi',
             date: 'Nisan 2025',
-            title: 'IDEF 2025\'te Yeni Nesil Sualtı Konnektör Serisi Tanıtıldı',
+            title: "IDEF 2025'te Yeni Nesil Sualtı Konnektör Serisi Tanıtıldı",
             desc: 'Aquatic Elektronik, IDEF 2025 fuarında 6000m derinlik dayanımlı yeni konnektör serisini kamuoyuyla paylaştı.',
             url: null,
         },
@@ -190,8 +192,8 @@ const HomePage = () => {
             id: 's2',
             tag: 'Uluslararası',
             date: 'Ocak 2025',
-            title: 'Kazakistan\'da Yeni Ofis Açılışı',
-            desc: 'Aquatic Elektronik, Orta Asya pazarına açılmak amacıyla Kazakistan\'da temsilcilik ofisi kurdu.',
+            title: "Kazakistan'da Yeni Ofis Açılışı",
+            desc: "Aquatic Elektronik, Orta Asya pazarına açılmak amacıyla Kazakistan'da temsilcilik ofisi kurdu.",
             url: null,
         },
         {
@@ -199,32 +201,31 @@ const HomePage = () => {
             tag: 'Teknoloji',
             date: 'Kasım 2024',
             title: 'Yerli Kara Kutu Projesi Test Aşamasını Tamamladı',
-            desc: 'Türkiye\'nin ilk yerli havacılık kara kutu projesi kapsamında geliştirilen sistem, zorlu çevre koşulları testlerini başarıyla geçti.',
+            desc: "Türkiye'nin ilk yerli havacılık kara kutu projesi kapsamında geliştirilen sistem, zorlu çevre koşulları testlerini başarıyla geçti.",
             url: null,
         },
     ];
 
     /* Milestones / references */
     const milestones = [
-        { id: 1, icon: <GlobalOutlined />, year: '2025', title: 'Kazakistan Açılışı', desc: 'Orta Asya pazarına giriş ve bölgesel ortaklıkların kurulması.' },
-        { id: 2, icon: <TrophyOutlined />, year: '2025', title: 'IDEF Ürün Lansmanı', desc: 'Yeni nesil sualtı konnektör serisinin uluslararası tanıtımı.' },
-        { id: 3, icon: <RocketOutlined />, year: '2024', title: 'Yerli Kara Kutu', desc: 'Türkiye\'nin ilk yerli kara kutu projesinde aktif tasarım ve üretim rolü.' },
-        { id: 4, icon: <SafetyCertificateOutlined />, year: '2023', title: 'Uluslararası Sertifikasyon', desc: 'Ürün gamının uluslararası standartlara uygunluk belgesinin alınması.' },
-        { id: 5, icon: <FileTextOutlined />, year: '2023', title: 'Savunma Tedarikçisi', desc: 'Yerli savunma sanayii projelerinde stratejik tedarikçi konumuna geçiş.' },
-        { id: 6, icon: <StarOutlined />, year: '2022', title: 'İlk Sualtı Sistemi', desc: 'Türk deniz kuvvetleri için ilk yerli sualtı elektronik sisteminin teslimi.' },
+        { id: '1', icon: <GlobalOutlined />, year: '2025' },
+        { id: '2', icon: <TrophyOutlined />, year: '2025' },
+        { id: '3', icon: <RocketOutlined />, year: '2024' },
+        { id: '4', icon: <SafetyCertificateOutlined />, year: '2023' },
+        { id: '5', icon: <FileTextOutlined />, year: '2023' },
+        { id: '6', icon: <StarOutlined />, year: '2022' },
     ];
 
     return (
         <div className="home-page">
-            <PageSEO
-                titleKey="nav.home"
-                descriptionKey="hero.subtitle"
-                path="/"
-            />
+            <PageSEO titleKey="nav.home" descriptionKey="hero.subtitle" path="/" />
             <section className="hero-section">
                 {/* Animated background */}
                 <div className="hero-bg">
-                    <div className="hero-bg-image" style={{ backgroundImage: `url(${imgHeroBg})` }} />
+                    <div
+                        className="hero-bg-image"
+                        style={{ backgroundImage: `url(${imgHeroBg})` }}
+                    />
                     <div className="hero-wave hero-wave-1" aria-hidden="true" />
                     <div className="hero-wave hero-wave-2" aria-hidden="true" />
                     <div className="hero-wave hero-wave-3" aria-hidden="true" />
@@ -234,12 +235,8 @@ const HomePage = () => {
                 </div>
 
                 <div className="hero-content container">
-                    <p className="hero-slogan animate-fadeInUp delay-2">
-                        {t('hero.slogan')}
-                    </p>
-                    <p className="hero-subtitle animate-fadeInUp delay-3">
-                        {t('hero.subtitle')}
-                    </p>
+                    <p className="hero-slogan animate-fadeInUp delay-2">{t('hero.slogan')}</p>
+                    <p className="hero-subtitle animate-fadeInUp delay-3">{t('hero.subtitle')}</p>
                     <div className="hero-actions animate-fadeInUp delay-4">
                         <Button
                             type="primary"
@@ -279,7 +276,10 @@ const HomePage = () => {
                     <Row gutter={[24, 24]} justify="center">
                         {stats.map((stat, index) => (
                             <Col xs={12} sm={12} md={6} key={index}>
-                                <div className={`stat-card reveal`} style={{ animationDelay: `${index * 0.1}s` }}>
+                                <div
+                                    className={`stat-card reveal`}
+                                    style={{ animationDelay: `${index * 0.1}s` }}
+                                >
                                     <div className="stat-icon">{stat.icon}</div>
                                     <div className="stat-value">{stat.value}</div>
                                     <div className="stat-label">{stat.label}</div>
@@ -295,9 +295,21 @@ const HomePage = () => {
                 <div className="container">
                     <div className="section-header-split reveal">
                         <div>
-                            <span className="section-label"><AppstoreOutlined /> Hizmetlerimiz</span>
-                            <h2 className="section-title" style={{ textAlign: 'left', marginBottom: 8 }}>{t('servicesPreview.title')}</h2>
-                            <p className="section-subtitle" style={{ textAlign: 'left', margin: 0, maxWidth: 500 }}>{t('servicesPreview.subtitle')}</p>
+                            <span className="section-label">
+                                <AppstoreOutlined /> Hizmetlerimiz
+                            </span>
+                            <h2
+                                className="section-title"
+                                style={{ textAlign: 'left', marginBottom: 8 }}
+                            >
+                                {t('servicesPreview.title')}
+                            </h2>
+                            <p
+                                className="section-subtitle"
+                                style={{ textAlign: 'left', margin: 0, maxWidth: 500 }}
+                            >
+                                {t('servicesPreview.subtitle')}
+                            </p>
                         </div>
                     </div>
                     <Row gutter={[24, 24]}>
@@ -305,13 +317,19 @@ const HomePage = () => {
                             <Col xs={24} sm={12} md={6} key={service.key}>
                                 <div
                                     className={`service-preview-card reveal`}
-                                    style={{ animationDelay: `${index * 0.1}s`, '--card-accent': service.color }}
+                                    style={{
+                                        animationDelay: `${index * 0.1}s`,
+                                        '--card-accent': service.color,
+                                    }}
                                     onClick={() => navigate('/services')}
                                 >
                                     <div className="service-card-image">
                                         <img src={service.image} alt={service.title} />
                                     </div>
-                                    <div className="service-icon-wrapper" style={{ background: service.color }}>
+                                    <div
+                                        className="service-icon-wrapper"
+                                        style={{ background: service.color }}
+                                    >
                                         {service.icon}
                                     </div>
                                     <h3 className="service-preview-title">{service.title}</h3>
@@ -331,14 +349,29 @@ const HomePage = () => {
                 <div className="container">
                     <div className="section-header-split reveal">
                         <div className="header-split-left">
-                            <span className="section-label"><ShoppingOutlined /> Ürünlerimiz</span>
-                            <h2 className="section-title" style={{ textAlign: 'left', marginBottom: 8 }}>{t('popularProducts.title')}</h2>
-                            <p className="section-subtitle" style={{ textAlign: 'left', margin: 0, maxWidth: 500 }}>
+                            <span className="section-label">
+                                <ShoppingOutlined /> Ürünlerimiz
+                            </span>
+                            <h2
+                                className="section-title"
+                                style={{ textAlign: 'left', marginBottom: 8 }}
+                            >
+                                {t('popularProducts.title')}
+                            </h2>
+                            <p
+                                className="section-subtitle"
+                                style={{ textAlign: 'left', margin: 0, maxWidth: 500 }}
+                            >
                                 {t('popularProducts.subtitle')}
                             </p>
                         </div>
                         <div className="header-split-right">
-                            <Button type="default" size="large" onClick={() => navigate('/products')} className="view-all-btn">
+                            <Button
+                                type="default"
+                                size="large"
+                                onClick={() => navigate('/products')}
+                                className="view-all-btn"
+                            >
                                 {t('popularProducts.viewAll')} <ArrowRightOutlined />
                             </Button>
                         </div>
@@ -347,15 +380,26 @@ const HomePage = () => {
                     <div className="popular-products-slider reveal">
                         {products.map((product) => (
                             <div key={product.id} className="popular-product-slide">
-                                <div className="premium-product-card" onClick={() => navigate('/products')}>
+                                <div
+                                    className="premium-product-card"
+                                    onClick={() => navigate('/products')}
+                                >
                                     <div className="premium-product-image">
-                                        {product.image && <img src={product.image} alt={product.name} />}
-                                        <div className="premium-product-badge">{t('popularProducts.topSeller')}</div>
+                                        {product.image && (
+                                            <img src={product.image} alt={product.name} />
+                                        )}
+                                        <div className="premium-product-badge">
+                                            {t('popularProducts.topSeller')}
+                                        </div>
                                     </div>
                                     <div className="premium-product-content">
-                                        <div className="premium-product-category">{product.category}</div>
+                                        <div className="premium-product-category">
+                                            {product.category}
+                                        </div>
                                         <h3 className="premium-product-title">{product.name}</h3>
-                                        <p className="premium-product-desc">{product.description}</p>
+                                        <p className="premium-product-desc">
+                                            {product.description}
+                                        </p>
                                         <div className="premium-product-footer">
                                             <div className="premium-product-action">
                                                 <ArrowRightOutlined />
@@ -373,19 +417,29 @@ const HomePage = () => {
             <section id="home-milestones" className="section references-section">
                 <div className="container">
                     <div className="reveal">
-                        <span className="section-label"><ApartmentOutlined /> Referanslar</span>
-                        <h2 className="section-title" style={{ textAlign: 'left', marginBottom: 8 }}>Önemli Kilometre Taşları</h2>
-                        <p className="section-subtitle" style={{ textAlign: 'left', margin: '0 0 40px', maxWidth: 500 }}>
-                            Ürün lansmanları, uluslararası açılışlar ve stratejik iş birlikleri
+                        <span className="section-label">
+                            <ApartmentOutlined /> {t('milestones.sectionLabel')}
+                        </span>
+                        <h2
+                            className="section-title"
+                            style={{ textAlign: 'left', marginBottom: 8 }}
+                        >
+                            {t('milestones.title')}
+                        </h2>
+                        <p
+                            className="section-subtitle"
+                            style={{ textAlign: 'left', margin: '0 0 40px', maxWidth: 500 }}
+                        >
+                            {t('milestones.subtitle')}
                         </p>
                     </div>
                     <div className="references-grid">
-                        {milestones.map(m => (
+                        {milestones.map((m) => (
                             <div className="milestone-card reveal" key={m.id}>
                                 <div className="milestone-icon">{m.icon}</div>
                                 <div className="milestone-year">{m.year}</div>
-                                <div className="milestone-title">{m.title}</div>
-                                <div className="milestone-desc">{m.desc}</div>
+                                <div className="milestone-title">{t(`milestones.items.${m.id}.title`)}</div>
+                                <div className="milestone-desc">{t(`milestones.items.${m.id}.desc`)}</div>
                             </div>
                         ))}
                     </div>
@@ -397,17 +451,29 @@ const HomePage = () => {
                 <div className="container">
                     <div className="section-header-split reveal">
                         <div>
-                            <span className="section-label"><FileTextOutlined /> Haberler</span>
-                            <h2 className="section-title" style={{ textAlign: 'left', marginBottom: 8 }}>Son Gelişmeler</h2>
-                            <p className="section-subtitle" style={{ textAlign: 'left', margin: 0, maxWidth: 500 }}>
-                                Sektördeki en güncel haberler ve gelişmeler
+                            <span className="section-label">
+                                <FileTextOutlined /> {t('news.sectionLabel')}
+                            </span>
+                            <h2
+                                className="section-title"
+                                style={{ textAlign: 'left', marginBottom: 8 }}
+                            >
+                                {t('news.title')}
+                            </h2>
+                            <p
+                                className="section-subtitle"
+                                style={{ textAlign: 'left', margin: 0, maxWidth: 500 }}
+                            >
+                                {t('news.subtitle')}
                             </p>
                         </div>
                     </div>
                     <Row gutter={[24, 24]} style={{ marginTop: 40 }}>
-                        {newsItems.map(item => {
+                        {newsItems.map((item) => {
                             const Tag = item.url ? 'a' : 'div';
-                            const linkProps = item.url ? { href: item.url, target: '_blank', rel: 'noopener noreferrer' } : {};
+                            const linkProps = item.url
+                                ? { href: item.url, target: '_blank', rel: 'noopener noreferrer' }
+                                : {};
                             return (
                                 <Col xs={24} md={8} key={item.id}>
                                     <Tag {...linkProps} className="news-card reveal">
@@ -434,9 +500,19 @@ const HomePage = () => {
             <section id="home-brands" className="section brands-section">
                 <div className="container">
                     <div className="reveal">
-                        <span className="section-label"><TeamOutlined /> Markalar & Referanslar</span>
-                        <h2 className="section-title" style={{ textAlign: 'left', marginBottom: 8 }}>{t('brands.title')}</h2>
-                        <p className="section-subtitle" style={{ textAlign: 'left', margin: '0 0 40px', maxWidth: 500 }}>
+                        <span className="section-label">
+                            <TeamOutlined /> {t('brands.sectionLabel')}
+                        </span>
+                        <h2
+                            className="section-title"
+                            style={{ textAlign: 'left', marginBottom: 8 }}
+                        >
+                            {t('brands.title')}
+                        </h2>
+                        <p
+                            className="section-subtitle"
+                            style={{ textAlign: 'left', margin: '0 0 40px', maxWidth: 500 }}
+                        >
                             {t('brands.subtitle')}
                         </p>
                     </div>
@@ -444,14 +520,17 @@ const HomePage = () => {
                         <div className="brands-marquee">
                             {allBrands.map((brand, index) => (
                                 <div key={index} className="brand-logo-wrapper glass-card">
-                                    <img src={brand.image} alt={brand.name} className="brand-logo" />
+                                    <img
+                                        src={brand.image}
+                                        alt={brand.name}
+                                        className="brand-logo"
+                                    />
                                 </div>
                             ))}
                         </div>
                     </div>
                 </div>
             </section>
-
         </div>
     );
 };

@@ -101,10 +101,10 @@ const CorporatePage = () => {
                 descriptionKey="corporate.subtitle"
                 path="/corporate"
             />
-            <PageHero 
-                title={t('corporate.title')} 
-                subtitle={t('corporate.subtitle')} 
-                bgImage={imgHero} 
+            <PageHero
+                title={t('corporate.title')}
+                subtitle={t('corporate.subtitle')}
+                bgImage={imgHero}
             />
 
             {/* ===== ABOUT HISTORY ===== */}
@@ -112,22 +112,34 @@ const CorporatePage = () => {
                 <div className="container">
                     <Row gutter={[64, 40]} align="middle">
                         <Col xs={24} lg={12} className="reveal">
-                            <span className="section-label"><HistoryOutlined /> {t('corporate.history.title')}</span>
-                            <h2 className="content-title" style={{ fontSize: '2.4rem', lineHeight: '1.2' }}>{t('corporate.history.subtitle')}</h2>
-                            <p className="content-text" style={{ fontSize: '1.1rem', marginBottom: 24 }}>
+                            <span className="section-label">
+                                <HistoryOutlined /> {t('corporate.history.title')}
+                            </span>
+                            <h2
+                                className="content-title"
+                                style={{ fontSize: '2.4rem', lineHeight: '1.2' }}
+                            >
+                                {t('corporate.history.subtitle')}
+                            </h2>
+                            <p
+                                className="content-text"
+                                style={{ fontSize: '1.1rem', marginBottom: 24 }}
+                            >
                                 {t('corporate.history.p1')}
                             </p>
-                            <p className="content-text">
-                                {t('corporate.history.p2')}
-                            </p>
+                            <p className="content-text">{t('corporate.history.p2')}</p>
                             <div className="premium-stats-row">
                                 <div className="premium-stat-item">
                                     <span className="stat-num">2019</span>
-                                    <span className="stat-label">{t('corporate.history.founded')}</span>
+                                    <span className="stat-label">
+                                        {t('corporate.history.founded')}
+                                    </span>
                                 </div>
                                 <div className="premium-stat-item">
                                     <span className="stat-num">50+</span>
-                                    <span className="stat-label">{t('corporate.history.projects')}</span>
+                                    <span className="stat-label">
+                                        {t('corporate.history.projects')}
+                                    </span>
                                 </div>
                             </div>
                         </Col>
@@ -135,13 +147,30 @@ const CorporatePage = () => {
                             <div className="premium-timeline-wrapper">
                                 <Timeline
                                     mode="alternate"
-                                    items={['2019', '2020', '2021', '2022', '2023', '2024', '2025'].map((year, index, arr) => ({
-                                        color: index === arr.length - 1 ? 'var(--color-primary)' : 'var(--color-border)',
-                                        dot: <div className={`timeline-dot ${index === arr.length - 1 ? 'active' : ''}`} />,
+                                    items={[
+                                        '2019',
+                                        '2020',
+                                        '2021',
+                                        '2022',
+                                        '2023',
+                                        '2024',
+                                        '2025',
+                                    ].map((year, index, arr) => ({
+                                        color:
+                                            index === arr.length - 1
+                                                ? 'var(--color-primary)'
+                                                : 'var(--color-border)',
+                                        dot: (
+                                            <div
+                                                className={`timeline-dot ${index === arr.length - 1 ? 'active' : ''}`}
+                                            />
+                                        ),
                                         children: (
                                             <div className="premium-timeline-card">
                                                 <h4 className="timeline-year">{year}</h4>
-                                                <p className="timeline-text">{t(`corporate.history.timeline.${year}`)}</p>
+                                                <p className="timeline-text">
+                                                    {t(`corporate.history.timeline.${year}`)}
+                                                </p>
                                             </div>
                                         ),
                                     }))}
@@ -157,9 +186,19 @@ const CorporatePage = () => {
                 <div className="container">
                     <div className="section-header-split reveal">
                         <div className="header-split-left">
-                            <span className="section-label"><AimOutlined /> {t('corporate.visionMission.title')}</span>
-                            <h2 className="content-title" style={{ textAlign: 'left', marginBottom: 8 }}>{t('corporate.visionMission.subtitle')}</h2>
-                            <p className="content-text" style={{ textAlign: 'left', margin: 0, maxWidth: 600 }}>
+                            <span className="section-label">
+                                <AimOutlined /> {t('corporate.visionMission.title')}
+                            </span>
+                            <h2
+                                className="content-title"
+                                style={{ textAlign: 'left', marginBottom: 8 }}
+                            >
+                                {t('corporate.visionMission.subtitle')}
+                            </h2>
+                            <p
+                                className="content-text"
+                                style={{ textAlign: 'left', margin: 0, maxWidth: 600 }}
+                            >
                                 {t('corporate.visionMission.desc')}
                             </p>
                         </div>
@@ -168,20 +207,34 @@ const CorporatePage = () => {
                     <Row gutter={[32, 32]} className="reveal">
                         <Col xs={24} md={12}>
                             <div className="premium-vm-card">
-                                <div className="vm-icon-wrapper" style={{ background: 'var(--gradient-primary)' }}>
+                                <div
+                                    className="vm-icon-wrapper"
+                                    style={{ background: 'var(--gradient-primary)' }}
+                                >
                                     <EyeOutlined />
                                 </div>
-                                <h3 className="vm-premium-title">{t('corporate.visionMission.visionTitle')}</h3>
-                                <p className="vm-premium-text">{t('corporate.visionMission.visionText')}</p>
+                                <h3 className="vm-premium-title">
+                                    {t('corporate.visionMission.visionTitle')}
+                                </h3>
+                                <p className="vm-premium-text">
+                                    {t('corporate.visionMission.visionText')}
+                                </p>
                             </div>
                         </Col>
                         <Col xs={24} md={12}>
                             <div className="premium-vm-card">
-                                <div className="vm-icon-wrapper" style={{ background: 'var(--gradient-dark)' }}>
+                                <div
+                                    className="vm-icon-wrapper"
+                                    style={{ background: 'var(--gradient-dark)' }}
+                                >
                                     <AimOutlined />
                                 </div>
-                                <h3 className="vm-premium-title">{t('corporate.visionMission.missionTitle')}</h3>
-                                <p className="vm-premium-text">{t('corporate.visionMission.missionText')}</p>
+                                <h3 className="vm-premium-title">
+                                    {t('corporate.visionMission.missionTitle')}
+                                </h3>
+                                <p className="vm-premium-text">
+                                    {t('corporate.visionMission.missionText')}
+                                </p>
                             </div>
                         </Col>
                     </Row>
@@ -193,8 +246,15 @@ const CorporatePage = () => {
                 <div className="container">
                     <div className="section-header-split reveal">
                         <div className="header-split-left">
-                            <span className="section-label"><TrophyOutlined /> {t('corporate.values.title')}</span>
-                            <h2 className="content-title" style={{ textAlign: 'left', marginBottom: 8 }}>{t('corporate.values.subtitle')}</h2>
+                            <span className="section-label">
+                                <TrophyOutlined /> {t('corporate.values.title')}
+                            </span>
+                            <h2
+                                className="content-title"
+                                style={{ textAlign: 'left', marginBottom: 8 }}
+                            >
+                                {t('corporate.values.subtitle')}
+                            </h2>
                         </div>
                     </div>
                     <Row gutter={[24, 24]}>
@@ -229,7 +289,10 @@ const CorporatePage = () => {
                                     className="premium-value-card reveal"
                                     style={{ animationDelay: `${idx * 0.1}s` }}
                                 >
-                                    <div className="value-icon-floating" style={{ color: val.color, background: `${val.color}15` }}>
+                                    <div
+                                        className="value-icon-floating"
+                                        style={{ color: val.color, background: `${val.color}15` }}
+                                    >
                                         {val.icon}
                                     </div>
                                     <h4 className="value-premium-title">{val.title}</h4>
@@ -245,8 +308,12 @@ const CorporatePage = () => {
             <section className="section bank-section" id="corp-bank-faq">
                 <div className="container">
                     <div className="reveal" style={{ textAlign: 'center', marginBottom: 48 }}>
-                        <span className="section-label"><BankOutlined /> {t('corporate.bank.title')}</span>
-                        <h2 className="content-title" style={{ marginTop: 16 }}>{t('corporate.bank.subtitle')}</h2>
+                        <span className="section-label">
+                            <BankOutlined /> {t('corporate.bank.title')}
+                        </span>
+                        <h2 className="content-title" style={{ marginTop: 16 }}>
+                            {t('corporate.bank.subtitle')}
+                        </h2>
                         <p className="content-text" style={{ maxWidth: 560, margin: '0 auto' }}>
                             {t('corporate.bank.desc')}
                         </p>
@@ -254,17 +321,26 @@ const CorporatePage = () => {
                     <Row gutter={[24, 24]}>
                         {bankAccounts.map((acc, idx) => (
                             <Col xs={24} md={8} key={acc.id}>
-                                <div className="bank-card-premium reveal" style={{ animationDelay: `${idx * 0.1}s` }}>
-                                    <div className="bank-card-header" style={{ background: acc.color }}>
+                                <div
+                                    className="bank-card-premium reveal"
+                                    style={{ animationDelay: `${idx * 0.1}s` }}
+                                >
+                                    <div
+                                        className="bank-card-header"
+                                        style={{ background: acc.color }}
+                                    >
                                         <div className="bank-currency-circle">{acc.currency}</div>
                                         <div>
-                                            <div className="bank-currency-name">{acc.currencyLabel}</div>
+                                            <div className="bank-currency-name">
+                                                {acc.currencyLabel}
+                                            </div>
                                             <div className="bank-name-text">{acc.bank}</div>
                                         </div>
                                     </div>
                                     <div className="bank-card-body">
                                         <p className="bank-company-name">
-                                            AQUATİC ELEKTRONİK MAKİNA OTOMASYON SAVUNMA SANAYİ TİC. LTD. ŞTİ.
+                                            AQUATİC ELEKTRONİK MAKİNA OTOMASYON SAVUNMA SANAYİ TİC.
+                                            LTD. ŞTİ.
                                         </p>
                                         <div className="bank-iban-label">IBAN</div>
                                         <div className="bank-iban-row">
@@ -275,14 +351,23 @@ const CorporatePage = () => {
                                                 title="IBAN Kopyala"
                                                 aria-label="IBAN Kopyala"
                                             >
-                                                {copiedIban === acc.id ? <CheckOutlined /> : <CopyOutlined />}
+                                                {copiedIban === acc.id ? (
+                                                    <CheckOutlined />
+                                                ) : (
+                                                    <CopyOutlined />
+                                                )}
                                             </button>
                                         </div>
                                         {copiedIban === acc.id && (
-                                            <p className="bank-copy-feedback">{t('corporate.bank.copied')}</p>
+                                            <p className="bank-copy-feedback">
+                                                {t('corporate.bank.copied')}
+                                            </p>
                                         )}
                                         <div className="bank-branch-row">
-                                            <span>{t('corporate.bank.branchCode')}: <strong>{acc.branchCode}</strong></span>
+                                            <span>
+                                                {t('corporate.bank.branchCode')}:{' '}
+                                                <strong>{acc.branchCode}</strong>
+                                            </span>
                                             <span className="bank-dot">•</span>
                                             <span>{acc.branchName}</span>
                                         </div>
@@ -299,8 +384,13 @@ const CorporatePage = () => {
                 <div className="container">
                     <Row gutter={[64, 40]} align="top">
                         <Col xs={24} lg={8} className="reveal">
-                            <span className="section-label"><QuestionCircleOutlined /> {t('corporate.faq.title')}</span>
-                            <h2 className="content-title" style={{ marginTop: 16, textAlign: 'left' }}>
+                            <span className="section-label">
+                                <QuestionCircleOutlined /> {t('corporate.faq.title')}
+                            </span>
+                            <h2
+                                className="content-title"
+                                style={{ marginTop: 16, textAlign: 'left' }}
+                            >
                                 {t('corporate.faq.subtitle')}
                             </h2>
                             <p className="content-text">{t('corporate.faq.desc')}</p>
@@ -310,7 +400,11 @@ const CorporatePage = () => {
                                 accordion
                                 className="faq-collapse"
                                 expandIcon={({ isActive }) =>
-                                    isActive ? <MinusOutlined className="faq-expand-icon" /> : <PlusOutlined className="faq-expand-icon" />
+                                    isActive ? (
+                                        <MinusOutlined className="faq-expand-icon" />
+                                    ) : (
+                                        <PlusOutlined className="faq-expand-icon" />
+                                    )
                                 }
                                 expandIconPosition="end"
                                 items={['1', '2', '3', '4'].map((key) => ({
@@ -322,7 +416,9 @@ const CorporatePage = () => {
                                         </span>
                                     ),
                                     children: (
-                                        <p className="faq-answer">{t(`corporate.faq.items.${key}.answer`)}</p>
+                                        <p className="faq-answer">
+                                            {t(`corporate.faq.items.${key}.answer`)}
+                                        </p>
                                     ),
                                 }))}
                             />

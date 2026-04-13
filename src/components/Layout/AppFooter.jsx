@@ -2,12 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Row, Col, Space, Divider } from 'antd';
-import {
-    EnvironmentOutlined,
-    PhoneOutlined,
-    MailOutlined,
-    RightOutlined,
-} from '@ant-design/icons';
+import { EnvironmentOutlined, PhoneOutlined, MailOutlined, RightOutlined } from '@ant-design/icons';
 import AquaticLogo from '../../assets/images/logo.webp';
 
 const AppFooter = () => {
@@ -29,7 +24,9 @@ const AppFooter = () => {
                     {/* Brand Column */}
                     <Col xs={24} sm={24} md={8}>
                         <div style={{ marginBottom: 20 }}>
-                            <div style={{ display: 'flex', alignItems: 'center', marginBottom: 16 }}>
+                            <div
+                                style={{ display: 'flex', alignItems: 'center', marginBottom: 16 }}
+                            >
                                 <img
                                     src={AquaticLogo}
                                     alt="Aquatic Logo"
@@ -40,7 +37,13 @@ const AppFooter = () => {
                                     }}
                                 />
                             </div>
-                            <p style={{ color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, fontSize: 14 }}>
+                            <p
+                                style={{
+                                    color: 'rgba(255,255,255,0.85)',
+                                    lineHeight: 1.8,
+                                    fontSize: 14,
+                                }}
+                            >
                                 {t('footer.description')}
                             </p>
                         </div>
@@ -96,15 +99,41 @@ const AppFooter = () => {
                             {t('footer.contactInfo')}
                         </h4>
                         <Space direction="vertical" size={16}>
-                            <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10, color: 'rgba(255,255,255,0.85)', fontSize: 14 }}>
-                                <EnvironmentOutlined style={{ marginTop: 3, color: 'var(--color-accent-light)' }} />
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'flex-start',
+                                    gap: 10,
+                                    color: 'rgba(255,255,255,0.85)',
+                                    fontSize: 14,
+                                }}
+                            >
+                                <EnvironmentOutlined
+                                    style={{ marginTop: 3, color: 'var(--color-accent-light)' }}
+                                />
                                 <span>{t('footer.address')}</span>
                             </div>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'rgba(255,255,255,0.85)', fontSize: 14 }}>
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: 10,
+                                    color: 'rgba(255,255,255,0.85)',
+                                    fontSize: 14,
+                                }}
+                            >
                                 <PhoneOutlined style={{ color: 'var(--color-accent-light)' }} />
                                 <span>+90 262 412 24 42</span>
                             </div>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'rgba(255,255,255,0.85)', fontSize: 14 }}>
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: 10,
+                                    color: 'rgba(255,255,255,0.85)',
+                                    fontSize: 14,
+                                }}
+                            >
                                 <MailOutlined style={{ color: 'var(--color-accent-light)' }} />
                                 <span>bilgi@aquatic.com.tr</span>
                             </div>

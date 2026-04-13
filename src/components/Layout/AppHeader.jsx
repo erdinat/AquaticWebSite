@@ -72,55 +72,59 @@ const AppHeader = () => {
 
     /* Home dropdown sections */
     const homeDropdownItems = [
-        { key: 'home-stats',      icon: <BarChartOutlined />,          label: 'İstatistikler' },
-        { key: 'home-services',   icon: <ToolOutlined />,              label: 'Hizmetler' },
-        { key: 'home-products',   icon: <ShoppingOutlined />,          label: 'Öne Çıkan Ürünler' },
-        { key: 'home-milestones', icon: <StarOutlined />,              label: 'Kilometre Taşları' },
-        { key: 'home-news',       icon: <FileTextOutlined />,          label: 'Son Haberler' },
-        { key: 'home-brands',     icon: <TeamOutlined />,              label: 'Markalar & Referanslar' },
-    ].map(item => ({
+        { key: 'home-stats', icon: <BarChartOutlined />, label: 'İstatistikler' },
+        { key: 'home-services', icon: <ToolOutlined />, label: 'Hizmetler' },
+        { key: 'home-products', icon: <ShoppingOutlined />, label: 'Öne Çıkan Ürünler' },
+        { key: 'home-milestones', icon: <StarOutlined />, label: 'Kilometre Taşları' },
+        { key: 'home-news', icon: <FileTextOutlined />, label: 'Son Haberler' },
+        { key: 'home-brands', icon: <TeamOutlined />, label: 'Markalar & Referanslar' },
+    ].map((item) => ({
         ...item,
         label: <span onClick={() => scrollToSection('/', item.key)}>{item.label}</span>,
     }));
 
     /* Corporate dropdown sections */
     const corporateDropdownItems = [
-        { key: 'corp-history',  icon: <HistoryOutlined />,            label: 'Tarihçemiz' },
-        { key: 'corp-vision',   icon: <AimOutlined />,                label: 'Vizyon & Misyon' },
-        { key: 'corp-values',   icon: <TrophyOutlined />,             label: 'Değerlerimiz' },
-        { key: 'corp-bank-faq', icon: <BankOutlined />,               label: 'Banka Bilgileri' },
-        { key: 'corp-faq',      icon: <QuestionCircleOutlined />,     label: 'Sık Sorulan Sorular' },
-    ].map(item => ({
+        { key: 'corp-history', icon: <HistoryOutlined />, label: 'Tarihçemiz' },
+        { key: 'corp-vision', icon: <AimOutlined />, label: 'Vizyon & Misyon' },
+        { key: 'corp-values', icon: <TrophyOutlined />, label: 'Değerlerimiz' },
+        { key: 'corp-bank-faq', icon: <BankOutlined />, label: 'Banka Bilgileri' },
+        { key: 'corp-faq', icon: <QuestionCircleOutlined />, label: 'Sık Sorulan Sorular' },
+    ].map((item) => ({
         ...item,
         label: <span onClick={() => scrollToSection('/corporate', item.key)}>{item.label}</span>,
     }));
 
     /* Services dropdown */
     const servicesDropdownItems = [
-        { key: 'defence',    icon: <RocketOutlined />,        label: 'Savunma Sanayi' },
-        { key: 'electronics',icon: <AppstoreOutlined />,      label: 'Elektronik & Otomasyon' },
-        { key: 'machinery',  icon: <ToolOutlined />,          label: 'Makina' },
-        { key: 'maritime',   icon: <SafetyCertificateOutlined />, label: 'Denizcilik' },
-    ].map(item => ({
+        { key: 'defence', icon: <RocketOutlined />, label: 'Savunma Sanayi' },
+        { key: 'electronics', icon: <AppstoreOutlined />, label: 'Elektronik & Otomasyon' },
+        { key: 'machinery', icon: <ToolOutlined />, label: 'Makina' },
+        { key: 'maritime', icon: <SafetyCertificateOutlined />, label: 'Denizcilik' },
+    ].map((item) => ({
         ...item,
-        label: (
-            <span onClick={() => navigate(`/services#${item.key}`)}>
-                {item.label}
-            </span>
-        ),
+        label: <span onClick={() => navigate(`/services#${item.key}`)}>{item.label}</span>,
     }));
 
     /* Navigation items */
     const navItems = [
         { key: '/', label: t('nav.home'), icon: <HomeOutlined />, dropdown: homeDropdownItems },
-        { key: '/corporate', label: t('nav.corporate'), icon: <BankOutlined />, dropdown: corporateDropdownItems },
-        { key: '/services', label: t('nav.services'), icon: <AppstoreOutlined />, dropdown: servicesDropdownItems },
+        {
+            key: '/corporate',
+            label: t('nav.corporate'),
+            icon: <BankOutlined />,
+            dropdown: corporateDropdownItems,
+        },
+        {
+            key: '/services',
+            label: t('nav.services'),
+            icon: <AppstoreOutlined />,
+            dropdown: servicesDropdownItems,
+        },
         { key: '/products', label: t('nav.products'), icon: <ShoppingOutlined /> },
         { key: '/blackbox', label: t('nav.blackbox'), icon: <SafetyCertificateOutlined /> },
         { key: '/contact', label: t('nav.contact'), icon: <MailOutlined /> },
     ];
-
-
 
     /* Language dropdown items */
     const langMenuItems = languages.map((lang) => ({
@@ -172,7 +176,10 @@ const AppHeader = () => {
                 </Link>
 
                 {/* Desktop Navigation */}
-                <div className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                <div
+                    className="desktop-nav"
+                    style={{ display: 'flex', alignItems: 'center', gap: 8 }}
+                >
                     <Menu
                         mode="horizontal"
                         selectedKeys={[location.pathname]}
@@ -188,10 +195,19 @@ const AppHeader = () => {
                                         >
                                             <span
                                                 onClick={() => navigate(item.key)}
-                                                style={{ color: textColor, transition: 'color 0.3s', display: 'flex', alignItems: 'center', gap: 4, cursor: 'pointer' }}
+                                                style={{
+                                                    color: textColor,
+                                                    transition: 'color 0.3s',
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    gap: 4,
+                                                    cursor: 'pointer',
+                                                }}
                                             >
                                                 {item.label}
-                                                <DownOutlined style={{ fontSize: 10, opacity: 0.7 }} />
+                                                <DownOutlined
+                                                    style={{ fontSize: 10, opacity: 0.7 }}
+                                                />
                                             </span>
                                         </Dropdown>
                                     ),
@@ -200,7 +216,10 @@ const AppHeader = () => {
                             return {
                                 key: item.key,
                                 label: (
-                                    <Link to={item.key} style={{ color: textColor, transition: 'color 0.3s' }}>
+                                    <Link
+                                        to={item.key}
+                                        style={{ color: textColor, transition: 'color 0.3s' }}
+                                    >
                                         {item.label}
                                     </Link>
                                 ),
@@ -246,7 +265,9 @@ const AppHeader = () => {
             {/* Mobile Drawer */}
             <Drawer
                 title={
-                    <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 20 }}>
+                    <span
+                        style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 20 }}
+                    >
                         AQUATIC
                     </span>
                 }
@@ -266,14 +287,16 @@ const AppHeader = () => {
                                 key: item.key,
                                 icon: item.icon,
                                 label: item.label,
-                                children: item.dropdown.map(sub => ({
+                                children: item.dropdown.map((sub) => ({
                                     key: sub.key,
                                     icon: sub.icon,
                                     label: (
-                                        <span onClick={() => {
-                                            scrollToSection(item.key, sub.key);
-                                            setDrawerOpen(false);
-                                        }}>
+                                        <span
+                                            onClick={() => {
+                                                scrollToSection(item.key, sub.key);
+                                                setDrawerOpen(false);
+                                            }}
+                                        >
                                             {sub.label.props.children}
                                         </span>
                                     ),

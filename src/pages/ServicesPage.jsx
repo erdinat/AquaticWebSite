@@ -95,7 +95,7 @@ const ServicesPage = () => {
         },
     ];
 
-    const activeGroup = serviceGroups.find(g => g.key === activeTab);
+    const activeGroup = serviceGroups.find((g) => g.key === activeTab);
 
     return (
         <div className="services-page">
@@ -112,10 +112,9 @@ const ServicesPage = () => {
 
             <section className="section services-tabs-section">
                 <div className="container">
-
                     {/* ── Tab Selector ── */}
                     <div className="svc-tab-selector reveal">
-                        {serviceGroups.map(group => (
+                        {serviceGroups.map((group) => (
                             <button
                                 key={group.key}
                                 className={`svc-tab-btn${activeTab === group.key ? ' active' : ''}`}
@@ -123,7 +122,9 @@ const ServicesPage = () => {
                                 onClick={() => setActiveTab(group.key)}
                             >
                                 <span className="svc-tab-icon">{group.icon}</span>
-                                <span className="svc-tab-text">{t(`services.${group.key}.title`)}</span>
+                                <span className="svc-tab-text">
+                                    {t(`services.${group.key}.title`)}
+                                </span>
                             </button>
                         ))}
                     </div>
@@ -132,15 +133,21 @@ const ServicesPage = () => {
                     {activeGroup && (
                         <div className="svc-content reveal">
                             <Row gutter={[40, 40]} align="stretch">
-
                                 {/* Left: Info card */}
                                 <Col xs={24} lg={10}>
                                     <div
                                         className="svc-info-panel"
-                                        style={{ '--panel-color': activeGroup.color, '--panel-gradient': activeGroup.gradient }}
+                                        style={{
+                                            '--panel-color': activeGroup.color,
+                                            '--panel-gradient': activeGroup.gradient,
+                                        }}
                                     >
                                         <div className="svc-info-image">
-                                            <img src={activeGroup.image} alt={t(`services.${activeGroup.key}.title`)} loading="lazy" />
+                                            <img
+                                                src={activeGroup.image}
+                                                alt={t(`services.${activeGroup.key}.title`)}
+                                                loading="lazy"
+                                            />
                                             <div className="svc-info-overlay" />
                                         </div>
                                         <div className="svc-info-body">
@@ -157,7 +164,7 @@ const ServicesPage = () => {
                                                 className="svc-info-cta"
                                                 onClick={() => navigate('/contact')}
                                             >
-                                                İletişime Geç <ArrowRightOutlined />
+                                                {t('hero.ctaContact')} <ArrowRightOutlined />
                                             </button>
                                         </div>
                                     </div>
@@ -183,10 +190,14 @@ const ServicesPage = () => {
                                                 </div>
                                                 <div className="svc-item-body">
                                                     <h4 className="svc-item-title">
-                                                        {t(`services.${activeGroup.key}.items.${item}.title`)}
+                                                        {t(
+                                                            `services.${activeGroup.key}.items.${item}.title`
+                                                        )}
                                                     </h4>
                                                     <p className="svc-item-desc">
-                                                        {t(`services.${activeGroup.key}.items.${item}.desc`)}
+                                                        {t(
+                                                            `services.${activeGroup.key}.items.${item}.desc`
+                                                        )}
                                                     </p>
                                                 </div>
                                                 <div className="svc-item-arrow">
@@ -199,7 +210,6 @@ const ServicesPage = () => {
                             </Row>
                         </div>
                     )}
-
                 </div>
             </section>
         </div>

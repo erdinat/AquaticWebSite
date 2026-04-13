@@ -99,18 +99,14 @@ const CareersPage = () => {
 
     const steps = [
         { icon: <FileTextOutlined />, label: t('careers.steps.apply') },
-        { icon: <InboxOutlined />,    label: t('careers.steps.cv') },
+        { icon: <InboxOutlined />, label: t('careers.steps.cv') },
         { icon: <SolutionOutlined />, label: t('careers.steps.review') },
-        { icon: <TeamOutlined />,     label: t('careers.steps.interview') },
+        { icon: <TeamOutlined />, label: t('careers.steps.interview') },
     ];
 
     return (
         <div className="careers-page">
-            <PageSEO
-                titleKey="nav.careers"
-                descriptionKey="careers.subtitle"
-                path="/careers"
-            />
+            <PageSEO titleKey="nav.careers" descriptionKey="careers.subtitle" path="/careers" />
             <PageHero
                 title={t('careers.title')}
                 subtitle={t('careers.subtitle')}
@@ -121,7 +117,9 @@ const CareersPage = () => {
             <section className="section careers-benefits-section">
                 <div className="container">
                     <div className="careers-section-header reveal">
-                        <span className="careers-label"><RocketOutlined /> {t('careers.whyJoin.title')}</span>
+                        <span className="careers-label">
+                            <RocketOutlined /> {t('careers.whyJoin.title')}
+                        </span>
                         <h2 className="careers-title">{t('careers.whyJoin.title')}</h2>
                         <p className="careers-desc">{t('careers.whyJoin.desc')}</p>
                     </div>
@@ -134,7 +132,10 @@ const CareersPage = () => {
                                     style={{ animationDelay: `${idx * 0.1}s` }}
                                 >
                                     <div className="benefit-num">{b.num}</div>
-                                    <div className="benefit-icon-wrap" style={{ background: b.color }}>
+                                    <div
+                                        className="benefit-icon-wrap"
+                                        style={{ background: b.color }}
+                                    >
                                         {b.icon}
                                     </div>
                                     <h3 className="benefit-title">{b.title}</h3>
@@ -150,25 +151,36 @@ const CareersPage = () => {
             <section className="careers-form-section">
                 <div className="container">
                     <div className="careers-form-grid reveal">
-
                         {/* LEFT: Sidebar */}
                         <div className="careers-sidebar">
                             <div className="careers-sidebar-inner">
-                                <span className="careers-sidebar-label"><UserAddOutlined /> {t('careers.application.title')}</span>
-                                <h2 className="careers-sidebar-heading">{t('careers.application.title')}</h2>
-                                <p className="careers-sidebar-desc">{t('careers.application.desc')}</p>
+                                <span className="careers-sidebar-label">
+                                    <UserAddOutlined /> {t('careers.application.title')}
+                                </span>
+                                <h2 className="careers-sidebar-heading">
+                                    {t('careers.application.title')}
+                                </h2>
+                                <p className="careers-sidebar-desc">
+                                    {t('careers.application.desc')}
+                                </p>
 
                                 <div className="careers-steps">
-                                    <div className="careers-steps-title">{t('careers.steps.title')}</div>
+                                    <div className="careers-steps-title">
+                                        {t('careers.steps.title')}
+                                    </div>
                                     {steps.map((step, idx) => (
                                         <div className="careers-step" key={idx}>
                                             <div className="careers-step-circle">
                                                 <span className="careers-step-num">{idx + 1}</span>
                                             </div>
-                                            {idx < steps.length - 1 && <div className="careers-step-line" />}
+                                            {idx < steps.length - 1 && (
+                                                <div className="careers-step-line" />
+                                            )}
                                             <div className="careers-step-content">
                                                 <div className="careers-step-icon">{step.icon}</div>
-                                                <span className="careers-step-label">{step.label}</span>
+                                                <span className="careers-step-label">
+                                                    {step.label}
+                                                </span>
                                             </div>
                                         </div>
                                     ))}
@@ -194,7 +206,9 @@ const CareersPage = () => {
                                         <Form.Item
                                             label={t('contact.name')}
                                             name="name"
-                                            rules={[{ required: true, message: t('contact.required') }]}
+                                            rules={[
+                                                { required: true, message: t('contact.required') },
+                                            ]}
                                         >
                                             <Input
                                                 placeholder={t('contact.name')}
@@ -209,7 +223,10 @@ const CareersPage = () => {
                                             name="email"
                                             rules={[
                                                 { required: true, message: t('contact.required') },
-                                                { type: 'email', message: t('contact.emailInvalid') },
+                                                {
+                                                    type: 'email',
+                                                    message: t('contact.emailInvalid'),
+                                                },
                                             ]}
                                         >
                                             <Input
@@ -235,7 +252,9 @@ const CareersPage = () => {
                                         <Form.Item
                                             label={t('careers.form.position')}
                                             name="position"
-                                            rules={[{ required: true, message: t('contact.required') }]}
+                                            rules={[
+                                                { required: true, message: t('contact.required') },
+                                            ]}
                                         >
                                             <Input
                                                 placeholder={t('careers.form.position')}
@@ -263,7 +282,7 @@ const CareersPage = () => {
                                     label={t('careers.form.cv')}
                                     extra={t('careers.form.cvHint')}
                                     valuePropName="fileList"
-                                    getValueFromEvent={(e) => Array.isArray(e) ? e : e?.fileList}
+                                    getValueFromEvent={(e) => (Array.isArray(e) ? e : e?.fileList)}
                                     rules={[{ required: true, message: t('careers.form.cvError') }]}
                                 >
                                     <Upload.Dragger
@@ -290,15 +309,23 @@ const CareersPage = () => {
                                         }}
                                     >
                                         <div className="dragger-content">
-                                            <div className="dragger-icon"><InboxOutlined /></div>
+                                            <div className="dragger-icon">
+                                                <InboxOutlined />
+                                            </div>
                                             <p className="dragger-text">{t('careers.form.cv')}</p>
-                                            <p className="dragger-hint">PDF, DOC, DOCX · Maks. 40KB</p>
+                                            <p className="dragger-hint">
+                                                PDF, DOC, DOCX · Maks. 40KB
+                                            </p>
                                         </div>
                                     </Upload.Dragger>
                                 </Form.Item>
 
                                 {/* Honeypot field — hidden from real users, bots fill it */}
-                                <Form.Item name="website" style={{ display: 'none' }} aria-hidden="true">
+                                <Form.Item
+                                    name="website"
+                                    style={{ display: 'none' }}
+                                    aria-hidden="true"
+                                >
                                     <Input tabIndex={-1} autoComplete="off" />
                                 </Form.Item>
                                 <Form.Item style={{ marginBottom: 0, marginTop: 8 }}>

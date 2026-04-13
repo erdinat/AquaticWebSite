@@ -58,7 +58,9 @@ const BlackBoxPage = () => {
             title: t('blackbox.specTitle'),
             dataIndex: 'spec',
             key: 'spec',
-            render: (text) => <span style={{ fontWeight: 600, color: 'var(--color-dark)' }}>{text}</span>,
+            render: (text) => (
+                <span style={{ fontWeight: 600, color: 'var(--color-dark)' }}>{text}</span>
+            ),
         },
         {
             title: '',
@@ -96,10 +98,10 @@ const BlackBoxPage = () => {
                 descriptionKey="blackbox.hero.subtitle"
                 path="/blackbox"
             />
-            <PageHero 
-                title={t('blackbox.hero.title')} 
-                subtitle={t('blackbox.hero.subtitle')} 
-                bgImage={imgHero} 
+            <PageHero
+                title={t('blackbox.hero.title')}
+                subtitle={t('blackbox.hero.subtitle')}
+                bgImage={imgHero}
             >
                 <div className="blackbox-badge animate-fadeInDown" style={{ marginBottom: 24 }}>
                     <SafetyCertificateOutlined /> {t('blackbox.hero.badge')}
@@ -120,9 +122,7 @@ const BlackBoxPage = () => {
             <section className="section blackbox-specs-section">
                 <div className="container">
                     <h2 className="section-title reveal">{t('blackbox.specTitle')}</h2>
-                    <p className="section-subtitle reveal">
-                        {t('blackbox.description')}
-                    </p>
+                    <p className="section-subtitle reveal">{t('blackbox.description')}</p>
                     <div className="specs-table-wrapper reveal">
                         <Table
                             columns={columns}
@@ -144,8 +144,14 @@ const BlackBoxPage = () => {
                             <h2 className="content-title reveal">{t('blackbox.features.title')}</h2>
                             <ul className="features-list">
                                 {features.map((feature, index) => (
-                                    <li key={index} className="feature-item reveal" style={{ animationDelay: `${index * 0.1}s` }}>
-                                        <CheckCircleOutlined style={{ color: 'var(--color-primary)', fontSize: 18 }} />
+                                    <li
+                                        key={index}
+                                        className="feature-item reveal"
+                                        style={{ animationDelay: `${index * 0.1}s` }}
+                                    >
+                                        <CheckCircleOutlined
+                                            style={{ color: 'var(--color-primary)', fontSize: 18 }}
+                                        />
                                         <span>{feature}</span>
                                     </li>
                                 ))}
@@ -156,8 +162,12 @@ const BlackBoxPage = () => {
                                 {specKeys.slice(0, 4).map((key) => (
                                     <div className="spec-highlight-card" key={key}>
                                         <div className="spec-highlight-icon">{specIcons[key]}</div>
-                                        <div className="spec-highlight-value">{t(`blackbox.specs.${key}.value`)}</div>
-                                        <div className="spec-highlight-label">{t(`blackbox.specs.${key}.label`)}</div>
+                                        <div className="spec-highlight-value">
+                                            {t(`blackbox.specs.${key}.value`)}
+                                        </div>
+                                        <div className="spec-highlight-label">
+                                            {t(`blackbox.specs.${key}.label`)}
+                                        </div>
                                     </div>
                                 ))}
                             </div>

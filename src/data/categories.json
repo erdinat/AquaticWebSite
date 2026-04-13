@@ -1,18 +1,18 @@
 [
-  {
-    "id": "subsea-connectors",
-    "nameKey": "products.categories.subseaConnectors"
-  },
-  {
-    "id": "underwater-cameras",
-    "nameKey": "products.categories.underwaterCameras"
-  },
-  {
-    "id": "subsea-lights-lasers",
-    "nameKey": "products.categories.subseaLights"
-  },
-  {
-    "id": "rov-accessories",
-    "nameKey": "products.categories.rovAccessories"
-  }
+    {
+        "id": "subsea-connectors",
+        "nameKey": "products.categories.subseaConnectors"
+    },
+    {
+        "id": "underwater-cameras",
+        "nameKey": "products.categories.underwaterCameras"
+    },
+    {
+        "id": "subsea-lights-lasers",
+        "nameKey": "products.categories.subseaLights"
+    },
+    {
+        "id": "rov-accessories",
+        "nameKey": "products.categories.rovAccessories"
+    }
 ]

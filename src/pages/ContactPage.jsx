@@ -38,13 +38,18 @@ const ContactPage = () => {
         setLoading(true);
         try {
             const emailjs = await import('@emailjs/browser');
-            await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-                from_name: values.name,
-                from_email: values.email,
-                phone: values.phone,
-                subject: values.subject,
-                message: values.message,
-            }, EMAILJS_PUBLIC_KEY);
+            await emailjs.send(
+                EMAILJS_SERVICE_ID,
+                EMAILJS_TEMPLATE_ID,
+                {
+                    from_name: values.name,
+                    from_email: values.email,
+                    phone: values.phone,
+                    subject: values.subject,
+                    message: values.message,
+                },
+                EMAILJS_PUBLIC_KEY
+            );
             message.success(t('contact.success'));
             form.resetFields();
         } catch {
@@ -86,11 +91,7 @@ const ContactPage = () => {
 
     return (
         <div className="contact-page">
-            <PageSEO
-                titleKey="nav.contact"
-                descriptionKey="contact.subtitle"
-                path="/contact"
-            />
+            <PageSEO titleKey="nav.contact" descriptionKey="contact.subtitle" path="/contact" />
             <PageHero
                 title={t('contact.title')}
                 subtitle={t('contact.subtitle')}
@@ -101,41 +102,72 @@ const ContactPage = () => {
             <section className="contact-main-section">
                 <div className="container">
                     <div className="contact-main-grid reveal">
-
                         {/* LEFT: Dark sidebar */}
                         <div className="contact-sidebar-panel">
                             <div className="contact-sidebar-inner">
                                 <span className="contact-sidebar-label">{t('contact.title')}</span>
-                                <h2 className="contact-sidebar-heading">{t('contact.formTitle')}</h2>
+                                <h2 className="contact-sidebar-heading">
+                                    {t('contact.formTitle')}
+                                </h2>
                                 <p className="contact-sidebar-desc">{t('contact.subtitle')}</p>
 
                                 <div className="contact-info-list">
-                                    <a href={`tel:${t('contact.kocaeli.phone')}`} className="contact-info-item">
-                                        <div className="contact-info-icon"><PhoneOutlined /></div>
+                                    <a
+                                        href={`tel:${t('contact.kocaeli.phone')}`}
+                                        className="contact-info-item"
+                                    >
+                                        <div className="contact-info-icon">
+                                            <PhoneOutlined />
+                                        </div>
                                         <div>
-                                            <div className="contact-info-label">{t('contact.phone')}</div>
-                                            <div className="contact-info-value">{t('contact.kocaeli.phone')}</div>
+                                            <div className="contact-info-label">
+                                                {t('contact.phone')}
+                                            </div>
+                                            <div className="contact-info-value">
+                                                {t('contact.kocaeli.phone')}
+                                            </div>
                                         </div>
                                     </a>
-                                    <a href={`mailto:${t('contact.kocaeli.email')}`} className="contact-info-item">
-                                        <div className="contact-info-icon"><MailOutlined /></div>
+                                    <a
+                                        href={`mailto:${t('contact.kocaeli.email')}`}
+                                        className="contact-info-item"
+                                    >
+                                        <div className="contact-info-icon">
+                                            <MailOutlined />
+                                        </div>
                                         <div>
-                                            <div className="contact-info-label">{t('contact.email')}</div>
-                                            <div className="contact-info-value">{t('contact.kocaeli.email')}</div>
+                                            <div className="contact-info-label">
+                                                {t('contact.email')}
+                                            </div>
+                                            <div className="contact-info-value">
+                                                {t('contact.kocaeli.email')}
+                                            </div>
                                         </div>
                                     </a>
                                     <div className="contact-info-item">
-                                        <div className="contact-info-icon"><EnvironmentOutlined /></div>
+                                        <div className="contact-info-icon">
+                                            <EnvironmentOutlined />
+                                        </div>
                                         <div>
-                                            <div className="contact-info-label">{t('contact.address')}</div>
-                                            <div className="contact-info-value">{t('contact.kocaeli.address')}</div>
+                                            <div className="contact-info-label">
+                                                {t('contact.address')}
+                                            </div>
+                                            <div className="contact-info-value">
+                                                {t('contact.kocaeli.address')}
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="contact-info-item">
-                                        <div className="contact-info-icon"><ClockCircleOutlined /></div>
+                                        <div className="contact-info-icon">
+                                            <ClockCircleOutlined />
+                                        </div>
                                         <div>
-                                            <div className="contact-info-label">{t('contact.hours')}</div>
-                                            <div className="contact-info-value">{t('contact.hoursValue')}</div>
+                                            <div className="contact-info-label">
+                                                {t('contact.hours')}
+                                            </div>
+                                            <div className="contact-info-value">
+                                                {t('contact.hoursValue')}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -156,12 +188,16 @@ const ContactPage = () => {
                                         <Form.Item
                                             label={t('contact.name')}
                                             name="name"
-                                            rules={[{ required: true, message: t('contact.required') }]}
+                                            rules={[
+                                                { required: true, message: t('contact.required') },
+                                            ]}
                                         >
                                             <Input
                                                 placeholder={t('contact.name')}
                                                 className="contact-input"
-                                                prefix={<span className="input-prefix-icon">👤</span>}
+                                                prefix={
+                                                    <span className="input-prefix-icon">👤</span>
+                                                }
                                             />
                                         </Form.Item>
                                     </Col>
@@ -171,13 +207,18 @@ const ContactPage = () => {
                                             name="email"
                                             rules={[
                                                 { required: true, message: t('contact.required') },
-                                                { type: 'email', message: t('contact.emailInvalid') },
+                                                {
+                                                    type: 'email',
+                                                    message: t('contact.emailInvalid'),
+                                                },
                                             ]}
                                         >
                                             <Input
                                                 placeholder={t('contact.email')}
                                                 className="contact-input"
-                                                prefix={<MailOutlined className="input-prefix-icon" />}
+                                                prefix={
+                                                    <MailOutlined className="input-prefix-icon" />
+                                                }
                                             />
                                         </Form.Item>
                                     </Col>
@@ -188,7 +229,9 @@ const ContactPage = () => {
                                             <Input
                                                 placeholder={t('contact.phone')}
                                                 className="contact-input"
-                                                prefix={<PhoneOutlined className="input-prefix-icon" />}
+                                                prefix={
+                                                    <PhoneOutlined className="input-prefix-icon" />
+                                                }
                                             />
                                         </Form.Item>
                                     </Col>
@@ -196,7 +239,9 @@ const ContactPage = () => {
                                         <Form.Item
                                             label={t('contact.subject')}
                                             name="subject"
-                                            rules={[{ required: true, message: t('contact.required') }]}
+                                            rules={[
+                                                { required: true, message: t('contact.required') },
+                                            ]}
                                         >
                                             <Input
                                                 placeholder={t('contact.subject')}
@@ -217,7 +262,11 @@ const ContactPage = () => {
                                     />
                                 </Form.Item>
                                 {/* Honeypot field — hidden from real users, bots fill it */}
-                                <Form.Item name="website" style={{ display: 'none' }} aria-hidden="true">
+                                <Form.Item
+                                    name="website"
+                                    style={{ display: 'none' }}
+                                    aria-hidden="true"
+                                >
                                     <Input tabIndex={-1} autoComplete="off" />
                                 </Form.Item>
                                 <Form.Item style={{ marginBottom: 0 }}>
@@ -242,14 +291,22 @@ const ContactPage = () => {
             <section className="offices-section">
                 <div className="container">
                     <div className="offices-header reveal">
-                        <span className="section-label"><EnvironmentOutlined /> {t('contact.locationsTitle')}</span>
+                        <span className="section-label">
+                            <EnvironmentOutlined /> {t('contact.locationsTitle')}
+                        </span>
                     </div>
                     <Row gutter={[24, 24]}>
                         {locations.map((loc, idx) => (
                             <Col xs={24} md={8} key={loc.key}>
-                                <div className="office-card reveal" style={{ animationDelay: `${idx * 0.1}s` }}>
+                                <div
+                                    className="office-card reveal"
+                                    style={{ animationDelay: `${idx * 0.1}s` }}
+                                >
                                     <div className="office-card-top">
-                                        <div className="office-icon-wrap" style={{ background: loc.color }}>
+                                        <div
+                                            className="office-icon-wrap"
+                                            style={{ background: loc.color }}
+                                        >
                                             {loc.icon}
                                         </div>
                                         <h3 className="office-title">{loc.title}</h3>
@@ -261,11 +318,15 @@ const ContactPage = () => {
                                         </div>
                                         <div className="office-detail">
                                             <PhoneOutlined className="office-detail-icon" />
-                                            <a href={`tel:${loc.phone}`} className="office-link">{loc.phone}</a>
+                                            <a href={`tel:${loc.phone}`} className="office-link">
+                                                {loc.phone}
+                                            </a>
                                         </div>
                                         <div className="office-detail">
                                             <MailOutlined className="office-detail-icon" />
-                                            <a href={`mailto:${loc.email}`} className="office-link">{loc.email}</a>
+                                            <a href={`mailto:${loc.email}`} className="office-link">
+                                                {loc.email}
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

@@ -14,7 +14,14 @@ const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 /* Loading fallback */
 const LoadingFallback = () => (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '60vh' }}>
+    <div
+        style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            minHeight: '60vh',
+        }}
+    >
         <Spin size="large" />
     </div>
 );

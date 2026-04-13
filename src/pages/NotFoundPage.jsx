@@ -10,7 +10,14 @@ const NotFoundPage = () => {
     const { t } = useTranslation();
 
     return (
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '70vh' }}>
+        <div
+            style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                minHeight: '70vh',
+            }}
+        >
             <Helmet>
                 <title>404 – Sayfa Bulunamadı | Aquatic</title>
                 <meta name="robots" content="noindex, nofollow" />

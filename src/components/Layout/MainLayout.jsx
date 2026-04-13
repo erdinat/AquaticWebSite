@@ -14,9 +14,7 @@ const MainLayout = ({ children }) => {
         <Layout style={{ minHeight: '100vh', background: 'var(--color-bg)' }}>
             <AppHeader />
             <Content style={{ marginTop: 0 }}>
-                <div className="page-enter">
-                    {children}
-                </div>
+                <div className="page-enter">{children}</div>
             </Content>
             <AppFooter />
         </Layout>
