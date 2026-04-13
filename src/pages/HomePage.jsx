@@ -185,13 +185,13 @@ const HomePage = () => {
     const [newsError, setNewsError] = useState(false);
 
     useEffect(() => {
-        const apiKey = import.meta.env.VITE_NEWSDATA_API_KEY;
+        const apiKey = (import.meta.env.VITE_NEWSDATA_API_KEY ?? '').trim();
         if (!apiKey) {
             setNewsLoading(false);
             setNewsError(true);
             return;
         }
-        const url = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=savunma+sanayi+OR+denizcilik+OR+underwater+defense&language=tr,en&category=technology,science&size=3`;
+        const url = `https://newsdata.io/api/1/news?apikey=${apiKey}&q=defense+technology&language=en&category=technology&size=3`;
         fetch(url)
             .then((res) => {
                 if (!res.ok) throw new Error(`HTTP ${res.status}`);
