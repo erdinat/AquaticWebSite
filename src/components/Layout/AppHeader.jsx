@@ -274,7 +274,7 @@ const AppHeader = () => {
                 placement="right"
                 onClose={() => setDrawerOpen(false)}
                 open={drawerOpen}
-                width={300}
+                style={{ width: 300 }}
                 closeIcon={<CloseOutlined />}
                 styles={{ body: { padding: 0 } }}
             >

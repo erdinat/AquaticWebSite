@@ -98,7 +98,7 @@ const AppFooter = () => {
                         >
                             {t('footer.contactInfo')}
                         </h4>
-                        <Space direction="vertical" size={16}>
+                        <Space orientation="vertical" size={16}>
                             <div
                                 style={{
                                     display: 'flex',

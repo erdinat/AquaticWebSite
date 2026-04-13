@@ -160,12 +160,12 @@ const CorporatePage = () => {
                                             index === arr.length - 1
                                                 ? 'var(--color-primary)'
                                                 : 'var(--color-border)',
-                                        dot: (
+                                        icon: (
                                             <div
                                                 className={`timeline-dot ${index === arr.length - 1 ? 'active' : ''}`}
                                             />
                                         ),
-                                        children: (
+                                        content: (
                                             <div className="premium-timeline-card">
                                                 <h4 className="timeline-year">{year}</h4>
                                                 <p className="timeline-text">
@@ -406,7 +406,7 @@ const CorporatePage = () => {
                                         <PlusOutlined className="faq-expand-icon" />
                                     )
                                 }
-                                expandIconPosition="end"
+                                expandIconPlacement="end"
                                 items={['1', '2', '3', '4'].map((key) => ({
                                     key,
                                     label: (

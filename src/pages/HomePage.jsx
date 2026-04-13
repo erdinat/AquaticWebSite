@@ -30,7 +30,7 @@ import imgDefence from '../assets/images/savunmasanayi.webp';
 import imgElectronics from '../assets/images/elektrik.webp';
 import imgMachinery from '../assets/images/makina.webp';
 import imgMaritime from '../assets/images/denizcilik.webp';
-import imgHeroBg from '../assets/images/products/main.webp';
+const imgHeroBg = '/hero.webp'; // public/ — stable URL, preloaded in index.html
 import brandAslan from '../assets/images/brands/aslan-cimento.webp';
 import brandBilgem from '../assets/images/brands/bilgem.webp';
 import brandDalgakiran from '../assets/images/brands/dalgakiran.webp';
