@@ -39,7 +39,8 @@
         "maritime": {
             "title": "Maritime",
             "desc": "Supporting the maritime sector with pipe outfitting and ship machinery operations."
-        }
+        },
+        "sectionLabel": "Our Services"
     },
     "corporate": {
         "title": "Corporate",
@@ -474,6 +475,7 @@
         "subtitle": "The most up-to-date news and developments in the industry"
     },
     "popularProducts": {
+        "sectionLabel": "Our Products",
         "title": "Our Popular Products",
         "subtitle": "Some of our most in-demand solutions in defense, underwater systems, electronics, and machinery.",
         "viewAll": "View All",
@@ -510,6 +512,29 @@
             "subjectPrefix": "Career Application",
             "positionLabel": "Position",
             "messageLabel": "Message"
+        }
+    },
+    "dropdown": {
+        "home": {
+            "stats": "Statistics",
+            "services": "Services",
+            "products": "Featured Products",
+            "milestones": "Milestones",
+            "news": "Latest News",
+            "brands": "Brands & References"
+        },
+        "corporate": {
+            "history": "About Us",
+            "vision": "Vision & Mission",
+            "values": "Our Values",
+            "bank": "Bank Information",
+            "faq": "FAQ"
+        },
+        "services": {
+            "defence": "Defense Industry",
+            "electronics": "Electronics & Automation",
+            "machinery": "Machinery",
+            "maritime": "Maritime"
         }
     }
 }

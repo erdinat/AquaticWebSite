@@ -296,7 +296,7 @@ const HomePage = () => {
                     <div className="section-header-split reveal">
                         <div>
                             <span className="section-label">
-                                <AppstoreOutlined /> Hizmetlerimiz
+                                <AppstoreOutlined /> {t('servicesPreview.sectionLabel')}
                             </span>
                             <h2
                                 className="section-title"
@@ -350,7 +350,7 @@ const HomePage = () => {
                     <div className="section-header-split reveal">
                         <div className="header-split-left">
                             <span className="section-label">
-                                <ShoppingOutlined /> Ürünlerimiz
+                                <ShoppingOutlined /> {t('popularProducts.sectionLabel')}
                             </span>
                             <h2
                                 className="section-title"

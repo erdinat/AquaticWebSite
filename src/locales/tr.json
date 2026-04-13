@@ -39,7 +39,8 @@
         "maritime": {
             "title": "Denizcilik",
             "desc": "Boru donatım ve gemi makine faaliyetleriyle denizcilik sektörüne destek."
-        }
+        },
+        "sectionLabel": "Hizmetlerimiz"
     },
     "corporate": {
         "title": "Kurumsal",
@@ -473,7 +474,31 @@
         "title": "Son Gelişmeler",
         "subtitle": "Sektördeki en güncel haberler ve gelişmeler"
     },
+    "dropdown": {
+        "home": {
+            "stats": "İstatistikler",
+            "services": "Hizmetler",
+            "products": "Öne Çıkan Ürünler",
+            "milestones": "Kilometre Taşları",
+            "news": "Son Haberler",
+            "brands": "Markalar & Referanslar"
+        },
+        "corporate": {
+            "history": "Tarihçemiz",
+            "vision": "Vizyon & Misyon",
+            "values": "Değerlerimiz",
+            "bank": "Banka Bilgileri",
+            "faq": "Sık Sorulan Sorular"
+        },
+        "services": {
+            "defence": "Savunma Sanayi",
+            "electronics": "Elektronik & Otomasyon",
+            "machinery": "Makina",
+            "maritime": "Denizcilik"
+        }
+    },
     "popularProducts": {
+        "sectionLabel": "Ürünlerimiz",
         "title": "Popüler Ürünlerimiz",
         "subtitle": "Savunma sanayi, sualtı sistemleri, elektronik ve makine alanlarında en çok talep gören çözümlerimizden bazıları.",
         "viewAll": "Tümünü İncele",

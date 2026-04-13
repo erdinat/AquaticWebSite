@@ -72,12 +72,12 @@ const AppHeader = () => {
 
     /* Home dropdown sections */
     const homeDropdownItems = [
-        { key: 'home-stats', icon: <BarChartOutlined />, label: 'İstatistikler' },
-        { key: 'home-services', icon: <ToolOutlined />, label: 'Hizmetler' },
-        { key: 'home-products', icon: <ShoppingOutlined />, label: 'Öne Çıkan Ürünler' },
-        { key: 'home-milestones', icon: <StarOutlined />, label: 'Kilometre Taşları' },
-        { key: 'home-news', icon: <FileTextOutlined />, label: 'Son Haberler' },
-        { key: 'home-brands', icon: <TeamOutlined />, label: 'Markalar & Referanslar' },
+        { key: 'home-stats', icon: <BarChartOutlined />, label: t('dropdown.home.stats') },
+        { key: 'home-services', icon: <ToolOutlined />, label: t('dropdown.home.services') },
+        { key: 'home-products', icon: <ShoppingOutlined />, label: t('dropdown.home.products') },
+        { key: 'home-milestones', icon: <StarOutlined />, label: t('dropdown.home.milestones') },
+        { key: 'home-news', icon: <FileTextOutlined />, label: t('dropdown.home.news') },
+        { key: 'home-brands', icon: <TeamOutlined />, label: t('dropdown.home.brands') },
     ].map((item) => ({
         ...item,
         label: <span onClick={() => scrollToSection('/', item.key)}>{item.label}</span>,
@@ -85,11 +85,11 @@ const AppHeader = () => {
 
     /* Corporate dropdown sections */
     const corporateDropdownItems = [
-        { key: 'corp-history', icon: <HistoryOutlined />, label: 'Tarihçemiz' },
-        { key: 'corp-vision', icon: <AimOutlined />, label: 'Vizyon & Misyon' },
-        { key: 'corp-values', icon: <TrophyOutlined />, label: 'Değerlerimiz' },
-        { key: 'corp-bank-faq', icon: <BankOutlined />, label: 'Banka Bilgileri' },
-        { key: 'corp-faq', icon: <QuestionCircleOutlined />, label: 'Sık Sorulan Sorular' },
+        { key: 'corp-history', icon: <HistoryOutlined />, label: t('dropdown.corporate.history') },
+        { key: 'corp-vision', icon: <AimOutlined />, label: t('dropdown.corporate.vision') },
+        { key: 'corp-values', icon: <TrophyOutlined />, label: t('dropdown.corporate.values') },
+        { key: 'corp-bank-faq', icon: <BankOutlined />, label: t('dropdown.corporate.bank') },
+        { key: 'corp-faq', icon: <QuestionCircleOutlined />, label: t('dropdown.corporate.faq') },
     ].map((item) => ({
         ...item,
         label: <span onClick={() => scrollToSection('/corporate', item.key)}>{item.label}</span>,
@@ -97,10 +97,10 @@ const AppHeader = () => {
 
     /* Services dropdown */
     const servicesDropdownItems = [
-        { key: 'defence', icon: <RocketOutlined />, label: 'Savunma Sanayi' },
-        { key: 'electronics', icon: <AppstoreOutlined />, label: 'Elektronik & Otomasyon' },
-        { key: 'machinery', icon: <ToolOutlined />, label: 'Makina' },
-        { key: 'maritime', icon: <SafetyCertificateOutlined />, label: 'Denizcilik' },
+        { key: 'defence', icon: <RocketOutlined />, label: t('dropdown.services.defence') },
+        { key: 'electronics', icon: <AppstoreOutlined />, label: t('dropdown.services.electronics') },
+        { key: 'machinery', icon: <ToolOutlined />, label: t('dropdown.services.machinery') },
+        { key: 'maritime', icon: <SafetyCertificateOutlined />, label: t('dropdown.services.maritime') },
     ].map((item) => ({
         ...item,
         label: <span onClick={() => navigate(`/services#${item.key}`)}>{item.label}</span>,
