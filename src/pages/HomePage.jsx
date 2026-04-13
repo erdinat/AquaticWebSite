@@ -202,16 +202,19 @@ const HomePage = () => {
                 setNewsItems(
                     data.results.map((article, i) => ({
                         id: `nd-${i}`,
-                        tag: article.category?.[0] ?? 'Teknoloji',
+                        tag: article.category?.[0] ?? 'technology',
                         date: article.pubDate
                             ? new Date(article.pubDate).toLocaleDateString('tr-TR', {
                                   year: 'numeric',
                                   month: 'long',
+                                  day: 'numeric',
                               })
                             : '',
                         title: article.title ?? '',
                         desc: article.description ?? '',
                         url: article.link ?? null,
+                        image: article.image_url ?? null,
+                        source: article.source_name ?? null,
                     }))
                 );
             })
@@ -508,8 +511,27 @@ const HomePage = () => {
                                 return (
                                     <Col xs={24} md={8} key={item.id}>
                                         <Tag {...linkProps} className="news-card reveal">
+                                            {item.image && (
+                                                <div className="news-card-image">
+                                                    <img
+                                                        src={item.image}
+                                                        alt={item.title}
+                                                        loading="lazy"
+                                                        onError={(e) => {
+                                                            e.target.closest('.news-card-image').style.display = 'none';
+                                                        }}
+                                                    />
+                                                    <div className="news-card-image-overlay" />
+                                                    <span className="news-card-tag">{item.tag}</span>
+                                                </div>
+                                            )}
                                             <div className="news-card-inner">
-                                                <span className="news-card-tag">{item.tag}</span>
+                                                {!item.image && (
+                                                    <span className="news-card-tag">{item.tag}</span>
+                                                )}
+                                                {item.source && (
+                                                    <div className="news-card-source">{item.source}</div>
+                                                )}
                                                 <div className="news-card-date">{item.date}</div>
                                                 <h3 className="news-card-title">{item.title}</h3>
                                                 <p className="news-card-desc">{item.desc}</p>
