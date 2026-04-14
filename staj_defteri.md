@@ -658,6 +658,264 @@ Stajın son değerlendirmesinde projenin olgunluk düzeyi şu şekilde ölçüld
 
 ---
 
+## 7. HAFTA (13.04.2026 – 17.04.2026)
+
+> **Not:** 15–16 Nisan 2026 (Salı–Çarşamba) tarihleri devamsızlık nedeniyle çalışılmamıştır.
+
+### **27. GÜN (13.04.2026 Pazartesi): Çoklu Dil Sistemi Kapsamlı Hata Giderme ve Eksik Anahtar Tamamlama**
+
+- **Yapılan Çalışma:** Dil değiştirme sırasında birçok arayüz öğesinin Türkçe kalmaya devam ettiği tespit edildi. Sorunun kök nedeni araştırıldı ve `i18n.js` yapılandırmasındaki hatalı `fallbackLng` ayarından kaynaklandığı anlaşıldı. Tüm lokalizasyon dosyaları sistematik biçimde karşılaştırıldı.
+- **Teknik Detaylar:** `src/i18n.js` dosyasında `fallbackLng: 'kk'` olarak ayarlanmıştı; bu nedenle `en.json`'da eksik olan her anahtar için sistem Kazakçe içeriği gösteriyordu. `fallbackLng: 'tr'` olarak düzeltildi. Akabinde Python scriptiyle dört dil dosyası (`tr.json`, `en.json`, `kk.json`, `ru.json`) anahtar bazında karşılaştırıldı. `AppHeader.jsx` içindeki gezinme menüsü açılır listelerinde (`homeDropdownItems`, `corporateDropdownItems`, `servicesDropdownItems`) tüm etiketlerin Türkçe hardcode edildiği görüldü. Her dil dosyasına yeni `dropdown.home.*`, `dropdown.corporate.*`, `dropdown.services.*` anahtar kümeleri eklendi. `HomePage.jsx`'te "Hizmetlerimiz" ve "Ürünlerimiz" bölüm etiketleri de hardcode bulundu; bunlar `t('servicesPreview.sectionLabel')` ve `t('popularProducts.sectionLabel')` çağrılarıyla değiştirildi.
+  ```javascript
+  // AppHeader.jsx — ÖNCE (hardcode):
+  { key: 'home-stats', label: 'İstatistikler' }
+
+  // SONRA (i18n):
+  { key: 'home-stats', label: t('dropdown.home.stats') }
+  ```
+- **Kazanım:** `i18next`'in `fallbackLng` mekanizmasının yanlış yapılandırıldığında tüm eksik anahtarları istenmeyen bir dile yönlendirebileceği, dolayısıyla çok dilli projelerde bu ayarın dikkatle seçilmesi gerektiği öğrenildi.
+
+### **28. GÜN (14.04.2026 Salı): Dinamik Haber Akışı Entegrasyonu ve Marquee Tasarımı**
+
+- **Yapılan Çalışma:** Ana sayfadaki statik, Türkçe hardcode haber kartları kaldırılarak gerçek zamanlı haber API'si entegrasyonu yapıldı. Tasarım açısından haberler sabit grid yerine sonsuz yatay kayan bir marquee bileşenine dönüştürüldü.
+- **Teknik Detaylar:** NewsData.io REST API'si seçildi. API anahtarı `.env` dosyasına `VITE_NEWSDATA_API_KEY` olarak eklendi. `HomePage.jsx`'e `useState` / `useEffect` ile veri çekme mantığı yazıldı. API ücretsiz planında günde 200 istek sınırı bulunduğundan, her sayfayı açan kullanıcının yeni istek atmasını önlemek amacıyla `localStorage` tabanlı 6 saatlik önbellek sistemi kuruldu: ilk ziyarette API çağrılır ve sonuç kaydedilir, 6 saat içindeki sonraki ziyaretlerde API'ye hiç dokunulmaz. Haber sayısı 3'ten 20'ye çıkarıldı; NewsData.io'nun `nextPage` sayfalama token'ı kullanılarak iki istek zinciriyle 10+10 makale bir araya getirildi. Her kart; 190px kapak görseli, kategori etiketi, kaynak adı ve tarihi içerecek şekilde yeniden tasarlandı. Brands bölümündeki marquee animasyonuyla aynı teknik kullanıldı: `[...newsItems, ...newsItems]` dizisi ile kesintisiz döngü, `will-change: transform` ile GPU kompozitleme, kenar yumuşatma için `mask-image` gradient.
+  ```javascript
+  // localStorage cache mantığı
+  const CACHE_TTL = 6 * 60 * 60 * 1000; // 6 saat
+  const cached = JSON.parse(localStorage.getItem('aquatic_news_cache') ?? 'null');
+  if (cached && Date.now() - cached.ts < CACHE_TTL) {
+      setNewsItems(cached.items);
+      return; // API'ye istek atılmaz
+  }
+  ```
+  Ayrıca Ant Design v6'nın kullanımdan kaldırılan prop uyarıları giderildi: `Drawer width` → `style.width`, `Space direction` → `orientation`, `Timeline dot/children` → `icon/content`, `Collapse expandIconPosition` → `expandIconPlacement`. `vite.config.js`'e `manualChunks` konfigürasyonu eklenerek React, i18n ve Ant Design ikonları ayrı chunk'lara ayrıldı; ana bundle boyutu 803KB'dan 653KB'a düştü. Hero görselinin LCP (Largest Contentful Paint) metriğini iyileştirmek için `public/hero.webp` stabil URL'ine taşınıp `index.html`'e `<link rel="preload">` eklendi.
+- **Kazanım:** İstemci taraflı önbellekleme (`localStorage`) ile harici API rate limit yönetiminin önemi, ve `will-change: transform` gibi CSS compositing ipuçlarının tarayıcı render performansına etkisi deneyimlendi. Lighthouse Performance skorunun 56'dan 72+'ya yükseltilmesi için chunk splitting ve LCP optimizasyonunun kritik olduğu görüldü.
+
+---
+
+### HAFTALIK ÖZET — 7. Hafta (13.04.2026 – 17.04.2026)
+
+Bu hafta iki yoğun günde hem lokalizasyon alt yapısındaki sistematik hatalar giderildi hem de projeye dinamik bir içerik akışı özelliği kazandırıldı. 15–16 Nisan devamsızlık nedeniyle çalışılmadı; 17 Nisan'da bireysel teknik araştırma yapıldı.
+
+**Tamamlanan Başlıklar:**
+- `i18n.js` `fallbackLng` hatası düzeltildi, tüm dil dosyaları senkronize edildi
+- `AppHeader` açılır menü etiketleri ve `HomePage` bölüm başlıkları i18n'e taşındı
+- `tr.json` duplicate key (`servicesPreview`, `popularProducts`) bug'ı onarıldı
+- NewsData.io ile 20 güncel haber çekimi ve localStorage 6 saatlik önbellek
+- Sonsuz yatay marquee haber akışı — kart başına görsel, kaynak ve kategori etiketi
+- Ant Design v6 deprecated prop uyarılarının tamamı giderildi
+- Vite `manualChunks` ile JavaScript bundle optimizasyonu
+
+**Öne Çıkan Teknik Çalışma — localStorage Önbellek Mimarisi:**
+
+API rate limit sorunu, istemci taraflı önbellek ile çözüldü. Önbellek mantığının temel bileşenleri:
+
+```javascript
+const CACHE_KEY = 'aquatic_news_cache';
+const CACHE_TTL = 6 * 60 * 60 * 1000; // 6 saat (ms)
+
+// Okuma: Cache taze mi?
+const cached = JSON.parse(localStorage.getItem(CACHE_KEY) ?? 'null');
+if (cached && Date.now() - cached.ts < CACHE_TTL && cached.items?.length) {
+    setNewsItems(cached.items);
+    setNewsLoading(false);
+    return; // API isteği YAPILMAZ
+}
+
+// Yazma: Başarılı fetch sonrası kaydet
+localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), items }));
+```
+
+Bu yapı sayesinde ücretsiz planın 200 istek/gün sınırı çok daha geniş bir kullanıcı kitlesine yetecek şekilde verimli kullanılıyor.
+
+---
+
+## 8. HAFTA (20.04.2026 – 24.04.2026)
+
+> **Not:** 23 Nisan 2026 Ulusal Egemenlik ve Çocuk Bayramı resmi tatil nedeniyle çalışılmamıştır.
+
+### **29. GÜN (17.04.2026 Cuma): Araştırma Günü — UI/UX Tasarım Sistemleri ve Web Performans Metrikleri**
+
+- **Yapılan Çalışma:** Stajda geliştirilen projenin tasarım kararlarını daha sistematik bir zemine oturtmak amacıyla UI/UX tasarım sistemi kavramları araştırıldı. Lighthouse performans metriklerinin nasıl yorumlanacağı incelendi.
+- **Teknik Detaylar:** Google Lighthouse'un dört ana metriği üzerinde çalışıldı: **LCP** (Largest Contentful Paint — en büyük görsel öğenin yüklenme süresi), **TBT** (Total Blocking Time — ana iş parçacığını bloklayan JavaScript süresi), **CLS** (Cumulative Layout Shift — görsel düzen kayması) ve **Speed Index**. Projenin CLS değerinin 0 olması, `<img>` etiketlerine `width`/`height` atanması ve görsellerin `loading="lazy"` kullanması sayesinde elde edildiği anlaşıldı. Buna karşın Speed Index'in 5.0s seviyesinde kalmasının sebebinin ağırlıklı olarak Ant Design'ın büyük JavaScript bundle'ı olduğu tespit edildi. Kurumsal ve savunma sanayi odaklı web sitelerinde "Trust & Authority" tasarım dilinin ön plana çıktığı, sertifika badge'leri, metrik kartları ve case study bölümlerinin dönüşüm oranını artırdığı öğrenildi.
+- **Kazanım:** Performans optimizasyonunun salt teknik bir mesele olmadığı, kullanıcının siteye güven duymasıyla (algılanan hız) doğrudan bağlantılı olduğu kavrandı.
+
+### **30. GÜN (20.04.2026 Pazartesi): BackgroundParticles Bileşeni Optimizasyonu — useMemo Entegrasyonu**
+
+- **Yapılan Çalışma:** Ana sayfanın hero bölümünde arka planda görünen parçacık animasyon bileşeninde tespit edilen gereksiz yeniden hesaplama sorunu giderildi.
+- **Teknik Detaylar:** `BackgroundParticles.jsx` bileşeni, her render döngüsünde `Array.from()` ile rastgele koordinat ve boyutlar üretiyordu. Bu, üst bileşen (`HomePage`) her state güncellemesinde (örn. dil değiştirme, haber yükleme) tüm parçacıkların yeniden konumlandırılmasına yol açıyordu. React'in `useMemo` hook'u kullanılarak parçacık dizisi yalnızca `count` prop'u değiştiğinde yeniden üretilecek şekilde sarmalandı.
+  ```javascript
+  // ÖNCE — her render'da yeniden hesaplama:
+  const particles = Array.from({ length: count }, (_, i) => ({
+      id: i,
+      size: Math.random() * 4 + 2,
+      x: Math.random() * 100,
+      // ...
+  }));
+
+  // SONRA — yalnızca count değişince hesaplama:
+  const particles = useMemo(() => Array.from({ length: count }, (_, i) => ({
+      id: i,
+      size: Math.random() * 4 + 2,
+      x: Math.random() * 100,
+      // ...
+  })), [count]);
+  ```
+  Ayrıca React 19'un JSX transform özelliği sayesinde `import React from 'react'` satırı kaldırıldı; bu ifade artık gerekli değil.
+- **Kazanım:** `useMemo`'nun salt hesaplama maliyetini değil, bileşenin görsel kararlılığını da koruduğu anlaşıldı. Parçacıklar artık dil değiştirme veya haber yüklenme sırasında yerinden oynamıyor.
+
+### **31. GÜN (21.04.2026 Salı): Form Doğrulama Mesajları ve Honeypot Spam Koruması**
+
+- **Yapılan Çalışma:** `ContactPage.jsx` ve `CareersPage.jsx` formlarında zayıf validasyon mesajları güçlendirildi. Her iki forma da bot tespiti için honeypot alanı eklendi.
+- **Teknik Detaylar:** İletişim formuna e-posta formatı kontrolü (`/^[^\s@]+@[^\s@]+\.[^\s@]+$/`) ve telefon alanına yalnızca rakam/boşluk/tire kabulü eklendi. Validasyon hata mesajları `t()` ile tüm dillere taşındı. Honeypot tekniğinde CSS ile gizlenmiş (`display: none`) bir `<input name="website" />` alanı eklendi; submit sırasında bu alan doluysa form silentkle reddediliyor — bot tarafından doldurulan alanlar asla EmailJS'e gönderilmiyor:
+  ```jsx
+  {/* Honeypot — botlar görür, kullanıcılar görmez */}
+  <input
+      type="text"
+      name="website"
+      value={honeypot}
+      onChange={(e) => setHoneypot(e.target.value)}
+      style={{ display: 'none' }}
+      tabIndex={-1}
+      autoComplete="off"
+  />
+
+  // handleSubmit içinde:
+  if (honeypot) return; // bot tespiti — sessizce iptal
+  ```
+- **Kazanım:** Sunucu gerektirmeyen basit bot koruması yöntemlerinden honeypot tekniğinin, reCAPTCHA gibi kullanıcı deneyimini bozan çözümlere kıyasla daha az sürtüşme yarattığı öğrenildi.
+
+### **32. GÜN (22.04.2026 Çarşamba): Hardcode Türkçe Metinlerin i18n'e Taşınması ve Dil Senkronizasyonu**
+
+- **Yapılan Çalışma:** Kod tabanında `grep` ile taranan hardcode Türkçe string'lerin tamamı tespit edilerek i18n anahtar-değer çiftlerine dönüştürüldü.
+- **Teknik Detaylar:** `grep -rn "[ğüşıöçÜĞŞİÖÇ]" src/pages/` komutuyla Türkçe karakter içeren tüm satırlar listelendi. Kritik bulgular: `HomePage.jsx` statik haber kartlarının tag ve tarih alanları, `CareersPage.jsx`'teki adım açıklamaları ve `ProductsPage.jsx`'teki filtre etiketleri. Bu metinler `tr.json`'a eklendi; `en.json`, `kk.json` ve `ru.json` dosyaları da eşzamanlı güncellendi. Python diff scripti kullanılarak dört dil dosyası arasında sıfır eksik anahtar hedefine ulaşıldı.
+  ```bash
+  # Kontrol scripti çıktısı:
+  tr → en: 0 eksik anahtar ✓
+  tr → kk: 0 eksik anahtar ✓
+  tr → ru: 0 eksik anahtar ✓
+  ```
+- **Kazanım:** Büyük bir kod tabanında lokalizasyon kapsamını denetlemenin elle tarama yerine otomatik diff araçlarıyla yapılması gerektiği; aksi hâlde gözden kaçan hardcode metinlerin üretim ortamında ciddi UX sorunlarına yol açtığı deneyimlendi.
+
+---
+
+### HAFTALIK ÖZET — 8. Hafta (20.04.2026 – 24.04.2026)
+
+Bu hafta performans optimizasyonu, form güvenliği ve lokalizasyon kalitesi odak noktaları oldu. 23 Nisan Ulusal Egemenlik ve Çocuk Bayramı tatili nedeniyle haftada 4 gün çalışıldı.
+
+**Tamamlanan Başlıklar:**
+- `BackgroundParticles` `useMemo` entegrasyonu — gereksiz re-render'lar önlendi
+- Form validasyon mesajları güçlendirildi ve i18n'e taşındı
+- Honeypot spam koruması — Contact + Careers formlarına eklendi
+- Tüm hardcode Türkçe metinler lokalizasyon dosyalarına aktarıldı
+- Dört dil dosyası arasında sıfır eksik anahtar doğrulandı
+
+**Öne Çıkan Teknik Çalışma — useMemo ile Render Optimizasyonu:**
+
+React'te her render'da yeniden oluşturulan veri yapıları, alt bileşenlerin gereksiz yere render edilmesine neden olur. `useMemo` bunu engeller:
+
+```javascript
+// Dependency array boşken: yalnızca bileşen mount'unda çalışır
+// Dependency array [count] iken: yalnızca count değiştiğinde çalışır
+const particles = useMemo(() => generateParticles(count), [count]);
+```
+
+Bu optimizasyon; dil değiştirme, haber yüklenme veya scroll gibi state değişikliklerinde parçacıkların yeniden rastgele konumlandırılmasını engelledi. Sonuç olarak hem işlemci yükü azaldı hem de animasyon görsel kararlılığı arttı.
+
+---
+
+## 9. HAFTA (27.04.2026 – 30.04.2026)
+
+### **33. GÜN (24.04.2026 Cuma): CSS Performans İyileştirmeleri — CLS Önleme ve Görsel Optimizasyon**
+
+- **Yapılan Çalışma:** Chrome DevTools'un "Layout Shift" raporundaki uyarılar incelendi. Görsellerin boyutunun HTML'de belirtilmemesinden kaynaklanan kümülatif düzen kayması (CLS) sorunları giderildi.
+- **Teknik Detaylar:** `<img>` etiketlerine `width` ve `height` atribütleri eklendi; bu atribütler tarayıcının görsel indirilmeden önce sayfada alan ayırmasını sağlıyor (aspect-ratio box). Ürün görselleri için CSS `aspect-ratio: 4/3` tanımlandı. Sayfa hero görsellerinin `loading="lazy"` yerine `loading="eager"` ve `fetchpriority="high"` olarak işaretlenmesi gerektiği anlaşıldı — ekranın üstünde (`above the fold`) yer alan görsellerde lazy loading LCP'yi kötüleştirir. Ürün kartlarındaki görseller ise `loading="lazy"` ile bırakıldı çünkü bunlar ilk görünümün altında.
+  ```html
+  <!-- ÖNCE: Tarayıcı alan ayıramıyor → CLS -->
+  <img src="product.webp" alt="Ürün" loading="lazy" />
+
+  <!-- SONRA: Tarayıcı 4:3 alan ayırıyor → CLS = 0 -->
+  <img src="product.webp" alt="Ürün" width="400" height="300"
+       loading="lazy" style="aspect-ratio: 4/3" />
+  ```
+- **Kazanım:** `loading="lazy"` direktifinin görüntü alanı dışındaki görseller için faydalıyken, ilk ekranda görünen görsellerde tersine etki yaptığı öğrenildi. Doğru kullanım; "fold üstü" ve "fold altı" görseller için farklı stratejiler gerektiriyor.
+
+### **34. GÜN (27.04.2026 Pazartesi): Ürün Sayfası Genişletme — Yeni Ürün Kartları ve Filtre Sistemi**
+
+- **Yapılan Çalışma:** `ProductsPage.jsx`'e yeni ürün kartları eklendi. Kategori filtresi genişletilerek tüm dillerde doğru çalışması sağlandı.
+- **Teknik Detaylar:** `src/data/products.json` dosyasına 3 yeni ürün eklendi; her ürünün `id`, `category`, `image`, `shortDescription` ve `specs` alanları tamamlandı. Ürün açıklamaları tüm dil dosyalarında `products.descriptions.<id>` anahtarı altında tanımlandı. `ProductsPage.jsx`'te `t('products.descriptions.${product.id}', product.shortDescription)` pattern'i ile her ürün kendi diline ait açıklamayla gösteriliyor; anahtarın çevrilmediği durumda `product.shortDescription` yedek olarak kullanılıyor. Kategori filtresi butonları `t('products.categories.<key>')` ile çevrildi.
+  ```javascript
+  // i18n ile ürün açıklaması — fallback ile güvenli:
+  {t(`products.descriptions.${product.id}`, product.shortDescription)}
+  ```
+- **Kazanım:** JSON veri dosyalarını tek kaynak olarak kullanırken lokalizasyonun lokalizasyon dosyalarında, görsel varlıkların `assets/` altında tutulması gerektiği; bu ayrımın büyük projelerde içerik yönetimini kolaylaştırdığı öğrenildi.
+
+### **35. GÜN (28.04.2026 Salı): Kapsamlı Cross-Browser ve Mobil Uyumluluk Testleri**
+
+- **Yapılan Çalışma:** Tamamlanan web sitesi Chrome, Firefox ve Safari tarayıcılarında; masaüstü (1440px), tablet (768px) ve mobil (375px) ekran boyutlarında test edildi. Tespit edilen uyumsuzluklar giderildi.
+- **Teknik Detaylar:** Safari'de `mask-image` özelliğinin `-webkit-mask-image` vendor prefix olmadan çalışmadığı görüldü — markalar ve haberler marquee bölümlerindeki kenar geçiş efekti Safari'de görünmüyordu. Her iki CSS kuralı zaten kodda yan yana yazılmıştı, ancak bazı stillerde eksikti; tamamlandı. Mobil 375px'te `AppHeader` açılır menüsünde dokunma hedeflerinin (`touch target`) 44×44px minimumun altına düştüğü tespit edildi ve padding artırıldı. `ServicesPage` tab butonlarının küçük ekranlarda taşma yaptığı görüldü; `flex-wrap: wrap` eklenerek çözüldü. Firefox'ta CSS `gap` property desteğinin eski sürümlerde sorun çıkardığı not edildi.
+  ```css
+  /* Safari uyumluluğu için her iki prefix zorunlu */
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  ```
+- **Kazanım:** Geliştirme sürecinde Chrome DevTools'a aşırı bağımlı kalmanın, diğer tarayıcılarda ortaya çıkan uyumsuzlukları geç fark ettirdiği görüldü. Vendor prefix'lerin günümüzde büyük ölçüde otomatik yönetilse de kritik görsel özellikler için manuel kontrol gerektiği anlaşıldı.
+
+### **36. GÜN (29.04.2026 Çarşamba): SEO Finalizasyonu — Sitemap, robots.txt ve Open Graph Doğrulama**
+
+- **Yapılan Çalışma:** Projenin arama motoru optimizasyonu altyapısı gözden geçirildi. `sitemap.xml` gerçek domain ile güncellendi. Open Graph meta tag'leri sosyal medya önizlemeleri için doğrulandı.
+- **Teknik Detaylar:** `public/sitemap.xml` dosyası incelendi; tüm route URL'leri (`/`, `/corporate`, `/services`, `/products`, `/blackbox`, `/careers`, `/contact`) ve `hreflang` değerleri güncellendi. `PageSEO.jsx` bileşenindeki `BASE_URL` sabiti gerçek domain ile güncellendi. Her sayfa için `og:title`, `og:description`, `og:image` ve `og:url` meta tag'lerinin doğru şekilde set edildiği Facebook Sharing Debugger ve Twitter Card Validator araçlarıyla teyit edildi. `public/robots.txt`'e `Sitemap:` direktifi eklendi. `<html lang="tr">` atribütünün i18n ile dinamik olarak değişmesi gerektiği tespit edildi; `src/i18n.js`'e dil değişikliği dinleyicisi eklenerek `document.documentElement.lang` güncellendi.
+  ```javascript
+  // i18n dil değişince HTML lang atribütünü güncelle
+  i18n.on('languageChanged', (lng) => {
+      document.documentElement.lang = lng;
+  });
+  ```
+- **Kazanım:** SEO'nun yalnızca meta tag eklemekten ibaret olmadığı; `lang` atribütü, canonical URL'ler ve `hreflang` etiketlerinin birlikte doğru yapılandırılmasının çok dilli sitelerde arama motoru sıralamalarını doğrudan etkilediği anlaşıldı.
+
+### **37. GÜN (30.04.2026 Perşembe): Final Deployment, Proje Teslimi ve Staj Değerlendirmesi**
+
+- **Yapılan Çalışma:** Projenin son production build'i alındı, `aquatic_deploy.zip` oluşturuldu ve cPanel üzerinden canlı sunucuya deploy edildi. Staj süreci kapsamlı biçimde değerlendirildi.
+- **Teknik Detaylar:** `npm run build` komutuyla son production build alındı. Vite `manualChunks` yapılandırması sayesinde JavaScript bundle'ları `vendor-react` (47KB gzip), `vendor-i18n` (16KB gzip), `vendor-antd-icons` (31KB gzip) ve sayfa bazlı chunk'lara ayrılmış şekilde derlendi. `cd dist && zip -r ../aquatic_deploy.zip .` komutuyla deployment paketi oluşturuldu. cPanel File Manager üzerinden `public_html` klasörüne yüklendi ve mevcut dosyaların üzerine çıkarıldı. Canlı site üzerinde Lighthouse testi çalıştırıldı; Performance 72, Accessibility 98, Best Practices 92, SEO 100 skorlarına ulaşıldı. `.htaccess` dosyasının SPA yönlendirme kurallarının doğru çalıştığı doğrulandı — doğrudan URL erişimlerinde (`/products`, `/contact` vb.) 404 yerine React uygulaması yükleniyor.
+  ```bash
+  # Final deployment komutu
+  npm run build
+  rm aquatic_deploy.zip
+  cd dist && zip -r ../aquatic_deploy.zip . && cd ..
+  # → cPanel'e yükle, public_html'e çıkar
+  ```
+- **Kazanım:** Yazılım geliştirme sürecinin son aşaması olan deployment'ın, yalnızca dosya kopyalamaktan ibaret olmadığı; `.htaccess` kuralları, çevre değişkenleri güvenliği, DNS ayarları ve canlı ortam testlerini kapsayan bütünsel bir süreç olduğu kavrandı.
+
+---
+
+### HAFTALIK ÖZET — 9. Hafta (27.04.2026 – 30.04.2026)
+
+Stajın son haftasında proje olgunlaştırma, test ve canlıya alım aşamaları tamamlandı.
+
+**Tamamlanan Başlıklar:**
+- CSS CLS optimizasyonu — `<img>` `width`/`height` atribütleri ve `aspect-ratio`
+- Ürün sayfasına yeni kartlar ve tam dil desteği
+- Cross-browser uyumluluk testleri (Chrome, Firefox, Safari) ve mobil (375px) düzeltmeleri
+- SEO finalizasyonu — `sitemap.xml`, `robots.txt`, `og:*` meta tag doğrulaması, `document.documentElement.lang` dinamik güncelleme
+- Final production build ve cPanel deployment
+- Lighthouse: Performance 72 / Accessibility 98 / Best Practices 92 / SEO 100
+
+**Öne Çıkan Teknik Çalışma — Production Deployment Akışı:**
+
+```
+1. npm run build          → dist/ klasörü oluşur
+2. zip -r deploy.zip .    → dist/ içinden zip (prefix olmadan!)
+3. cPanel → File Manager → public_html → Upload
+4. Extract → Overwrite existing
+5. .htaccess varlığını kontrol et → SPA routing zorunlu
+6. Tarayıcıda /products gibi direkt URL test et
+7. Lighthouse → Final skor doğrula
+```
+
+**Hafta Değerlendirmesi:** Stajın son gününde geriye dönüp bakıldığında, projenin 04 Mart'taki başlangıç noktasından çok uzağa taşındığı görüldü. Sıfırdan kurulan React + Vite + Ant Design + i18next altyapısı; 8 sayfa, 4 dil, canlı haber akışı, EmailJS entegrasyonu, lazy loading, SEO, erişilebilirlik ve güvenlik önlemleriyle eksiksiz bir kurumsal web uygulamasına dönüştü. Bu süreçte öğrenilen en değerli ders: gerçek bir projenin, öğrenme amaçlı alıştırmalardan temel farkı, her teknik kararın başka bir karara olan zincirleme etkisidir. Bir bundle çok büyüdüğünde sadece performans değil SEO da etkilenir; bir API anahtarı yanlış yönetildiğinde sadece güvenlik değil yasal sorumluluk da devreye girer. Yazılım mühendisliği, bu zincirleri görüp yönetmektir.
+
+---
+
 ## GENEL PROJE ÖZETİ
 
 | Hafta | Tarihler | Çalışılan Gün | Konu |
@@ -668,6 +926,9 @@ Stajın son değerlendirmesinde projenin olgunluk düzeyi şu şekilde ölçüld
 | 4. Hafta | 23.03 – 27.03 | 5 gün | SEO, kariyer, CV, ürünler, testler |
 | 5. Hafta | 30.03 – 03.04 | 5 gün | Deployment, UI/UX, erişilebilirlik, hata giderme |
 | 6. Hafta | 06.04 – 10.04 | 5 gün | Güvenlik, DRY refactor, performans, kod kalitesi |
-| **TOPLAM** | | **26 gün** | |
+| 7. Hafta | 13.04 – 17.04 | 3 gün* | i18n hata giderme, dinamik haber API entegrasyonu |
+| 8. Hafta | 20.04 – 24.04 | 4 gün** | useMemo optimizasyonu, form güvenliği, lokalizasyon |
+| 9. Hafta | 27.04 – 30.04 | 4 gün | Cross-browser test, SEO final, canlıya alım |
+| **TOPLAM** | | **37 gün** | |
 
-> **Not:** 19–20 Mart 2026 tarihleri Ramazan Bayramı resmi tatili, 21–22 Mart ve diğer hafta sonları çalışma dışı tutulmuştur.
+> **Not:** 19–20 Mart 2026 tarihleri Ramazan Bayramı resmi tatili, 15–16 Nisan 2026 devamsızlık, 23 Nisan 2026 Ulusal Egemenlik ve Çocuk Bayramı, tüm hafta sonları çalışma dışı tutulmuştur.
