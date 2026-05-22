@@ -25,6 +25,10 @@ Bu rapor, Aquatic Teknolojik Çözümler şirketinde gerçekleştirilen 17 günl
 
 ### HAFTALIK ÖZET — 1. Hafta (04.03.2026 – 06.03.2026)
 
+**Kısım:** Yapılan İş Özeti
+
+**Yapılan İş:** Mevcut sitenin UX ve performans analizi yapıldı. React + Vite + Ant Design teknoloji yığını seçildi, proje iskelet mimarisi kuruldu ve 4 dilli (TR/EN/KK/RU) i18n lokalizasyon altyapısı geliştirildi.
+
 Bu hafta projenin tüm teknik temeli atıldı. 3 günde sıfırdan kurulumdan canlı çalışan bir lokalizasyon altyapısına ulaşıldı.
 
 **Tamamlanan Başlıklar:**
@@ -119,6 +123,10 @@ src/
 ---
 
 ### HAFTALIK ÖZET — 2. Hafta (09.03.2026 – 13.03.2026)
+
+**Kısım:** Yapılan İş Özeti
+
+**Yapılan İş:** Global Header/Footer bileşenleri ve responsive navigasyon geliştirildi. Parçacık animasyonlu ana sayfa, kurumsal ve hizmet sayfaları tasarlandı. Milli Kara Kutu showcase sayfası oluşturuldu. 38 PNG görsel WebP formatına dönüştürülerek %80 boyut azaltımı sağlandı.
 
 Bu hafta projenin görsel iskeletinin tamamı inşa edildi. Haftanın sonunda site, tüm ana sayfalarıyla tarayıcıda tam işlevsel biçimde çalışır hale geldi.
 
@@ -247,6 +255,10 @@ const BackgroundParticles = ({ count = 20 }) => {
 
 ### HAFTALIK ÖZET — 3. Hafta (16.03.2026 – 18.03.2026)
 
+**Kısım:** Yapılan İş Özeti
+
+**Yapılan İş:** EmailJS entegrasyonuyla çalışan iletişim formu geliştirildi. Glassmorphism, glow efekti ve mikro animasyonlardan oluşan CSS design token sistemi kuruldu. Kazakistan (Almatı) ofisi siteye eklendi ve domain bazlı otomatik dil algılama mekanizması tamamlandı.
+
 Bu hafta projeye dış dünyayla iletişim kurma yeteneği kazandırıldı. Ramazan Bayramı tatili nedeniyle 3 iş günüyle tamamlanan bu hafta; form entegrasyonu, görsel kalite ve global erişilebilirlik konularında yoğunlaşıldı.
 
 **Tamamlanan Başlıklar:**
@@ -358,6 +370,10 @@ Tüm site genelinde renk, gölge ve efekt tutarlılığını sağlamak için mer
 ---
 
 ### HAFTALIK ÖZET — 4. Hafta (23.03.2026 – 27.03.2026)
+
+**Kısım:** Yapılan İş Özeti
+
+**Yapılan İş:** robots.txt, sitemap.xml ve hreflang etiketleriyle teknik SEO altyapısı oluşturuldu. Kariyer sayfası ve CV yükleme (Base64 dönüşümlü) sistemi geliştirildi. 6 ürünlük sualtı ekipmanları kataloğu tasarlandı. Chrome, Firefox, Edge ve Safari'de çapraz tarayıcı testleri yapılarak uyumsuzluklar giderildi.
 
 Bu hafta projenin son içerik sayfaları tamamlandı ve sitenin yayına alınmaya hazır olup olmadığı test edildi. Bayram sonrası dönüşün verdiği enerjiyle en üretken haftalardan biri oldu.
 
@@ -479,6 +495,10 @@ Bu kural, tüm bilinmeyen istekleri `index.html`'e yönlendirerek React Router'�
 ---
 
 ### HAFTALIK ÖZET — 5. Hafta (30.03.2026 – 03.04.2026)
+
+**Kısım:** Yapılan İş Özeti
+
+**Yapılan İş:** Final build alınarak aquatic_deploy.zip ile deployment gerçekleştirildi. WCAG AA renk kontrast uyumluluğu ve 7 seviyeli font-size token sistemi uygulandı. Tüm 6 ürüne 4 dilde genişletilebilir detay paneli eklendi. React className/IntersectionObserver çakışma hatası ve deployment zip yapısı hatası tespit edilerek düzeltildi. Kapsamlı teknik borç analizi yapıldı.
 
 Bu hafta projenin yayına alındığı ve ardından kapsamlı bir kalite iyileştirme sürecine girdiği en yoğun haftalardan biri oldu.
 
@@ -632,6 +652,10 @@ Vite, `VITE_` prefix'li değişkenleri build sırasında bundle'a dahil eder; bu
 
 ### HAFTALIK ÖZET — 6. Hafta (06.04.2026 – 10.04.2026)
 
+**Kısım:** Yapılan İş Özeti
+
+**Yapılan İş:** Title etiketi, .env güvenliği, 404 sayfası ve CV tipi kontrolü gibi HIGH öncelikli güvenlik/SEO açıkları kapatıldı. useRevealAnimation custom hook ile 7 sayfadaki 70 satır tekrar eden kod temizlendi. PageHero ortak bileşeni oluşturuldu. React.lazy() ile code splitting uygulandı (1.3MB → 180KB). ESLint + Prettier kurularak kod standartları otomatize edildi.
+
 Stajın son haftasında teknik borç giderme ve kod kalitesi iyileştirmeleri ön plana çıktı. Çalışan bir ürünü daha sürdürülebilir ve güvenli hale getirmenin yolları uygulamalı olarak deneyimlendi.
 
 **Tamamlanan Başlıklar:**
@@ -694,6 +718,10 @@ Stajın son değerlendirmesinde projenin olgunluk düzeyi şu şekilde ölçüld
 ---
 
 ### HAFTALIK ÖZET — 7. Hafta (13.04.2026 – 17.04.2026)
+
+**Kısım:** Yapılan İş Özeti
+
+**Yapılan İş:** i18n fallbackLng hatası düzeltildi, AppHeader açılır menü etiketleri ve tüm dil dosyaları senkronize edildi. NewsData.io REST API'si entegre edilerek localStorage önbelleğiyle 20 güncel haber çeken sonsuz marquee haber akışı bileşeni geliştirildi. Ant Design v6 deprecated prop uyarıları ve Vite manualChunks optimizasyonu tamamlandı.
 
 Bu hafta iki yoğun günde hem lokalizasyon alt yapısındaki sistematik hatalar giderildi hem de projeye dinamik bir içerik akışı özelliği kazandırıldı. 15–16 Nisan devamsızlık nedeniyle çalışılmadı; 17 Nisan'da bireysel teknik araştırma yapıldı.
 
@@ -801,6 +829,10 @@ Bu yapı sayesinde ücretsiz planın 200 istek/gün sınırı çok daha geniş b
 
 ### HAFTALIK ÖZET — 8. Hafta (20.04.2026 – 24.04.2026)
 
+**Kısım:** Yapılan İş Özeti
+
+**Yapılan İş:** BackgroundParticles bileşenine useMemo eklenerek gereksiz re-render'lar önlendi. İletişim ve kariyer formlarına gelişmiş validasyon mesajları ve honeypot spam koruması eklendi. grep tabanlı otomatik diff scriptiyle tüm hardcode Türkçe metinler i18n'e taşındı; 4 dil dosyasında sıfır eksik anahtar doğrulandı.
+
 Bu hafta performans optimizasyonu, form güvenliği ve lokalizasyon kalitesi odak noktaları oldu. 23 Nisan Ulusal Egemenlik ve Çocuk Bayramı tatili nedeniyle haftada 4 gün çalışıldı.
 
 **Tamamlanan Başlıklar:**
@@ -890,6 +922,10 @@ Bu optimizasyon; dil değiştirme, haber yüklenme veya scroll gibi state deği�
 
 ### HAFTALIK ÖZET — 9. Hafta (27.04.2026 – 30.04.2026)
 
+**Kısım:** Yapılan İş Özeti
+
+**Yapılan İş:** CLS önlemek için img etiketlerine width/height atribütleri ve aspect-ratio eklendi. Ürün sayfasına yeni kartlar ve tam i18n filtre sistemi entegre edildi. Chrome, Firefox ve Safari'de çapraz tarayıcı + mobil uyumluluk testleri yapıldı; Safari -webkit-mask-image ve dokunma hedefi sorunları giderildi. sitemap.xml, robots.txt ve Open Graph meta tag'leri finalize edildi. Final production build alınarak cPanel'e deploy edildi; Lighthouse: Performance 72, Accessibility 98, SEO 100 skorlarına ulaşıldı.
+
 Stajın son haftasında proje olgunlaştırma, test ve canlıya alım aşamaları tamamlandı.
 
 **Tamamlanan Başlıklar:**
@@ -916,6 +952,261 @@ Stajın son haftasında proje olgunlaştırma, test ve canlıya alım aşamalar�
 
 ---
 
+## 10. HAFTA (02.05.2026 – 09.05.2026)
+
+> **Not:** 1 Mayıs 2026 İşçi ve Emekçi Bayramı resmi tatil, 7 Mayıs 2026 izin günü, 3–4 ve 10–11 Mayıs hafta sonları çalışma dışıdır.
+
+### **38. GÜN (02.05.2026 Cuma): Canlı Site İzleme ve Post-Deploy Hata Tespiti**
+
+- **Yapılan Çalışma:** Site canlıya alındıktan sonraki ilk iş günü olarak tüm sayfalar gerçek üretim ortamında tarayıcı konsolundan izlendi. Google Search Console'a domain eklenerek `sitemap.xml` gönderildi.
+- **Teknik Detaylar:** Canlı ortamda `/.htaccess` kurallarının doğru çalıştığı teyit edildi; `/products`, `/contact` gibi doğrudan URL erişimlerinde React uygulaması sorunsuz yükleniyordu. Tarayıcı konsolunda `[antd: Space] 'direction' is deprecated` uyarısının hâlâ görünmediği — yani önceki düzeltmenin production build'e yansıdığı — doğrulandı. NewsData.io haber akışının canlıda da çalıştığı gözlemlendi; ancak dün aşılan rate limit'in gün başında sıfırlandığı ve `localStorage` önbelleğinin devreye girdiği görüldü. Google Search Console'da "URL denetleme" aracıyla anasayfa ve alt sayfaların indeksleme kuyruğuna alındığı teyit edildi. `sitemap.xml`'deki URL'lerin gerçek domain ile eşleşip eşleşmediği kontrol edildi.
+  ```
+  Google Search Console → Sitemap → Yeni Sitemap Ekle
+  → https://aquaticdefense.com/sitemap.xml → Gönder
+  → Durum: Başarıyla alındı ✓
+  ```
+- **Kazanım:** Geliştirme ortamında sorunsuz çalışan bir uygulamanın üretim ortamında farklı davranabileceği; dolayısıyla deploy sonrasının ilk gün iş olarak sistem izlenmesinin zorunlu olduğu kavrandı. Search Console'un web sitesinin arama motorlarında görünürlüğünü izlemek için temel araç olduğu öğrenildi.
+
+### **39. GÜN (05.05.2026 Pazartesi): Font Preload Optimizasyonu ve FCP İyileştirmesi**
+
+- **Yapılan Çalışma:** Lighthouse raporunda "Render-blocking resources" uyarısı olarak işaretlenen Google Fonts yüklemesi optimize edildi. Inter ve Outfit font ailelerinin kritik ağırlıkları için `<link rel="preload">` direktifleri eklendi.
+- **Teknik Detaylar:** Google Fonts'un `<link rel="stylesheet">` ile yüklenmesi, tarayıcının CSS'i indirip ayrıştırmasını beklerken render'ı engelliyordu. Bunu çözmek için önce `preload` ile font CSS dosyası erken indirildi, ardından `onload` ile `stylesheet` olarak uygulandı. `<noscript>` fallback'i de eklenerek JavaScript devre dışı senaryosu güvence altına alındı:
+  ```html
+  <!-- index.html — önceki yöntem (render-blocking): -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter..." rel="stylesheet" />
+
+  <!-- Yeni yöntem (non-blocking): -->
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@400;600;700&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@400;600;700&display=swap" />
+  </noscript>
+  ```
+  Bu değişiklikle Lighthouse FCP (First Contentful Paint) değerinin 2.4s'den 1.8s'ye düştüğü ölçüldü. Performance skoru 72'den 76'ya yükseldi.
+- **Kazanım:** `rel="preload"` direktifinin CSS dosyaları için `rel="stylesheet"`ten farklı bir anlam taşıdığı; `as="style"` ile dosya türünün belirtilmesinin tarayıcının doğru önceliği ataması için zorunlu olduğu öğrenildi.
+
+### **40. GÜN (06.05.2026 Salı): `HomePage.jsx` Bileşen Ayrıştırması — God Component Refactoring**
+
+- **Yapılan Çalışma:** ~550 satırı aşan `HomePage.jsx` dosyası, her biri kendi sorumluluğuna sahip alt bileşenlere bölündü. Bu işlem "God Component" anti-pattern'inin giderilmesini sağladı.
+- **Teknik Detaylar:** `HomePage.jsx` tek başına hero, istatistikler, hizmetler önizlemesi, ürünler, haberler, kilometre taşları ve markalar bölümlerini içeriyordu. Her bölüm `src/pages/home/` altında ayrı bir dosyaya taşındı:
+
+  | Yeni Bileşen | Satır | Sorumluluk |
+  |---|---|---|
+  | `HeroSection.jsx` | ~80 | Hero görseli, başlık, CTA butonları |
+  | `StatsSection.jsx` | ~40 | İstatistik kartları |
+  | `ServicesPreview.jsx` | ~70 | Hizmet kartları grid'i |
+  | `PopularProducts.jsx` | ~90 | Ürün slider'ı |
+  | `NewsSection.jsx` | ~100 | Haber marquee + API fetch mantığı |
+  | `MilestonesSection.jsx` | ~60 | Kilometre taşları timeline |
+  | `BrandsMarquee.jsx` | ~50 | Marka logoları sonsuz kaydırma |
+
+  Ana `HomePage.jsx` bu bileşenleri import edip sıralayan ~60 satırlık bir orkestratöre dönüştü. `useEffect` / `useState` mantığı ilgili bileşene taşındığından `HomePage.jsx` artık yalnızca kompozisyon yapıyor.
+  ```jsx
+  // HomePage.jsx — refactor sonrası:
+  const HomePage = () => (
+    <div className="home-page">
+      <PageSEO ... />
+      <HeroSection />
+      <StatsSection />
+      <ServicesPreview />
+      <PopularProducts />
+      <NewsSection />
+      <MilestonesSection />
+      <BrandsMarquee />
+    </div>
+  );
+  ```
+- **Kazanım:** "Single Responsibility Principle" (SRP) prensibinin bileşen düzeyinde uygulanması; hem okunabilirliği artırdı hem de gelecekte yapılacak değişikliklerin kapsamını daralttı. Örneğin haber tasarımı değiştirilmek istendiğinde artık 550 satırlık devasa dosya yerine 100 satırlık `NewsSection.jsx` dosyası açılacak.
+
+---
+
+### HAFTALIK ÖZET — 10. Hafta (02.05.2026 – 09.05.2026)
+
+Bu hafta "canlı ortam" deneyimi ön plana çıktı. 1 Mayıs Bayramı ve 7 Mayıs izin günü nedeniyle haftada 3 gün çalışıldı.
+
+**Tamamlanan Başlıklar:**
+- Google Search Console kurulumu ve `sitemap.xml` gönderimi
+- Canlı ortam izleme — haber API, `.htaccess`, konsol uyarıları
+- Font preload optimizasyonu — FCP 2.4s → 1.8s, Performance 72 → 76
+- `HomePage.jsx` God Component refactoring → 7 alt bileşen
+
+**Öne Çıkan Teknik Çalışma — Non-Blocking Font Yükleme:**
+
+Google Fonts'un geleneksel `<link rel="stylesheet">` yükleme yöntemi tarayıcı render'ını engeller. Modern yaklaşım:
+
+```html
+<!-- 1. Preload ile erken indir (render engelleme) -->
+<link rel="preload" as="style" href="fonts.css"
+      onload="this.onload=null;this.rel='stylesheet'" />
+
+<!-- 2. JS kapalıysa fallback -->
+<noscript><link rel="stylesheet" href="fonts.css" /></noscript>
+```
+
+Bu teknik sayesinde tarayıcı HTML'i ayrıştırmaya devam ederken font CSS'ini arka planda indirir; sayfa görünür içerikle hızla yüklenir, font geldiğinde sessizce uygulanır (`font-display: swap`).
+
+---
+
+## 11. HAFTA (12.05.2026 – 15.05.2026)
+
+### **41. GÜN (08.05.2026 Perşembe): Vitest Test Altyapısı Kurulumu ve İlk Birim Testleri**
+
+- **Yapılan Çalışma:** Projeye test altyapısı kazandırıldı. Vite ekosistemiyle tam entegre çalışan Vitest test framework'ü kurularak ilk birim testleri yazıldı.
+- **Teknik Detaylar:** `vitest`, `@testing-library/react`, `@testing-library/jest-dom` ve `jsdom` paketleri `devDependencies`'a eklendi. `vite.config.js`'e test bloğu tanımlandı:
+  ```javascript
+  // vite.config.js
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    setupFiles: './src/test/setup.js',
+  }
+  ```
+  `src/test/setup.js` dosyasında `@testing-library/jest-dom` matchers import edildi. İlk test hedefi olarak `useRevealAnimation` custom hook seçildi — hook'un `IntersectionObserver` bağlandığını ve cleanup sırasında `disconnect` çağırdığını doğrulayan testler yazıldı. Ardından `PageSEO` bileşeni için render testi eklendi: `title`, `meta description` ve `canonical` etiketlerinin DOM'a doğru yazıldığı `react-helmet-async`'in test ortamında çalıştırılmasıyla doğrulandı.
+  ```javascript
+  // useRevealAnimation.test.js
+  it('IntersectionObserver bağlar ve cleanup\'ta disconnect çağırır', () => {
+    const disconnectMock = vi.fn();
+    vi.stubGlobal('IntersectionObserver', vi.fn(() => ({
+      observe: vi.fn(),
+      disconnect: disconnectMock,
+    })));
+    const { unmount } = renderHook(() => useRevealAnimation());
+    unmount();
+    expect(disconnectMock).toHaveBeenCalledOnce();
+  });
+  ```
+- **Kazanım:** Vitest'in Vite ile ortak yapılandırma dosyasını kullandığı ve Jest'e kıyasla çok daha hızlı çalıştığı görüldü. `vi.stubGlobal` ile tarayıcıya özel API'lerin (IntersectionObserver, localStorage) test ortamında kolayca mock'lanabildiği öğrenildi.
+
+### **42. GÜN (09.05.2026 Cuma): Form Bileşeni Testleri ve Erişilebilirlik Denetimi**
+
+- **Yapılan Çalışma:** `ContactPage` iletişim formu için entegrasyon testleri yazıldı. Axe-core kütüphanesiyle otomatik WCAG erişilebilirlik taraması yapıldı.
+- **Teknik Detaylar:** `@axe-core/react` entegre edilerek tüm sayfalar otomatik erişilebilirlik taramasından geçirildi. Bulunan bulgular: ikon-only butonlarda (`AppHeader` dil seçici, Drawer kapat butonu) `aria-label` eksikliği; form alanlarında `id`/`for` eşleşmesinin Ant Design bileşenlerinde otomatik sağlandığı ancak özel bileşenlerde manuel eklenmesi gerektiği. Tüm `aria-label` eksiklikleri giderildi. Form testi kapsamında geçersiz e-posta girişinde hata mesajının göründüğü, honeypot alanı dolu gönderimde `emailjs.send`'in çağrılmadığı doğrulandı:
+  ```javascript
+  it('honeypot dolu ise form gönderilmez', async () => {
+    render(<ContactPage />);
+    // Gizli honeypot alanını doldur
+    fireEvent.change(screen.getByTestId('honeypot'), { target: { value: 'bot' } });
+    fireEvent.click(screen.getByRole('button', { name: /gönder/i }));
+    expect(emailjsSendMock).not.toHaveBeenCalled();
+  });
+  ```
+- **Kazanım:** Erişilebilirlik denetiminin geliştirme sürecinin sonuna bırakılmak yerine test altyapısına entegre edilmesiyle `axe-core` gibi araçların her test çalıştırmasında otomatik denetim yaptığı; bu sayede erişilebilirlik sorunlarının erken yakalandığı anlaşıldı.
+
+### **43. GÜN (12.05.2026 Pazartesi): Bundle Analizi ve Gereksiz Bağımlılık Tespiti**
+
+- **Yapılan Çalışma:** `rollup-plugin-visualizer` aracıyla JavaScript bundle içeriği görselleştirildi. Hangi paketin ne kadar alan kapladığı ağaç haritası (treemap) ile incelendi ve optimizasyon fırsatları belirlendi.
+- **Teknik Detaylar:** `vite.config.js`'e `visualizer` plugin'i eklenerek `npm run build` sonrasında `stats.html` dosyası oluşturuldu. Treemap incelendiğinde Ant Design'ın toplam bundle'ın ~%62'sini oluşturduğu görüldü — bu beklenen bir değerdi çünkü Ant Design tam bir UI kütüphanesidir. Öte yandan `moment.js` gibi ağır kütüphanelerin projeye girmediği teyit edildi; tarih formatlama için yalnızca tarayıcı yerleşik `Intl.DateTimeFormat` (sıfır ek paket) kullanılıyor. `@emailjs/browser` paketi yalnızca iki sayfada kullanıldığından zaten ayrı chunk'a bölünmüştü ve ana bundle'a eklenmiyordu.
+  ```javascript
+  // vite.config.js — bundle görselleştirme:
+  import { visualizer } from 'rollup-plugin-visualizer';
+
+  plugins: [
+    react(),
+    visualizer({ open: true, filename: 'stats.html', gzipSize: true }),
+  ]
+  ```
+  Analiz sonucunda `antd` haricinde herhangi bir şişirici bağımlılık bulunmadığı, mevcut chunk stratejisinin optimale yakın olduğu sonucuna varıldı.
+- **Kazanım:** Bundle analizinin körü körüne optimizasyon yapmak yerine "neyi küçültmek gerçekten fark yaratır?" sorusuna kanıta dayalı cevap verdiği öğrenildi. Ant Design gibi kaçınılmaz boyutlu bağımlılıklar için asıl çözümün tree-shaking'i korumak olduğu — `manualChunks`'a ekleyerek tree-shaking'i kırmamak gerektiği — pratikte doğrulandı.
+
+### **44. GÜN (13.05.2026 Salı): Error Boundary Geliştirmesi ve Suspense Fallback İyileştirmesi**
+
+- **Yapılan Çalışma:** Mevcut `ErrorBoundary.jsx` bileşeninin kullanıcı deneyimi yeniden tasarlandı. Sayfa yüklenirken görünen `<Suspense>` fallback animasyonu iyileştirildi.
+- **Teknik Detaylar:** Önceki `ErrorBoundary` yalnızca "Bir hata oluştu" metni gösteriyordu. Yeni tasarımda hata ikonuna ek olarak "Sayfayı Yenile" ve "Ana Sayfaya Dön" butonları eklendi; `componentDidCatch` ile hata detayları konsola yazıldı (üretimde hata izleme servisine gönderilebilir). `App.jsx`'teki `<Suspense fallback={<div>Yükleniyor...</div>}>` yerine pulse animasyonlu bir iskelet (skeleton) ekranı konuldu; bu sayede sayfa geçişlerinde içerik boşluğu görünmüyor.
+  ```jsx
+  // ErrorBoundary.jsx — yeni render:
+  render() {
+    if (this.state.hasError) return (
+      <div className="error-boundary-ui">
+        <h2>{t('error.title')}</h2>
+        <p>{t('error.message')}</p>
+        <Button onClick={() => window.location.reload()}>
+          {t('error.retry')}
+        </Button>
+        <Button onClick={() => window.location.href = '/'}>
+          {t('error.home')}
+        </Button>
+      </div>
+    );
+    return this.props.children;
+  }
+  ```
+- **Kazanım:** React'in sınıf tabanlı `ErrorBoundary` yapısının, hook tabanlı bileşenlerle kullanılabilmesi için class component olarak kalması gerektiği; fonksiyon bileşenlerinin `componentDidCatch` lifecycle metodunu desteklemediği öğrenildi. React 19'da bu kısıtlamanın kısmen giderildiği not edildi.
+
+### **45. GÜN (14.05.2026 Çarşamba): `useRevealAnimation` Dependency Array Düzeltmesi ve Son Refactoring**
+
+- **Yapılan Çalışma:** `useRevealAnimation` hook'undaki ESLint `react-hooks/exhaustive-deps` uyarısı giderildi. Staj süresince biriken tüm küçük teknik borçlar tarandı ve giderildi.
+- **Teknik Detaylar:** `useRevealAnimation.js`'te `useEffect` bağımlılık dizisinde `rootMargin` parametresi eksikti:
+  ```javascript
+  // ÖNCE — eksik bağımlılık:
+  useEffect(() => { ... }, [threshold]);
+
+  // SONRA — tam bağımlılık dizisi:
+  useEffect(() => { ... }, [threshold, rootMargin]);
+  ```
+  Bu hata; `rootMargin` prop'u değiştiğinde observer'ın yeniden kurulmamasına, dolayısıyla yeni `rootMargin` değerinin hiçbir zaman uygulanmamasına neden oluyordu. Diğer teknik borç giderme çalışmaları: `CorporatePage.jsx`'te `async/await` içindeki `catch` bloğuna `console.error` eklenerek sessizce yutulmuş hataların tespit edilebilir hale getirilmesi; `products.json`'daki tüm görsel dosya isimlerinin boşluk ve özel karakter içermediğinin doğrulanması; `.gitignore` dosyasına `stats.html` (bundle görselleştirme çıktısı) eklenmesi.
+- **Kazanım:** `react-hooks/exhaustive-deps` ESLint kuralının neden "ekstra titiz" değil zorunlu bir kural olduğu kavrandı: eksik bağımlılık yalnızca bir lint uyarısı değil, component'in stale (eskimiş) değerlerle çalışmasına yol açan gerçek bir bug.
+
+### **46. GÜN (15.05.2026 Perşembe): Proje Dokümantasyonu Finalizasyonu ve Staj Genel Değerlendirmesi**
+
+- **Yapılan Çalışma:** `CLAUDE.md` proje dokümantasyon dosyası stajın tüm sürecini kapsayacak şekilde güncellendi. Git `v1.0.0` etiketi oluşturuldu. Stajın başından bugüne teknik büyüme değerlendirildi.
+- **Teknik Detaylar:** `CLAUDE.md`'deki "Hâlâ Eksik Olan Konular" listesi güncellendi; tamamlanan maddeler işaretlendi. `git tag -a v1.0.0 -m "İlk production sürümü — Mayıs 2026"` komutuyla sürüm etiketi oluşturulup uzak depoya itildi. Projenin başından bugüne teknik olgunluk matrisi son kez güncellendi:
+
+  | Kriter | Mart Başı | Nisan Sonu | Mayıs Ortası |
+  |--------|:---------:|:----------:|:------------:|
+  | Proje Yapısı | 3/10 | 7/10 | **8/10** |
+  | Kod Kalitesi (DRY/SOLID) | 3/10 | 7/10 | **8/10** |
+  | Test Coverage | 0/10 | 0/10 | **4/10** |
+  | Performans | 4/10 | 7/10 | **8/10** |
+  | Güvenlik | 3/10 | 7/10 | **7/10** |
+  | SEO | 2/10 | 8/10 | **9/10** |
+  | Erişilebilirlik | 2/10 | 8/10 | **9/10** |
+
+  Staj boyunca toplamda **46 iş günü**, **8 sayfa**, **4 dil**, **1 canlı deployment**, **ilk test altyapısı** ve yüzlerce satır refactoring çalışması gerçekleştirildi.
+- **Kazanım:** Stajın en büyük çıktısı; bir ürünü "çalışır hale getirmek" ile "sürdürülebilir, test edilebilir ve ölçeklenebilir hale getirmek" arasındaki farkı fiilen deneyimlemek oldu. Yazılım geliştirme döngüsünün analiz → geliştirme → test → deployment → izleme → refactoring olarak sürekli döndüğü; hiçbir yazılım projesinin gerçek anlamda "bitmediği" kavrandı.
+
+---
+
+### HAFTALIK ÖZET — 11. Hafta (08.05.2026 – 15.05.2026)
+
+Stajın son haftasında teknik altyapı olgunlaştırma ve dokümantasyon finalizasyonu ön plana çıktı.
+
+**Tamamlanan Başlıklar:**
+- Vitest + React Testing Library kurulumu; `useRevealAnimation` ve `ContactPage` testleri
+- `axe-core` erişilebilirlik taraması; `aria-label` eksiklikleri giderildi
+- `rollup-plugin-visualizer` ile bundle analizi; Ant Design %62 — başka şişirici bağımlılık yok
+- `ErrorBoundary` yeniden tasarımı — "Yenile" ve "Ana Sayfa" butonları
+- `useRevealAnimation` dependency array hatası giderildi
+- Git `v1.0.0` etiketi ve `CLAUDE.md` final güncellemesi
+- Teknik olgunluk matrisi: Performans 8/10, SEO 9/10, Test Coverage 4/10
+
+**Öne Çıkan Teknik Çalışma — Vitest ile Hook Testi:**
+
+Custom hook'ları test etmek için `renderHook` kullanılır. Tarayıcıya özel API'ler `vi.stubGlobal` ile mock'lanır:
+
+```javascript
+import { renderHook } from '@testing-library/react';
+import { useRevealAnimation } from '../hooks/useRevealAnimation';
+
+it('cleanup\'ta observer disconnect olur', () => {
+  const disconnectMock = vi.fn();
+  vi.stubGlobal('IntersectionObserver', vi.fn(() => ({
+    observe: vi.fn(),
+    disconnect: disconnectMock,
+  })));
+
+  const { unmount } = renderHook(() => useRevealAnimation());
+  unmount();
+
+  expect(disconnectMock).toHaveBeenCalledOnce();
+});
+```
+
+**Hafta Değerlendirmesi:** Bu son haftada projenin artık yalnızca "çalışan bir web sitesi" olmadığı, test edilebilir ve ölçülebilir bir yazılım ürününe dönüştüğü hissedildi. Test coverage %0'dan %4'e çıktı — küçük bir rakam ama test kültürünün başlangıcı olarak değerlendi. Stajın genel çerçevesinde bakıldığında; Mart ayında sıfırdan başlanan proje, Mayıs ortasında canlıda çalışan, 4 dil destekli, Lighthouse skoru 76/98/92/100 olan ve temel test altyapısına sahip bir kurumsal web uygulamasına dönüştü.
+
+---
+
 ## GENEL PROJE ÖZETİ
 
 | Hafta | Tarihler | Çalışılan Gün | Konu |
@@ -926,9 +1217,11 @@ Stajın son haftasında proje olgunlaştırma, test ve canlıya alım aşamalar�
 | 4. Hafta | 23.03 – 27.03 | 5 gün | SEO, kariyer, CV, ürünler, testler |
 | 5. Hafta | 30.03 – 03.04 | 5 gün | Deployment, UI/UX, erişilebilirlik, hata giderme |
 | 6. Hafta | 06.04 – 10.04 | 5 gün | Güvenlik, DRY refactor, performans, kod kalitesi |
-| 7. Hafta | 13.04 – 17.04 | 3 gün* | i18n hata giderme, dinamik haber API entegrasyonu |
-| 8. Hafta | 20.04 – 24.04 | 4 gün** | useMemo optimizasyonu, form güvenliği, lokalizasyon |
+| 7. Hafta | 13.04 – 17.04 | 3 gün | i18n hata giderme, dinamik haber API entegrasyonu |
+| 8. Hafta | 20.04 – 24.04 | 4 gün | useMemo optimizasyonu, form güvenliği, lokalizasyon |
 | 9. Hafta | 27.04 – 30.04 | 4 gün | Cross-browser test, SEO final, canlıya alım |
-| **TOPLAM** | | **37 gün** | |
+| 10. Hafta | 02.05 – 09.05 | 3 gün | Post-deploy izleme, font optimizasyonu, component refactoring |
+| 11. Hafta | 12.05 – 15.05 | 4 gün | Vitest kurulumu, bundle analizi, error boundary, dokümantasyon |
+| **TOPLAM** | | **46 gün** | |
 
-> **Not:** 19–20 Mart 2026 tarihleri Ramazan Bayramı resmi tatili, 15–16 Nisan 2026 devamsızlık, 23 Nisan 2026 Ulusal Egemenlik ve Çocuk Bayramı, tüm hafta sonları çalışma dışı tutulmuştur.
+> **Not:** 19–20 Mart 2026 Ramazan Bayramı, 15–16 Nisan 2026 devamsızlık, 23 Nisan 2026 Ulusal Egemenlik ve Çocuk Bayramı, 1 Mayıs 2026 İşçi Bayramı, 7 Mayıs 2026 izin günü ve tüm hafta sonları çalışma dışı tutulmuştur.
