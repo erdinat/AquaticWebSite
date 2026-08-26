@@ -48,7 +48,7 @@ const CorporatePage = () => {
             iban: 'TR00 0000 0000 0000 0000 0000 00',
             branchCode: '0000',
             branchName: 'GÖLCÜK / KOCAELİ',
-            color: '#0050b3',
+            color: 'var(--color-primary)',
         },
         {
             id: 'eur',
@@ -58,7 +58,7 @@ const CorporatePage = () => {
             iban: 'TR00 0000 0000 0000 0000 0000 00',
             branchCode: '0000',
             branchName: 'GÖLCÜK / KOCAELİ',
-            color: '#003a8c',
+            color: 'var(--color-primary-dark)',
         },
         {
             id: 'usd',
@@ -68,7 +68,7 @@ const CorporatePage = () => {
             iban: 'TR00 0000 0000 0000 0000 0000 00',
             branchCode: '0000',
             branchName: 'GÖLCÜK / KOCAELİ',
-            color: '#0077b6',
+            color: 'var(--color-accent-dark)',
         },
     ];
 

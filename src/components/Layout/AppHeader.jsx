@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Layout, Menu, Button, Drawer, Dropdown, Space } from 'antd';
+import LocalizedLink from '../common/LocalizedLink';
+import { splitLangFromPath, localizePath } from '../../i18n/langRouting';
 import {
     MenuOutlined,
     CloseOutlined,
@@ -23,6 +25,8 @@ import {
     QuestionCircleOutlined,
     DownOutlined,
     RocketOutlined,
+    CompassOutlined,
+    ThunderboltOutlined,
 } from '@ant-design/icons';
 import AquaticLogo from '../../assets/images/logo.webp';
 
@@ -50,19 +54,22 @@ const AppHeader = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    /* Change language and persist */
+    /* Current URL language + bare (unprefixed) path */
+    const { lang: currentLang, barePath } = splitLangFromPath(location.pathname);
+
+    /* Change language: navigate to the localized equivalent of the current page.
+       i18n itself is kept in sync by <LangSync/> reacting to the URL change. */
     const changeLanguage = (lang) => {
-        i18n.changeLanguage(lang);
-        localStorage.setItem('aquatic-lang', lang);
+        navigate(localizePath(lang, barePath));
     };
 
     /* Scroll to section helper */
     const scrollToSection = (path, hash) => {
-        if (location.pathname === path) {
+        if (barePath === path) {
             const el = document.getElementById(hash);
             if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         } else {
-            navigate(path);
+            navigate(localizePath(currentLang, path));
             setTimeout(() => {
                 const el = document.getElementById(hash);
                 if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -80,7 +87,13 @@ const AppHeader = () => {
         { key: 'home-brands', icon: <TeamOutlined />, label: t('dropdown.home.brands') },
     ].map((item) => ({
         ...item,
-        label: <span onClick={() => scrollToSection('/', item.key)}>{item.label}</span>,
+        // Dropdown popups are React-portaled to document.body, so a click still
+        // bubbles up the *React* tree to the parent nav item's onClick unless
+        // stopped here — see the "Hizmetler altmenü" fix for the full story.
+        onClick: ({ domEvent }) => {
+            domEvent.stopPropagation();
+            scrollToSection('/', item.key);
+        },
     }));
 
     /* Corporate dropdown sections */
@@ -92,18 +105,28 @@ const AppHeader = () => {
         { key: 'corp-faq', icon: <QuestionCircleOutlined />, label: t('dropdown.corporate.faq') },
     ].map((item) => ({
         ...item,
-        label: <span onClick={() => scrollToSection('/corporate', item.key)}>{item.label}</span>,
+        onClick: ({ domEvent }) => {
+            domEvent.stopPropagation();
+            scrollToSection('/corporate', item.key);
+        },
     }));
 
     /* Services dropdown */
     const servicesDropdownItems = [
-        { key: 'defence', icon: <RocketOutlined />, label: t('dropdown.services.defence') },
-        { key: 'electronics', icon: <AppstoreOutlined />, label: t('dropdown.services.electronics') },
-        { key: 'machinery', icon: <ToolOutlined />, label: t('dropdown.services.machinery') },
-        { key: 'maritime', icon: <SafetyCertificateOutlined />, label: t('dropdown.services.maritime') },
+        { key: 'denizcilik', icon: <CompassOutlined />, label: t('dropdown.services.denizcilik') },
+        { key: 'savunmaSanayi', icon: <RocketOutlined />, label: t('dropdown.services.savunmaSanayi') },
+        { key: 'makina', icon: <ToolOutlined />, label: t('dropdown.services.makina') },
+        {
+            key: 'elektronikOtomasyon',
+            icon: <ThunderboltOutlined />,
+            label: t('dropdown.services.elektronikOtomasyon'),
+        },
     ].map((item) => ({
         ...item,
-        label: <span onClick={() => navigate(`/services#${item.key}`)}>{item.label}</span>,
+        onClick: ({ domEvent }) => {
+            domEvent.stopPropagation();
+            navigate(localizePath(currentLang, '/services') + `#${item.key}`);
+        },
     }));
 
     /* Navigation items */
@@ -137,7 +160,7 @@ const AppHeader = () => {
     const currentLangLabel = languages.find((l) => l.key === i18n.language)?.label || '🇹🇷 Türkçe';
 
     /* Determine if hero page (transparent header) */
-    const isHome = location.pathname === '/';
+    const isHome = barePath === '/';
     const headerBg = scrolled || !isHome ? 'rgba(255, 255, 255, 0.97)' : 'transparent';
     const textColor = scrolled || !isHome ? 'var(--color-dark)' : '#fff';
 
@@ -156,7 +179,7 @@ const AppHeader = () => {
                 }}
             >
                 {/* Logo image only */}
-                <Link
+                <LocalizedLink
                     to="/"
                     style={{
                         display: 'flex',
@@ -168,12 +191,14 @@ const AppHeader = () => {
                     <img
                         src={AquaticLogo}
                         alt="Aquatic Logo"
+                        width={162}
+                        height={48}
                         style={{
-                            height: 40,
+                            height: 48,
                             objectFit: 'contain',
                         }}
                     />
-                </Link>
+                </LocalizedLink>
 
                 {/* Desktop Navigation */}
                 <div
@@ -182,11 +207,12 @@ const AppHeader = () => {
                 >
                     <Menu
                         mode="horizontal"
-                        selectedKeys={[location.pathname]}
+                        selectedKeys={[barePath]}
                         items={navItems.map((item) => {
                             if (item.dropdown) {
                                 return {
                                     key: item.key,
+                                    onClick: () => navigate(localizePath(currentLang, item.key)),
                                     label: (
                                         <Dropdown
                                             menu={{ items: item.dropdown }}
@@ -194,7 +220,6 @@ const AppHeader = () => {
                                             arrow
                                         >
                                             <span
-                                                onClick={() => navigate(item.key)}
                                                 style={{
                                                     color: textColor,
                                                     transition: 'color 0.3s',
@@ -216,12 +241,12 @@ const AppHeader = () => {
                             return {
                                 key: item.key,
                                 label: (
-                                    <Link
+                                    <LocalizedLink
                                         to={item.key}
                                         style={{ color: textColor, transition: 'color 0.3s' }}
                                     >
                                         {item.label}
-                                    </Link>
+                                    </LocalizedLink>
                                 ),
                             };
                         })}
@@ -280,7 +305,7 @@ const AppHeader = () => {
             >
                 <Menu
                     mode="inline"
-                    selectedKeys={[location.pathname]}
+                    selectedKeys={[barePath]}
                     items={navItems.map((item) => {
                         if (item.dropdown) {
                             return {
@@ -290,16 +315,11 @@ const AppHeader = () => {
                                 children: item.dropdown.map((sub) => ({
                                     key: sub.key,
                                     icon: sub.icon,
-                                    label: (
-                                        <span
-                                            onClick={() => {
-                                                scrollToSection(item.key, sub.key);
-                                                setDrawerOpen(false);
-                                            }}
-                                        >
-                                            {sub.label.props.children}
-                                        </span>
-                                    ),
+                                    label: sub.label,
+                                    onClick: (info) => {
+                                        sub.onClick(info);
+                                        setDrawerOpen(false);
+                                    },
                                 })),
                             };
                         }
@@ -308,7 +328,7 @@ const AppHeader = () => {
                             icon: item.icon,
                             label: item.label,
                             onClick: () => {
-                                navigate(item.key);
+                                navigate(localizePath(currentLang, item.key));
                                 setDrawerOpen(false);
                             },
                         };

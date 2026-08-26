@@ -8,6 +8,15 @@ import {
     SettingOutlined,
     CameraOutlined,
     BulbOutlined,
+    ApiOutlined,
+    ThunderboltOutlined,
+    ExperimentOutlined,
+    GlobalOutlined,
+    ControlOutlined,
+    CompressOutlined,
+    SafetyOutlined,
+    NodeIndexOutlined,
+    ToolOutlined,
 } from '@ant-design/icons';
 import PageHero from '../components/common/PageHero';
 import { useRevealAnimation } from '../hooks/useRevealAnimation';
@@ -21,16 +30,42 @@ import categoriesData from '../data/categories.json';
 const { Sider, Content } = Layout;
 
 const categoryColors = {
-    'underwater-cameras': '#0050b3',
+    'kucuk-mikro-dairesel': 'var(--color-primary)',
+    'standart-dairesel': 'var(--color-primary-dark)',
+    'guc-serileri': 'var(--color-accent-dark)',
+    'yag-dolgulu': 'var(--color-accent)',
+    'ethernet-koaksiyel': 'var(--color-primary-light)',
+    'rm-lpm-serisi': 'var(--color-primary)',
+    'dusuk-profilli': 'var(--color-accent-dark)',
+    'metal-govdeli': 'var(--color-primary-dark)',
+    'fiber-optik': 'var(--color-accent)',
+    'konnektor-aksesuarlari': 'var(--color-text-muted)',
+    'underwater-cameras': 'var(--color-primary)',
     'subsea-lights-lasers': '#0096c7',
-    'subsea-connectors': '#023e8a',
-    'rov-accessories': '#005f73',
 };
 
 const getCategoryIcon = (id) => {
     switch (id) {
-        case 'subsea-connectors':
+        case 'kucuk-mikro-dairesel':
             return <SettingOutlined />;
+        case 'standart-dairesel':
+            return <ApiOutlined />;
+        case 'guc-serileri':
+            return <ThunderboltOutlined />;
+        case 'yag-dolgulu':
+            return <ExperimentOutlined />;
+        case 'ethernet-koaksiyel':
+            return <GlobalOutlined />;
+        case 'rm-lpm-serisi':
+            return <ControlOutlined />;
+        case 'dusuk-profilli':
+            return <CompressOutlined />;
+        case 'metal-govdeli':
+            return <SafetyOutlined />;
+        case 'fiber-optik':
+            return <NodeIndexOutlined />;
+        case 'konnektor-aksesuarlari':
+            return <ToolOutlined />;
         case 'underwater-cameras':
             return <CameraOutlined />;
         case 'subsea-lights-lasers':
@@ -160,11 +195,30 @@ const ProductsPage = () => {
                                                             className={`product-card${isExpanded ? ' product-card--expanded' : ''}`}
                                                             cover={
                                                                 <div className="product-image-wrapper">
-                                                                    <img
-                                                                        alt={product.name}
-                                                                        src={product.images?.[0]}
-                                                                        loading="lazy"
-                                                                    />
+                                                                    {product.images?.[0] ? (
+                                                                        <img
+                                                                            alt={product.name}
+                                                                            src={product.images[0]}
+                                                                            loading="lazy"
+                                                                        />
+                                                                    ) : (
+                                                                        <div
+                                                                            className="product-image-placeholder"
+                                                                            style={{
+                                                                                color:
+                                                                                    categoryColors[
+                                                                                        product
+                                                                                            .categoryId
+                                                                                    ] ||
+                                                                                    'var(--color-primary)',
+                                                                            }}
+                                                                            aria-hidden="true"
+                                                                        >
+                                                                            {getCategoryIcon(
+                                                                                product.categoryId
+                                                                            )}
+                                                                        </div>
+                                                                    )}
                                                                     {product.isPremium && (
                                                                         <div className="product-premium-badge">
                                                                             Premium

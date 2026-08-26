@@ -1,6 +1,7 @@
 /* ===== i18n Configuration ===== */
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import { getDomainDefaultLang } from './i18n/langRouting';
 
 import tr from './locales/tr.json';
 import en from './locales/en.json';
@@ -14,15 +15,12 @@ const resources = {
     ru: { translation: ru },
 };
 
-// Domain-based default language detection
+// Initial guess before LangSync corrects it from the URL on mount (see
+// LangSync.jsx) — domain-aware so aquatic.kz doesn't flash Turkish first.
 const getInitialLanguage = () => {
     const saved = localStorage.getItem('aquatic-lang');
     if (saved) return saved;
-
-    const hostname = window.location.hostname;
-    if (hostname.includes('.tr')) return 'tr';
-    if (hostname.includes('.kz')) return 'kk';
-    return 'tr'; // Default to Turkish
+    return getDomainDefaultLang();
 };
 
 i18n.use(initReactI18next).init({

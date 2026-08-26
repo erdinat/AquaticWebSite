@@ -8,16 +8,16 @@ import ErrorBoundary from './components/ErrorBoundary';
 import './i18n';
 import './index.css';
 
-/* Ant Design theme customization - Corporate Blue */
+/* Ant Design theme customization - Deep Steel Navy */
 const theme = {
     token: {
-        colorPrimary: '#0050b3',
-        colorLink: '#0050b3',
-        colorLinkHover: '#1890ff',
-        borderRadius: 8,
-        fontFamily: "'Inter', 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif",
+        colorPrimary: '#0a3d62',
+        colorLink: '#0a3d62',
+        colorLinkHover: '#2e6e96',
+        borderRadius: 6,
+        fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
         fontSize: 15,
-        colorBgLayout: '#f5f7fa',
+        colorBgLayout: '#f4f7ff',
     },
 };
 

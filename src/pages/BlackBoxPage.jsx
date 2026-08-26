@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
+import { useLocalizedNavigate } from '../hooks/useLocalizedNavigate';
 import PageHero from '../components/common/PageHero';
 import { useRevealAnimation } from '../hooks/useRevealAnimation';
 import PageSEO from '../components/common/PageSEO';
@@ -21,7 +21,7 @@ import './BlackBoxPage.css';
 
 const BlackBoxPage = () => {
     const { t } = useTranslation();
-    const navigate = useNavigate();
+    const navigate = useLocalizedNavigate();
 
     /* Reveal animations */
     useRevealAnimation();
@@ -29,10 +29,10 @@ const BlackBoxPage = () => {
     /* Specs icon mapping */
     const specIcons = {
         temperature: <FireOutlined style={{ color: '#ff4d4f' }} />,
-        pressure: <ExperimentOutlined style={{ color: '#0050b3' }} />,
+        pressure: <ExperimentOutlined style={{ color: 'var(--color-primary)' }} />,
         impact: <ThunderboltOutlined style={{ color: '#faad14' }} />,
         recording: <ClockCircleOutlined style={{ color: '#52c41a' }} />,
-        beacon: <RadarChartOutlined style={{ color: '#1890ff' }} />,
+        beacon: <RadarChartOutlined style={{ color: 'var(--color-primary-light)' }} />,
         standard: <FileProtectOutlined style={{ color: '#722ed1' }} />,
     };
 

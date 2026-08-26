@@ -1,33 +1,284 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://aquatic.com.kz/</loc>
-    <lastmod>2024-03-14</lastmod>
+    <loc>https://aquatic.com.tr/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aquatic.com.tr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquatic.com.tr/en"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aquatic.com.tr/ru"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://aquatic.com.tr/kk"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aquatic.com.tr/"/>
+    <lastmod>2026-08-21</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://aquatic.com.tr/en</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aquatic.com.tr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquatic.com.tr/en"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aquatic.com.tr/ru"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://aquatic.com.tr/kk"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aquatic.com.tr/"/>
+    <lastmod>2026-08-21</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://aquatic.com.tr/ru</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aquatic.com.tr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquatic.com.tr/en"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aquatic.com.tr/ru"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://aquatic.com.tr/kk"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aquatic.com.tr/"/>
+    <lastmod>2026-08-21</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://aquatic.com.tr/kk</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aquatic.com.tr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquatic.com.tr/en"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aquatic.com.tr/ru"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://aquatic.com.tr/kk"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aquatic.com.tr/"/>
+    <lastmod>2026-08-21</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://aquatic.com.tr/corporate</loc>
-    <lastmod>2024-03-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aquatic.com.tr/corporate"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquatic.com.tr/en/corporate"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aquatic.com.tr/ru/corporate"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://aquatic.com.tr/kk/corporate"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aquatic.com.tr/corporate"/>
+    <lastmod>2026-08-21</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://aquatic.com.tr/en/corporate</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aquatic.com.tr/corporate"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquatic.com.tr/en/corporate"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aquatic.com.tr/ru/corporate"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://aquatic.com.tr/kk/corporate"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aquatic.com.tr/corporate"/>
+    <lastmod>2026-08-21</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://aquatic.com.tr/ru/corporate</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aquatic.com.tr/corporate"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquatic.com.tr/en/corporate"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aquatic.com.tr/ru/corporate"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://aquatic.com.tr/kk/corporate"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aquatic.com.tr/corporate"/>
+    <lastmod>2026-08-21</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://aquatic.com.tr/kk/corporate</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aquatic.com.tr/corporate"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquatic.com.tr/en/corporate"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aquatic.com.tr/ru/corporate"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://aquatic.com.tr/kk/corporate"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aquatic.com.tr/corporate"/>
+    <lastmod>2026-08-21</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://aquatic.com.tr/services</loc>
-    <lastmod>2024-03-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aquatic.com.tr/services"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquatic.com.tr/en/services"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aquatic.com.tr/ru/services"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://aquatic.com.tr/kk/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aquatic.com.tr/services"/>
+    <lastmod>2026-08-21</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://aquatic.com.tr/en/services</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aquatic.com.tr/services"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquatic.com.tr/en/services"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aquatic.com.tr/ru/services"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://aquatic.com.tr/kk/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aquatic.com.tr/services"/>
+    <lastmod>2026-08-21</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://aquatic.com.tr/ru/services</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aquatic.com.tr/services"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquatic.com.tr/en/services"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aquatic.com.tr/ru/services"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://aquatic.com.tr/kk/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aquatic.com.tr/services"/>
+    <lastmod>2026-08-21</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://aquatic.com.tr/kk/services</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aquatic.com.tr/services"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquatic.com.tr/en/services"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aquatic.com.tr/ru/services"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://aquatic.com.tr/kk/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aquatic.com.tr/services"/>
+    <lastmod>2026-08-21</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://aquatic.com.tr/products</loc>
-    <lastmod>2024-03-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aquatic.com.tr/products"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquatic.com.tr/en/products"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aquatic.com.tr/ru/products"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://aquatic.com.tr/kk/products"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aquatic.com.tr/products"/>
+    <lastmod>2026-08-21</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://aquatic.com.tr/en/products</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aquatic.com.tr/products"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquatic.com.tr/en/products"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aquatic.com.tr/ru/products"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://aquatic.com.tr/kk/products"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aquatic.com.tr/products"/>
+    <lastmod>2026-08-21</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://aquatic.com.tr/ru/products</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aquatic.com.tr/products"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquatic.com.tr/en/products"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aquatic.com.tr/ru/products"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://aquatic.com.tr/kk/products"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aquatic.com.tr/products"/>
+    <lastmod>2026-08-21</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://aquatic.com.tr/kk/products</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aquatic.com.tr/products"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquatic.com.tr/en/products"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aquatic.com.tr/ru/products"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://aquatic.com.tr/kk/products"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aquatic.com.tr/products"/>
+    <lastmod>2026-08-21</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://aquatic.com.tr/blackbox</loc>
-    <lastmod>2024-03-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aquatic.com.tr/blackbox"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquatic.com.tr/en/blackbox"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aquatic.com.tr/ru/blackbox"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://aquatic.com.tr/kk/blackbox"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aquatic.com.tr/blackbox"/>
+    <lastmod>2026-08-21</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://aquatic.com.tr/en/blackbox</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aquatic.com.tr/blackbox"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquatic.com.tr/en/blackbox"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aquatic.com.tr/ru/blackbox"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://aquatic.com.tr/kk/blackbox"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aquatic.com.tr/blackbox"/>
+    <lastmod>2026-08-21</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://aquatic.com.tr/ru/blackbox</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aquatic.com.tr/blackbox"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquatic.com.tr/en/blackbox"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aquatic.com.tr/ru/blackbox"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://aquatic.com.tr/kk/blackbox"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aquatic.com.tr/blackbox"/>
+    <lastmod>2026-08-21</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://aquatic.com.tr/kk/blackbox</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aquatic.com.tr/blackbox"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquatic.com.tr/en/blackbox"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aquatic.com.tr/ru/blackbox"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://aquatic.com.tr/kk/blackbox"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aquatic.com.tr/blackbox"/>
+    <lastmod>2026-08-21</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://aquatic.com.tr/careers</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aquatic.com.tr/careers"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquatic.com.tr/en/careers"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aquatic.com.tr/ru/careers"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://aquatic.com.tr/kk/careers"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aquatic.com.tr/careers"/>
+    <lastmod>2026-08-21</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://aquatic.com.tr/en/careers</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aquatic.com.tr/careers"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquatic.com.tr/en/careers"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aquatic.com.tr/ru/careers"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://aquatic.com.tr/kk/careers"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aquatic.com.tr/careers"/>
+    <lastmod>2026-08-21</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://aquatic.com.tr/ru/careers</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aquatic.com.tr/careers"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquatic.com.tr/en/careers"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aquatic.com.tr/ru/careers"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://aquatic.com.tr/kk/careers"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aquatic.com.tr/careers"/>
+    <lastmod>2026-08-21</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://aquatic.com.tr/kk/careers</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aquatic.com.tr/careers"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquatic.com.tr/en/careers"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aquatic.com.tr/ru/careers"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://aquatic.com.tr/kk/careers"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aquatic.com.tr/careers"/>
+    <lastmod>2026-08-21</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://aquatic.com.tr/contact</loc>
-    <lastmod>2024-03-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aquatic.com.tr/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquatic.com.tr/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aquatic.com.tr/ru/contact"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://aquatic.com.tr/kk/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aquatic.com.tr/contact"/>
+    <lastmod>2026-08-21</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://aquatic.com.tr/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aquatic.com.tr/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquatic.com.tr/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aquatic.com.tr/ru/contact"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://aquatic.com.tr/kk/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aquatic.com.tr/contact"/>
+    <lastmod>2026-08-21</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://aquatic.com.tr/ru/contact</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aquatic.com.tr/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquatic.com.tr/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aquatic.com.tr/ru/contact"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://aquatic.com.tr/kk/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aquatic.com.tr/contact"/>
+    <lastmod>2026-08-21</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://aquatic.com.tr/kk/contact</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aquatic.com.tr/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aquatic.com.tr/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aquatic.com.tr/ru/contact"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://aquatic.com.tr/kk/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aquatic.com.tr/contact"/>
+    <lastmod>2026-08-21</lastmod>
     <priority>0.80</priority>
   </url>
 </urlset>

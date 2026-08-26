@@ -1,7 +1,43 @@
 [
     {
-        "id": "subsea-connectors",
-        "nameKey": "products.categories.subseaConnectors"
+        "id": "kucuk-mikro-dairesel",
+        "nameKey": "products.categories.kucukMikroDairesel"
+    },
+    {
+        "id": "standart-dairesel",
+        "nameKey": "products.categories.standartDairesel"
+    },
+    {
+        "id": "guc-serileri",
+        "nameKey": "products.categories.gucSerileri"
+    },
+    {
+        "id": "yag-dolgulu",
+        "nameKey": "products.categories.yagDolgulu"
+    },
+    {
+        "id": "ethernet-koaksiyel",
+        "nameKey": "products.categories.ethernetKoaksiyel"
+    },
+    {
+        "id": "rm-lpm-serisi",
+        "nameKey": "products.categories.rmLpmSerisi"
+    },
+    {
+        "id": "dusuk-profilli",
+        "nameKey": "products.categories.dusukProfilli"
+    },
+    {
+        "id": "metal-govdeli",
+        "nameKey": "products.categories.metalGovdeli"
+    },
+    {
+        "id": "fiber-optik",
+        "nameKey": "products.categories.fiberOptik"
+    },
+    {
+        "id": "konnektor-aksesuarlari",
+        "nameKey": "products.categories.konnektorAksesuarlari"
     },
     {
         "id": "underwater-cameras",
@@ -10,9 +46,5 @@
     {
         "id": "subsea-lights-lasers",
         "nameKey": "products.categories.subseaLights"
-    },
-    {
-        "id": "rov-accessories",
-        "nameKey": "products.categories.rovAccessories"
     }
 ]

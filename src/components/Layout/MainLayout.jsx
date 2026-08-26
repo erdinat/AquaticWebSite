@@ -2,6 +2,7 @@ import React from 'react';
 import { Layout } from 'antd';
 import AppHeader from './AppHeader';
 import AppFooter from './AppFooter';
+import WhatsAppButton from '../common/WhatsAppButton';
 
 const { Content } = Layout;
 
@@ -17,6 +18,7 @@ const MainLayout = ({ children }) => {
                 <div className="page-enter">{children}</div>
             </Content>
             <AppFooter />
+            <WhatsAppButton />
         </Layout>
     );
 };

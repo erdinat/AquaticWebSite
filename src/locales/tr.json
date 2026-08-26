@@ -1,4 +1,9 @@
 {
+    "notFound": {
+        "title": "Sayfa Bulunamadı",
+        "message": "Aradığınız sayfa bulunamadı.",
+        "back": "Ana Sayfaya Dön"
+    },
     "nav": {
         "home": "Ana Sayfa",
         "corporate": "Kurumsal",
@@ -11,34 +16,48 @@
     "hero": {
         "title": "AQUATIC",
         "slogan": "Teknolojik Gözünüz",
-        "subtitle": "Savunma sanayiinden denizciliğe, elektronikten makine mühendisliğine kadar geniş bir yelpazede yenilikçi çözümler sunuyoruz.",
+        "subtitle": "Sualtı robotlarından torpido konnektörlerine, Türkiye'nin ilk yerli kara kutusuna kadar — sahada kanıtlanmış mühendislik.",
         "cta": "Hizmetlerimizi Keşfedin",
-        "ctaContact": "Bizimle İletişime Geçin"
+        "ctaContact": "Bizimle İletişime Geçin",
+        "slides": {
+            "denizcilik": {
+                "slogan": "Denizde Güvenilir Mühendislik",
+                "subtitle": "Gemi elektrik, makine ve hidrolik sistemlerinde uçtan uca teknik bakım-onarım."
+            },
+            "savunma": {
+                "slogan": "Savunma Sanayiinde Hassasiyet",
+                "subtitle": "Denizaltı ve sualtı platformları için özel tip konnektör ve kablo çözümleri."
+            },
+            "makina": {
+                "slogan": "Endüstride Hassas Üretim",
+                "subtitle": "Kaynaklı imalat, CNC işleme ve özel makine üretiminde uçtan uca mühendislik."
+            }
+        }
     },
     "stats": {
         "experience": "Yıllık Deneyim",
         "projects": "Tamamlanan Proje",
-        "clients": "Mutlu Müşteri",
+        "clients": "Kurumsal Ortak",
         "countries": "Ülke"
     },
     "servicesPreview": {
         "title": "Hizmet Alanlarımız",
-        "subtitle": "Geniş bir yelpazede profesyonel mühendislik çözümleri sunuyoruz.",
-        "defence": {
-            "title": "Savunma Sanayi",
-            "desc": "Sualtı robotları, akustik sistemler ve torpido konnektörleri ile savunma sektörüne yenilikçi çözümler."
+        "subtitle": "Denizcilikten savunma sanayiine, makinadan elektronik ve otomasyona uçtan uca mühendislik.",
+        "denizcilik": {
+            "title": "Aquatic Denizcilik",
+            "desc": "Gemi elektrik, makine, hidrolik-pnömatik ve boru donatım faaliyetleriyle denizcilik sektörüne uçtan uca destek."
         },
-        "electronics": {
-            "title": "Elektronik & Otomasyon",
-            "desc": "Transformatör imalat makineleri ve PCB tasarımlarıyla endüstriyel otomasyon çözümleri."
+        "savunmaSanayi": {
+            "title": "Savunma Sanayi & Sualtı Teknolojileri",
+            "desc": "Özel tip savaş sistemi konnektörleri, sonar/torpido kabloları ve sualtı kamera-konnektör çözümleriyle kritik projelere katkı."
         },
-        "machinery": {
-            "title": "Makina",
-            "desc": "3D tasarım ve talaşlı imalat parkuruyla hassas mühendislik."
+        "makina": {
+            "title": "Aquatic Makina & Endüstri",
+            "desc": "Kaynaklı imalat, CNC talaşlı imalat, özel makine üretimi ve tesis/fabrika kurulumuyla üretim süreçlerinizi güçlendiriyoruz."
         },
-        "maritime": {
-            "title": "Denizcilik",
-            "desc": "Boru donatım ve gemi makine faaliyetleriyle denizcilik sektörüne destek."
+        "elektronikOtomasyon": {
+            "title": "Elektronik ve Otomasyon",
+            "desc": "PCB tasarım ve üretiminden PLC/SCADA entegrasyonuna uzman elektronik ve otomasyon çözümleri."
         },
         "sectionLabel": "Hizmetlerimiz"
     },
@@ -120,78 +139,181 @@
     },
     "services": {
         "title": "Hizmet Gruplarımız",
-        "subtitle": "Farklı sektörlere özel, kapsamlı mühendislik çözümleri sunuyoruz.",
-        "defence": {
-            "title": "Savunma Sanayi",
-            "desc": "Savunma sanayi alanında kritik teknolojiler geliştiriyor, milli projelere katkı sağlıyoruz.",
+        "subtitle": "Denizcilikten savunma sanayiine, sualtı teknolojilerinden endüstriyel otomasyona kapsamlı mühendislik hizmetleri sunuyoruz.",
+        "denizcilik": {
+            "title": "Aquatic Denizcilik",
+            "desc": "Gemi elektrik, makine, hidrolik-pnömatik ve genel bakım-onarım faaliyetlerini kapsayan denizcilik sektörüne yönelik teknik hizmetler bütünü.",
             "items": {
-                "underwater": {
-                    "title": "Sualtı Robotları (ROV/AUV)",
-                    "desc": "Askeri ve sivil amaçlı sualtı keşif, gözetleme ve müdahale robotları tasarım ve üretimi."
+                "gemiElektrik": {
+                    "title": "Gemi Elektrik Faaliyetleri",
+                    "desc": "Gemilerde elektrik sistemlerinin kurulumu, bakımı ve arıza giderme hizmetleri.",
+                    "detail": "Gemi üzerindeki ana ve yardımcı elektrik sistemlerinin (güç dağıtım panoları, jeneratör senkronizasyon sistemleri, aydınlatma, kablo tesisatı, topraklama ve izolasyon kontrolleri) kurulumu, periyodik bakımı, arıza tespiti ve onarımı gerçekleştirilir. Sörvey ve klas kuruluşu gereksinimlerine uygun elektrik testleri, kablo döşeme ve pano revizyon çalışmaları hizmet kapsamındadır. Ekip, gemi tipine (ticari, askeri, özel amaçlı) göre özelleştirilmiş elektrik bakım planları uygular."
                 },
-                "acoustic": {
-                    "title": "Akustik Sistemler",
-                    "desc": "Sualtı akustik sensör, sonar ve haberleşme sistemleri geliştirme ve entegrasyonu."
+                "gemiMakine": {
+                    "title": "Gemi Makine Faaliyetleri (Ana Makine, Jeneratör Bakım-Onarım)",
+                    "desc": "Ana makine ve jeneratör gruplarının periyodik bakım, revizyon ve arıza onarım hizmetleri.",
+                    "detail": "Gemi ana makinesi ve jeneratör setlerinin periyodik bakımı, revizyon (overhaul), parça değişimi, yağ analizleri doğrultusunda önleyici bakım planlaması ve arızi onarım hizmetleri sunulur. Enjektör, turboşarj, soğutma sistemi, yakıt sistemi ve egzoz hattı gibi kritik alt bileşenlerin kontrolü ve bakımı da bu kapsamda yürütülür. Amaç, geminin operasyonel sürekliliğini ve makine dairesi güvenliğini en üst düzeyde tutmaktır."
                 },
-                "torpedo": {
-                    "title": "Torpido Konnektörleri",
-                    "desc": "MIL-STD standartlarına uygun, yüksek güvenilirlikli torpido konnektör tasarım ve üretimi."
+                "hidrolikPnomatik": {
+                    "title": "Gemi Hidrolik-Pnömatik Sistem Onarımları",
+                    "desc": "Gemi hidrolik ve pnömatik sistemlerinin bakım, onarım ve revizyon hizmetleri.",
+                    "detail": "Dümen makinesi, vinç, kapak açma-kapama sistemleri, güverte makineleri ve benzeri hidrolik/pnömatik tahrikli ekipmanların bakım, sızdırmazlık kontrolü, hortum-conta değişimi, basınç testleri ve arıza onarımı gerçekleştirilir. Hidrolik pompa, valf ve silindir revizyonları ile pnömatik hat ve kompresör sistemlerinin periyodik kontrolleri de hizmet kapsamındadır."
+                },
+                "pnomatikMerdiven": {
+                    "title": "Pnömatik Merdiven",
+                    "desc": "Gemilerde kullanılan pnömatik (havalı) merdiven sistemleri.",
+                    "detail": "Gemi bordasına iniş-biniş için kullanılan pnömatik tahrikli merdiven sistemlerinin tedariki, montajı ve bakımı sağlanır. Sistem, hızlı ve güvenli konuşlandırma imkânı sunarak personel ve mürettebat geçişlerinde operasyonel verimliliği artırır. Ürün kataloğu talep üzerine paylaşılabilir; teknik özellikler (taşıma kapasitesi, açılma süresi, malzeme sınıfı vb.) proje bazında değerlendirilir."
+                },
+                "komplebakimOnarim": {
+                    "title": "Gemi Komple Bakım-Onarım Faaliyetleri",
+                    "desc": "Tek elden yürütülen kapsamlı gemi bakım-onarım hizmeti.",
+                    "detail": "Elektrik, makine, hidrolik-pnömatik, boru donatım ve teçhizat alanlarını tek çatı altında birleştiren komple bakım-onarım paketi sunulur. Dok girişinden çıkışına kadar planlama, iş kırılım yapısı (WBS), parça tedariki, işçilik koordinasyonu ve son kontrol/test süreçleri Aquatic tarafından uçtan uca yönetilir. Bu hizmet, gemi sahiplerine tek muhatap ile koordinasyon kolaylığı ve zaman tasarrufu sağlar."
+                },
+                "tecizMontajOnarim": {
+                    "title": "Teçhiz, Montaj ve Onarım Faaliyetleri",
+                    "desc": "Gemi teçhizatının montajı, devreye alınması ve onarımı.",
+                    "detail": "Yeni inşa ya da modernizasyon projelerinde gemi teçhizatının (donanım, ekipman, yardımcı sistemler) montajı, hizalanması ve devreye alma (commissioning) süreçleri yürütülür. Ayrıca mevcut teçhizatta oluşan arızaların giderilmesi, aşınan parçaların yenilenmesi ve performans testleri hizmet kapsamındadır."
+                },
+                "boruDonatim": {
+                    "title": "Gemi Boru Donatım Faaliyetleri",
+                    "desc": "Gemi boru hatlarının imalatı, montajı ve donatımı.",
+                    "detail": "Yakıt, yağ, soğutma suyu, sintine, balast ve yangın hattı gibi gemi boru sistemlerinin tasarıma uygun imalatı, izometrik çizimlere göre montajı, kaynak ve basınç testleri gerçekleştirilir. Korozyona dayanıklı malzeme seçimi ve klas kuruluşu onaylı işçilik standartları uygulanır."
                 }
             }
         },
-        "electronics": {
-            "title": "Elektronik & Otomasyon",
-            "desc": "Endüstriyel otomasyon ve elektronik sistemler alanında uzman çözümler.",
+        "savunmaSanayi": {
+            "title": "Savunma Sanayi & Sualtı Teknolojileri",
+            "desc": "Denizaltı, sonar ve torpido sistemleri gibi kritik savunma sanayii uygulamaları için özel tip kablo ve konnektör çözümleri. Sualtı ortamına özel kablo, kamera ve konnektör ürün ailesi.",
             "items": {
-                "transformer": {
-                    "title": "Transformatör İmalat Makineleri",
-                    "desc": "Yüksek verimli transformatör sarım, kesim ve montaj makineleri tasarım ve üretimi."
+                "ozelKonnektorler": {
+                    "title": "Özel Tip Savaş Sistemleri Konnektörleri",
+                    "desc": "Askeri/deniz savunma sistemlerine özel tasarlanmış konnektör çözümleri.",
+                    "detail": "Yüksek basınç, su geçirmezlik, elektromanyetik uyumluluk (EMC) ve şok/titreşim dayanımı gerektiren savunma sanayii uygulamaları için özel tip konnektörler tasarlanır ve üretilir. Denizaltı, savaş gemisi ve sualtı platformlarında kullanılan sistemlerin kesintisiz ve güvenilir bağlantı ihtiyacını karşılayacak şekilde, ilgili askeri standartlara (MIL-spec vb.) uygun mühendislik yaklaşımıyla geliştirilir."
                 },
-                "pcb": {
-                    "title": "PCB Tasarım ve Üretim",
-                    "desc": "Çok katmanlı, yüksek frekanslı PCB tasarımı ve prototip üretimi."
+                "sonarKablolari": {
+                    "title": "Sonar Sistem Kabloları",
+                    "desc": "Sonar sistemleri için özel imal edilmiş sinyal ve güç kabloları.",
+                    "detail": "Sonar dizilerinin (array) yüksek hassasiyetli sinyal iletimi gerektiren yapısına uygun, düşük gürültülü, ekranlı ve su geçirmez kablo çözümleri üretilir. Derin su basıncına ve tuzlu su ortamına dayanıklı izolasyon malzemeleri kullanılarak sinyal bütünlüğü ve uzun ömür garanti altına alınır."
                 },
-                "automation": {
-                    "title": "PLC & SCADA Sistemleri",
-                    "desc": "Endüstriyel PLC programlama, SCADA arayüz geliştirme ve saha otomasyon entegrasyonu."
+                "torpidoKablolari": {
+                    "title": "Torpido Sistem Kabloları",
+                    "desc": "Torpido kontrol ve fırlatma sistemleri için kritik kablo çözümleri.",
+                    "detail": "Torpido sistemlerinin kontrol, telemetri ve enerji besleme hatlarında kullanılan, yüksek güvenilirlik ve hata toleransı gerektiren özel kablo tasarımları geliştirilir. Ani darbe, basınç değişimi ve elektromanyetik parazite karşı dayanıklı yapılarıyla kritik görev sistemlerinin kesintisiz çalışmasını destekler."
+                },
+                "sualtiAkustik": {
+                    "title": "Sualtı Akustik Sistemler",
+                    "desc": "Sualtı akustik algılama ve iletişim sistemleri için altyapı çözümleri.",
+                    "detail": "Sualtı akustik sensör dizileri, hidrofon sistemleri ve akustik iletişim platformları için kablolama, konnektör ve entegrasyon hizmetleri sunulur. Sistemlerin derin su koşullarında güvenilir sinyal iletimi ve uzun süreli operasyonel dayanıklılık göstermesi hedeflenir."
+                },
+                "sualtiKablosu": {
+                    "title": "Su Altı Kablosu",
+                    "desc": "Sualtı kullanımına uygun özel tip kablolar.",
+                    "detail": "Yüksek su geçirmezlik dereceli, basınca dayanıklı, korozyona karşı korumalı sualtı kabloları; ROV/AUV sistemleri, sualtı sensörleri ve deniz altyapı projeleri için tedarik edilir. Ürün kataloğu talep üzerine paylaşılabilir; derinlik sınıfı, iletken sayısı, kesit ve kaplama malzemesi gibi teknik detaylar proje bazında değerlendirilir."
+                },
+                "kamera": {
+                    "title": "Kamera",
+                    "desc": "Sualtı görüntüleme sistemleri.",
+                    "detail": "Gemi altı muayeneleri, sualtı inceleme, ROV entegrasyonu ve güvenlik izleme amaçlı yüksek dayanımlı sualtı kameraları sunulur. Düşük ışık koşullarında yüksek görüntü kalitesi ve derin su basıncına dayanıklı gövde yapısı öne çıkan özellikler arasındadır. Çözünürlük, derinlik sınırı ve bağlantı arayüzü bilgileri proje bazında paylaşılır."
+                },
+                "konnektor": {
+                    "title": "Konnektör",
+                    "desc": "Sualtı ve deniz ortamına özel konnektör çözümleri.",
+                    "detail": "Sualtı ekipmanlarının birbirine ve ana sistemlere güvenli şekilde bağlanmasını sağlayan, su geçirmez ve basınca dayanıklı konnektör ürün ailesi sunulur. Pim sayısı, IP/derinlik sınıfı ve malzeme seçenekleri için güncel ürün kataloğumuza ve /products sayfamıza bakabilirsiniz."
                 }
             }
         },
-        "machinery": {
-            "title": "Makina",
-            "desc": "Hassas mühendislik ve imalat çözümleri ile üretim süreçlerinizi güçlendiriyoruz.",
+        "makina": {
+            "title": "Aquatic Makina & Endüstri",
+            "desc": "Kaynaklı imalat, özel makine üretimi, talaşlı imalat ve endüstriyel bakım-onarım hizmetleri. Tesis kurulumu, fabrika altyapısı ve endüstriyel boru donatım hizmetleri.",
             "items": {
-                "design3d": {
-                    "title": "3D Tasarım",
-                    "desc": "SolidWorks, CATIA ve AutoCAD ile profesyonel 3D modelleme ve mühendislik tasarımı."
+                "kaynakliImalat": {
+                    "title": "Kaynaklı İmalat ve Montaj",
+                    "desc": "Çelik konstrüksiyon ve metal parçaların kaynaklı imalatı ile montajı.",
+                    "detail": "Proje ve teknik resimlere uygun olarak metal aksamların kaynaklı imalatı, ısıl işlem, yüzey hazırlığı ve nihai montaj süreçleri yürütülür. Kalite kontrol aşamalarında kaynak dikişlerinin görsel ve gerektiğinde tahribatsız muayene (NDT) yöntemleriyle kontrolü sağlanır."
                 },
-                "cnc": {
+                "konveyorler": {
+                    "title": "Konveyörler",
+                    "desc": "Endüstriyel taşıma sistemleri tasarım ve imalatı.",
+                    "detail": "Üretim hatlarına özel bant, zincir veya rulolu konveyör sistemlerinin tasarımı, imalatı, montajı ve devreye alınması gerçekleştirilir. Kapasite, taşınacak malzeme türü ve hat yerleşimine göre özelleştirilmiş çözümler sunulur; ayrıca mevcut konveyör sistemlerinin bakım ve revizyon hizmetleri de kapsam dahilindedir."
+                },
+                "ozelImalatMakinalar": {
+                    "title": "Özel İmalat Makinaları",
+                    "desc": "Müşteriye özel tasarlanan üretim/otomasyon makineleri.",
+                    "detail": "Standart makinelerin karşılamadığı ihtiyaçlar için sıfırdan tasarım-imalat yaklaşımıyla özel amaçlı makineler geliştirilir. Mekanik tasarım, otomasyon entegrasyonu, prototip üretimi ve saha devreye alma süreçleri tek elden yürütülür."
+                },
+                "tasarim3d": {
+                    "title": "3D Tasarım ve Gerçekleme",
+                    "desc": "3B mühendislik tasarımı ve prototip/parça üretimi.",
+                    "detail": "CAD tabanlı 3 boyutlu mühendislik tasarımları hazırlanır; tasarımların fiziksel olarak gerçeklenmesi (prototipleme, imalat için teknik resme dönüştürme, tersine mühendislik) süreçleri desteklenir. Karmaşık geometrili parçaların tasarım doğrulaması bu hizmet kapsamında yapılır."
+                },
+                "talasliImalat": {
                     "title": "Talaşlı İmalat",
-                    "desc": "CNC torna, freze ve 5 eksen işleme merkezleriyle hassas parça üretimi."
+                    "desc": "CNC ve konvansiyonel talaşlı imalat hizmetleri.",
+                    "detail": "Torna, freze ve CNC işleme merkezlerinde hassas ölçülü parça imalatı gerçekleştirilir. Prototipten seri üretime kadar farklı ölçeklerde, teknik resme birebir uygun toleranslarla üretim yapılır."
                 },
-                "welding": {
-                    "title": "Kaynak & Mekanik Montaj",
-                    "desc": "TIG/MIG kaynak, sertleştirme ve hassas mekanik montaj hizmetleri."
+                "trafoEkipmanlari": {
+                    "title": "Trafo Sanayi Üretim Ekipmanları",
+                    "desc": "Trafo üretim hatlarına yönelik ekipman ve makine çözümleri.",
+                    "detail": "Transformatör üretim tesislerinde kullanılan özel amaçlı üretim ekipmanlarının tasarımı, imalatı ve bakımı sağlanır. Süreç verimliliğini artıracak mekanik çözümler, sektörün teknik gereksinimleri göz önünde bulundurularak geliştirilir."
+                },
+                "bobinSarimMakinalari": {
+                    "title": "Bobin Sarım Makinaları ve Onarım Hizmetleri",
+                    "desc": "Bobin sarım makinelerinin imalatı ve bakım-onarımı.",
+                    "detail": "Elektrik motoru ve trafo üretiminde kullanılan bobin sarım makinelerinin tasarımı, imalatı, kurulumu ile mevcut makinelerin periyodik bakım ve onarım hizmetleri sunulur. Sarım hassasiyeti ve makine performansını korumaya yönelik teknik destek sağlanır."
+                },
+                "bobinSarimManderelleri": {
+                    "title": "Bobin Sarım Manderelleri",
+                    "desc": "Bobin sarım işlemlerinde kullanılan mandrel (kalıp mili) üretimi.",
+                    "detail": "Farklı bobin ölçü ve tiplerine uygun, hassas toleranslı mandrel (manderel) üretimi gerçekleştirilir. Talep edilen bobin geometrisine göre özel ölçülerde imalat yapılabilir."
+                },
+                "tesisBoruDonatim": {
+                    "title": "Tesis Boru Donatım ve Onarım Faaliyetleri",
+                    "desc": "Endüstriyel tesislerde boru hattı imalatı, donatımı ve onarımı.",
+                    "detail": "Fabrika ve tesislerdeki proses boru hatlarının (buhar, basınçlı hava, su, kimyasal transfer vb.) tasarıma uygun imalatı, montajı, kaynak işlemleri ve basınç testleri gerçekleştirilir. Mevcut hatlarda oluşan arıza, korozyon veya kaçakların giderilmesine yönelik onarım hizmetleri de sunulur."
+                },
+                "tesisFabrikaKurulumu": {
+                    "title": "Tesis / Fabrika Kurulumu",
+                    "desc": "Anahtar teslim tesis ve fabrika kurulum hizmetleri.",
+                    "detail": "Yeni üretim tesislerinin altyapı planlamasından ekipman montajına, boru-elektrik donatımından devreye alma süreçlerine kadar anahtar teslim kurulum hizmeti sunulur. Proje yönetimi, saha koordinasyonu ve son kontrol süreçleri Aquatic mühendislik ekibi tarafından yürütülür."
                 }
             }
         },
-        "maritime": {
-            "title": "Denizcilik",
-            "desc": "Denizcilik sektörü için kapsamlı mühendislik ve teknik destek hizmetleri.",
+        "elektronikOtomasyon": {
+            "title": "Aquatic Elektronik ve Otomasyon",
+            "desc": "Elektronik kart tasarımı, üretimi ve otomasyon çözümleri.",
             "items": {
-                "pipe": {
-                    "title": "Boru Donatım",
-                    "desc": "Gemi ve endüstriyel tesisler için boru sistemleri tasarımı, imalatı ve montajı."
+                "pcbTasarim": {
+                    "title": "PCB Tasarım ve Üretimi",
+                    "desc": "Baskılı devre kartı (PCB) tasarımı ve üretim hizmetleri.",
+                    "detail": "Şematik tasarımdan yerleşim planına (layout), prototip üretiminden seri üretime kadar PCB geliştirme süreçlerinin tamamı yürütülür. Endüstriyel ve savunma sanayii uygulamaları için yüksek güvenilirlik gerektiren kart tasarımlarında sinyal bütünlüğü, EMC uyumluluğu ve dayanıklılık ön planda tutulur."
                 },
-                "shipMachine": {
-                    "title": "Gemi Makine Faaliyetleri",
-                    "desc": "Ana makine, jeneratör bakım-onarım ve revizyon hizmetleri."
+                "elektronikTasarim": {
+                    "title": "Elektronik Tasarım",
+                    "desc": "Devre ve sistem seviyesinde elektronik mühendislik tasarımı.",
+                    "detail": "Müşteri ihtiyacına özel elektronik devre ve sistem tasarımları geliştirilir; kavramsal tasarımdan prototipe, testten üretime hazır hale getirmeye kadar uçtan uca mühendislik desteği sağlanır."
                 },
-                "shipElectrical": {
-                    "title": "Gemi Elektrik Sistemleri",
-                    "desc": "Enerji dağıtım panoları, kablo tesisatı ve elektrik sistemleri bakım-onarım hizmetleri."
+                "otomasyonEntegrasyon": {
+                    "title": "Elektronik ve Otomasyon",
+                    "desc": "Endüstriyel otomasyon ve kontrol sistemleri entegrasyonu.",
+                    "detail": "Üretim hatları, gemi sistemleri ve endüstriyel tesisler için otomasyon altyapısı (PLC, SCADA, sensör entegrasyonu, kontrol panoları) tasarlanır ve devreye alınır. Elektronik tasarım ve otomasyon yetkinlikleri birleştirilerek uçtan uca akıllı sistem çözümleri sunulur."
                 }
             }
+        },
+        "catalogs": {
+            "title": "Kataloglarımız",
+            "subtitle": "Ürünlerimizin tam teknik detaylarını içeren güncel kataloglarımızı inceleyin ve indirin.",
+            "downloadLabel": "Görüntüle / İndir",
+            "items": {
+                "connectors": {
+                    "title": "Sualtı Konnektörleri Kataloğu",
+                    "desc": "60 sayfa — tüm konnektör serileri, teknik özellik tabloları ve parça numaraları."
+                },
+                "lighting": {
+                    "title": "Sualtı Aydınlatma Ürün Kataloğu",
+                    "desc": "Sualtı kamera ve aydınlatma ürün ailesinin tam teknik kataloğu."
+                }
+            },
+            "sectionLabel": "Dokümanlar"
         }
     },
     "products": {
@@ -217,10 +339,18 @@
         "specsTitle": "Teknik Özellikler",
         "categories": {
             "all": "Tüm Ürünler",
-            "subseaConnectors": "Sualtı Konnektörleri",
+            "kucukMikroDairesel": "Küçük & Mikro Dairesel",
+            "standartDairesel": "Standart Dairesel",
+            "gucSerileri": "Güç Serileri",
+            "yagDolgulu": "Yağ Dolgulu Seri",
+            "ethernetKoaksiyel": "Ethernet & Koaksiyel",
+            "rmLpmSerisi": "RM & LPM Serisi",
+            "dusukProfilli": "Düşük Profilli Seri",
+            "metalGovdeli": "Metal Gövdeli Seri",
+            "fiberOptik": "Fiber Optik Seri",
+            "konnektorAksesuarlari": "Konnektör Aksesuarları",
             "underwaterCameras": "Sualtı Kameraları",
-            "subseaLights": "Sualtı Aydınlatma ve Lazer",
-            "rovAccessories": "ROV Aksesuarları"
+            "subseaLights": "Sualtı Aydınlatma ve Lazer"
         },
         "items": {
             "camera": {
@@ -444,6 +574,10 @@
             "email": "bilgi@aquatic.com.tr"
         }
     },
+    "whatsapp": {
+        "message": "Merhaba, Aquatic Elektronik hakkında bilgi almak istiyorum.",
+        "ariaLabel": "WhatsApp ile iletişime geçin"
+    },
     "footer": {
         "description": "Savunma sanayi, elektronik, makina ve denizcilik alanlarında yenilikçi mühendislik çözümleri.",
         "quickLinks": "Hızlı Bağlantılar",
@@ -461,12 +595,30 @@
         "title": "Önemli Kilometre Taşları",
         "subtitle": "Ürün lansmanları, uluslararası açılışlar ve stratejik iş birlikleri",
         "items": {
-            "1": { "title": "Kazakistan Açılışı", "desc": "Orta Asya pazarına giriş ve bölgesel ortaklıkların kurulması." },
-            "2": { "title": "IDEF Ürün Lansmanı", "desc": "Yeni nesil sualtı konnektör serisinin uluslararası tanıtımı." },
-            "3": { "title": "Yerli Kara Kutu", "desc": "Türkiye'nin ilk yerli kara kutu projesinde aktif tasarım ve üretim rolü." },
-            "4": { "title": "Uluslararası Sertifikasyon", "desc": "Ürün gamının uluslararası standartlara uygunluk belgesinin alınması." },
-            "5": { "title": "Savunma Tedarikçisi", "desc": "Yerli savunma sanayii projelerinde stratejik tedarikçi konumuna geçiş." },
-            "6": { "title": "İlk Sualtı Sistemi", "desc": "Türk deniz kuvvetleri için ilk yerli sualtı elektronik sisteminin teslimi." }
+            "1": {
+                "title": "Kazakistan Açılışı",
+                "desc": "Orta Asya pazarına giriş ve bölgesel ortaklıkların kurulması."
+            },
+            "2": {
+                "title": "IDEF Ürün Lansmanı",
+                "desc": "Yeni nesil sualtı konnektör serisinin uluslararası tanıtımı."
+            },
+            "3": {
+                "title": "Yerli Kara Kutu",
+                "desc": "Türkiye'nin ilk yerli kara kutu projesinde aktif tasarım ve üretim rolü."
+            },
+            "4": {
+                "title": "Uluslararası Sertifikasyon",
+                "desc": "Ürün gamının uluslararası standartlara uygunluk belgesinin alınması."
+            },
+            "5": {
+                "title": "Savunma Tedarikçisi",
+                "desc": "Yerli savunma sanayii projelerinde stratejik tedarikçi konumuna geçiş."
+            },
+            "6": {
+                "title": "İlk Sualtı Sistemi",
+                "desc": "Türk deniz kuvvetleri için ilk yerli sualtı elektronik sisteminin teslimi."
+            }
         }
     },
     "news": {
@@ -494,10 +646,10 @@
             "faq": "Sık Sorulan Sorular"
         },
         "services": {
-            "defence": "Savunma Sanayi",
-            "electronics": "Elektronik & Otomasyon",
-            "machinery": "Makina",
-            "maritime": "Denizcilik"
+            "denizcilik": "Aquatic Denizcilik",
+            "savunmaSanayi": "Savunma Sanayi & Sualtı",
+            "makina": "Makina & Endüstri",
+            "elektronikOtomasyon": "Elektronik ve Otomasyon"
         }
     },
     "popularProducts": {
@@ -505,7 +657,44 @@
         "title": "Popüler Ürünlerimiz",
         "subtitle": "Savunma sanayi, sualtı sistemleri, elektronik ve makine alanlarında en çok talep gören çözümlerimizden bazıları.",
         "viewAll": "Tümünü İncele",
-        "topSeller": "En Çok Satan"
+        "topSeller": "En Çok Satan",
+        "items": {
+            "1": {
+                "name": "Basınç Kabı",
+                "category": "Basınç Kabı",
+                "description": "Yüksek basınca dayanıklı, sertifikalı basınç kabı tasarım ve üretimi."
+            },
+            "2": {
+                "name": "Taşınabilir Ünite",
+                "category": "Taşınabilir Ünite",
+                "description": "Saha operasyonları için kompakt, dayanıklı taşınabilir güç ve kontrol ünitesi."
+            },
+            "3": {
+                "name": "Taşınabilir Ünite 2",
+                "category": "Taşınabilir Ünite",
+                "description": "Geliştirilmiş bağlantı ve izleme özelliklerine sahip ikinci nesil taşınabilir ünite."
+            },
+            "4": {
+                "name": "Sualtı Kamerası",
+                "category": "Kamera",
+                "description": "Derin su operasyonları için yüksek çözünürlüklü, sualtı kamera sistemi."
+            },
+            "5": {
+                "name": "Sualtı Aydınlatma Ünitesi",
+                "category": "Aydınlatma",
+                "description": "Düşük güç tüketimli, yüksek parlaklıkta sualtı LED aydınlatma çözümü."
+            },
+            "6": {
+                "name": "Kontrol Monitörü",
+                "category": "Monitör",
+                "description": "Sualtı sistemleri ve ROV kontrolleri için endüstriyel monitör."
+            },
+            "7": {
+                "name": "Emniyet Kemer Sistemi",
+                "category": "Emniyet Ekipmanı",
+                "description": "Sualtı operatörleri için ergonomik ve güvenli emniyet kemer takımı."
+            }
+        }
     },
     "careers": {
         "title": "Kariyer",

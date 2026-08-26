@@ -1,5 +1,4 @@
 import React from 'react';
-import BackgroundParticles from '../BackgroundParticles';
 
 /**
  * PageHero
@@ -14,12 +13,11 @@ const PageHero = ({ title, subtitle, bgImage, extraOverlayClass = '', children }
     return (
         <section className="page-hero">
             <div className="page-hero-bg" />
-            <BackgroundParticles count={15} />
             <div
                 className={`page-hero-overlay ${extraOverlayClass}`}
                 style={bgImage ? { backgroundImage: `url(${bgImage})` } : {}}
             />
-            <div className="page-hero-glow" />
+            <div className="page-hero-scrim" />
             <div className="container page-hero-content">
                 {title && <h1 className="page-hero-title animate-fadeInUp">{title}</h1>}
                 {subtitle && (

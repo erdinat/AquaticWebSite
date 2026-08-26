@@ -1,4 +1,9 @@
 {
+    "notFound": {
+        "title": "Page Not Found",
+        "message": "The page you are looking for could not be found.",
+        "back": "Back to Home"
+    },
     "nav": {
         "home": "Home",
         "corporate": "Corporate",
@@ -11,34 +16,48 @@
     "hero": {
         "title": "AQUATIC",
         "slogan": "Your Technological Eye",
-        "subtitle": "We provide innovative solutions across a wide range of fields, from defense industry to maritime, electronics to mechanical engineering.",
+        "subtitle": "From underwater robots to torpedo connectors, to Turkey's first domestically-built black box — engineering proven in the field.",
         "cta": "Explore Our Services",
-        "ctaContact": "Get In Touch"
+        "ctaContact": "Get In Touch",
+        "slides": {
+            "denizcilik": {
+                "slogan": "Reliable Engineering at Sea",
+                "subtitle": "End-to-end technical maintenance and repair for ship electrical, machinery, and hydraulic systems."
+            },
+            "savunma": {
+                "slogan": "Precision in the Defense Industry",
+                "subtitle": "Special-type connector and cable solutions for submarines and underwater platforms."
+            },
+            "makina": {
+                "slogan": "Precision Manufacturing in Industry",
+                "subtitle": "End-to-end engineering in welded fabrication, CNC machining, and custom machine production."
+            }
+        }
     },
     "stats": {
         "experience": "Years of Experience",
         "projects": "Completed Projects",
-        "clients": "Happy Clients",
+        "clients": "Institutional Partners",
         "countries": "Countries"
     },
     "servicesPreview": {
         "title": "Our Service Areas",
-        "subtitle": "We provide professional engineering solutions across a wide spectrum.",
-        "defence": {
-            "title": "Defense Industry",
-            "desc": "Innovative solutions for the defense sector with underwater robots, acoustic systems, and torpedo connectors."
+        "subtitle": "End-to-end engineering from maritime to defense, from machinery to electronics and automation.",
+        "denizcilik": {
+            "title": "Aquatic Maritime",
+            "desc": "End-to-end support for the maritime sector with ship electrical, machinery, hydraulic-pneumatic and pipe outfitting operations."
         },
-        "electronics": {
-            "title": "Electronics & Automation",
-            "desc": "Industrial automation solutions with transformer manufacturing machines and PCB designs."
+        "savunmaSanayi": {
+            "title": "Defense Industry & Underwater Technologies",
+            "desc": "Special-type combat system connectors, sonar/torpedo cables, and underwater camera-connector solutions for critical projects."
         },
-        "machinery": {
-            "title": "Machinery",
-            "desc": "Precision engineering with 3D design and CNC machining capabilities."
+        "makina": {
+            "title": "Aquatic Machinery & Industry",
+            "desc": "Strengthening your production processes with welded fabrication, CNC machining, custom machine manufacturing, and facility installation."
         },
-        "maritime": {
-            "title": "Maritime",
-            "desc": "Supporting the maritime sector with pipe outfitting and ship machinery operations."
+        "elektronikOtomasyon": {
+            "title": "Electronics and Automation",
+            "desc": "Expert electronics and automation solutions from PCB design and manufacturing to PLC/SCADA integration."
         },
         "sectionLabel": "Our Services"
     },
@@ -120,78 +139,181 @@
     },
     "services": {
         "title": "Service Groups",
-        "subtitle": "We provide comprehensive engineering solutions tailored to different sectors.",
-        "defence": {
-            "title": "Defense Industry",
-            "desc": "We develop critical technologies in the defense industry and contribute to national projects.",
+        "subtitle": "From maritime to defense industry, from underwater technologies to industrial automation — comprehensive engineering services.",
+        "denizcilik": {
+            "title": "Aquatic Maritime",
+            "desc": "A complete set of technical services for the maritime sector, covering ship electrical, machinery, hydraulic-pneumatic and general maintenance-repair activities.",
             "items": {
-                "underwater": {
-                    "title": "Underwater Robots (ROV/AUV)",
-                    "desc": "Design and production of underwater exploration, surveillance, and intervention robots for military and civilian purposes."
+                "gemiElektrik": {
+                    "title": "Ship Electrical Operations",
+                    "desc": "Installation, maintenance, and troubleshooting of electrical systems on ships.",
+                    "detail": "Installation, periodic maintenance, fault detection, and repair of the main and auxiliary electrical systems on board (power distribution panels, generator synchronization systems, lighting, cable wiring, grounding and insulation checks) are carried out. Electrical tests, cable laying, and panel overhaul works compliant with survey and classification society requirements are part of the service. The team applies customized electrical maintenance plans depending on the ship type (commercial, military, special purpose)."
                 },
-                "acoustic": {
-                    "title": "Acoustic Systems",
-                    "desc": "Development and integration of underwater acoustic sensors, sonar, and communication systems."
+                "gemiMakine": {
+                    "title": "Ship Machinery Operations (Main Engine, Generator Maintenance-Repair)",
+                    "desc": "Periodic maintenance, overhaul and fault repair services for main engine and generator groups.",
+                    "detail": "Periodic maintenance, overhaul, part replacement, preventive maintenance planning based on oil analysis, and corrective repair services are provided for the ship's main engine and generator sets. Inspection and maintenance of critical subcomponents such as injectors, turbochargers, cooling systems, fuel systems and exhaust lines are also carried out under this scope. The goal is to keep the ship's operational continuity and engine room safety at the highest level."
                 },
-                "torpedo": {
-                    "title": "Torpedo Connectors",
-                    "desc": "Design and production of highly reliable torpedo connectors compliant with MIL-STD standards."
+                "hidrolikPnomatik": {
+                    "title": "Ship Hydraulic-Pneumatic System Repairs",
+                    "desc": "Maintenance, repair and overhaul services for ship hydraulic and pneumatic systems.",
+                    "detail": "Maintenance, leak testing, hose/gasket replacement, pressure testing, and fault repair are performed for hydraulically/pneumatically driven equipment such as steering gear, cranes, hatch opening-closing systems and deck machinery. Hydraulic pump, valve and cylinder overhauls, as well as periodic checks of pneumatic lines and compressor systems, are also included."
+                },
+                "pnomatikMerdiven": {
+                    "title": "Pneumatic Accommodation Ladder",
+                    "desc": "Pneumatic (air-driven) ladder systems used on ships.",
+                    "detail": "Supply, installation and maintenance of pneumatically driven ladder systems used for boarding/disembarking at the ship's side are provided. The system offers fast and safe deployment, improving operational efficiency for crew and personnel transfers. A product catalog is available on request; technical specifications (load capacity, deployment time, material class, etc.) are evaluated on a project basis."
+                },
+                "komplebakimOnarim": {
+                    "title": "Complete Ship Maintenance-Repair Operations",
+                    "desc": "A comprehensive, single-point ship maintenance-repair service.",
+                    "detail": "A complete maintenance-repair package is offered, combining electrical, machinery, hydraulic-pneumatic, pipe outfitting and equipment areas under one roof. From dock entry to exit, planning, work breakdown structure (WBS), parts procurement, labor coordination and final inspection/testing processes are managed end-to-end by Aquatic. This service offers ship owners the convenience of a single point of contact and time savings."
+                },
+                "tecizMontajOnarim": {
+                    "title": "Outfitting, Installation and Repair Operations",
+                    "desc": "Installation, commissioning and repair of ship outfitting equipment.",
+                    "detail": "In new-build or modernization projects, the installation, alignment and commissioning of ship outfitting (equipment, machinery, auxiliary systems) is carried out. In addition, troubleshooting of existing equipment, renewal of worn parts, and performance testing are included in the scope of service."
+                },
+                "boruDonatim": {
+                    "title": "Ship Pipe Outfitting Operations",
+                    "desc": "Manufacturing, installation and outfitting of ship piping systems.",
+                    "detail": "Manufacturing of ship piping systems such as fuel, oil, cooling water, bilge, ballast and fire lines is carried out according to design, with installation based on isometric drawings, welding and pressure testing. Corrosion-resistant material selection and classification society-approved workmanship standards are applied."
                 }
             }
         },
-        "electronics": {
-            "title": "Electronics & Automation",
-            "desc": "Expert solutions in industrial automation and electronic systems.",
+        "savunmaSanayi": {
+            "title": "Defense Industry & Underwater Technologies",
+            "desc": "Special-type cable and connector solutions for critical defense industry applications such as submarine, sonar and torpedo systems. A product family of cables, cameras, and connectors specifically for the underwater environment.",
             "items": {
-                "transformer": {
-                    "title": "Transformer Manufacturing Machines",
-                    "desc": "Design and production of high-efficiency transformer winding, cutting, and assembly machines."
+                "ozelKonnektorler": {
+                    "title": "Special-Type Combat System Connectors",
+                    "desc": "Connector solutions specially designed for military/naval defense systems.",
+                    "detail": "Special-type connectors are designed and manufactured for defense industry applications requiring high pressure resistance, watertightness, electromagnetic compatibility (EMC), and shock/vibration resistance. They are engineered in compliance with relevant military standards (MIL-spec, etc.) to meet the uninterrupted and reliable connection needs of systems used in submarines, warships, and underwater platforms."
                 },
-                "pcb": {
-                    "title": "PCB Design & Production",
-                    "desc": "Multi-layer, high-frequency PCB design and prototype production."
+                "sonarKablolari": {
+                    "title": "Sonar System Cables",
+                    "desc": "Custom-manufactured signal and power cables for sonar systems.",
+                    "detail": "Low-noise, shielded, and watertight cable solutions are manufactured to suit the high-precision signal transmission requirements of sonar arrays. Signal integrity and long service life are ensured through the use of insulation materials resistant to deep-water pressure and saltwater environments."
                 },
-                "automation": {
-                    "title": "PLC & SCADA Systems",
-                    "desc": "Industrial PLC programming, SCADA interface development, and field automation integration."
+                "torpidoKablolari": {
+                    "title": "Torpedo System Cables",
+                    "desc": "Critical cable solutions for torpedo control and launch systems.",
+                    "detail": "Special cable designs requiring high reliability and fault tolerance are developed for the control, telemetry, and power supply lines of torpedo systems. Their structures, resistant to sudden shock, pressure changes, and electromagnetic interference, support the uninterrupted operation of critical mission systems."
+                },
+                "sualtiAkustik": {
+                    "title": "Underwater Acoustic Systems",
+                    "desc": "Infrastructure solutions for underwater acoustic detection and communication systems.",
+                    "detail": "Cabling, connector, and integration services are provided for underwater acoustic sensor arrays, hydrophone systems, and acoustic communication platforms. The goal is for these systems to demonstrate reliable signal transmission and long-term operational durability under deep-water conditions."
+                },
+                "sualtiKablosu": {
+                    "title": "Underwater Cable",
+                    "desc": "Special-type cables suitable for underwater use.",
+                    "detail": "Highly watertight, pressure-resistant, corrosion-protected underwater cables are supplied for ROV/AUV systems, underwater sensors, and marine infrastructure projects. A product catalog is available on request; technical details such as depth class, conductor count, cross-section, and jacket material are evaluated on a project basis."
+                },
+                "kamera": {
+                    "title": "Camera",
+                    "desc": "Underwater imaging systems.",
+                    "detail": "High-durability underwater cameras are offered for hull inspections, underwater surveys, ROV integration, and security monitoring purposes. High image quality in low-light conditions and a housing structure resistant to deep-water pressure are among the standout features. Resolution, depth limit, and interface details are shared on a project basis."
+                },
+                "konnektor": {
+                    "title": "Connector",
+                    "desc": "Connector solutions specific to underwater and marine environments.",
+                    "detail": "A watertight, pressure-resistant connector product family is offered, enabling underwater equipment to be safely connected to each other and to main systems. See our current product catalog and the /products page for pin count, IP/depth class, and material options."
                 }
             }
         },
-        "machinery": {
-            "title": "Machinery",
-            "desc": "Strengthening your production processes with precision engineering and manufacturing solutions.",
+        "makina": {
+            "title": "Aquatic Machinery & Industry",
+            "desc": "Welded fabrication, custom machine manufacturing, machining, and industrial maintenance-repair services. Facility installation, factory infrastructure, and industrial pipe outfitting services.",
             "items": {
-                "design3d": {
-                    "title": "3D Design",
-                    "desc": "Professional 3D modeling and engineering design with SolidWorks, CATIA, and AutoCAD."
+                "kaynakliImalat": {
+                    "title": "Welded Fabrication and Assembly",
+                    "desc": "Welded fabrication and assembly of steel structures and metal parts.",
+                    "detail": "Welded fabrication of metal components, heat treatment, surface preparation, and final assembly processes are carried out in accordance with project and technical drawings. During quality control stages, weld seams are inspected visually and, where required, through non-destructive testing (NDT) methods."
                 },
-                "cnc": {
-                    "title": "CNC Machining",
-                    "desc": "Precision part production with CNC turning, milling, and 5-axis machining centers."
+                "konveyorler": {
+                    "title": "Conveyors",
+                    "desc": "Design and manufacturing of industrial conveying systems.",
+                    "detail": "Design, manufacturing, installation, and commissioning of belt, chain, or roller conveyor systems custom-built for production lines are carried out. Customized solutions are offered based on capacity, material type to be conveyed, and line layout; maintenance and overhaul services for existing conveyor systems are also included."
                 },
-                "welding": {
-                    "title": "Welding & Mechanical Assembly",
-                    "desc": "TIG/MIG welding, hardening, and precision mechanical assembly services."
+                "ozelImalatMakinalar": {
+                    "title": "Custom Manufacturing Machines",
+                    "desc": "Production/automation machines custom-designed for the customer.",
+                    "detail": "Special-purpose machines are developed from scratch using a design-manufacturing approach for needs that standard machines cannot meet. Mechanical design, automation integration, prototype production, and on-site commissioning processes are managed end-to-end."
+                },
+                "tasarim3d": {
+                    "title": "3D Design and Realization",
+                    "desc": "3D engineering design and prototype/part production.",
+                    "detail": "CAD-based three-dimensional engineering designs are prepared; processes for physically realizing designs (prototyping, converting to technical drawings for manufacturing, reverse engineering) are supported. Design verification of complex-geometry parts is carried out under this service."
+                },
+                "talasliImalat": {
+                    "title": "Machining",
+                    "desc": "CNC and conventional machining services.",
+                    "detail": "Precision-dimensioned part manufacturing is carried out at turning, milling, and CNC machining centers. Production is done from prototype to serial manufacturing, at different scales, with tolerances matching the technical drawing exactly."
+                },
+                "trafoEkipmanlari": {
+                    "title": "Transformer Industry Production Equipment",
+                    "desc": "Equipment and machine solutions for transformer production lines.",
+                    "detail": "Design, manufacturing, and maintenance of special-purpose production equipment used in transformer manufacturing facilities are provided. Mechanical solutions that improve process efficiency are developed considering the industry's technical requirements."
+                },
+                "bobinSarimMakinalari": {
+                    "title": "Coil Winding Machines and Repair Services",
+                    "desc": "Manufacturing and maintenance-repair of coil winding machines.",
+                    "detail": "Design, manufacturing, and installation of coil winding machines used in electric motor and transformer production, as well as periodic maintenance and repair services for existing machines, are offered. Technical support is provided to preserve winding precision and machine performance."
+                },
+                "bobinSarimManderelleri": {
+                    "title": "Coil Winding Mandrels",
+                    "desc": "Production of mandrels used in coil winding processes.",
+                    "detail": "Precision-toleranced mandrels suitable for different coil sizes and types are manufactured. Custom-sized production can be carried out according to the requested coil geometry."
+                },
+                "tesisBoruDonatim": {
+                    "title": "Facility Pipe Outfitting and Repair Operations",
+                    "desc": "Manufacturing, outfitting, and repair of piping systems in industrial facilities.",
+                    "detail": "Manufacturing of process piping systems in factories and facilities (steam, compressed air, water, chemical transfer, etc.) is carried out according to design, along with installation, welding operations, and pressure testing. Repair services are also offered for faults, corrosion, or leaks in existing lines."
+                },
+                "tesisFabrikaKurulumu": {
+                    "title": "Facility / Factory Installation",
+                    "desc": "Turnkey facility and factory installation services.",
+                    "detail": "A turnkey installation service is offered, from infrastructure planning of new production facilities to equipment installation, from pipe-electrical outfitting to commissioning processes. Project management, on-site coordination, and final inspection processes are carried out by the Aquatic engineering team."
                 }
             }
         },
-        "maritime": {
-            "title": "Maritime",
-            "desc": "Comprehensive engineering and technical support services for the maritime sector.",
+        "elektronikOtomasyon": {
+            "title": "Aquatic Electronics and Automation",
+            "desc": "Electronic board design, manufacturing, and automation solutions.",
             "items": {
-                "pipe": {
-                    "title": "Pipe Outfitting",
-                    "desc": "Pipe system design, manufacturing, and installation for ships and industrial facilities."
+                "pcbTasarim": {
+                    "title": "PCB Design and Manufacturing",
+                    "desc": "Printed circuit board (PCB) design and manufacturing services.",
+                    "detail": "The entire PCB development process is carried out, from schematic design to layout planning, from prototype production to serial manufacturing. Signal integrity, EMC compliance, and durability are prioritized in board designs requiring high reliability for industrial and defense industry applications."
                 },
-                "shipMachine": {
-                    "title": "Ship Machinery Operations",
-                    "desc": "Main engine, auxiliary engine maintenance-repair and overhaul services."
+                "elektronikTasarim": {
+                    "title": "Electronic Design",
+                    "desc": "Electronic engineering design at the circuit and system level.",
+                    "detail": "Electronic circuit and system designs custom-tailored to customer needs are developed; end-to-end engineering support is provided from conceptual design to prototype, from testing to production readiness."
                 },
-                "shipElectrical": {
-                    "title": "Ship Electrical Systems",
-                    "desc": "Power distribution panels, cable installation, and electrical system maintenance and repair services."
+                "otomasyonEntegrasyon": {
+                    "title": "Electronics and Automation",
+                    "desc": "Integration of industrial automation and control systems.",
+                    "detail": "Automation infrastructure (PLC, SCADA, sensor integration, control panels) is designed and commissioned for production lines, ship systems, and industrial facilities. Electronic design and automation competencies are combined to offer end-to-end smart system solutions."
                 }
             }
+        },
+        "catalogs": {
+            "title": "Our Catalogs",
+            "subtitle": "Browse and download our up-to-date catalogs with full technical details of our products.",
+            "downloadLabel": "View / Download",
+            "items": {
+                "connectors": {
+                    "title": "Underwater Connectors Catalog",
+                    "desc": "60 pages — all connector series, technical specification tables and part numbers."
+                },
+                "lighting": {
+                    "title": "Underwater Lighting Product Catalog",
+                    "desc": "Full technical catalog of our underwater camera and lighting product family."
+                }
+            },
+            "sectionLabel": "Resources"
         }
     },
     "products": {
@@ -217,10 +339,18 @@
         "specsTitle": "Technical Specifications",
         "categories": {
             "all": "All Products",
-            "subseaConnectors": "Subsea Connectors",
+            "kucukMikroDairesel": "Small & Micro Circular",
+            "standartDairesel": "Standard Circular",
+            "gucSerileri": "Power Series",
+            "yagDolgulu": "Oil-Filled Series",
+            "ethernetKoaksiyel": "Ethernet & Coaxial",
+            "rmLpmSerisi": "RM & LPM Series",
+            "dusukProfilli": "Low Profile Series",
+            "metalGovdeli": "Metal Shell Series",
+            "fiberOptik": "Fiber Optic Series",
+            "konnektorAksesuarlari": "Connector Accessories",
             "underwaterCameras": "Underwater Cameras",
-            "subseaLights": "Subsea Lighting & Laser",
-            "rovAccessories": "ROV Accessories"
+            "subseaLights": "Subsea Lighting & Laser"
         },
         "items": {
             "camera": {
@@ -444,6 +574,10 @@
             "email": "bilgi@aquatic.com.tr"
         }
     },
+    "whatsapp": {
+        "message": "Hello, I would like to get information about Aquatic Elektronik.",
+        "ariaLabel": "Contact us on WhatsApp"
+    },
     "footer": {
         "description": "Innovative engineering solutions in defense industry, electronics, machinery, and maritime fields.",
         "quickLinks": "Quick Links",
@@ -461,12 +595,30 @@
         "title": "Key Milestones",
         "subtitle": "Product launches, international openings, and strategic partnerships",
         "items": {
-            "1": { "title": "Kazakhstan Opening", "desc": "Entry into the Central Asian market and establishment of regional partnerships." },
-            "2": { "title": "IDEF Product Launch", "desc": "International introduction of the new-generation subsea connector series." },
-            "3": { "title": "National Black Box", "desc": "Active design and production role in Turkey's first domestic black box project." },
-            "4": { "title": "International Certification", "desc": "Obtaining international standards compliance certificates for the product range." },
-            "5": { "title": "Defense Supplier", "desc": "Transition to strategic supplier status in domestic defense industry projects." },
-            "6": { "title": "First Subsea System", "desc": "Delivery of the first domestic subsea electronic system for the Turkish Navy." }
+            "1": {
+                "title": "Kazakhstan Opening",
+                "desc": "Entry into the Central Asian market and establishment of regional partnerships."
+            },
+            "2": {
+                "title": "IDEF Product Launch",
+                "desc": "International introduction of the new-generation subsea connector series."
+            },
+            "3": {
+                "title": "National Black Box",
+                "desc": "Active design and production role in Turkey's first domestic black box project."
+            },
+            "4": {
+                "title": "International Certification",
+                "desc": "Obtaining international standards compliance certificates for the product range."
+            },
+            "5": {
+                "title": "Defense Supplier",
+                "desc": "Transition to strategic supplier status in domestic defense industry projects."
+            },
+            "6": {
+                "title": "First Subsea System",
+                "desc": "Delivery of the first domestic subsea electronic system for the Turkish Navy."
+            }
         }
     },
     "news": {
@@ -482,7 +634,44 @@
         "title": "Our Popular Products",
         "subtitle": "Some of our most in-demand solutions in defense, underwater systems, electronics, and machinery.",
         "viewAll": "View All",
-        "topSeller": "Top Seller"
+        "topSeller": "Top Seller",
+        "items": {
+            "1": {
+                "name": "Pressure Vessel",
+                "category": "Pressure Vessel",
+                "description": "Design and manufacturing of certified, high-pressure-resistant pressure vessels."
+            },
+            "2": {
+                "name": "Portable Unit",
+                "category": "Portable Unit",
+                "description": "Compact, durable portable power and control unit for field operations."
+            },
+            "3": {
+                "name": "Portable Unit 2",
+                "category": "Portable Unit",
+                "description": "Second-generation portable unit with improved connectivity and monitoring features."
+            },
+            "4": {
+                "name": "Underwater Camera",
+                "category": "Camera",
+                "description": "High-resolution underwater camera system for deep-water operations."
+            },
+            "5": {
+                "name": "Underwater Lighting Unit",
+                "category": "Light",
+                "description": "Low-power, high-brightness underwater LED lighting solution."
+            },
+            "6": {
+                "name": "Control Monitor",
+                "category": "Monitor",
+                "description": "Industrial monitor for underwater systems and ROV controls."
+            },
+            "7": {
+                "name": "Safety Harness System",
+                "category": "Harness",
+                "description": "Ergonomic and secure safety harness kit for underwater operators."
+            }
+        }
     },
     "careers": {
         "title": "Careers",
@@ -534,10 +723,10 @@
             "faq": "FAQ"
         },
         "services": {
-            "defence": "Defense Industry",
-            "electronics": "Electronics & Automation",
-            "machinery": "Machinery",
-            "maritime": "Maritime"
+            "denizcilik": "Aquatic Maritime",
+            "savunmaSanayi": "Defense & Underwater",
+            "makina": "Machinery & Industry",
+            "elektronikOtomasyon": "Electronics and Automation"
         }
     }
 }

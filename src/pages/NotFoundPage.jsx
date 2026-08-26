@@ -1,12 +1,12 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Button, Result } from 'antd';
 import { HomeOutlined } from '@ant-design/icons';
-import { Helmet } from 'react-helmet-async';
+import { useLocalizedNavigate } from '../hooks/useLocalizedNavigate';
+import PageSEO from '../components/common/PageSEO';
 
 const NotFoundPage = () => {
-    const navigate = useNavigate();
+    const navigate = useLocalizedNavigate();
     const { t } = useTranslation();
 
     return (
@@ -18,10 +18,7 @@ const NotFoundPage = () => {
                 minHeight: '70vh',
             }}
         >
-            <Helmet>
-                <title>404 – Sayfa Bulunamadı | Aquatic</title>
-                <meta name="robots" content="noindex, nofollow" />
-            </Helmet>
+            <PageSEO titleKey="notFound.title" path="/404" noindex />
             <Result
                 status="404"
                 title="404"

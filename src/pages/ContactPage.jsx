@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import PageHero from '../components/common/PageHero';
 import { useRevealAnimation } from '../hooks/useRevealAnimation';
 import PageSEO from '../components/common/PageSEO';
+import HoneypotField from '../components/common/HoneypotField';
 import { Row, Col, Form, Input, Button, message } from 'antd';
 import {
     SendOutlined,
@@ -52,8 +53,8 @@ const ContactPage = () => {
             );
             message.success(t('contact.success'));
             form.resetFields();
-        } catch {
-            message.error(t('contact.error'));
+        } catch (error) {
+            message.error(error?.text || t('contact.error'));
         } finally {
             setLoading(false);
         }
@@ -63,7 +64,7 @@ const ContactPage = () => {
         {
             key: 'kocaeli',
             icon: <BuildOutlined />,
-            color: '#0050b3',
+            color: 'var(--color-primary)',
             title: t('contact.kocaeli.title'),
             address: t('contact.kocaeli.address'),
             phone: t('contact.kocaeli.phone'),
@@ -72,7 +73,7 @@ const ContactPage = () => {
         {
             key: 'istanbul',
             icon: <HomeOutlined />,
-            color: '#003a8c',
+            color: 'var(--color-primary-dark)',
             title: t('contact.istanbul.title'),
             address: t('contact.istanbul.address'),
             phone: t('contact.istanbul.phone'),
@@ -81,7 +82,7 @@ const ContactPage = () => {
         {
             key: 'almaty',
             icon: <GlobalOutlined />,
-            color: '#0077b6',
+            color: 'var(--color-accent-dark)',
             title: t('contact.almaty.title'),
             address: t('contact.almaty.address'),
             phone: t('contact.almaty.phone'),
@@ -261,14 +262,7 @@ const ContactPage = () => {
                                         className="contact-input"
                                     />
                                 </Form.Item>
-                                {/* Honeypot field — hidden from real users, bots fill it */}
-                                <Form.Item
-                                    name="website"
-                                    style={{ display: 'none' }}
-                                    aria-hidden="true"
-                                >
-                                    <Input tabIndex={-1} autoComplete="off" />
-                                </Form.Item>
+                                <HoneypotField />
                                 <Form.Item style={{ marginBottom: 0 }}>
                                     <Button
                                         type="primary"

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import LocalizedLink from '../common/LocalizedLink';
 import { Row, Col, Space, Divider } from 'antd';
 import { EnvironmentOutlined, PhoneOutlined, MailOutlined, RightOutlined } from '@ant-design/icons';
 import AquaticLogo from '../../assets/images/logo.webp';
@@ -65,7 +65,7 @@ const AppFooter = () => {
                         <ul style={{ listStyle: 'none', padding: 0 }}>
                             {quickLinks.map((link) => (
                                 <li key={link.path} style={{ marginBottom: 12 }}>
-                                    <Link
+                                    <LocalizedLink
                                         to={link.path}
                                         style={{
                                             color: 'rgba(255,255,255,0.85)',
@@ -79,7 +79,7 @@ const AppFooter = () => {
                                     >
                                         <RightOutlined style={{ fontSize: 10 }} />
                                         {link.label}
-                                    </Link>
+                                    </LocalizedLink>
                                 </li>
                             ))}
                         </ul>

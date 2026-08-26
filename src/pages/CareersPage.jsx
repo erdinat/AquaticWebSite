@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import PageHero from '../components/common/PageHero';
 import { useRevealAnimation } from '../hooks/useRevealAnimation';
 import PageSEO from '../components/common/PageSEO';
+import HoneypotField from '../components/common/HoneypotField';
 import { Row, Col, Form, Input, Button, Upload, message } from 'antd';
 import {
     RocketOutlined,
@@ -79,21 +80,21 @@ const CareersPage = () => {
             icon: <HeatMapOutlined />,
             title: t('corporate.values.innovation'),
             desc: t('corporate.values.innovationDesc'),
-            color: '#0050b3',
+            color: 'var(--color-primary)',
         },
         {
             num: '02',
             icon: <TrophyOutlined />,
             title: t('corporate.values.expertise'),
             desc: t('corporate.values.expertiseDesc'),
-            color: '#003a8c',
+            color: 'var(--color-primary-dark)',
         },
         {
             num: '03',
             icon: <GlobalOutlined />,
             title: t('corporate.values.sustainability'),
             desc: t('corporate.values.sustainabilityDesc'),
-            color: '#0077b6',
+            color: 'var(--color-accent-dark)',
         },
     ];
 
@@ -292,12 +293,18 @@ const CareersPage = () => {
                                         accept=".pdf,.doc,.docx"
                                         className="careers-dragger"
                                         beforeUpload={(file) => {
-                                            const allowed = [
+                                            const allowedTypes = [
                                                 'application/pdf',
                                                 'application/msword',
                                                 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
                                             ];
-                                            if (!allowed.includes(file.type)) {
+                                            const allowedExtensions = ['.pdf', '.doc', '.docx'];
+                                            const hasAllowedExtension = allowedExtensions.some((ext) =>
+                                                file.name.toLowerCase().endsWith(ext)
+                                            );
+                                            // MIME + extension double-check (defense in depth — both are
+                                            // client-reported and spoofable; real protection needs a backend)
+                                            if (!allowedTypes.includes(file.type) || !hasAllowedExtension) {
                                                 message.error(t('careers.form.cvTypeError'));
                                                 return Upload.LIST_IGNORE;
                                             }
@@ -320,14 +327,7 @@ const CareersPage = () => {
                                     </Upload.Dragger>
                                 </Form.Item>
 
-                                {/* Honeypot field — hidden from real users, bots fill it */}
-                                <Form.Item
-                                    name="website"
-                                    style={{ display: 'none' }}
-                                    aria-hidden="true"
-                                >
-                                    <Input tabIndex={-1} autoComplete="off" />
-                                </Form.Item>
+                                <HoneypotField />
                                 <Form.Item style={{ marginBottom: 0, marginTop: 8 }}>
                                     <Button
                                         type="primary"
