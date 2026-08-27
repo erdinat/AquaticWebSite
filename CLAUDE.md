@@ -200,6 +200,14 @@ Kullanıcı isteğiyle sağ alt köşede tüm sayfalarda sabit duran bir WhatsAp
 
 Kullanıcı 3 PDF katalog sağladı (`public/catalogs/`): 2'si Türkçe (Sualtı Konnektörleri Kataloğu — 60 sayfa, Sualtı Aydınlatma Ürün Kataloğu), 1'i İngilizce (Underwater Lighting Product Catalog — aydınlatma kataloğunun EN edisyonu, konnektör kataloğunun EN edisyonu yok). Kullanıcının talebiyle kategori bazlı değil, **dil bazlı** gösterim yapıldı: `ServicesPage.jsx`'in altına eklenen "Kataloglarımız" bölümü, aktif site dili `tr` ise 2 Türkçe kataloğu, diğer tüm dillerde (en/ru/kk) tek İngilizce kataloğu listeliyor (`CATALOGS.tr` / `CATALOGS.other`, `i18n.language` ile seçiliyor). Kartlar `target="_blank"` ile yeni sekmede açılıyor (`download` attribute'u bilinçli olarak eklenmedi — hem görüntüleme hem indirme istendiği için tarayıcının yerleşik PDF görüntüleyicisi + oradaki indir butonu kullanılıyor). i18n anahtarları: `services.catalogs.*` (4 dilde).
 
+### ⚠️ "Teknolojik Gözünüz" hero fotoğrafı bilinçli olarak eski (sahte etiketli) görsele geri döndürüldü (27 Ağustos 2026)
+
+Kullanıcı `public/hero.webp`'i (rotasyondaki "Teknolojik Gözünüz" slaytının fotoğrafı) 21 Ağustos'taki marka yenilemesinde kullanılmaya başlanan yeni liman/ROV fotoğrafından, ondan önceki (git geçmişinde `886b90f`) eski fotoğrafa döndürmemi istedi. **Bu eski fotoğrafın üzerinde gerçek olmayan/uydurma ürün etiketleri var** ("DEEPSEAL™ E-SERIES 2.4kV", "AURA FIBER | D-COM/SUBSEA" — Aquatic'in gerçek bir ürünü değil, muhtemelen eski bir AI-stok görsel) — bu tam da 21 Ağustos'taki marka yenilemesinin kurtulmaya çalıştığı türden bir görsel. Kullanıcıya bu net biçimde iki kez soruldu, ikisinde de aynı fotoğrafı istediğini teyit etti — **bilinçli kullanıcı kararı olarak uygulandı**, hata değil.
+
+Yeni (liman/ROV) fotoğraf koddan silinmedi, sadece `public/hero.webp` içeriği eskisiyle değiştirildi — yeni görsel hâlâ git geçmişinde (`f85f2b6` commit'i) duruyor, istenirse geri getirilebilir. Bu değişiklik henüz commit edilmedi.
+
+> 💡 Gelecekte bu görseli "düzeltmeye" kalkışmadan önce bu notu oku — bilinçli bir geri alma, unutulmuş bir hata değil.
+
 ### 🎞️ Hero metni sola alındı + büyütüldü (26 Ağustos 2026)
 
 Kullanıcı geri bildirimi: "yazılar tam ortada kötü gözüküyor, sol taraftan büyük ve değişik ilgi çekici bir şekilde çıksalar." Değişiklikler:
