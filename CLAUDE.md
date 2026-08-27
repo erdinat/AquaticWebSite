@@ -353,6 +353,8 @@ Yeni (liman/ROV) fotoğraf koddan silinmedi, sadece `public/hero.webp` içeriği
 
 > 💡 Gelecekte bu görseli "düzeltmeye" kalkışmadan önce bu notu oku — bilinçli bir geri alma, unutulmuş bir hata değil.
 
+**Karar tersine döndü (aynı gün, canlıya alındıktan sonra):** Bu commit edilip deploy edildikten sonra kullanıcı "ben onu hiç beğenmiyorum" diyerek fikrini değiştirdi. `public/hero.webp` tekrar `f85f2b6` commit'indeki liman/ROV fotoğrafına döndürüldü (git geçmişinden `git show f85f2b6:public/hero.webp` ile çıkarılıp kopyalandı — sahte etiketli eski fotoğraf artık hiçbir yerde kullanılmıyor, sadece git geçmişinde duruyor). Önbellek sorunu tekrarlamasın diye `?v=2` → `?v=3`'e çıkarıldı (`index.html` preload + `HomePage.jsx`'teki `imgHeroBg`). Yukarıdaki not artık güncel değil — bu görsel konusu iki kez el değiştirdi, gelecekte tekrar sorulmadan hiçbir yöne "düzeltilmeye" çalışılmamalı.
+
 ### 🎞️ Hero metni sola alındı + büyütüldü (26 Ağustos 2026)
 
 Kullanıcı geri bildirimi: "yazılar tam ortada kötü gözüküyor, sol taraftan büyük ve değişik ilgi çekici bir şekilde çıksalar." Değişiklikler:

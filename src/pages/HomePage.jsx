@@ -32,7 +32,7 @@ import imgMaritime from '../assets/images/denizcilik.webp';
 // public/ — stable URL (not fingerprinted by Vite), so a ?v= query param is
 // bumped by hand whenever the file's content changes to bust stale caches
 // (browsers otherwise keep serving old bytes under the same URL indefinitely).
-const imgHeroBg = '/hero.webp?v=2';
+const imgHeroBg = '/hero.webp?v=3';
 /* Hero-only photos — distinct from the ones reused on /services, so the
    rotating hero doesn't repeat imagery the visitor sees a scroll away. */
 import imgHeroMaritime from '../assets/images/hero-denizcilik.webp';
