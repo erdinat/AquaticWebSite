@@ -299,12 +299,15 @@ const CareersPage = () => {
                                                 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
                                             ];
                                             const allowedExtensions = ['.pdf', '.doc', '.docx'];
-                                            const hasAllowedExtension = allowedExtensions.some((ext) =>
-                                                file.name.toLowerCase().endsWith(ext)
+                                            const hasAllowedExtension = allowedExtensions.some(
+                                                (ext) => file.name.toLowerCase().endsWith(ext)
                                             );
                                             // MIME + extension double-check (defense in depth — both are
                                             // client-reported and spoofable; real protection needs a backend)
-                                            if (!allowedTypes.includes(file.type) || !hasAllowedExtension) {
+                                            if (
+                                                !allowedTypes.includes(file.type) ||
+                                                !hasAllowedExtension
+                                            ) {
                                                 message.error(t('careers.form.cvTypeError'));
                                                 return Upload.LIST_IGNORE;
                                             }

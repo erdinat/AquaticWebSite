@@ -426,6 +426,22 @@ body {
     transition: all var(--transition-normal);
 }
 
+/* When transparent (homepage, not scrolled yet) the header has no background
+   of its own — it just shows whatever part of the hero photo/scrim is behind
+   it. The hero scrim fades out toward the right (by design, so the left-
+   aligned hero text pops), which left nav items on the right (language
+   switcher, "More") with too little contrast against bright photos. This
+   gives the header bar its own constant dark base, independent of the photo
+   or scrim underneath, so nav text stays legible everywhere. */
+.app-header.transparent::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 10, 20, 0.5) 0%, rgba(0, 10, 20, 0.08) 100%);
+    pointer-events: none;
+    z-index: -1;
+}
+
 .app-header.scrolled {
     background: rgba(255, 255, 255, 0.95) !important;
     backdrop-filter: blur(20px);

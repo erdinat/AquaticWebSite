@@ -11,7 +11,8 @@
         "products": "Ürünler",
         "blackbox": "Milli Kara Kutu",
         "careers": "Kariyer",
-        "contact": "İletişim"
+        "contact": "İletişim",
+        "more": "Diğer"
     },
     "hero": {
         "title": "AQUATIC",
@@ -182,8 +183,8 @@
             }
         },
         "savunmaSanayi": {
-            "title": "Savunma Sanayi & Sualtı Teknolojileri",
-            "desc": "Denizaltı, sonar ve torpido sistemleri gibi kritik savunma sanayii uygulamaları için özel tip kablo ve konnektör çözümleri. Sualtı ortamına özel kablo, kamera ve konnektör ürün ailesi.",
+            "title": "Savunma Sanayi",
+            "desc": "Denizaltı, sonar ve torpido sistemleri gibi kritik savunma sanayii uygulamaları için özel tip kablo ve konnektör çözümleri.",
             "items": {
                 "ozelKonnektorler": {
                     "title": "Özel Tip Savaş Sistemleri Konnektörleri",
@@ -199,7 +200,13 @@
                     "title": "Torpido Sistem Kabloları",
                     "desc": "Torpido kontrol ve fırlatma sistemleri için kritik kablo çözümleri.",
                     "detail": "Torpido sistemlerinin kontrol, telemetri ve enerji besleme hatlarında kullanılan, yüksek güvenilirlik ve hata toleransı gerektiren özel kablo tasarımları geliştirilir. Ani darbe, basınç değişimi ve elektromanyetik parazite karşı dayanıklı yapılarıyla kritik görev sistemlerinin kesintisiz çalışmasını destekler."
-                },
+                }
+            }
+        },
+        "sualtiTeknolojileri": {
+            "title": "Sualtı Teknolojileri",
+            "desc": "Sualtı ortamına özel kablo, kamera ve konnektör ürün ailesi — ROV, AUV ve sualtı platformları için altyapı çözümleri.",
+            "items": {
                 "sualtiAkustik": {
                     "title": "Sualtı Akustik Sistemler",
                     "desc": "Sualtı akustik algılama ve iletişim sistemleri için altyapı çözümleri.",
@@ -223,18 +230,13 @@
             }
         },
         "makina": {
-            "title": "Aquatic Makina & Endüstri",
-            "desc": "Kaynaklı imalat, özel makine üretimi, talaşlı imalat ve endüstriyel bakım-onarım hizmetleri. Tesis kurulumu, fabrika altyapısı ve endüstriyel boru donatım hizmetleri.",
+            "title": "Aquatic Makina",
+            "desc": "Kaynaklı imalat, özel makine üretimi ve talaşlı imalat hizmetleri.",
             "items": {
                 "kaynakliImalat": {
                     "title": "Kaynaklı İmalat ve Montaj",
                     "desc": "Çelik konstrüksiyon ve metal parçaların kaynaklı imalatı ile montajı.",
                     "detail": "Proje ve teknik resimlere uygun olarak metal aksamların kaynaklı imalatı, ısıl işlem, yüzey hazırlığı ve nihai montaj süreçleri yürütülür. Kalite kontrol aşamalarında kaynak dikişlerinin görsel ve gerektiğinde tahribatsız muayene (NDT) yöntemleriyle kontrolü sağlanır."
-                },
-                "konveyorler": {
-                    "title": "Konveyörler",
-                    "desc": "Endüstriyel taşıma sistemleri tasarım ve imalatı.",
-                    "detail": "Üretim hatlarına özel bant, zincir veya rulolu konveyör sistemlerinin tasarımı, imalatı, montajı ve devreye alınması gerçekleştirilir. Kapasite, taşınacak malzeme türü ve hat yerleşimine göre özelleştirilmiş çözümler sunulur; ayrıca mevcut konveyör sistemlerinin bakım ve revizyon hizmetleri de kapsam dahilindedir."
                 },
                 "ozelImalatMakinalar": {
                     "title": "Özel İmalat Makinaları",
@@ -250,6 +252,17 @@
                     "title": "Talaşlı İmalat",
                     "desc": "CNC ve konvansiyonel talaşlı imalat hizmetleri.",
                     "detail": "Torna, freze ve CNC işleme merkezlerinde hassas ölçülü parça imalatı gerçekleştirilir. Prototipten seri üretime kadar farklı ölçeklerde, teknik resme birebir uygun toleranslarla üretim yapılır."
+                }
+            }
+        },
+        "endustri": {
+            "title": "Aquatic Endüstri",
+            "desc": "Endüstriyel bakım-onarım, tesis kurulumu, fabrika altyapısı ve endüstriyel boru donatım hizmetleri.",
+            "items": {
+                "konveyorler": {
+                    "title": "Konveyörler",
+                    "desc": "Endüstriyel taşıma sistemleri tasarım ve imalatı.",
+                    "detail": "Üretim hatlarına özel bant, zincir veya rulolu konveyör sistemlerinin tasarımı, imalatı, montajı ve devreye alınması gerçekleştirilir. Kapasite, taşınacak malzeme türü ve hat yerleşimine göre özelleştirilmiş çözümler sunulur; ayrıca mevcut konveyör sistemlerinin bakım ve revizyon hizmetleri de kapsam dahilindedir."
                 },
                 "trafoEkipmanlari": {
                     "title": "Trafo Sanayi Üretim Ekipmanları",
@@ -314,6 +327,273 @@
                 }
             },
             "sectionLabel": "Dokümanlar"
+        },
+        "viewLabel": "İncele",
+        "detail": {
+            "talasli-imalat": {
+                "materials": [
+                    "Alüminyum",
+                    "Paslanmaz Çelik",
+                    "Pirinç",
+                    "Bronz",
+                    "Titanyum",
+                    "POM (Delrin)"
+                ],
+                "materialsBody": "Torna ve CNC işleme merkezlerimizde metal ve mühendislik plastiklerinin tamamına yakınını hassas toleranslarla işliyoruz. Malzeme seçimi, parçanın çalışma ortamına (deniz suyu, yüksek basınç, aşınma) göre projeye özel belirlenir.",
+                "capabilityBody": "Prototipten seri üretime kadar, hassas toleranslarla çalışan CNC torna ve freze tezgahlarımızla teknik resme birebir uygun parça üretimi sağlıyoruz. Her parti, boyutsal ölçüm raporu ile teslim edilir."
+            },
+            "kaynakli-imalat": {
+                "materials": [
+                    "Karbon Çeliği",
+                    "Paslanmaz Çelik (304/316L)",
+                    "Alüminyum",
+                    "Galvaniz Sac"
+                ],
+                "materialsBody": "TIG, MIG ve ark kaynak yöntemleriyle, gemi ve endüstriyel uygulamalara uygun malzeme gruplarında kaynaklı imalat gerçekleştiriyoruz. Malzeme kalınlığı ve korozyon direnci gereksinimine göre uygun kaynak prosedürü uygulanır.",
+                "capabilityBody": "Kaynak dikişleri, görsel muayenenin yanı sıra gerektiğinde tahribatsız muayene (NDT) yöntemleriyle kontrol edilir. Isıl işlem, yüzey hazırlığı ve son montaj süreçleri tek çatı altında yönetilir."
+            },
+            "ozel-imalat-makinalari": {
+                "materials": [
+                    "Yapısal Çelik",
+                    "Paslanmaz Çelik",
+                    "Alüminyum Profil",
+                    "Endüstriyel Elektronik Komponentler"
+                ],
+                "materialsBody": "Özel makine gövdelerinde yapısal dayanım, otomasyon panellerinde ise endüstriyel standartlara uygun elektronik komponentler kullanıyoruz. Malzeme seçimi, makinenin çalışacağı ortam ve üretim hızına göre optimize edilir.",
+                "capabilityBody": "Mekanik tasarımdan otomasyon entegrasyonuna, prototip üretiminden saha devreye almaya kadar tüm süreç Aquatic mühendislik ekibi tarafından tek elden yürütülür."
+            },
+            "3d-tasarim": {
+                "materials": [
+                    "PLA",
+                    "ABS",
+                    "PETG",
+                    "Reçine (SLA)",
+                    "Naylon (SLS)"
+                ],
+                "materialsBody": "Konsept doğrulama ve fonksiyonel prototipler için FDM ve SLA teknolojileriyle farklı malzeme ailelerinde 3 boyutlu baskı hizmeti sunuyoruz. Malzeme seçimi, prototipin test amacına (görsel, fonksiyonel, ısıl) göre belirlenir.",
+                "capabilityBody": "CAD tabanlı 3 boyutlu tasarımdan başlayıp, hızlı prototipleme ve tersine mühendislik süreçleriyle fikri fiziksel ürüne dönüştürüyoruz. Karmaşık geometrili parçalar için tasarım doğrulama desteği sağlıyoruz."
+            },
+            "gemi-elektrik": {
+                "materials": [
+                    "Bakır Kablo",
+                    "Güç Dağıtım Panoları",
+                    "Jeneratör Ekipmanları",
+                    "İzolasyon Malzemeleri"
+                ],
+                "materialsBody": "Gemi elektrik sistemlerinde deniz suyu ve nem koşullarına dayanıklı, klas onaylı kablo ve pano malzemeleri kullanıyoruz. Malzeme seçimi, geminin tipi ve elektrik yükü gereksinimlerine göre belirlenir.",
+                "capabilityBody": "Ana ve yardımcı elektrik sistemlerinin kurulumundan periyodik bakımına, arıza tespitinden kablo döşemeye kadar tüm süreç sörvey ve klas kuruluşu gereksinimlerine uygun şekilde yürütülür."
+            },
+            "gemi-makine": {
+                "materials": [
+                    "Yedek Parça (OEM/Muadil)",
+                    "Motor Yağları",
+                    "Enjektör Setleri",
+                    "Turboşarj Bileşenleri"
+                ],
+                "materialsBody": "Ana makine ve jeneratör bakımında orijinal veya OEM-eşdeğeri yedek parçalar, yağ analiz sonuçlarına göre belirlenen bakım malzemeleri kullanılır.",
+                "capabilityBody": "Periyodik bakım, revizyon (overhaul), yağ analizine dayalı önleyici bakım planlaması ve arızi onarım hizmetleri; enjektör, turboşarj, soğutma ve yakıt sistemlerini kapsayacak şekilde sunulur."
+            },
+            "hidrolik-pnomatik": {
+                "materials": [
+                    "Hidrolik Hortum",
+                    "Conta Setleri",
+                    "Hidrolik Yağ",
+                    "Pnömatik Valfler"
+                ],
+                "materialsBody": "Dümen makinesi, vinç ve güverte makineleri gibi hidrolik/pnömatik sistemlerde basınca dayanıklı hortum, conta ve valf malzemeleri kullanılır.",
+                "capabilityBody": "Sızdırmazlık kontrolü, hortum-conta değişimi, basınç testleri ve hidrolik pompa/valf/silindir revizyonlarını kapsayan uçtan uca bakım-onarım hizmeti sunuyoruz."
+            },
+            "pnomatik-merdiven": {
+                "materials": [
+                    "Alüminyum Profil",
+                    "Pnömatik Silindir",
+                    "Kauçuk Basamak Kaplaması"
+                ],
+                "materialsBody": "Pnömatik merdiven sistemlerinde hafif ve dayanıklı alüminyum profil, korozyona dirençli bağlantı elemanları ve kaymaz basamak kaplamaları kullanılır.",
+                "capabilityBody": "Taşıma kapasitesi, açılma süresi ve malzeme sınıfı proje bazında değerlendirilerek, tedarik, montaj ve bakım süreçleri tek elden yürütülür."
+            },
+            "komple-bakim-onarim": {
+                "materials": [
+                    "Elektrik, Makine ve Boru Donatım Malzemeleri",
+                    "Yedek Parça Lojistiği"
+                ],
+                "materialsBody": "Komple bakım-onarım kapsamında elektrik, makine, hidrolik-pnömatik ve boru donatım alanlarının tüm malzeme tedariki tek çatı altında koordine edilir.",
+                "capabilityBody": "Dok girişinden çıkışına kadar planlama, iş kırılım yapısı (WBS), parça tedariki, işçilik koordinasyonu ve son kontrol/test süreçleri Aquatic tarafından uçtan uca yönetilir."
+            },
+            "teciz-montaj-onarim": {
+                "materials": [
+                    "Gemi Teçhizatı",
+                    "Montaj Bağlantı Elemanları",
+                    "Yardımcı Sistem Bileşenleri"
+                ],
+                "materialsBody": "Yeni inşa ve modernizasyon projelerinde, gemi teçhizatının montajında klas onaylı bağlantı elemanları ve yardımcı sistem bileşenleri kullanılır.",
+                "capabilityBody": "Teçhizat montajı, hizalama ve devreye alma (commissioning) süreçlerinin yanı sıra mevcut teçhizatın onarımı ve performans testleri de hizmet kapsamındadır."
+            },
+            "boru-donatim": {
+                "materials": [
+                    "Paslanmaz/Karbon Çelik Boru",
+                    "Kaynak Malzemeleri",
+                    "Korozyon Önleyici Kaplamalar"
+                ],
+                "materialsBody": "Yakıt, yağ, soğutma suyu, sintine, balast ve yangın hattı gibi sistemlerde korozyona dayanıklı boru ve bağlantı malzemeleri kullanılır.",
+                "capabilityBody": "İzometrik çizimlere uygun imalat, montaj, kaynak ve basınç testleri; klas kuruluşu onaylı işçilik standartlarıyla gerçekleştirilir."
+            },
+            "ozel-konnektorler": {
+                "materials": [
+                    "316L Paslanmaz Çelik",
+                    "PEEK İzolasyon",
+                    "FKM O-ring"
+                ],
+                "materialsBody": "Yüksek basınç ve elektromanyetik uyumluluk gerektiren konnektörlerde paslanmaz çelik gövde ve yüksek performanslı izolasyon malzemeleri kullanılır.",
+                "capabilityBody": "MIL-spec gibi askeri standartlara uygun mühendislik yaklaşımıyla, denizaltı ve sualtı platformları için kesintisiz bağlantı çözümleri geliştiriyoruz."
+            },
+            "sonar-kablolari": {
+                "materials": [
+                    "Ekranlı Kablo",
+                    "Düşük Gürültülü İletken",
+                    "Su Geçirmez İzolasyon"
+                ],
+                "materialsBody": "Sonar dizilerinin hassas sinyal iletimi için düşük gürültülü, ekranlı ve derin su basıncına dayanıklı izolasyon malzemeleri kullanılır.",
+                "capabilityBody": "Sinyal bütünlüğü ve uzun ömrü garanti altına alan özel kablo tasarım ve üretim süreçlerini yürütüyoruz."
+            },
+            "torpido-kablolari": {
+                "materials": [
+                    "Yüksek Mukavemetli İletken",
+                    "Darbe Dayanımlı İzolasyon"
+                ],
+                "materialsBody": "Torpido sistemlerinin kontrol ve enerji hatlarında ani darbe ve basınç değişimine dayanıklı özel kablo yapıları kullanılır.",
+                "capabilityBody": "Kritik görev sistemlerinin kesintisiz çalışmasını destekleyen, yüksek güvenilirlikli kablo tasarımı sunuyoruz."
+            },
+            "sualti-akustik": {
+                "materials": [
+                    "Hidrofon",
+                    "Akustik Sensör",
+                    "Su Geçirmez Konnektör"
+                ],
+                "materialsBody": "Sualtı akustik sensör dizileri ve hidrofon sistemlerinde derin su koşullarına uygun malzeme ve konnektörler kullanılır.",
+                "capabilityBody": "Kablolama, konnektör ve entegrasyon hizmetleriyle, uzun süreli operasyonel dayanıklılık gösteren akustik sistemler kuruyoruz."
+            },
+            "sualti-kablosu": {
+                "materials": [
+                    "Basınca Dayanıklı Kılıf",
+                    "Korozyon Korumalı İletken"
+                ],
+                "materialsBody": "ROV/AUV sistemleri ve deniz altyapı projeleri için yüksek su geçirmezlik dereceli, korozyona karşı korumalı kablolar tedarik ediyoruz.",
+                "capabilityBody": "Derinlik sınıfı, iletken sayısı, kesit ve kaplama malzemesi proje bazında değerlendirilerek özel üretim gerçekleştirilir."
+            },
+            "kamera": {
+                "materials": [
+                    "Titanyum/Paslanmaz Gövde",
+                    "Sapphire Optik Lens"
+                ],
+                "materialsBody": "Sualtı kameralarında derin su basıncına dayanıklı gövde ve düşük ışıkta yüksek görüntü kalitesi sağlayan optik malzemeler kullanılır.",
+                "capabilityBody": "Gemi altı muayenesi, sualtı inceleme ve ROV entegrasyonu için yüksek dayanımlı görüntüleme çözümleri sunuyoruz."
+            },
+            "konnektor": {
+                "materials": [
+                    "Su Geçirmez Konnektör Gövdesi",
+                    "Çift O-ring Sızdırmazlık"
+                ],
+                "materialsBody": "Sualtı ekipmanlarının güvenli bağlantısı için su geçirmez, basınca dayanıklı konnektör ürün ailesi kullanılır.",
+                "capabilityBody": "Pim sayısı, IP/derinlik sınıfı ve malzeme seçenekleri proje ihtiyacına göre belirlenerek özel konnektör çözümleri sunulur."
+            },
+            "konveyorler": {
+                "materials": [
+                    "Konveyör Bant/Zincir",
+                    "Rulo Sistemleri",
+                    "Yapısal Çelik Şase"
+                ],
+                "materialsBody": "Taşınacak malzeme türüne göre bant, zincir veya rulolu konveyör sistemlerinde uygun aşınma direncine sahip malzemeler kullanılır.",
+                "capabilityBody": "Kapasite ve hat yerleşimine göre özelleştirilmiş tasarım, imalat, montaj ve devreye alma hizmeti sunuyoruz; mevcut sistemlerin bakımı da kapsam dahilindedir."
+            },
+            "trafo-ekipmanlari": {
+                "materials": [
+                    "Elektroteknik Sac",
+                    "Bakır İletken",
+                    "İzolasyon Malzemeleri"
+                ],
+                "materialsBody": "Trafo üretim ekipmanlarında elektroteknik sac ve yüksek iletkenlikli bakır malzemeler, sektörün teknik gereksinimlerine uygun şekilde kullanılır.",
+                "capabilityBody": "Transformatör üretim tesislerine yönelik özel amaçlı ekipmanların tasarımı, imalatı ve bakımını sağlıyoruz."
+            },
+            "bobin-sarim-makinalari": {
+                "materials": [
+                    "Yapısal Çelik Şase",
+                    "Hassas Tahrik Motorları",
+                    "Kontrol Elektroniği"
+                ],
+                "materialsBody": "Bobin sarım makinelerinde sarım hassasiyetini koruyan hassas tahrik sistemleri ve dayanıklı yapısal malzemeler kullanılır.",
+                "capabilityBody": "Elektrik motoru ve trafo üretiminde kullanılan bobin sarım makinelerinin tasarım, imalat, kurulum ve bakım-onarım hizmetlerini sunuyoruz."
+            },
+            "bobin-sarim-manderelleri": {
+                "materials": [
+                    "Sertleştirilmiş Çelik",
+                    "Hassas Toleranslı İşleme"
+                ],
+                "materialsBody": "Mandrel üretiminde boyutsal kararlılık ve aşınma direnci sağlayan sertleştirilmiş çelik malzemeler kullanılır.",
+                "capabilityBody": "Farklı bobin ölçü ve tiplerine uygun, hassas toleranslı mandrel üretimi talep edilen ölçülere göre gerçekleştirilir."
+            },
+            "tesis-boru-donatim": {
+                "materials": [
+                    "Karbon/Paslanmaz Çelik Boru",
+                    "Buhar/Basınçlı Hava Hattı Ekipmanları"
+                ],
+                "materialsBody": "Proses boru hatlarında (buhar, basınçlı hava, su, kimyasal transfer) hat basıncı ve ortama uygun malzeme seçimi yapılır.",
+                "capabilityBody": "Tasarıma uygun imalat, montaj, kaynak işlemleri ve basınç testlerinin yanı sıra mevcut hatlardaki arıza ve kaçak onarımlarını da sunuyoruz."
+            },
+            "tesis-fabrika-kurulumu": {
+                "materials": [
+                    "Yapısal Çelik",
+                    "Elektrik ve Boru Altyapı Malzemeleri"
+                ],
+                "materialsBody": "Anahtar teslim tesis kurulumlarında yapısal çelik, elektrik ve boru altyapı malzemeleri proje mühendisliğine uygun şekilde tedarik edilir.",
+                "capabilityBody": "Altyapı planlamasından ekipman montajına, devreye alma süreçlerine kadar anahtar teslim kurulum hizmeti sunuyoruz; proje yönetimi Aquatic mühendislik ekibi tarafından yürütülür."
+            },
+            "pcb-tasarim": {
+                "materials": [
+                    "FR4 Baskılı Devre Kartı",
+                    "Bakır Katman",
+                    "SMD/THT Komponentler"
+                ],
+                "materialsBody": "PCB üretiminde uygulamanın güvenilirlik gereksinimine göre FR4 ve yüksek kaliteli bakır katman malzemeleri kullanılır.",
+                "capabilityBody": "Şematik tasarımdan yerleşim planına, prototipten seri üretime kadar; sinyal bütünlüğü ve EMC uyumluluğu ön planda tutularak PCB geliştirme sürecini yönetiyoruz."
+            },
+            "elektronik-tasarim": {
+                "materials": [
+                    "Endüstriyel Elektronik Komponentler",
+                    "Devre Kartı Malzemeleri"
+                ],
+                "materialsBody": "Elektronik devre tasarımında uygulamaya özel, endüstriyel standartlara uygun komponentler kullanılır.",
+                "capabilityBody": "Kavramsal tasarımdan prototipe, testten üretime hazır hale getirmeye kadar uçtan uca elektronik mühendislik desteği sağlıyoruz."
+            },
+            "otomasyon-entegrasyon": {
+                "materials": [
+                    "PLC/SCADA Donanımı",
+                    "Sensörler",
+                    "Kontrol Panoları"
+                ],
+                "materialsBody": "Otomasyon altyapısında PLC, SCADA donanımı ve endüstriyel sensörler, uygulamanın kontrol gereksinimlerine göre seçilir.",
+                "capabilityBody": "Üretim hatları, gemi sistemleri ve endüstriyel tesisler için otomasyon altyapısını tasarlayıp devreye alıyoruz; elektronik tasarım ve otomasyon yetkinliklerini birleştiriyoruz."
+            }
+        },
+        "serviceDetail": {
+            "materialsTitle": "İşlediğimiz Malzemeler",
+            "capabilityTitle": "Üretim Kabiliyeti",
+            "capabilityBtn": "Başlayın",
+            "heroBtn": "Bize Ulaşın",
+            "relatedTitle": "Özel Üretim Hizmetlerimiz",
+            "quoteTitle": "Fiyat Teklifi Al",
+            "quoteSubtitle": "Projenizin detaylarını paylaşın, size en kısa sürede dönüş yapalım.",
+            "formName": "Ad Soyad",
+            "formEmail": "E-posta",
+            "formSubject": "Konu",
+            "formDescription": "Açıklama",
+            "formFile": "Teknik Dosya (PDF, DWG, STEP)",
+            "formFileHint": "Maks. 40 KB — daha büyük dosyalar için lütfen e-posta ile iletin.",
+            "formSubmit": "Teklif İste",
+            "formSubmitting": "Gönderiliyor...",
+            "formSuccess": "Talebiniz alındı, en kısa sürede dönüş yapacağız.",
+            "formError": "Bir hata oluştu, lütfen tekrar deneyin ya da bize doğrudan e-posta gönderin.",
+            "backToServices": "Hizmetlere Dön"
         }
     },
     "products": {
@@ -479,7 +759,8 @@
                     "maxTemp": "Maks. Sıcaklık"
                 }
             }
-        }
+        },
+        "conceptNote": "Bu kategorideki güç, lümen, ölçü ve çalışma derinliği değerleri konsept tasarım hedefidir; nihai değerler prototip ve sertifikasyon testleri sonrası kesinleşir."
     },
     "blackbox": {
         "hero": {
@@ -636,7 +917,8 @@
             "products": "Öne Çıkan Ürünler",
             "milestones": "Kilometre Taşları",
             "news": "Son Haberler",
-            "brands": "Markalar & Referanslar"
+            "brands": "Markalar & Referanslar",
+            "categoryShowcase": "Kategori Vitrini"
         },
         "corporate": {
             "history": "Tarihçemiz",
@@ -647,8 +929,10 @@
         },
         "services": {
             "denizcilik": "Aquatic Denizcilik",
-            "savunmaSanayi": "Savunma Sanayi & Sualtı",
-            "makina": "Makina & Endüstri",
+            "savunmaSanayi": "Savunma Sanayi",
+            "sualtiTeknolojileri": "Sualtı Teknolojileri",
+            "makina": "Aquatic Makina",
+            "endustri": "Aquatic Endüstri",
             "elektronikOtomasyon": "Elektronik ve Otomasyon"
         }
     },
@@ -728,5 +1012,14 @@
             "positionLabel": "Pozisyon",
             "messageLabel": "Mesaj"
         }
+    },
+    "categoryShowcase": {
+        "sectionLabel": "Kategori Vitrini",
+        "title": "Hizmetlerimiz ve Ürünlerimiz",
+        "subtitle": "Denizcilikten savunma sanayiine, sualtı teknolojilerinden endüstriyel üretime — her alanda öne çıkan çözümlerimiz.",
+        "ctaLabel": "TIKLA!",
+        "quoteButton": "TEKLİF AL",
+        "prev": "Önceki",
+        "next": "Sonraki"
     }
 }

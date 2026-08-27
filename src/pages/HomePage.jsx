@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useRevealAnimation } from '../hooks/useRevealAnimation';
 import PageSEO from '../components/common/PageSEO';
 import { useTranslation } from 'react-i18next';
@@ -12,16 +12,16 @@ import {
     ArrowRightOutlined,
     TeamOutlined,
     GlobalOutlined,
+    BankOutlined,
     ProjectOutlined,
     CalendarOutlined,
-    TrophyOutlined,
-    SafetyCertificateOutlined,
     FileTextOutlined,
-    StarOutlined,
     AppstoreOutlined,
-    ShoppingOutlined,
-    ApartmentOutlined,
+    LeftOutlined,
+    RightOutlined,
 } from '@ant-design/icons';
+import productsData from '../data/products.json';
+import { getCategoryIcon } from '../data/productCategoryVisuals';
 import './HomePage.css';
 
 /* Optimized images */
@@ -29,7 +29,15 @@ import imgDefence from '../assets/images/savunmasanayi.webp';
 import imgElectronics from '../assets/images/elektrik.webp';
 import imgMachinery from '../assets/images/makina.webp';
 import imgMaritime from '../assets/images/denizcilik.webp';
-const imgHeroBg = '/hero.webp'; // public/ — stable URL, preloaded in index.html
+// public/ — stable URL (not fingerprinted by Vite), so a ?v= query param is
+// bumped by hand whenever the file's content changes to bust stale caches
+// (browsers otherwise keep serving old bytes under the same URL indefinitely).
+const imgHeroBg = '/hero.webp?v=2';
+/* Hero-only photos — distinct from the ones reused on /services, so the
+   rotating hero doesn't repeat imagery the visitor sees a scroll away. */
+import imgHeroMaritime from '../assets/images/hero-denizcilik.webp';
+import imgHeroDefence from '../assets/images/hero-savunma.webp';
+import imgHeroMachinery from '../assets/images/hero-makina.webp';
 import brandAslan from '../assets/images/brands/aslan-cimento.webp';
 import brandBilgem from '../assets/images/brands/bilgem.webp';
 import brandDalgakiran from '../assets/images/brands/dalgakiran.webp';
@@ -38,14 +46,6 @@ import brandErve from '../assets/images/brands/erve.webp';
 import brandGolcuk from '../assets/images/brands/golcuk-belediye.webp';
 import brandTrc from '../assets/images/brands/trc.webp';
 import brandTubitak from '../assets/images/brands/tubitak-sage.webp';
-import prodCamera from '../assets/images/products/camera.webp';
-import prodHarness from '../assets/images/products/harness.webp';
-import prodLight from '../assets/images/products/light.webp';
-import prodMonitor from '../assets/images/products/monitor.webp';
-import prodPortableUnit from '../assets/images/products/portable-unit.webp';
-import prodPortableUnit2 from '../assets/images/products/portable-unit2.webp';
-import prodPressureVessel from '../assets/images/products/pressure-vessel.webp';
-
 /* Brand Images */
 
 import brandRef1 from '../assets/images/brands/ref1.webp';
@@ -58,9 +58,9 @@ import brandRef7 from '../assets/images/brands/ref7.webp';
    changes with it (see HERO_SLIDES usage below), not just the image. */
 const HERO_SLIDES = [
     { image: imgHeroBg, i18nKey: 'default' },
-    { image: imgMaritime, i18nKey: 'denizcilik' },
-    { image: imgDefence, i18nKey: 'savunma' },
-    { image: imgMachinery, i18nKey: 'makina' },
+    { image: imgHeroMaritime, i18nKey: 'denizcilik' },
+    { image: imgHeroDefence, i18nKey: 'savunma' },
+    { image: imgHeroMachinery, i18nKey: 'makina' },
 ];
 const HERO_SLIDE_INTERVAL = 6000;
 
@@ -70,6 +70,17 @@ const HomePage = () => {
 
     /* Intersection observer for animations */
     useRevealAnimation({ threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    /* Category showcase carousels — step-by-step via prev/next buttons
+       (scroll-snap does the alignment), one ref per row keyed by category. */
+    const csCarouselRefs = useRef({});
+    const scrollCsCarousel = (key, direction) => {
+        const el = csCarouselRefs.current[key];
+        if (!el) return;
+        const card = el.querySelector('.cs-card');
+        const step = card ? card.offsetWidth + 20 : el.clientWidth * 0.8;
+        el.scrollBy({ left: direction * step, behavior: 'smooth' });
+    };
 
     /* Rotating hero background + copy */
     const [heroSlide, setHeroSlide] = useState(0);
@@ -87,41 +98,77 @@ const HomePage = () => {
             ? t('hero.subtitle')
             : t(`hero.slides.${activeSlideKey}.subtitle`);
 
-    /* Services preview data */
-    const services = [
+    /* Category Showcase — combines services + products in one row per
+       category. Which content a row shows depends on what actually has real
+       photography: only underwater-cameras/subsea-lights-lasers in
+       products.json have photos (the other 48 connector-series products are
+       still imageless, see CLAUDE.md item 37) — cards for those fall back to
+       a category-icon placeholder (same pattern ProductsPage.jsx already
+       uses), rather than the row disappearing or repurposing a service item
+       as a stand-in "product". */
+    const CATEGORY_SHOWCASE = [
         {
             key: 'denizcilik',
             icon: <CompassOutlined />,
-            title: t('servicesPreview.denizcilik.title'),
-            desc: t('servicesPreview.denizcilik.desc'),
             color: 'var(--color-primary-dark)',
             image: imgMaritime,
+            productCategoryIds: ['standart-dairesel', 'ethernet-koaksiyel'],
         },
         {
             key: 'savunmaSanayi',
             icon: <RocketOutlined />,
-            title: t('servicesPreview.savunmaSanayi.title'),
-            desc: t('servicesPreview.savunmaSanayi.desc'),
             color: 'var(--color-primary)',
             image: imgDefence,
+            productCategoryIds: ['metal-govdeli', 'guc-serileri'],
+        },
+        {
+            key: 'sualtiTeknolojileri',
+            icon: <GlobalOutlined />,
+            color: 'var(--color-accent)',
+            image: imgDefence,
+            productCategoryIds: [
+                'underwater-cameras',
+                'subsea-lights-lasers',
+                'konnektor-aksesuarlari',
+                'kucuk-mikro-dairesel',
+            ],
         },
         {
             key: 'makina',
             icon: <ToolOutlined />,
-            title: t('servicesPreview.makina.title'),
-            desc: t('servicesPreview.makina.desc'),
-            color: 'var(--color-accent-dark)',
+            color: '#005f73',
             image: imgMachinery,
+            productCategoryIds: ['dusuk-profilli', 'yag-dolgulu'],
+        },
+        {
+            key: 'endustri',
+            icon: <BankOutlined />,
+            color: '#0a9396',
+            image: imgMachinery,
+            productCategoryIds: ['rm-lpm-serisi'],
         },
         {
             key: 'elektronikOtomasyon',
             icon: <ThunderboltOutlined />,
-            title: t('servicesPreview.elektronikOtomasyon.title'),
-            desc: t('servicesPreview.elektronikOtomasyon.desc'),
-            color: 'var(--color-accent)',
+            color: 'var(--color-accent-dark)',
             image: imgElectronics,
+            productCategoryIds: ['fiber-optik'],
         },
     ];
+
+    const categoryShowcaseRows = CATEGORY_SHOWCASE.map((row) => {
+        const cards = productsData
+            .filter((p) => row.productCategoryIds.includes(p.categoryId))
+            .slice(0, 9)
+            .map((p) => ({
+                key: p.id,
+                image: p.images?.[0],
+                categoryId: p.categoryId,
+                title: p.name,
+                onClick: () => navigate('/products'),
+            }));
+        return { ...row, cards };
+    });
 
     /* Stats data */
     const stats = [
@@ -130,22 +177,6 @@ const HomePage = () => {
         { icon: <TeamOutlined />, value: '50+', label: t('stats.clients') },
         { icon: <GlobalOutlined />, value: '5+', label: t('stats.countries') },
     ];
-
-    /* Popular products (static demo data) — names/descriptions come from i18n */
-    const products = [
-        { id: 1, image: prodPressureVessel },
-        { id: 2, image: prodPortableUnit },
-        { id: 3, image: prodPortableUnit2 },
-        { id: 4, image: prodCamera },
-        { id: 5, image: prodLight },
-        { id: 6, image: prodMonitor },
-        { id: 7, image: prodHarness },
-    ].map((p) => ({
-        ...p,
-        name: t(`popularProducts.items.${p.id}.name`),
-        category: t(`popularProducts.items.${p.id}.category`),
-        description: t(`popularProducts.items.${p.id}.description`),
-    }));
 
     /* Brands Data with names for accessibility */
     const marqueeBrands = [
@@ -304,16 +335,6 @@ const HomePage = () => {
             .finally(() => setNewsLoading(false));
     }, []);
 
-    /* Milestones / references */
-    const milestones = [
-        { id: '1', icon: <GlobalOutlined />, year: '2025' },
-        { id: '2', icon: <TrophyOutlined />, year: '2025' },
-        { id: '3', icon: <RocketOutlined />, year: '2024' },
-        { id: '4', icon: <SafetyCertificateOutlined />, year: '2023' },
-        { id: '5', icon: <FileTextOutlined />, year: '2023' },
-        { id: '6', icon: <StarOutlined />, year: '2022' },
-    ];
-
     return (
         <div className="home-page">
             <PageSEO titleKey="nav.home" descriptionKey="hero.subtitle" path="/" />
@@ -331,10 +352,13 @@ const HomePage = () => {
                 </div>
 
                 <div className="hero-content container">
-                    <h1 key={`slogan-${heroSlide}`} className="hero-slogan hero-text-in delay-2">
+                    <h1 key={`slogan-${heroSlide}`} className="hero-slogan hero-focus-in delay-2">
                         {heroSlogan}
                     </h1>
-                    <p key={`subtitle-${heroSlide}`} className="hero-subtitle hero-text-in delay-3">
+                    <p
+                        key={`subtitle-${heroSlide}`}
+                        className="hero-subtitle hero-focus-in delay-3"
+                    >
                         {heroSubtitle}
                     </p>
                     <div className="hero-actions animate-fadeInUp delay-4">
@@ -375,187 +399,121 @@ const HomePage = () => {
                 </div>
             </section>
 
-            {/* ===== SERVICES PREVIEW ===== */}
-            <section id="home-services" className="section services-preview-section">
+            {/* ===== CATEGORY SHOWCASE (services + products combined) ===== */}
+            <section id="home-category-showcase" className="section category-showcase-section">
                 <div className="container">
                     <div className="section-header-split reveal">
                         <div>
                             <span className="section-label">
-                                <AppstoreOutlined /> {t('servicesPreview.sectionLabel')}
+                                <AppstoreOutlined /> {t('categoryShowcase.sectionLabel')}
                             </span>
                             <h2
                                 className="section-title"
                                 style={{ textAlign: 'left', marginBottom: 8 }}
                             >
-                                {t('servicesPreview.title')}
+                                {t('categoryShowcase.title')}
                             </h2>
                             <p
                                 className="section-subtitle"
-                                style={{ textAlign: 'left', margin: 0, maxWidth: 500 }}
+                                style={{ textAlign: 'left', margin: 0, maxWidth: 560 }}
                             >
-                                {t('servicesPreview.subtitle')}
+                                {t('categoryShowcase.subtitle')}
                             </p>
                         </div>
                     </div>
-                    <Row gutter={[24, 24]}>
-                        {services.map((service, index) => (
-                            <Col xs={24} sm={12} md={6} key={service.key}>
-                                <div
-                                    className={`service-preview-card reveal`}
-                                    style={{
-                                        animationDelay: `${index * 0.1}s`,
-                                        '--card-accent': service.color,
-                                    }}
-                                    role="button"
-                                    tabIndex={0}
-                                    onClick={() => navigate(`/services#${service.key}`)}
-                                    onKeyDown={(e) => {
-                                        if (e.key === 'Enter' || e.key === ' ') {
-                                            e.preventDefault();
-                                            navigate(`/services#${service.key}`);
-                                        }
-                                    }}
-                                >
-                                    <img
-                                        className="service-card-photo"
-                                        src={service.image}
-                                        alt=""
-                                        width={1920}
-                                        height={1071}
-                                        loading="lazy"
-                                    />
-                                    <div className="service-card-scrim" aria-hidden="true" />
-                                    <div className="service-card-content">
-                                        <div
-                                            className="service-icon-wrapper"
-                                            style={{ background: service.color }}
-                                        >
-                                            {service.icon}
-                                        </div>
-                                        <h3 className="service-preview-title">{service.title}</h3>
-                                        <p className="service-preview-desc">{service.desc}</p>
-                                        <div className="service-link" aria-label={t('hero.cta')}>
-                                            <ArrowRightOutlined />
-                                        </div>
-                                    </div>
-                                </div>
-                            </Col>
-                        ))}
-                    </Row>
-                </div>
-            </section>
 
-            {/* ===== POPULAR PRODUCTS ===== */}
-            <section id="home-products" className="section products-section">
-                <div className="container">
-                    <div className="section-header-split reveal">
-                        <div className="header-split-left">
-                            <span className="section-label">
-                                <ShoppingOutlined /> {t('popularProducts.sectionLabel')}
-                            </span>
-                            <h2
-                                className="section-title"
-                                style={{ textAlign: 'left', marginBottom: 8 }}
-                            >
-                                {t('popularProducts.title')}
-                            </h2>
-                            <p
-                                className="section-subtitle"
-                                style={{ textAlign: 'left', margin: 0, maxWidth: 500 }}
-                            >
-                                {t('popularProducts.subtitle')}
-                            </p>
-                        </div>
-                        <div className="header-split-right">
-                            <Button
-                                type="default"
-                                size="large"
-                                onClick={() => navigate('/products')}
-                                className="view-all-btn"
-                            >
-                                {t('popularProducts.viewAll')} <ArrowRightOutlined />
-                            </Button>
-                        </div>
-                    </div>
-
-                    <div className="popular-products-slider reveal">
-                        {products.map((product) => (
-                            <div key={product.id} className="popular-product-slide">
+                    <div className="cs-rows">
+                        {categoryShowcaseRows.map((row, rowIdx) => {
+                            if (!row.cards.length) return null;
+                            return (
                                 <div
-                                    className="premium-product-card"
-                                    role="button"
-                                    tabIndex={0}
-                                    onClick={() => navigate('/products')}
-                                    onKeyDown={(e) => {
-                                        if (e.key === 'Enter' || e.key === ' ') {
-                                            e.preventDefault();
-                                            navigate('/products');
-                                        }
-                                    }}
+                                    className="cs-row reveal"
+                                    key={row.key}
+                                    style={{ animationDelay: `${rowIdx * 0.08}s` }}
                                 >
-                                    <div className="premium-product-image">
-                                        {product.image && (
-                                            <img
-                                                src={product.image}
-                                                alt={product.name}
-                                                width={360}
-                                                height={300}
-                                            />
-                                        )}
-                                        <div className="premium-product-badge">
-                                            {t('popularProducts.topSeller')}
-                                        </div>
-                                    </div>
-                                    <div className="premium-product-content">
-                                        <div className="premium-product-category">
-                                            {product.category}
-                                        </div>
-                                        <h3 className="premium-product-title">{product.name}</h3>
-                                        <p className="premium-product-desc">
-                                            {product.description}
-                                        </p>
-                                        <div className="premium-product-footer">
-                                            <div className="premium-product-action">
+                                    <button
+                                        className="cs-banner"
+                                        style={{
+                                            backgroundImage: `url(${row.image})`,
+                                            '--cs-color': row.color,
+                                        }}
+                                        onClick={() => navigate(`/services/category/${row.key}`)}
+                                    >
+                                        <span className="cs-banner-overlay" aria-hidden="true" />
+                                        <span className="cs-banner-icon">{row.icon}</span>
+                                        <span className="cs-banner-body">
+                                            <span className="cs-banner-title">
+                                                {t(`services.${row.key}.title`)}
+                                            </span>
+                                            <span className="cs-banner-cta">
+                                                {t('categoryShowcase.ctaLabel')}{' '}
                                                 <ArrowRightOutlined />
-                                            </div>
+                                            </span>
+                                        </span>
+                                    </button>
+
+                                    <div className="cs-carousel-wrap">
+                                        <button
+                                            type="button"
+                                            className="cs-arrow cs-arrow--prev"
+                                            aria-label={t('categoryShowcase.prev')}
+                                            onClick={() => scrollCsCarousel(row.key, -1)}
+                                        >
+                                            <LeftOutlined />
+                                        </button>
+                                        <button
+                                            type="button"
+                                            className="cs-arrow cs-arrow--next"
+                                            aria-label={t('categoryShowcase.next')}
+                                            onClick={() => scrollCsCarousel(row.key, 1)}
+                                        >
+                                            <RightOutlined />
+                                        </button>
+
+                                        <div
+                                            className="cs-carousel"
+                                            ref={(el) => {
+                                                csCarouselRefs.current[row.key] = el;
+                                            }}
+                                        >
+                                            {row.cards.map((card) => (
+                                                <button
+                                                    key={card.key}
+                                                    className="cs-card"
+                                                    onClick={card.onClick}
+                                                >
+                                                    <div className="cs-card-image">
+                                                        {card.image ? (
+                                                            <img
+                                                                src={card.image}
+                                                                alt={card.title}
+                                                                loading="lazy"
+                                                            />
+                                                        ) : (
+                                                            <div
+                                                                className="cs-card-image-placeholder"
+                                                                style={{ color: row.color }}
+                                                                aria-hidden="true"
+                                                            >
+                                                                {getCategoryIcon(card.categoryId)}
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                    <div className="cs-card-body">
+                                                        <h4 className="cs-card-title">
+                                                            {card.title}
+                                                        </h4>
+                                                        <span className="cs-card-quote-btn">
+                                                            {t('categoryShowcase.quoteButton')}
+                                                        </span>
+                                                    </div>
+                                                </button>
+                                            ))}
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* ===== REFERENCES / MILESTONES SECTION ===== */}
-            <section id="home-milestones" className="section references-section">
-                <div className="container">
-                    <div className="reveal">
-                        <span className="section-label">
-                            <ApartmentOutlined /> {t('milestones.sectionLabel')}
-                        </span>
-                        <h2
-                            className="section-title"
-                            style={{ textAlign: 'left', marginBottom: 8 }}
-                        >
-                            {t('milestones.title')}
-                        </h2>
-                        <p
-                            className="section-subtitle"
-                            style={{ textAlign: 'left', margin: '0 0 40px', maxWidth: 500 }}
-                        >
-                            {t('milestones.subtitle')}
-                        </p>
-                    </div>
-                    <div className="references-grid">
-                        {milestones.map((m) => (
-                            <div className="milestone-card reveal" key={m.id}>
-                                <div className="milestone-icon">{m.icon}</div>
-                                <div className="milestone-year">{m.year}</div>
-                                <div className="milestone-title">{t(`milestones.items.${m.id}.title`)}</div>
-                                <div className="milestone-desc">{t(`milestones.items.${m.id}.desc`)}</div>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
                 </div>
             </section>
@@ -603,10 +561,18 @@ const HomePage = () => {
                                 {[...newsItems, ...newsItems].map((item, idx) => {
                                     const Tag = item.url ? 'a' : 'div';
                                     const linkProps = item.url
-                                        ? { href: item.url, target: '_blank', rel: 'noopener noreferrer' }
+                                        ? {
+                                              href: item.url,
+                                              target: '_blank',
+                                              rel: 'noopener noreferrer',
+                                          }
                                         : {};
                                     return (
-                                        <Tag {...linkProps} className="news-card" key={`${item.id}-${idx}`}>
+                                        <Tag
+                                            {...linkProps}
+                                            className="news-card"
+                                            key={`${item.id}-${idx}`}
+                                        >
                                             {item.image && (
                                                 <div className="news-card-image">
                                                     <img
@@ -614,19 +580,27 @@ const HomePage = () => {
                                                         alt={item.title}
                                                         loading="lazy"
                                                         onError={(e) => {
-                                                            e.target.closest('.news-card-image').style.display = 'none';
+                                                            e.target.closest(
+                                                                '.news-card-image'
+                                                            ).style.display = 'none';
                                                         }}
                                                     />
                                                     <div className="news-card-image-overlay" />
-                                                    <span className="news-card-tag">{item.tag}</span>
+                                                    <span className="news-card-tag">
+                                                        {item.tag}
+                                                    </span>
                                                 </div>
                                             )}
                                             <div className="news-card-inner">
                                                 {!item.image && (
-                                                    <span className="news-card-tag">{item.tag}</span>
+                                                    <span className="news-card-tag">
+                                                        {item.tag}
+                                                    </span>
                                                 )}
                                                 {item.source && (
-                                                    <div className="news-card-source">{item.source}</div>
+                                                    <div className="news-card-source">
+                                                        {item.source}
+                                                    </div>
                                                 )}
                                                 <div className="news-card-date">{item.date}</div>
                                                 <h3 className="news-card-title">{item.title}</h3>

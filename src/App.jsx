@@ -8,6 +8,8 @@ import { SUPPORTED_LANGS, getDomainDefaultLang } from './i18n/langRouting';
 const HomePage = lazy(() => import('./pages/HomePage'));
 const CorporatePage = lazy(() => import('./pages/CorporatePage'));
 const ServicesPage = lazy(() => import('./pages/ServicesPage'));
+const ServiceCategoryPage = lazy(() => import('./pages/ServiceCategoryPage'));
+const ServiceDetailPage = lazy(() => import('./pages/ServiceDetailPage'));
 const ProductsPage = lazy(() => import('./pages/ProductsPage'));
 const BlackBoxPage = lazy(() => import('./pages/BlackBoxPage'));
 const CareersPage = lazy(() => import('./pages/CareersPage'));
@@ -33,6 +35,8 @@ const PAGES = [
     { path: '', Component: HomePage },
     { path: 'corporate', Component: CorporatePage },
     { path: 'services', Component: ServicesPage },
+    { path: 'services/category/:categoryKey', Component: ServiceCategoryPage },
+    { path: 'services/:slug', Component: ServiceDetailPage },
     { path: 'products', Component: ProductsPage },
     { path: 'blackbox', Component: BlackBoxPage },
     { path: 'careers', Component: CareersPage },

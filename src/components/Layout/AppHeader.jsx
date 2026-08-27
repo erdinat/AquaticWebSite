@@ -16,7 +16,6 @@ import {
     MailOutlined,
     BarChartOutlined,
     ToolOutlined,
-    StarOutlined,
     FileTextOutlined,
     TeamOutlined,
     HistoryOutlined,
@@ -27,6 +26,7 @@ import {
     RocketOutlined,
     CompassOutlined,
     ThunderboltOutlined,
+    EllipsisOutlined,
 } from '@ant-design/icons';
 import AquaticLogo from '../../assets/images/logo.webp';
 
@@ -80,9 +80,11 @@ const AppHeader = () => {
     /* Home dropdown sections */
     const homeDropdownItems = [
         { key: 'home-stats', icon: <BarChartOutlined />, label: t('dropdown.home.stats') },
-        { key: 'home-services', icon: <ToolOutlined />, label: t('dropdown.home.services') },
-        { key: 'home-products', icon: <ShoppingOutlined />, label: t('dropdown.home.products') },
-        { key: 'home-milestones', icon: <StarOutlined />, label: t('dropdown.home.milestones') },
+        {
+            key: 'home-category-showcase',
+            icon: <ShoppingOutlined />,
+            label: t('dropdown.home.categoryShowcase'),
+        },
         { key: 'home-news', icon: <FileTextOutlined />, label: t('dropdown.home.news') },
         { key: 'home-brands', icon: <TeamOutlined />, label: t('dropdown.home.brands') },
     ].map((item) => ({
@@ -114,8 +116,18 @@ const AppHeader = () => {
     /* Services dropdown */
     const servicesDropdownItems = [
         { key: 'denizcilik', icon: <CompassOutlined />, label: t('dropdown.services.denizcilik') },
-        { key: 'savunmaSanayi', icon: <RocketOutlined />, label: t('dropdown.services.savunmaSanayi') },
+        {
+            key: 'savunmaSanayi',
+            icon: <RocketOutlined />,
+            label: t('dropdown.services.savunmaSanayi'),
+        },
+        {
+            key: 'sualtiTeknolojileri',
+            icon: <GlobalOutlined />,
+            label: t('dropdown.services.sualtiTeknolojileri'),
+        },
         { key: 'makina', icon: <ToolOutlined />, label: t('dropdown.services.makina') },
+        { key: 'endustri', icon: <BankOutlined />, label: t('dropdown.services.endustri') },
         {
             key: 'elektronikOtomasyon',
             icon: <ThunderboltOutlined />,
@@ -125,11 +137,33 @@ const AppHeader = () => {
         ...item,
         onClick: ({ domEvent }) => {
             domEvent.stopPropagation();
-            navigate(localizePath(currentLang, '/services') + `#${item.key}`);
+            navigate(localizePath(currentLang, `/services/category/${item.key}`));
         },
     }));
 
-    /* Navigation items */
+    /* "More" dropdown — secondary pages tucked behind a single nav entry
+       (contact, careers, blackbox) so the primary nav stays to 4 items */
+    const moreDropdownItems = [
+        { key: 'more-contact', path: '/contact', icon: <MailOutlined />, label: t('nav.contact') },
+        { key: 'more-careers', path: '/careers', icon: <TeamOutlined />, label: t('nav.careers') },
+        {
+            key: 'more-blackbox',
+            path: '/blackbox',
+            icon: <SafetyCertificateOutlined />,
+            label: t('nav.blackbox'),
+        },
+    ].map((item) => ({
+        ...item,
+        onClick: ({ domEvent }) => {
+            domEvent.stopPropagation();
+            navigate(localizePath(currentLang, item.path));
+        },
+    }));
+
+    /* Navigation items — only Home/Corporate/Services/Products show directly;
+       Contact/Careers/BlackBox live under the "More" dropdown (dropdownOnly:
+       true means the parent item itself isn't a real page, so clicking it
+       shouldn't navigate — it only opens the flyout). */
     const navItems = [
         { key: '/', label: t('nav.home'), icon: <HomeOutlined />, dropdown: homeDropdownItems },
         {
@@ -145,8 +179,13 @@ const AppHeader = () => {
             dropdown: servicesDropdownItems,
         },
         { key: '/products', label: t('nav.products'), icon: <ShoppingOutlined /> },
-        { key: '/blackbox', label: t('nav.blackbox'), icon: <SafetyCertificateOutlined /> },
-        { key: '/contact', label: t('nav.contact'), icon: <MailOutlined /> },
+        {
+            key: 'more',
+            label: t('nav.more'),
+            icon: <EllipsisOutlined />,
+            dropdown: moreDropdownItems,
+            dropdownOnly: true,
+        },
     ];
 
     /* Language dropdown items */
@@ -161,13 +200,14 @@ const AppHeader = () => {
 
     /* Determine if hero page (transparent header) */
     const isHome = barePath === '/';
+    const isTransparent = !scrolled && isHome;
     const headerBg = scrolled || !isHome ? 'rgba(255, 255, 255, 0.97)' : 'transparent';
     const textColor = scrolled || !isHome ? 'var(--color-dark)' : '#fff';
 
     return (
         <>
             <Header
-                className={`app-header ${scrolled ? 'scrolled' : ''}`}
+                className={`app-header ${scrolled ? 'scrolled' : ''}${isTransparent ? ' transparent' : ''}`}
                 style={{
                     background: headerBg,
                     padding: '0 40px',
@@ -212,7 +252,9 @@ const AppHeader = () => {
                             if (item.dropdown) {
                                 return {
                                     key: item.key,
-                                    onClick: () => navigate(localizePath(currentLang, item.key)),
+                                    onClick: item.dropdownOnly
+                                        ? undefined
+                                        : () => navigate(localizePath(currentLang, item.key)),
                                     label: (
                                         <Dropdown
                                             menu={{ items: item.dropdown }}

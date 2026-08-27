@@ -1,23 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Row, Col, Card, Layout, Menu, Empty, Pagination } from 'antd';
-import {
-    DownOutlined,
-    UpOutlined,
-    AppstoreOutlined,
-    SettingOutlined,
-    CameraOutlined,
-    BulbOutlined,
-    ApiOutlined,
-    ThunderboltOutlined,
-    ExperimentOutlined,
-    GlobalOutlined,
-    ControlOutlined,
-    CompressOutlined,
-    SafetyOutlined,
-    NodeIndexOutlined,
-    ToolOutlined,
-} from '@ant-design/icons';
+import { DownOutlined, UpOutlined, AppstoreOutlined, InfoCircleOutlined } from '@ant-design/icons';
 import PageHero from '../components/common/PageHero';
 import { useRevealAnimation } from '../hooks/useRevealAnimation';
 import PageSEO from '../components/common/PageSEO';
@@ -26,54 +10,9 @@ import './ProductsPage.css';
 
 import productsData from '../data/products.json';
 import categoriesData from '../data/categories.json';
+import { categoryColors, getCategoryIcon } from '../data/productCategoryVisuals';
 
 const { Sider, Content } = Layout;
-
-const categoryColors = {
-    'kucuk-mikro-dairesel': 'var(--color-primary)',
-    'standart-dairesel': 'var(--color-primary-dark)',
-    'guc-serileri': 'var(--color-accent-dark)',
-    'yag-dolgulu': 'var(--color-accent)',
-    'ethernet-koaksiyel': 'var(--color-primary-light)',
-    'rm-lpm-serisi': 'var(--color-primary)',
-    'dusuk-profilli': 'var(--color-accent-dark)',
-    'metal-govdeli': 'var(--color-primary-dark)',
-    'fiber-optik': 'var(--color-accent)',
-    'konnektor-aksesuarlari': 'var(--color-text-muted)',
-    'underwater-cameras': 'var(--color-primary)',
-    'subsea-lights-lasers': '#0096c7',
-};
-
-const getCategoryIcon = (id) => {
-    switch (id) {
-        case 'kucuk-mikro-dairesel':
-            return <SettingOutlined />;
-        case 'standart-dairesel':
-            return <ApiOutlined />;
-        case 'guc-serileri':
-            return <ThunderboltOutlined />;
-        case 'yag-dolgulu':
-            return <ExperimentOutlined />;
-        case 'ethernet-koaksiyel':
-            return <GlobalOutlined />;
-        case 'rm-lpm-serisi':
-            return <ControlOutlined />;
-        case 'dusuk-profilli':
-            return <CompressOutlined />;
-        case 'metal-govdeli':
-            return <SafetyOutlined />;
-        case 'fiber-optik':
-            return <NodeIndexOutlined />;
-        case 'konnektor-aksesuarlari':
-            return <ToolOutlined />;
-        case 'underwater-cameras':
-            return <CameraOutlined />;
-        case 'subsea-lights-lasers':
-            return <BulbOutlined />;
-        default:
-            return <AppstoreOutlined />;
-    }
-};
 
 const ProductsPage = () => {
     const { t } = useTranslation();
@@ -167,6 +106,12 @@ const ProductsPage = () => {
                         </Sider>
 
                         <Content className="products-content">
+                            {activeCategory === 'subsea-lights-lasers' && (
+                                <div className="products-concept-note reveal">
+                                    <InfoCircleOutlined />
+                                    <span>{t('products.conceptNote')}</span>
+                                </div>
+                            )}
                             {filteredProducts.length === 0 ? (
                                 <Empty
                                     description={t(
@@ -246,7 +191,10 @@ const ProductsPage = () => {
                                                             </div>
 
                                                             <p className="product-desc">
-                                                                {t(`products.descriptions.${product.id}`, product.shortDescription)}
+                                                                {t(
+                                                                    `products.descriptions.${product.id}`,
+                                                                    product.shortDescription
+                                                                )}
                                                             </p>
 
                                                             <button

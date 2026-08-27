@@ -11,7 +11,8 @@
         "products": "Products",
         "blackbox": "National Black Box",
         "careers": "Careers",
-        "contact": "Contact"
+        "contact": "Contact",
+        "more": "More"
     },
     "hero": {
         "title": "AQUATIC",
@@ -182,8 +183,8 @@
             }
         },
         "savunmaSanayi": {
-            "title": "Defense Industry & Underwater Technologies",
-            "desc": "Special-type cable and connector solutions for critical defense industry applications such as submarine, sonar and torpedo systems. A product family of cables, cameras, and connectors specifically for the underwater environment.",
+            "title": "Defense Industry",
+            "desc": "Special-type cable and connector solutions for critical defense industry applications such as submarines, sonar and torpedo systems.",
             "items": {
                 "ozelKonnektorler": {
                     "title": "Special-Type Combat System Connectors",
@@ -199,7 +200,13 @@
                     "title": "Torpedo System Cables",
                     "desc": "Critical cable solutions for torpedo control and launch systems.",
                     "detail": "Special cable designs requiring high reliability and fault tolerance are developed for the control, telemetry, and power supply lines of torpedo systems. Their structures, resistant to sudden shock, pressure changes, and electromagnetic interference, support the uninterrupted operation of critical mission systems."
-                },
+                }
+            }
+        },
+        "sualtiTeknolojileri": {
+            "title": "Underwater Technologies",
+            "desc": "A product family of cables, cameras and connectors purpose-built for the underwater environment — infrastructure solutions for ROVs, AUVs and underwater platforms.",
+            "items": {
                 "sualtiAkustik": {
                     "title": "Underwater Acoustic Systems",
                     "desc": "Infrastructure solutions for underwater acoustic detection and communication systems.",
@@ -223,18 +230,13 @@
             }
         },
         "makina": {
-            "title": "Aquatic Machinery & Industry",
-            "desc": "Welded fabrication, custom machine manufacturing, machining, and industrial maintenance-repair services. Facility installation, factory infrastructure, and industrial pipe outfitting services.",
+            "title": "Aquatic Machinery",
+            "desc": "Welded fabrication, custom machine production and precision machining services.",
             "items": {
                 "kaynakliImalat": {
                     "title": "Welded Fabrication and Assembly",
                     "desc": "Welded fabrication and assembly of steel structures and metal parts.",
                     "detail": "Welded fabrication of metal components, heat treatment, surface preparation, and final assembly processes are carried out in accordance with project and technical drawings. During quality control stages, weld seams are inspected visually and, where required, through non-destructive testing (NDT) methods."
-                },
-                "konveyorler": {
-                    "title": "Conveyors",
-                    "desc": "Design and manufacturing of industrial conveying systems.",
-                    "detail": "Design, manufacturing, installation, and commissioning of belt, chain, or roller conveyor systems custom-built for production lines are carried out. Customized solutions are offered based on capacity, material type to be conveyed, and line layout; maintenance and overhaul services for existing conveyor systems are also included."
                 },
                 "ozelImalatMakinalar": {
                     "title": "Custom Manufacturing Machines",
@@ -250,6 +252,17 @@
                     "title": "Machining",
                     "desc": "CNC and conventional machining services.",
                     "detail": "Precision-dimensioned part manufacturing is carried out at turning, milling, and CNC machining centers. Production is done from prototype to serial manufacturing, at different scales, with tolerances matching the technical drawing exactly."
+                }
+            }
+        },
+        "endustri": {
+            "title": "Aquatic Industry",
+            "desc": "Industrial maintenance and repair, facility installation, factory infrastructure and industrial pipe outfitting services.",
+            "items": {
+                "konveyorler": {
+                    "title": "Conveyors",
+                    "desc": "Design and manufacturing of industrial conveying systems.",
+                    "detail": "Design, manufacturing, installation, and commissioning of belt, chain, or roller conveyor systems custom-built for production lines are carried out. Customized solutions are offered based on capacity, material type to be conveyed, and line layout; maintenance and overhaul services for existing conveyor systems are also included."
                 },
                 "trafoEkipmanlari": {
                     "title": "Transformer Industry Production Equipment",
@@ -314,6 +327,273 @@
                 }
             },
             "sectionLabel": "Resources"
+        },
+        "viewLabel": "View",
+        "detail": {
+            "talasli-imalat": {
+                "materials": [
+                    "Aluminum",
+                    "Stainless Steel",
+                    "Brass",
+                    "Bronze",
+                    "Titanium",
+                    "POM (Delrin)"
+                ],
+                "materialsBody": "In our lathe and CNC machining centers, we machine nearly the full range of metals and engineering plastics to precise tolerances. Material selection is determined per project based on the operating environment of the part (seawater, high pressure, wear).",
+                "capabilityBody": "From prototype to series production, our CNC lathes and milling centers deliver parts that match technical drawings exactly, within tight tolerances. Every batch is delivered with a dimensional inspection report."
+            },
+            "kaynakli-imalat": {
+                "materials": [
+                    "Carbon Steel",
+                    "Stainless Steel (304/316L)",
+                    "Aluminum",
+                    "Galvanized Sheet"
+                ],
+                "materialsBody": "Using TIG, MIG and arc welding methods, we carry out welded fabrication in material groups suited to marine and industrial applications. The appropriate welding procedure is applied based on material thickness and corrosion-resistance requirements.",
+                "capabilityBody": "Weld seams are inspected visually and, when required, with non-destructive testing (NDT) methods. Heat treatment, surface preparation and final assembly are all managed under one roof."
+            },
+            "ozel-imalat-makinalari": {
+                "materials": [
+                    "Structural Steel",
+                    "Stainless Steel",
+                    "Aluminum Profile",
+                    "Industrial Electronic Components"
+                ],
+                "materialsBody": "We use structurally rigid materials for custom machine frames and industrial-grade electronic components for automation panels. Material selection is optimized for the operating environment of the machine and production speed.",
+                "capabilityBody": "From mechanical design to automation integration, from prototype production to on-site commissioning, the entire process is managed end-to-end by the Aquatic engineering team."
+            },
+            "3d-tasarim": {
+                "materials": [
+                    "PLA",
+                    "ABS",
+                    "PETG",
+                    "Resin (SLA)",
+                    "Nylon (SLS)"
+                ],
+                "materialsBody": "For concept validation and functional prototypes, we offer 3D printing across different material families using FDM and SLA technologies. Material selection is based on the test purpose of the prototype (visual, functional, thermal).",
+                "capabilityBody": "Starting from CAD-based 3D design, we turn ideas into physical products through rapid prototyping and reverse engineering. We provide design validation support for parts with complex geometry."
+            },
+            "gemi-elektrik": {
+                "materials": [
+                    "Copper Cable",
+                    "Power Distribution Panels",
+                    "Generator Equipment",
+                    "Insulation Materials"
+                ],
+                "materialsBody": "For ship electrical systems we use class-approved cable and panel materials resistant to seawater and humidity. Material selection is determined by the vessel's type and electrical load requirements.",
+                "capabilityBody": "From installing main and auxiliary electrical systems to periodic maintenance, fault diagnosis and cable laying, the entire process is carried out in line with survey and classification society requirements."
+            },
+            "gemi-makine": {
+                "materials": [
+                    "Spare Parts (OEM/Equivalent)",
+                    "Engine Oils",
+                    "Injector Sets",
+                    "Turbocharger Components"
+                ],
+                "materialsBody": "For main engine and generator maintenance we use original or OEM-equivalent spare parts and maintenance materials determined by oil analysis results.",
+                "capabilityBody": "Periodic maintenance, overhaul, preventive maintenance planning based on oil analysis, and emergency repair services are provided, covering injector, turbocharger, cooling and fuel systems."
+            },
+            "hidrolik-pnomatik": {
+                "materials": [
+                    "Hydraulic Hose",
+                    "Seal Kits",
+                    "Hydraulic Oil",
+                    "Pneumatic Valves"
+                ],
+                "materialsBody": "For hydraulic/pneumatic systems such as steering gear, cranes and deck machinery, we use pressure-resistant hose, seal and valve materials.",
+                "capabilityBody": "We provide end-to-end maintenance and repair covering leak-tightness checks, hose and seal replacement, pressure testing, and hydraulic pump/valve/cylinder overhauls."
+            },
+            "pnomatik-merdiven": {
+                "materials": [
+                    "Aluminum Profile",
+                    "Pneumatic Cylinder",
+                    "Rubber Step Coating"
+                ],
+                "materialsBody": "Pneumatic gangway ladder systems use lightweight, durable aluminum profile, corrosion-resistant fasteners and anti-slip step coatings.",
+                "capabilityBody": "Load capacity, deployment time and material class are evaluated per project, with sourcing, installation and maintenance managed end-to-end."
+            },
+            "komple-bakim-onarim": {
+                "materials": [
+                    "Electrical, Machinery and Pipe Outfitting Materials",
+                    "Spare Parts Logistics"
+                ],
+                "materialsBody": "For complete maintenance and repair, all material sourcing across electrical, machinery, hydraulic-pneumatic and pipe outfitting disciplines is coordinated under one roof.",
+                "capabilityBody": "From dry-dock entry to exit, planning, work breakdown structure (WBS), parts sourcing, labor coordination and final inspection/testing are all managed end-to-end by Aquatic."
+            },
+            "teciz-montaj-onarim": {
+                "materials": [
+                    "Ship Outfitting Equipment",
+                    "Assembly Fasteners",
+                    "Auxiliary System Components"
+                ],
+                "materialsBody": "In new-build and retrofit projects, class-approved fasteners and auxiliary system components are used when installing ship outfitting equipment.",
+                "capabilityBody": "In addition to equipment installation, alignment and commissioning, repair of existing outfitting and performance testing are also part of the service."
+            },
+            "boru-donatim": {
+                "materials": [
+                    "Stainless/Carbon Steel Pipe",
+                    "Welding Consumables",
+                    "Anti-Corrosion Coatings"
+                ],
+                "materialsBody": "For systems such as fuel, oil, cooling water, bilge, ballast and fire lines, corrosion-resistant pipe and fitting materials are used.",
+                "capabilityBody": "Fabrication to isometric drawings, installation, welding and pressure testing are carried out to class-approved workmanship standards."
+            },
+            "ozel-konnektorler": {
+                "materials": [
+                    "316L Stainless Steel",
+                    "PEEK Insulation",
+                    "FKM O-Ring"
+                ],
+                "materialsBody": "For connectors requiring high pressure resistance and electromagnetic compatibility, stainless steel housings and high-performance insulation materials are used.",
+                "capabilityBody": "Using an engineering approach compliant with military standards such as MIL-spec, we develop uninterrupted connection solutions for submarines and underwater platforms."
+            },
+            "sonar-kablolari": {
+                "materials": [
+                    "Shielded Cable",
+                    "Low-Noise Conductor",
+                    "Waterproof Insulation"
+                ],
+                "materialsBody": "For the precise signal transmission of sonar arrays, low-noise, shielded insulation materials resistant to deep-water pressure are used.",
+                "capabilityBody": "We carry out custom cable design and manufacturing processes that guarantee signal integrity and long service life."
+            },
+            "torpido-kablolari": {
+                "materials": [
+                    "High-Strength Conductor",
+                    "Impact-Resistant Insulation"
+                ],
+                "materialsBody": "For torpedo system control and power lines, special cable constructions resistant to sudden shock and pressure change are used.",
+                "capabilityBody": "We offer highly reliable cable design that supports the uninterrupted operation of mission-critical systems."
+            },
+            "sualti-akustik": {
+                "materials": [
+                    "Hydrophone",
+                    "Acoustic Sensor",
+                    "Waterproof Connector"
+                ],
+                "materialsBody": "For underwater acoustic sensor arrays and hydrophone systems, materials and connectors suited to deep-water conditions are used.",
+                "capabilityBody": "Through cabling, connector and integration services, we build acoustic systems with long-term operational durability."
+            },
+            "sualti-kablosu": {
+                "materials": [
+                    "Pressure-Resistant Sheath",
+                    "Corrosion-Protected Conductor"
+                ],
+                "materialsBody": "We supply highly waterproof, corrosion-protected cables for ROV/AUV systems and marine infrastructure projects.",
+                "capabilityBody": "Depth class, conductor count, cross-section and sheath material are evaluated per project for custom production."
+            },
+            "kamera": {
+                "materials": [
+                    "Titanium/Stainless Housing",
+                    "Sapphire Optical Lens"
+                ],
+                "materialsBody": "Underwater cameras use housings resistant to deep-water pressure and optical materials that deliver high image quality in low light.",
+                "capabilityBody": "We offer highly durable imaging solutions for hull inspection, underwater surveys and ROV integration."
+            },
+            "konnektor": {
+                "materials": [
+                    "Waterproof Connector Housing",
+                    "Dual O-Ring Sealing"
+                ],
+                "materialsBody": "For the secure connection of underwater equipment, a waterproof, pressure-resistant connector product family is used.",
+                "capabilityBody": "Pin count, IP/depth class and material options are determined per project need, offering custom connector solutions."
+            },
+            "konveyorler": {
+                "materials": [
+                    "Conveyor Belt/Chain",
+                    "Roller Systems",
+                    "Structural Steel Frame"
+                ],
+                "materialsBody": "Depending on the material to be conveyed, belt, chain or roller conveyor systems use materials with suitable wear resistance.",
+                "capabilityBody": "We offer design, fabrication, installation and commissioning customized to capacity and line layout; maintenance of existing systems is also included."
+            },
+            "trafo-ekipmanlari": {
+                "materials": [
+                    "Electrical Steel Sheet",
+                    "Copper Conductor",
+                    "Insulation Materials"
+                ],
+                "materialsBody": "Transformer production equipment uses electrical steel sheet and high-conductivity copper materials suited to the industry's technical requirements.",
+                "capabilityBody": "We provide the design, fabrication and maintenance of special-purpose equipment for transformer production facilities."
+            },
+            "bobin-sarim-makinalari": {
+                "materials": [
+                    "Structural Steel Frame",
+                    "Precision Drive Motors",
+                    "Control Electronics"
+                ],
+                "materialsBody": "Coil winding machines use precision drive systems that preserve winding accuracy and durable structural materials.",
+                "capabilityBody": "We offer design, fabrication, installation and maintenance/repair services for coil winding machines used in electric motor and transformer production."
+            },
+            "bobin-sarim-manderelleri": {
+                "materials": [
+                    "Hardened Steel",
+                    "Precision Tolerance Machining"
+                ],
+                "materialsBody": "Mandrel production uses hardened steel materials that provide dimensional stability and wear resistance.",
+                "capabilityBody": "Precision-tolerance mandrels suited to different coil sizes and types are manufactured to the requested dimensions."
+            },
+            "tesis-boru-donatim": {
+                "materials": [
+                    "Carbon/Stainless Steel Pipe",
+                    "Steam/Compressed Air Line Equipment"
+                ],
+                "materialsBody": "For process piping (steam, compressed air, water, chemical transfer), materials are selected to suit line pressure and environment.",
+                "capabilityBody": "In addition to fabrication, installation, welding and pressure testing per design, we also repair faults and leaks on existing lines."
+            },
+            "tesis-fabrika-kurulumu": {
+                "materials": [
+                    "Structural Steel",
+                    "Electrical and Piping Infrastructure Materials"
+                ],
+                "materialsBody": "For turnkey facility installations, structural steel, electrical and piping infrastructure materials are sourced in line with project engineering.",
+                "capabilityBody": "From infrastructure planning to equipment installation and commissioning, we offer turnkey installation services; project management is handled by the Aquatic engineering team."
+            },
+            "pcb-tasarim": {
+                "materials": [
+                    "FR4 Printed Circuit Board",
+                    "Copper Layer",
+                    "SMD/THT Components"
+                ],
+                "materialsBody": "PCB production uses FR4 and high-quality copper layer materials matched to the application's reliability requirements.",
+                "capabilityBody": "From schematic design to layout, from prototype to series production, we manage the PCB development process with signal integrity and EMC compliance as priorities."
+            },
+            "elektronik-tasarim": {
+                "materials": [
+                    "Industrial Electronic Components",
+                    "Circuit Board Materials"
+                ],
+                "materialsBody": "Electronic circuit design uses application-specific components that meet industrial standards.",
+                "capabilityBody": "We provide end-to-end electronic engineering support from conceptual design to prototype, from testing to production readiness."
+            },
+            "otomasyon-entegrasyon": {
+                "materials": [
+                    "PLC/SCADA Hardware",
+                    "Sensors",
+                    "Control Panels"
+                ],
+                "materialsBody": "Automation infrastructure uses PLC, SCADA hardware and industrial sensors selected according to the application's control requirements.",
+                "capabilityBody": "We design and commission automation infrastructure for production lines, ship systems and industrial facilities, combining electronic design and automation capabilities."
+            }
+        },
+        "serviceDetail": {
+            "materialsTitle": "Materials We Work With",
+            "capabilityTitle": "Production Capability",
+            "capabilityBtn": "Get Started",
+            "heroBtn": "Contact Us",
+            "relatedTitle": "Our Custom Manufacturing Services",
+            "quoteTitle": "Get a Quote",
+            "quoteSubtitle": "Share your project details and we'll get back to you as soon as possible.",
+            "formName": "Full Name",
+            "formEmail": "Email",
+            "formSubject": "Subject",
+            "formDescription": "Description",
+            "formFile": "Technical File (PDF, DWG, STEP)",
+            "formFileHint": "Max. 40 KB — for larger files, please email us directly.",
+            "formSubmit": "Request Quote",
+            "formSubmitting": "Sending...",
+            "formSuccess": "Your request has been received, we will get back to you shortly.",
+            "formError": "Something went wrong, please try again or email us directly.",
+            "backToServices": "Back to Services"
         }
     },
     "products": {
@@ -479,7 +759,8 @@
                     "maxTemp": "Max Temperature"
                 }
             }
-        }
+        },
+        "conceptNote": "Power, lumen, dimension and depth-rating values in this category are concept design targets; final values are confirmed after prototype and certification testing."
     },
     "blackbox": {
         "hero": {
@@ -713,7 +994,8 @@
             "products": "Featured Products",
             "milestones": "Milestones",
             "news": "Latest News",
-            "brands": "Brands & References"
+            "brands": "Brands & References",
+            "categoryShowcase": "Category Showcase"
         },
         "corporate": {
             "history": "About Us",
@@ -724,9 +1006,20 @@
         },
         "services": {
             "denizcilik": "Aquatic Maritime",
-            "savunmaSanayi": "Defense & Underwater",
-            "makina": "Machinery & Industry",
+            "savunmaSanayi": "Defense Industry",
+            "sualtiTeknolojileri": "Underwater Technologies",
+            "makina": "Aquatic Machinery",
+            "endustri": "Aquatic Industry",
             "elektronikOtomasyon": "Electronics and Automation"
         }
+    },
+    "categoryShowcase": {
+        "sectionLabel": "Category Showcase",
+        "title": "Our Services & Products",
+        "subtitle": "From maritime to defense industry, from underwater technologies to industrial manufacturing — our leading solutions in every field.",
+        "ctaLabel": "CLICK!",
+        "quoteButton": "GET A QUOTE",
+        "prev": "Previous",
+        "next": "Next"
     }
 }
