@@ -171,7 +171,7 @@
 /* --- Stats Section --- */
 .stats-section {
     padding: 72px 0;
-    background: #f4f7ff;
+    background: var(--color-bg);
     margin-top: -40px;
     position: relative;
     z-index: 3;
@@ -239,7 +239,7 @@
 
 /* --- Category Showcase (services + products combined) --- */
 .category-showcase-section {
-    background: #f4f7ff;
+    background: var(--color-bg);
 }
 
 .cs-rows {
@@ -534,9 +534,97 @@
     }
 }
 
+/* --- Catalog Downloads --- */
+.home-catalogs-section {
+    background: #fff;
+}
+
+.home-catalogs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+.home-catalog-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: #fff;
+    border: 1.5px solid rgba(10, 61, 98, 0.14);
+    border-radius: 16px;
+    padding: 22px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 10px rgba(0, 21, 41, 0.04);
+}
+
+.home-catalog-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 10px 30px rgba(10, 61, 98, 0.12);
+    transform: translateY(-3px);
+}
+
+.home-catalog-icon {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: var(--color-primary);
+    color: #fff;
+    font-size: 24px;
+}
+
+.home-catalog-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.home-catalog-title {
+    font-family: var(--font-display);
+    font-size: var(--font-size-h3);
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 4px;
+}
+
+.home-catalog-desc {
+    font-size: var(--font-size-body-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.home-catalog-download {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.home-catalog-download .anticon {
+    font-size: 18px;
+}
+
+@media (max-width: 480px) {
+    .home-catalog-card {
+        flex-wrap: wrap;
+    }
+    .home-catalog-download {
+        flex-direction: row;
+        margin-left: 70px;
+    }
+}
+
 /* --- Brands / References Section --- */
 .brands-section {
-    background: #f4f7ff;
+    background: var(--color-bg);
     padding: 80px 0;
     overflow: hidden;
 }
@@ -584,43 +672,39 @@
 
 /* --- News Section --- */
 .news-section {
-    background: #f4f7ff;
+    background: var(--color-bg);
 }
 
-/* ── News Marquee ── */
+/* ── News Carousel — step-by-step via prev/next (same pattern as the
+   category showcase), not an endless auto-scroll the visitor can't stop ── */
+.news-marquee-wrap {
+    position: relative;
+}
+
 .news-marquee-container {
     width: 100%;
-    overflow: hidden;
-    position: relative;
     padding: 12px 0 20px;
-    mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
 }
 
 .news-marquee-track {
     display: flex;
     gap: 24px;
-    width: max-content;
-    animation: scrollNews 45s linear infinite;
-    will-change: transform;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 4px;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
-.news-marquee-track:hover {
-    animation-play-state: paused;
-}
-
-@keyframes scrollNews {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-50% - 12px));
-    }
+.news-marquee-track::-webkit-scrollbar {
+    display: none;
 }
 
 /* ── News Skeleton ── */
 .news-skeleton {
     flex-shrink: 0;
+    scroll-snap-align: start;
     width: 340px;
     background: #ffffff;
     border-radius: 20px;
@@ -685,6 +769,7 @@
 /* ── News Card ── */
 .news-card {
     flex-shrink: 0;
+    scroll-snap-align: start;
     width: 340px;
     background: #ffffff;
     border-radius: 20px;

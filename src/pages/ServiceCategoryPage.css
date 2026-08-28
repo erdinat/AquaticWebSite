@@ -1,7 +1,7 @@
 /* ===== ServiceCategoryPage — one category's own dedicated page ===== */
 
 .service-category-page {
-    background: #f4f7ff;
+    background: var(--color-bg);
     padding: 140px 0 100px;
     min-height: 100vh;
 }

@@ -3,6 +3,7 @@ import { Layout } from 'antd';
 import AppHeader from './AppHeader';
 import AppFooter from './AppFooter';
 import WhatsAppButton from '../common/WhatsAppButton';
+import CookieConsent from '../common/CookieConsent';
 
 const { Content } = Layout;
 
@@ -19,6 +20,7 @@ const MainLayout = ({ children }) => {
             </Content>
             <AppFooter />
             <WhatsAppButton />
+            <CookieConsent />
         </Layout>
     );
 };

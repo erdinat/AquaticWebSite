@@ -62,7 +62,7 @@ export const SERVICE_GROUPS = [
         icon: <GlobalOutlined />,
         color: 'var(--color-accent)',
         gradient: 'linear-gradient(135deg, var(--color-accent), var(--color-accent-dark))',
-        image: imgDefence,
+        image: '/images/services/detail/savunmaSanayi-konnektor.webp',
         items: [
             { key: 'sualtiAkustik', icon: <DashboardOutlined />, slug: 'sualti-akustik' },
             { key: 'sualtiKablosu', icon: <DeploymentUnitOutlined />, slug: 'sualti-kablosu' },
@@ -88,7 +88,7 @@ export const SERVICE_GROUPS = [
         icon: <BankOutlined />,
         color: '#0a9396',
         gradient: 'linear-gradient(135deg, #0a9396, #005f73)',
-        image: imgMachinery,
+        image: '/images/services/detail/makina-konveyorler.webp',
         items: [
             { key: 'konveyorler', icon: <DeploymentUnitOutlined />, slug: 'konveyorler' },
             { key: 'trafoEkipmanlari', icon: <BuildOutlined />, slug: 'trafo-ekipmanlari' },

@@ -2,7 +2,7 @@
 
 /* ===== BENEFITS SECTION ===== */
 .careers-benefits-section {
-    background: #f4f7ff;
+    background: var(--color-bg);
     padding: 80px 0;
 }
 
@@ -105,7 +105,7 @@
 
 /* ===== APPLICATION FORM SECTION ===== */
 .careers-form-section {
-    background: #f4f7ff;
+    background: var(--color-bg);
     padding: 80px 0;
 }
 

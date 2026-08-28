@@ -19,6 +19,8 @@ import {
     AppstoreOutlined,
     LeftOutlined,
     RightOutlined,
+    FilePdfOutlined,
+    DownloadOutlined,
 } from '@ant-design/icons';
 import productsData from '../data/products.json';
 import { getCategoryIcon } from '../data/productCategoryVisuals';
@@ -64,8 +66,19 @@ const HERO_SLIDES = [
 ];
 const HERO_SLIDE_INTERVAL = 6000;
 
+/* Downloadable catalog PDFs — the connector + lighting catalogs only exist in
+   Turkish, the lighting catalog also has an English edition used for every
+   other site language (no separate RU/KK catalog editions exist yet). */
+const CATALOGS = {
+    tr: [
+        { key: 'connectors', file: '/catalogs/aquatic-sualti-konnektorleri-katalogu-tr.pdf' },
+        { key: 'lighting', file: '/catalogs/aquatic-sualti-aydinlatma-katalogu-tr.pdf' },
+    ],
+    other: [{ key: 'lighting', file: '/catalogs/aquatic-underwater-lighting-catalog-en.pdf' }],
+};
+
 const HomePage = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const navigate = useLocalizedNavigate();
 
     /* Intersection observer for animations */
@@ -79,6 +92,18 @@ const HomePage = () => {
         if (!el) return;
         const card = el.querySelector('.cs-card');
         const step = card ? card.offsetWidth + 20 : el.clientWidth * 0.8;
+        el.scrollBy({ left: direction * step, behavior: 'smooth' });
+    };
+
+    /* News carousel — same step-by-step pattern as the category showcase
+       above, instead of an endless auto-scroll the visitor has no way to
+       stop. */
+    const newsCarouselRef = useRef(null);
+    const scrollNewsCarousel = (direction) => {
+        const el = newsCarouselRef.current;
+        if (!el) return;
+        const card = el.querySelector('.news-card, .news-skeleton');
+        const step = card ? card.offsetWidth + 24 : el.clientWidth * 0.8;
         el.scrollBy({ left: direction * step, behavior: 'smooth' });
     };
 
@@ -110,7 +135,7 @@ const HomePage = () => {
         {
             key: 'denizcilik',
             icon: <CompassOutlined />,
-            color: 'var(--color-primary-dark)',
+            color: 'var(--color-primary)',
             image: imgMaritime,
             productCategoryIds: ['standart-dairesel', 'ethernet-koaksiyel'],
         },
@@ -124,8 +149,8 @@ const HomePage = () => {
         {
             key: 'sualtiTeknolojileri',
             icon: <GlobalOutlined />,
-            color: 'var(--color-accent)',
-            image: imgDefence,
+            color: 'var(--color-primary)',
+            image: '/images/services/detail/savunmaSanayi-konnektor.webp',
             productCategoryIds: [
                 'underwater-cameras',
                 'subsea-lights-lasers',
@@ -136,21 +161,21 @@ const HomePage = () => {
         {
             key: 'makina',
             icon: <ToolOutlined />,
-            color: '#005f73',
+            color: 'var(--color-primary)',
             image: imgMachinery,
             productCategoryIds: ['dusuk-profilli', 'yag-dolgulu'],
         },
         {
             key: 'endustri',
             icon: <BankOutlined />,
-            color: '#0a9396',
-            image: imgMachinery,
+            color: 'var(--color-primary)',
+            image: '/images/services/detail/makina-konveyorler.webp',
             productCategoryIds: ['rm-lpm-serisi'],
         },
         {
             key: 'elektronikOtomasyon',
             icon: <ThunderboltOutlined />,
-            color: 'var(--color-accent-dark)',
+            color: 'var(--color-primary)',
             image: imgElectronics,
             productCategoryIds: ['fiber-optik'],
         },
@@ -170,6 +195,8 @@ const HomePage = () => {
         return { ...row, cards };
     });
 
+    const activeCatalogs = i18n.language === 'tr' ? CATALOGS.tr : CATALOGS.other;
+
     /* Stats data */
     const stats = [
         { icon: <CalendarOutlined />, value: '6+', label: t('stats.experience') },
@@ -186,7 +213,7 @@ const HomePage = () => {
         { name: 'EMS', image: brandEms },
         { name: 'ERVE', image: brandErve },
         { name: 'Gölcük Belediyesi', image: brandGolcuk },
-        { name: 'TRC', image: brandTrc },
+        { name: 'TRC Marine', image: brandTrc },
         { name: 'TÜBİTAK SAGE', image: brandTubitak },
         { name: 'Reference 1', image: brandRef1 },
         { name: 'Reference 3', image: brandRef3 },
@@ -518,6 +545,54 @@ const HomePage = () => {
                 </div>
             </section>
 
+            {/* ===== CATALOG DOWNLOADS ===== */}
+            <section id="home-catalogs" className="section home-catalogs-section">
+                <div className="container">
+                    <span className="section-label reveal">
+                        <FilePdfOutlined /> {t('services.catalogs.sectionLabel')}
+                    </span>
+                    <h2
+                        className="section-title reveal"
+                        style={{ textAlign: 'left', marginBottom: 8 }}
+                    >
+                        {t('services.catalogs.title')}
+                    </h2>
+                    <p
+                        className="section-subtitle reveal"
+                        style={{ textAlign: 'left', margin: '0 0 40px' }}
+                    >
+                        {t('services.catalogs.subtitle')}
+                    </p>
+                    <div className="home-catalogs-grid reveal">
+                        {activeCatalogs.map((catalog) => (
+                            <a
+                                key={catalog.key}
+                                href={catalog.file}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="home-catalog-card"
+                            >
+                                <div className="home-catalog-icon">
+                                    <FilePdfOutlined />
+                                </div>
+                                <div className="home-catalog-body">
+                                    <h4 className="home-catalog-title">
+                                        {t(`services.catalogs.items.${catalog.key}.title`)}
+                                    </h4>
+                                    <p className="home-catalog-desc">
+                                        {t(`services.catalogs.items.${catalog.key}.desc`)}
+                                    </p>
+                                </div>
+                                <div className="home-catalog-download">
+                                    <DownloadOutlined />
+                                    <span>{t('services.catalogs.downloadLabel')}</span>
+                                </div>
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* ===== NEWS SECTION ===== */}
             <section id="home-news" className="section news-section">
                 <div className="container">
@@ -540,7 +615,28 @@ const HomePage = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="news-marquee-container" style={{ marginTop: 40 }}>
+                    <div className="news-marquee-wrap" style={{ marginTop: 40 }}>
+                        {!newsLoading && !newsError && newsItems.length > 0 && (
+                            <>
+                                <button
+                                    type="button"
+                                    className="cs-arrow cs-arrow--prev"
+                                    aria-label={t('categoryShowcase.prev')}
+                                    onClick={() => scrollNewsCarousel(-1)}
+                                >
+                                    <LeftOutlined />
+                                </button>
+                                <button
+                                    type="button"
+                                    className="cs-arrow cs-arrow--next"
+                                    aria-label={t('categoryShowcase.next')}
+                                    onClick={() => scrollNewsCarousel(1)}
+                                >
+                                    <RightOutlined />
+                                </button>
+                            </>
+                        )}
+                        <div className="news-marquee-container">
                         {newsLoading ? (
                             <div className="news-marquee-track">
                                 {[0, 1, 2, 3].map((i) => (
@@ -557,8 +653,8 @@ const HomePage = () => {
                         ) : newsError || newsItems.length === 0 ? (
                             <p style={{ color: 'var(--color-text-muted)' }}>{t('news.error')}</p>
                         ) : (
-                            <div className="news-marquee-track">
-                                {[...newsItems, ...newsItems].map((item, idx) => {
+                            <div className="news-marquee-track" ref={newsCarouselRef}>
+                                {newsItems.map((item) => {
                                     const Tag = item.url ? 'a' : 'div';
                                     const linkProps = item.url
                                         ? {
@@ -568,11 +664,7 @@ const HomePage = () => {
                                           }
                                         : {};
                                     return (
-                                        <Tag
-                                            {...linkProps}
-                                            className="news-card"
-                                            key={`${item.id}-${idx}`}
-                                        >
+                                        <Tag {...linkProps} className="news-card" key={item.id}>
                                             {item.image && (
                                                 <div className="news-card-image">
                                                     <img
@@ -616,6 +708,7 @@ const HomePage = () => {
                                 })}
                             </div>
                         )}
+                        </div>
                     </div>
                 </div>
             </section>

@@ -15,6 +15,7 @@ const AppFooter = () => {
         { label: t('nav.blackbox'), path: '/blackbox' },
         { label: t('nav.careers'), path: '/careers' },
         { label: t('nav.contact'), path: '/contact' },
+        { label: t('footer.privacyPolicy'), path: '/privacy' },
     ];
 
     return (
@@ -144,8 +145,37 @@ const AppFooter = () => {
                 <Divider style={{ borderColor: 'rgba(255,255,255,0.1)', margin: '40px 0 20px' }} />
 
                 {/* Copyright */}
-                <div style={{ textAlign: 'center', color: 'rgba(255,255,255,0.7)', fontSize: 13 }}>
-                    © {new Date().getFullYear()} Aquatic. {t('footer.rights')}
+                <div
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        flexWrap: 'wrap',
+                        gap: 8,
+                        color: 'rgba(255,255,255,0.7)',
+                        fontSize: 13,
+                    }}
+                >
+                    <span>
+                        © {new Date().getFullYear()} Aquatic. {t('footer.rights')}
+                    </span>
+                    <span aria-hidden="true">·</span>
+                    <button
+                        type="button"
+                        onClick={() => window.dispatchEvent(new Event('open-cookie-preferences'))}
+                        style={{
+                            background: 'none',
+                            border: 'none',
+                            padding: 0,
+                            color: 'rgba(255,255,255,0.7)',
+                            fontSize: 13,
+                            textDecoration: 'underline',
+                            textUnderlineOffset: 2,
+                            cursor: 'pointer',
+                        }}
+                    >
+                        {t('footer.cookiePreferences')}
+                    </button>
                 </div>
             </div>
         </footer>

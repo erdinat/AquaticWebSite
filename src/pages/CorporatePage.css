@@ -134,7 +134,7 @@
 
 /* --- Premium Vision/Mission Cards --- */
 .vision-mission-section {
-    background: #f4f7ff;
+    background: var(--color-bg);
     position: relative;
     overflow: hidden;
     padding-top: 80px;
@@ -246,7 +246,7 @@
 
 /* ===== BANK SECTION ===== */
 .bank-section {
-    background: #f4f7ff;
+    background: var(--color-bg);
 }
 
 .bank-card-premium {
@@ -407,7 +407,7 @@
 
 /* ===== FAQ SECTION ===== */
 .faq-section {
-    background: #f4f7ff;
+    background: var(--color-bg);
 }
 
 .faq-collapse {

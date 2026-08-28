@@ -90,7 +90,7 @@
 
 /* --- Specs Section --- */
 .blackbox-specs-section {
-    background: #f4f7ff;
+    background: var(--color-bg);
 }
 
 .specs-table-wrapper {
@@ -111,7 +111,7 @@
 
 /* --- Features Section --- */
 .features-section {
-    background: #f4f7ff;
+    background: var(--color-bg);
 }
 
 .features-list {

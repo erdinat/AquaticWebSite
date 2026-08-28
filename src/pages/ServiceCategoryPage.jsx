@@ -56,11 +56,13 @@ const ServiceCategoryPage = () => {
                     </button>
                 </div>
 
-                {/* ── Sub-services grid — asymmetric photo / flat-color cards ── */}
+                {/* ── Sub-services grid — flat color is now only a fallback for a
+                    genuinely missing/broken photo, not a forced design rhythm;
+                    all 27 items have real photos as of the latest image batch. ── */}
                 <div className="scp-grid">
                     {group.items.map((item, idx) => {
                         const heroImage = DETAIL_DATA[item.slug]?.heroImage;
-                        const isFlat = !heroImage || missingPhotos[item.slug] || (idx + 1) % 3 === 0;
+                        const isFlat = !heroImage || missingPhotos[item.slug];
                         return (
                             <button
                                 key={item.key}

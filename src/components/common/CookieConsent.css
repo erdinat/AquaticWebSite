@@ -1,0 +1,87 @@
+.cookie-consent {
+    position: fixed;
+    left: 24px;
+    bottom: 24px;
+    z-index: 1200;
+    width: 340px;
+    max-width: calc(100vw - 48px);
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 20px 50px rgba(0, 21, 41, 0.18);
+    padding: 22px 22px 20px;
+    animation: cookieConsentIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes cookieConsentIn {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cookie-consent {
+        animation: none;
+    }
+}
+
+.cookie-consent-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: var(--color-primary-bg);
+    font-size: 20px;
+    margin-bottom: 14px;
+}
+
+.cookie-consent-text {
+    margin: 0 0 18px;
+    color: var(--color-text-secondary);
+    font-size: 13.5px;
+    line-height: 1.65;
+}
+
+.cookie-consent-text a {
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.cookie-consent-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* The site's global .ant-btn-primary rule (index.css) forces height/padding
+   with !important for CTA buttons elsewhere — it also caught "Kabul Et" here
+   while "Reddet" (default type) kept antd's native height, so the two
+   buttons rendered at different heights. Pin both explicitly. */
+.cookie-consent-actions .ant-btn {
+    height: 38px !important;
+    padding: 0 16px !important;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+}
+
+/* Bottom sheet on small screens — a corner card gets cramped, and it should
+   still clear the WhatsApp button rather than sit on top of it. */
+@media (max-width: 480px) {
+    .cookie-consent {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        width: auto;
+        max-width: none;
+    }
+}

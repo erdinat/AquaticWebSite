@@ -14,6 +14,7 @@ const ProductsPage = lazy(() => import('./pages/ProductsPage'));
 const BlackBoxPage = lazy(() => import('./pages/BlackBoxPage'));
 const CareersPage = lazy(() => import('./pages/CareersPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
+const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 /* Loading fallback */
@@ -41,6 +42,7 @@ const PAGES = [
     { path: 'blackbox', Component: BlackBoxPage },
     { path: 'careers', Component: CareersPage },
     { path: 'contact', Component: ContactPage },
+    { path: 'privacy', Component: PrivacyPolicyPage },
 ];
 
 function App() {

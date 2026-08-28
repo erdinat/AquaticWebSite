@@ -857,14 +857,18 @@
     },
     "whatsapp": {
         "message": "Hello, I would like to get information about Aquatic Elektronik.",
-        "ariaLabel": "Contact us on WhatsApp"
+        "ariaLabel": "Contact us on WhatsApp",
+        "greeting": "Hi there! 👋 How can I help you?",
+        "dismiss": "Dismiss"
     },
     "footer": {
         "description": "Innovative engineering solutions in defense industry, electronics, machinery, and maritime fields.",
         "quickLinks": "Quick Links",
         "contactInfo": "Contact Information",
         "rights": "All rights reserved.",
-        "address": "Şehitler Mah. Barbaros Hayrettin Cad. No:90/A Gölcük/Kocaeli"
+        "address": "Şehitler Mah. Barbaros Hayrettin Cad. No:90/A Gölcük/Kocaeli",
+        "privacyPolicy": "Privacy Policy",
+        "cookiePreferences": "Cookie Preferences"
     },
     "brands": {
         "title": "Brands We Work With",
@@ -1021,5 +1025,47 @@
         "quoteButton": "GET A QUOTE",
         "prev": "Previous",
         "next": "Next"
+    },
+    "cookieConsent": {
+        "text": "We use cookies to improve our site. Analytics cookies are only loaded with your consent.",
+        "link": "Privacy Policy",
+        "accept": "Accept",
+        "reject": "Reject"
+    },
+    "privacyPolicy": {
+        "title": "Privacy Policy",
+        "subtitle": "Information on how your personal data is collected and processed.",
+        "updatedLabel": "Last updated",
+        "updatedDate": "August 28, 2026",
+        "sections": [
+            {
+                "title": "1. Data Controller",
+                "body": "This website is operated by Aquatic Elektronik Makina Otomasyon Sav. San. Tic. Ltd. Şti. (\"Aquatic\"). Address: Şehitler Mah. Barbaros Hayrettin Cad. No:90/A, Gölcük/Kocaeli, Türkiye. Email: bilgi@aquatic.com.tr. Phone: +90 262 412 24 42. Your personal data is processed by Aquatic as the data controller under Turkish Law No. 6698 on the Protection of Personal Data (\"KVKK\")."
+            },
+            {
+                "title": "2. What Data Do We Collect?",
+                "body": "When you fill out the Contact or Careers forms, we collect your name, email, phone number, message content, and (for Careers) your CV file. When you visit our site, if you accept cookies, our analytics tools collect browser/device information, approximate location, pages visited, and on-site behavior (clicks, scrolling). If you do not consent, this second category of data is never collected."
+            },
+            {
+                "title": "3. Cookies and Analytics Tools",
+                "body": "We use Google Analytics 4 and Microsoft Clarity on this site. These tools only load after you click \"Accept\" on the cookie banner at the bottom of the page; if you click \"Reject\" or make no choice, they never run. You can change your choice at any time via the \"Cookie Preferences\" link at the bottom of the page."
+            },
+            {
+                "title": "4. Why Do We Process Your Data?",
+                "body": "Your data is processed to respond to your inquiries, evaluate job applications, improve our service quality by analyzing site usage, and fulfill our legal obligations."
+            },
+            {
+                "title": "5. Data Transfers",
+                "body": "Your form data is delivered to Aquatic's email address via the EmailJS service. Analytics data you consent to is processed on servers operated by Google LLC and Microsoft Corporation, both headquartered in the United States. These transfers are carried out in accordance with KVKK's provisions on international data transfers."
+            },
+            {
+                "title": "6. Your Rights Under KVKK",
+                "body": "Under Article 11 of KVKK, you have the right to learn whether your personal data is processed, request information about it, learn its purpose and whether it is used accordingly, know the third parties to whom it is transferred domestically or abroad, request correction if processed incompletely or incorrectly, request its deletion or destruction, and request that these actions be notified to third parties to whom the data was transferred. You may submit requests to bilgi@aquatic.com.tr."
+            },
+            {
+                "title": "7. Contact",
+                "body": "For questions about this privacy policy, contact us at bilgi@aquatic.com.tr or +90 262 412 24 42."
+            }
+        ]
     }
 }

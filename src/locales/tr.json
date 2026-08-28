@@ -857,14 +857,18 @@
     },
     "whatsapp": {
         "message": "Merhaba, Aquatic Elektronik hakkında bilgi almak istiyorum.",
-        "ariaLabel": "WhatsApp ile iletişime geçin"
+        "ariaLabel": "WhatsApp ile iletişime geçin",
+        "greeting": "Merhaba! 👋 Size nasıl yardımcı olabilirim?",
+        "dismiss": "Kapat"
     },
     "footer": {
         "description": "Savunma sanayi, elektronik, makina ve denizcilik alanlarında yenilikçi mühendislik çözümleri.",
         "quickLinks": "Hızlı Bağlantılar",
         "contactInfo": "İletişim Bilgileri",
         "rights": "Tüm hakları saklıdır.",
-        "address": "Şehitler Mah. Barbaros Hayrettin Cad. No:90/A Gölcük/Kocaeli"
+        "address": "Şehitler Mah. Barbaros Hayrettin Cad. No:90/A Gölcük/Kocaeli",
+        "privacyPolicy": "Gizlilik Politikası",
+        "cookiePreferences": "Çerez Tercihleri"
     },
     "brands": {
         "title": "Birlikte Çalıştığımız Markalar",
@@ -1021,5 +1025,47 @@
         "quoteButton": "TEKLİF AL",
         "prev": "Önceki",
         "next": "Sonraki"
+    },
+    "cookieConsent": {
+        "text": "Sitemizi daha iyi hale getirmek için çerezler kullanıyoruz. Analitik çerezlere yalnızca onayınızla izin veriyoruz.",
+        "link": "Gizlilik Politikası",
+        "accept": "Kabul Et",
+        "reject": "Reddet"
+    },
+    "privacyPolicy": {
+        "title": "Gizlilik Politikası",
+        "subtitle": "Kişisel verilerinizin nasıl toplandığı ve işlendiği hakkında bilgi.",
+        "updatedLabel": "Son güncelleme",
+        "updatedDate": "28 Ağustos 2026",
+        "sections": [
+            {
+                "title": "1. Veri Sorumlusu",
+                "body": "Bu web sitesi, Aquatic Elektronik Makina Otomasyon Sav. San. Tic. Ltd. Şti. (\"Aquatic\") tarafından işletilmektedir. Adres: Şehitler Mah. Barbaros Hayrettin Cad. No:90/A, Gölcük/Kocaeli. E-posta: bilgi@aquatic.com.tr. Telefon: +90 262 412 24 42. Kişisel verileriniz, 6698 sayılı Kişisel Verilerin Korunması Kanunu (\"KVKK\") kapsamında veri sorumlusu sıfatıyla Aquatic tarafından işlenmektedir."
+            },
+            {
+                "title": "2. Hangi Verileri Topluyoruz?",
+                "body": "İletişim ve Kariyer formlarını doldurduğunuzda ad-soyad, e-posta, telefon numarası, mesaj içeriği ve (Kariyer formunda) özgeçmiş dosyanız toplanır. Sitemizi ziyaret ettiğinizde, çerez onayı verdiğiniz takdirde, tarayıcı/cihaz bilgisi, yaklaşık konum, ziyaret ettiğiniz sayfalar ve site içi davranışlarınız (tıklama, kaydırma) analitik araçlarımız tarafından toplanır. Onay vermezseniz bu ikinci grup veri hiç toplanmaz."
+            },
+            {
+                "title": "3. Çerezler ve Analitik Araçlar",
+                "body": "Sitemizde Google Analytics 4 ve Microsoft Clarity kullanıyoruz. Bu araçlar yalnızca sayfanın altındaki çerez bandında \"Kabul Et\" seçeneğini işaretlediğinizde yüklenir; \"Reddet\" seçerseniz veya hiçbir seçim yapmazsanız bu araçlar hiç çalışmaz. Tercihinizi dilediğiniz zaman sayfanın alt kısmındaki \"Çerez Tercihleri\" bağlantısından değiştirebilirsiniz."
+            },
+            {
+                "title": "4. Verilerinizi Neden İşliyoruz?",
+                "body": "Verileriniz; iletişim taleplerinize yanıt vermek, iş başvurularını değerlendirmek, sitemizin kullanımını analiz ederek hizmet kalitemizi artırmak ve yasal yükümlülüklerimizi yerine getirmek amacıyla işlenir."
+            },
+            {
+                "title": "5. Verilerin Aktarımı",
+                "body": "Form verileriniz, e-posta iletimini sağlayan EmailJS altyapısı üzerinden Aquatic'in e-posta adresine ulaştırılır. Onay verdiğiniz analitik veriler, Amerika Birleşik Devletleri merkezli Google LLC ve Microsoft Corporation'ın sunucularında işlenir. Bu aktarımlar KVKK'nın yurt dışına veri aktarımına ilişkin hükümleri kapsamında gerçekleştirilir."
+            },
+            {
+                "title": "6. KVKK Kapsamındaki Haklarınız",
+                "body": "KVKK'nın 11. maddesi uyarınca; kişisel verilerinizin işlenip işlenmediğini öğrenme, işlenmişse buna ilişkin bilgi talep etme, işlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme, yurt içinde/yurt dışında aktarıldığı üçüncü kişileri bilme, eksik/yanlış işlenmişse düzeltilmesini isteme, silinmesini/yok edilmesini isteme ve bu işlemlerin aktarıldığı üçüncü kişilere bildirilmesini isteme haklarına sahipsiniz. Taleplerinizi bilgi@aquatic.com.tr adresine iletebilirsiniz."
+            },
+            {
+                "title": "7. İletişim",
+                "body": "Gizlilik politikamızla ilgili sorularınız için bilgi@aquatic.com.tr veya +90 262 412 24 42 üzerinden bize ulaşabilirsiniz."
+            }
+        ]
     }
 }

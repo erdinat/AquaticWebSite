@@ -102,6 +102,81 @@ Tüm sayfalardaki hardcoded `#0050b3`/`#00b4d8`/`#0077b6`/`#003a8c` hex değerle
 
 ## ✅ Tamamlanan İyileştirmeler
 
+### 🖼️ Favicon yenilendi — eski marka öncesi gradyan yerine damla logosu (28 Ağustos 2026)
+
+Kullanıcı iki görsel paylaştı: mavi bir su damlası + baloncuklar logosu, ve mevcut favicon'un tarayıcıda nasıl göründüğünü gösteren bir ekran görüntüsü ("Ana Sayfa" yanındaki mavi daire+"A"), ikincisinin birincisiyle değiştirilmesini istedi. Kök tespit: `public/favicon.svg` 21 Ağustos'taki marka yenilemesinden beri hiç güncellenmemişti — hâlâ eski `#0050b3→#00b4d8` (parlak mavi-camgöbeği gradyan) ile basit bir daire+"A" harfiydi, CLAUDE.md'nin "Marka Yenileme" bölümünün kurtulmaya çalıştığı tam da bu görünümdü.
+
+**Yeni tasarım:** SVG olarak yeniden çizildi — yuvarlak su damlası (üstte sivri, altta yuvarlak), içinde beyaz yarı saydam bir "parlama" hilali, sağ üstte azalan boyutlarda 3 baloncuk. **Renk kararı:** kullanıcının referans görselindeki parlak gök mavisi yerine sitenin kendi marka lacivert gradyanı (`--color-primary` `#0a3d62` → `--color-primary-dark` `#041f33`, `--gradient-primary` ile aynı) kullanıldı — şekil referanstan alındı, renk sitenin geri kalanıyla tutarlı kalsın diye markanın kendi tonuna bağlandı (parlak mavi kullanmak, favicon'u düzeltirken tam da kurtulmaya çalıştığımız "jenerik parlak mavi" görünümüne geri dönmek olurdu). Kullanıcı orijinal referansın kendi mavisini isterse tek satır (`stop-color`) değişikliği yeterli.
+
+**Doğrulama:** Ortamda SVG-render aracı olmadığı için macOS'un yerleşik `qlmanage -t` (Quick Look thumbnail) komutuyla PNG'ye çevrilip hem büyük hem gerçek favicon boyutunda (32×32) görsel olarak kontrol edildi — küçük boyutta da damla şekli net okunuyor.
+
+**Düzeltme (aynı gün):** Kullanıcı "sım sıyah gözüküyor" dedi — haklıydı: `#0a3d62→#041f33` gradyanının ikisi de koyu lacivert/neredeyse siyah tonlarda, 32×32 gibi küçük bir favicon boyutunda ayrım kayboluyor, damla tamamen siyah bir blob gibi görünüyordu (gradyanlar zaten bu kadar küçük alanda pek fark edilmiyor, iki koyu ton arasındaki gradyan sadece "daha da koyu" okunuyor). Marka lacivertine bağlı kalma kararı bu yüzden geri alındı — gradyan `#5BA3E0 → #2E6E96` (açık-orta mavi) yapıldı, artık hem büyük hem gerçek boyutta net "açık mavi damla" olarak okunuyor.
+
+### 🐞 Kategori banner'larındaki tekrar eden görseller + kart ızgarasındaki "kayıp" görseller düzeltildi (29 Ağustos 2026)
+
+47 görsel eklendikten hemen sonra iki ayrı kullanıcı raporu:
+
+1. **"Hizmetler sayfasında bazı hizmetlerin görselleri aynı"** — `/services` kategori ızgarasında (6 kart) iki çift kart birebir aynı fotoğrafı gösteriyordu. Kök sebep: `src/data/serviceGroups.jsx` ve `HomePage.jsx`'teki `CATEGORY_SHOWCASE`'de `sualtiTeknolojileri` ile `savunmaSanayi` aynı `imgDefence` importunu, `endustri` ile `makina` aynı `imgMachinery` importunu paylaşıyordu (21 Ağustos'taki 4→6 kategori ayrımından kalma, o zaman bu iki yeni kategori için "kendilerine özel fotoğraf yok" diye belgelenmiş bilinçli bir geçici karardı). Artık her ikisi de gerçek, kendi kategorisine ait bir fotoğrafla değiştirildi — `sualtiTeknolojileri` → `savunmaSanayi-konnektor.webp`, `endustri` → `makina-konveyorler.webp` (29 Ağustos'ta eklenen 27 madde fotoğrafından ödünç alındı, yeni bir görsel üretmeye gerek kalmadı). Bu değişiklik hem `serviceGroups.jsx`'i (ki `ServicesPage.jsx` + `ServiceCategoryPage.jsx` ikisi de oradan besleniyor) hem `HomePage.jsx`'in kendi ayrı `CATEGORY_SHOWCASE` dizisini kapsıyor — ikisi de aynı ikilemi bağımsız olarak taşıyordu. (Tüm 27×3=81 görsel dosyası arasında md5 ile tam eşleşme taraması yapıldı, başka byte-eşit kopya çıkmadı — sorun sadece bu 2 kategori-seviyesi görseldeydi.)
+2. **"Hizmetler kategori içerisindeki bazılarının görselleri gözükmüyor"** — `ServiceCategoryPage.jsx`'teki alt-hizmet ızgarasında her 3. kart (`(idx+1) % 3 === 0`) bilinçli olarak "düz renk" (görselsiz) gösteriliyordu — bu, o zamanki "asimetrik kart tasarımı" isteğinin bir parçasıydı. 47 görsel eklenmeden önce zaten birçok kart görselsiz olduğu için bu kural fark edilmiyordu; şimdi **27 maddenin tamamında** gerçek fotoğraf olduğu için bu zorla-düz-kart kuralı "görsel eksik/bozuk" gibi görünmeye başladı. Kullanıcının en güncel geri bildirimi önceki tasarım isteğini geçersiz kıldığı için kural kaldırıldı — artık bir kart sadece gerçekten eksik/yüklenemeyen bir fotoğrafı varsa düz renge düşüyor (`isFlat = !heroImage || missingPhotos[item.slug]`), zorunlu ritim kuralı olmadan.
+
+### 🖼️ Eksik 47 hizmet görseli tamamlandı — 27 maddenin tamamında artık gerçek fotoğraf var (29 Ağustos 2026)
+
+Kullanıcı, daha önce yayınlanan "Hizmet Görsel Promptları" artifact'indeki 47 promptla ürettiği görselleri `~/Desktop/hizmetGörselPromtları/` klasörüne koyup webp'ye çevirip yerlerine koymamı istedi. 47 dosyanın 44'ü doğru isimlendirilmişti; 3 tanesi yanlış isimlendirilmiş bulundu (`quote:boru-donatim-capability.png`, `quote:sualti-kablosu-capability.png`, `quote:torpido-kablolari-capabilit.png` — muhtemelen kaynak path'teki `/` karakteri dosya adına kopyalanırken `:`'ye dönüşmüş, sonuncusunda ayrıca "capability" kelimesi "capabilit" olarak kesilmiş) — her üçü de içerik olarak doğrulanıp (görsel açılıp prompt'la karşılaştırılarak) doğru slug+tip'e eşlendi. Tamamı `cwebp -q 85 -resize 1200 0` (materials/capability, `public/images/services/quote/`) veya `-resize 960 0` (trafo hero, `public/images/services/detail/`) ile projenin mevcut kalite/genişlik kuralına uygun şekilde optimize edildi.
+
+**Kod tarafında fark edilen eksik bağlantı:** Görseller diskte olsa bile `src/data/serviceDetailContent.js`'teki `DETAIL_DATA`'da sadece orijinal 4 Makina maddesinin `materialsImage`/`capabilityImage` alanları vardı — kalan 23 maddede bu alanlar hiç tanımlı değildi, yani dosyalar var olsa da `ServiceDetailPage.jsx` onları hiçbir zaman render etmeyecekti. `DETAIL_DATA`'daki 23 girdinin tamamına `materialsImage`/`capabilityImage` eklendi. Artık **27 hizmet maddesinin tamamında** materyal/kabiliyet fotoğrafı var — `.svcd-materials-grid--no-image` (görselsiz tek-kolonlu fallback) ve `trafo-ekipmanlari`'nin `.svcd-hero-image` gri fallback'i artık hiç tetiklenmiyor (madde 37/38'deki ilgili eksik-görsel notları bu görsel setiyle kapandı — hâlâ açık olan tek görsel borcu `/products` sayfasındaki 48 konnektör serisi, madde 37).
+
+### 🐞 Çerez butonlarının boy farkı, WhatsApp karşılama balonu, Kategori Vitrini'nde tek mavi ton (28 Ağustos 2026)
+
+Üç ayrı istek:
+
+1. **Çerez onayındaki "Kabul Et"/"Reddet" butonları farklı yükseklikteydi.** Kök sebep: `index.css`'teki global `.ant-btn-primary` kuralı (`height: var(--btn-height-md) !important` = 48px, sitedeki tüm birincil CTA butonları için bilinçli olarak var) sadece "Kabul Et"i (primary) etkiliyordu, "Reddet" (default tip) antd'nin kendi varsayılan yüksekliğinde kalıyordu. Global kural doğru ve başka yerlerde gerekli olduğu için dokunulmadı — bunun yerine `CookieConsent.css`'e `.cookie-consent-actions .ant-btn { height: 38px !important; ... }` gibi daha spesifik, iki butonu da eşitleyen bir kural eklendi.
+2. **WhatsApp butonuna karşılama yazısı eklendi.** `WhatsAppButton.jsx` artık butonun solunda küçük, kapatılabilir bir konuşma balonu gösteriyor ("Merhaba! 👋 Size nasıl yardımcı olabilirim?" — `whatsapp.greeting`, 4 dilde), balona tıklamak da aynı WhatsApp linkini açıyor. Kapatma (×) durumu sadece component state'inde tutuluyor (sayfa yenilenince tekrar görünür — kalıcı "bir daha gösterme" tercihi istenmedi, basit tutuldu). CSS `position:fixed` artık yeni `.whatsapp-widget` sarmalayıcısında, buton kendisi statik flex item oldu.
+3. **Ana sayfadaki Kategori Vitrini'nin 6 satırı farklı renklerdeydi** (lacivert/teal karışımı: `--color-primary-dark`, `--color-primary`, `--color-accent`, `#005f73`, `#0a9396`, `--color-accent-dark`) — kullanıcı hepsinin sitenin kendi mavi tonunda olmasını istedi. `HomePage.jsx`'teki `CATEGORY_SHOWCASE` dizisinde 6 satırın `color` alanı da `var(--color-primary)`'ye eşitlendi (banner degrade overlay'i, "İletişime Geç" buton rengi ve eksik-görsel placeholder ikon rengi hepsi bu tek tondan besleniyor).
+
+### 🧹 Beş ayrı düzeltme: çerez bandı tasarımı, kataloglar ana sayfaya taşındı, TRC Marine logosu, haber karuseli (28 Ağustos 2026)
+
+Kullanıcının tek mesajda verdiği 5 ayrı istek:
+
+1. **Çerez onay bandı tasarımı kötüydü.** Kök sebep muhtemelen şuydu: eski tasarım tam genişlikte, koyu lacivert, sayfanın altına yapışık bir bant idi — sağ altta zaten sabit duran WhatsApp butonuyla (`z-index:999`, `bottom:24px`) çakışma riski taşıyordu. `CookieConsent.jsx`/`.css` yeniden tasarlandı: artık sol altta (WhatsApp'tan uzak), küçük, beyaz, yuvarlak köşeli, gölgeli bir kart (🍪 ikonu + kısa metin + "Kabul Et"/"Reddet" butonları), site genelinde zaten kullanılan kart dilini (beyaz + `box-shadow` + `border-radius`) takip ediyor. 480px altında tam genişlik alt sayfa (bottom sheet) haline geliyor.
+2. **"Kataloglarımız" bölümü `/services`'ten ana sayfaya taşındı.** `ServicesPage.jsx`'teki `CATALOGS` verisi ve JSX'i tamamen kaldırılıp `HomePage.jsx`'e eklendi (Kategori Vitrini ile Haberler bölümü arasına — mantıken "ürün/hizmet" içeriğine en yakın yer). CSS `ServicesPage.css`'ten silinip yeni `.home-catalog-*` class'larıyla `HomePage.css`'e taşındı. `ServicesPage.jsx` artık sadece kategori seçim ızgarasından ibaret, çok daha sade (build çıktısında sayfanın JS chunk'ı ~3.2KB'tan ~1.6KB'a indi).
+3. **Katalog kartlarındaki "11.6 MB" gibi dosya boyutu metni kaldırıldı** — kullanıcı gereksiz buldu. `catalog.size` alanı ve `.svc-catalog-meta`/`.home-catalog-meta` satırı tamamen kaldırıldı, sadece başlık/açıklama/indir butonu kaldı.
+4. **Markalar bölümündeki "TRC Marine" logosu kötü görünüyordu** ("tac marine" olarak yazılmış, gerçek isim TRC Marine). Kök sebep: `trc.webp` dosyasının arka planı diğer marka logoları gibi temiz beyaz değil, hafif lavanta-beyaz bir gradyan içeriyordu — `.brand-logo-wrapper`'ın beyaz kart zemininde bu fark görünür bir leke gibi duruyordu. Python/Pillow ile yumuşak eşikleme uygulandı (gri ton ~180'in üzerindeki pikseller kademeli olarak saf beyaza çekildi, logo mürekkebi ~50'nin altında olduğu için hiç etkilenmedi) — arka plan artık diğer logolarla birebir aynı temiz beyaz. `marqueeBrands` dizisindeki görünen ad da `'TRC'` → `'TRC Marine'` olarak düzeltildi.
+5. **"Haberleri durduramıyorum" — haber karuseli de Kategori Vitrini'yle aynı adım-adım kontrol desenine geçirildi.** Eskiden `.news-marquee-track` sonsuz `animation: scrollNews 45s linear infinite` ile kayıyordu, tek durdurma yolu hover'dı (dokunmatikte işe yaramaz). Artık `.cs-arrow` (Kategori Vitrini'nde zaten var olan aynı ok butonu class'ı, kod tekrarı önlemek için yeniden kullanıldı) ile adım adım kontrol ediliyor, `scroll-snap` ile hizalanıyor, kart listesi bir daha katlanmıyor (`[...newsItems, ...newsItems]` → `newsItems`). Yeni `newsCarouselRef` + `scrollNewsCarousel(direction)` `HomePage.jsx`'e eklendi.
+
+### 🐞 Kök sebep: sitedeki açık gri ton aslında global bir token'dı — `--color-bg` beyaza çevrildi (28 Ağustos 2026)
+
+Kullanıcı bir önceki düzeltmenin (hizmet detay sayfası) yeterli olmadığını, sorunun **birçok sayfada** tekrarlandığını ve muhtemelen global bir stil dosyasında olduğunu bildirdi — teşhisi doğruydu. Kök sebep: `src/index.css`'teki `--color-bg: #f4f7ff` token'ı `html`/`body`'ye (ve `MainLayout.jsx`'teki üst düzey `<Layout>` sarmalayıcısına inline `background: 'var(--color-bg)'` ile) uygulanıyordu — yani **her sayfanın temel arka planı** açık mavi-gri idi, beyaz değil. Buna ek olarak aynı `#f4f7ff` değeri, token'a referans vermeden 8 farklı sayfa CSS dosyasında (`HomePage`, `ServicesPage`, `ServiceCategoryPage`, `CorporatePage`, `BlackBoxPage`, `CareersPage`, `ContactPage`) toplam 17 ayrı bölüm arka planında hardcoded olarak tekrarlanmıştı (kopyala-yapıştır ile yayılmış, token'a bağlı değildi).
+
+**Düzeltme:** `--color-bg` token değeri `#ffffff`'e çevrildi (tek satır, `html`/`body`/`MainLayout` otomatik güncellendi). 17 hardcoded `#f4f7ff` bölüm arka planı da `var(--color-bg)`'ye çevrildi — hem şimdi beyaz oldular hem de artık tek bir kaynaktan besleniyorlar, aynı hata (token'a bağlı olmayan kopya renk) bir daha bu şekilde sızamaz.
+
+**Bilinçli olarak dokunulmayan 3 yer** (bunlar "sayfa arka planı" değil, küçük fonksiyonel UI elemanları, kullanıcının "body/main/genel kapsayıcı" tarifine uymuyor):
+- `CorporatePage.css` → `.bank-iban-row` — IBAN kutusunun hafif vurgulu arka planı (artık beyaz sayfa üzerinde daha da belirgin bir "öne çıkan kutu" gibi okunuyor).
+- `HomePage.css` → `.cs-card-image` — Kategori Vitrini kartlarındaki görsel yüklenmeden önceki/eksikken görünen arka fon.
+- `HomePage.css` → `.skeleton-line` — haber bölümü yüklenirken gösterilen shimmer iskelet animasyonunun gradyanı; bunu beyaz yapmak yükleniyor göstergesini görünmez kılardı.
+
+Ayrıca `CareersPage.css`/`ContactPage.css`'teki form input arka planları (`#fafbff` vb., `!important` ile), dosya yükleme kutusu ve tablo zebra-çizgileri gibi küçük, bağlama özgü UI vurguları da bilinçli olarak bırakıldı — bunlar kopyalanmış bir hata değil, standart form/tablo tasarım deseni.
+
+### 🐞 Hizmet detay sayfalarındaki gri bantlar kaldırıldı — tüm arka planlar beyaz (28 Ağustos 2026)
+
+Kullanıcı raporu: "hizmetler sayfasındaki her bir hizmet sayfasının arka planlarında hata var hepsi beyaz olmalı." `ServiceDetailPage.css`'te "Üretim Kabiliyeti" (`.svcd-capability-section`) ve teklif formu (`.svcd-quote-section`) bölümleri bilinçli olarak açık gri (`--svcd-gray: #f4f6f8`) bant olarak tasarlanmıştı (beyaz hero/malzemeler bölümleriyle almaşık — dergi sayfası hissi için) — 27 hizmet sayfasının tamamında bu iki bölüm gri görünüyordu. Kullanıcı bunu istemedi, ikisi de `#fff`'e çevrildi. İçindeki beyaz kartlar (`.svcd-capability-box`, `.svcd-quote-wrap`) artık beyaz zemin üzerinde sadece gölgeyle ayrışıyor — bu, sayfanın kendi hero bölümündeki (`.svcd-hero-box`) zaten var olan aynı desen (beyaz kart + gölge, beyaz zemin üzerinde) ile tutarlı, yeni bir çözüm icat edilmedi.
+
+> Not: Malzeme/kabiliyet görseli eksik olan maddelerdeki görsel-yer-tutucu gri renkleri (`.svcd-hero-image`/`.svcd-capability-image` fallback) ve malzeme çip'lerinin (`.svcd-chip`) gri pill arka planı bilinçli olarak dokunulmadı — bunlar sayfa bölüm arka planı değil, küçük fonksiyonel UI elemanları (bkz. madde "Detay sayfa şablonu tüm 27 hizmet maddesine genişletildi" — eksik görsel notu hâlâ geçerli).
+
+### 📊 Ziyaretçi Analitiği (Google Analytics 4 + Microsoft Clarity) + çerez onayı + gizlilik politikası (28 Ağustos 2026)
+
+Müşteri "kimler ziyaret ediyor, nerelere bakıyorlar" görebileceği bir panel istedi. Statik/backend'siz bir sitede sıfırdan panel inşa etmek (kendi veritabanı + admin girişi + grafik arayüzü) ayrı, haftalarca sürecek bir proje olurdu — bunun yerine kullanıcıya seçenekler sunuldu (AskUserQuestion), **Google Analytics 4 + Microsoft Clarity** ikilisi seçildi: GA4 sayısal veriyi (ziyaretçi, sayfa, kaynak, coğrafya, cihaz) Google'ın kendi panelinde gösteriyor, Clarity ise "nerelere bakıyorlar" sorusuna GA4'ten daha iyi cevap veren gerçek tıklama/scroll ısı haritaları + oturum kayıtları sağlıyor. İkisi de ücretsiz, panel kod tarafında değil, ilgili servisin kendi web arayüzünde.
+
+**KVKK uyumu (kullanıcı onaylı):** Sitede daha önce hiç çerez onay mekanizması/gizlilik politikası yoktu — kontrol edilip kullanıcıya bildirildi, ikisinin de eklenmesi istendi.
+
+**Kod:**
+- `src/utils/analytics.js` — `loadAnalytics()`: GA4 `gtag.js` + Clarity script'lerini dinamik olarak `<head>`'e ekliyor. **Sadece çağrıldığında** çalışıyor, sayfa yüklenince otomatik değil. ID'ler `.env`'den okunuyor (`VITE_GA4_MEASUREMENT_ID`, `VITE_CLARITY_PROJECT_ID`) — biri boşsa o araç atlanıyor (`popularProducts`/`NewsData` gibi projedeki mevcut "API key yoksa sessizce atla" deseniyle aynı).
+- `src/components/common/CookieConsent.jsx` — `MainLayout.jsx`'e eklenen sabit alt banner. İlk ziyarette (localStorage'da karar yoksa) gösteriliyor; "Kabul Et" → `loadAnalytics()` çağrılıp karar `localStorage`'a yazılıyor, "Reddet" → hiçbir script yüklenmeden sadece karar kaydediliyor. `AppFooter.jsx`'teki yeni "Çerez Tercihleri" linki bir custom event (`open-cookie-preferences`) fırlatarak banner'ı tekrar açabiliyor — karar her zaman değiştirilebilir.
+- `src/pages/PrivacyPolicyPage.jsx` + `.css` — yeni `/privacy` sayfası (çok dilli route mekanizmasıyla otomatik `/en/privacy` vb.), 7 bölümlük KVKK metni (veri sorumlusu, toplanan veriler, çerezler/analitik araçlar, işleme amacı, aktarım — Google/EmailJS, KVKK m.11 hakları, iletişim) — gerçek şirket bilgileriyle (`PageSEO.jsx`'teki JSON-LD'den alınan adres/e-posta/telefon). TR yazılıp EN/RU/KK'ya tam çevrildi (bu, marketing içeriği değil yasal metin olduğu için diğer bazı içerikler gibi "çeviri borcu" bırakılmadı). Footer'a ve `AppFooter.jsx`'e link eklendi.
+- `public/.htaccess`'teki CSP güncellendi — `script-src`'e `googletagmanager.com`/`clarity.ms`, `connect-src`'e ayrıca `google-analytics.com` eklendi (yoksa onay verilse bile scriptler CSP tarafından sessizce engellenirdi).
+- `public/sitemap.xml`'e `/privacy` 4 dilde eklendi (düşük öncelik, 0.30 — `/contact` gibi çekirdek sayfalarla aynı katmanda ama daha az önemli).
+
+> ⚠️ **Bilinçli sınır:** GA4/Clarity ID'leri `.env`'de boş bırakıldı — müşteri kendi Google/Clarity hesabını oluşturup ID'leri paylaşana kadar hiçbir analitik veri toplanmıyor (kod hazır, sadece iki değer eksik). ID'leri nereden alacağı yukarıdaki "Analitik Config" bölümünde adım adım yazıyor.
+
 ### 🔴 HIGH — Çözüldü
 
 | # | Sorun | Çözüm | Tarih |
@@ -513,6 +588,21 @@ VITE_EMAILJS_PUBLIC_KEY=*****
 `ContactPage.jsx` ve `CareersPage.jsx`'te `import.meta.env.VITE_EMAILJS_*` ile okunuyor.
 
 > ⚠️ `.env` dosyası `.gitignore`'da olmalı — asla repo'ya push'lanmamalı.
+
+---
+
+## Analitik Config (Google Analytics 4 + Microsoft Clarity)
+
+`.env` dosyasında saklı, ikisi de opsiyonel (boşsa o araç hiç yüklenmez):
+
+```
+VITE_GA4_MEASUREMENT_ID=G-XXXXXXXXXX
+VITE_CLARITY_PROJECT_ID=xxxxxxxxxx
+```
+
+`src/utils/analytics.js`'teki `loadAnalytics()` fonksiyonu okuyor. **Sadece kullanıcı çerez bandında "Kabul Et"e bastığında çağrılıyor** — KVKK gereği hiçbir analitik script varsayılan olarak yüklenmiyor (bkz. aşağıdaki "Ziyaretçi Analitiği" bölümü). ID'leri almak için: GA4 → analytics.google.com'da yeni bir "Web" veri akışı oluştur, "Ölçüm Kimliği" (G- ile başlar) buraya kopyalanır. Clarity → clarity.microsoft.com'da yeni proje oluştur, Ayarlar → Kurulum'daki "Project ID" buraya kopyalanır.
+
+> ⚠️ ID'ler girildikten sonra `public/.htaccess`'teki CSP zaten `googletagmanager.com`/`clarity.ms`'e izin veriyor — ek bir değişiklik gerekmiyor.
 
 ---
 

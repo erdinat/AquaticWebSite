@@ -173,7 +173,7 @@
 
 /* ── Production Capability ── */
 .svcd-capability-section {
-    background: var(--svcd-gray);
+    background: #fff;
     padding: 100px 0;
 }
 
@@ -297,7 +297,7 @@
 
 /* ── Quote form ── */
 .svcd-quote-section {
-    background: var(--svcd-gray);
+    background: #fff;
 }
 
 .svcd-quote-wrap {
