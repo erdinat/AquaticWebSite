@@ -1,0 +1,932 @@
+{
+    "notFound": {
+        "title": "页面未找到",
+        "message": "抱歉，您访问的页面不存在。",
+        "back": "返回首页"
+    },
+    "nav": {
+        "home": "首页",
+        "corporate": "关于我们",
+        "services": "服务",
+        "products": "产品",
+        "blackbox": "国产黑匣子",
+        "careers": "招聘",
+        "contact": "联系我们",
+        "more": "更多"
+    },
+    "hero": {
+        "title": "AQUATIC",
+        "slogan": "您的科技之眼",
+        "subtitle": "从水下机器人到鱼雷连接器，再到土耳其首台国产黑匣子——经过实战验证的工程实力。",
+        "cta": "探索我们的服务",
+        "ctaContact": "联系我们",
+        "slides": {
+            "denizcilik": {
+                "slogan": "海洋工程，值得信赖",
+                "subtitle": "船舶电气、机械与液压系统的全流程技术维护与维修。"
+            },
+            "savunma": {
+                "slogan": "国防工业中的精密之作",
+                "subtitle": "为潜艇与水下平台提供专用连接器与电缆解决方案。"
+            },
+            "makina": {
+                "slogan": "工业领域的精密制造",
+                "subtitle": "焊接加工、数控加工与专用机械制造的全流程工程服务。"
+            }
+        }
+    },
+    "stats": {
+        "experience": "年行业经验",
+        "projects": "已完成项目",
+        "clients": "企业合作伙伴",
+        "countries": "覆盖国家"
+    },
+    "servicesPreview": {
+        "title": "我们的服务领域",
+        "subtitle": "从航运到国防工业，从机械制造到电子与自动化的全流程工程服务。",
+        "denizcilik": {
+            "title": "Aquatic 航运",
+            "desc": "通过船舶电气、机械、液压气动及管路装配服务，为航运行业提供全方位支持。"
+        },
+        "savunmaSanayi": {
+            "title": "国防工业 & 水下技术",
+            "desc": "以专用作战系统连接器、声纳/鱼雷电缆及水下摄像连接器解决方案，助力关键项目。"
+        },
+        "makina": {
+            "title": "Aquatic 机械与工业",
+            "desc": "通过焊接加工、数控精密加工、专用机械制造及厂房建设，为您的生产流程赋能。"
+        },
+        "elektronikOtomasyon": {
+            "title": "电子与自动化",
+            "desc": "从PCB设计制造到PLC/SCADA集成的专业电子与自动化解决方案。"
+        },
+        "sectionLabel": "我们的服务"
+    },
+    "corporate": {
+        "title": "关于我们",
+        "subtitle": "公司简介、企业概况与质量理念。",
+        "history": {
+            "title": "公司简介",
+            "subtitle": "土耳其国防工业中的本土力量",
+            "p1": "AQUATIC Elektronik Makina Otomasyon Savunma Sanayi Tic. Ltd. Şti. 是一家总部位于科贾埃利·格尔居克（Kocaeli Gölcük），并在伊斯坦布尔科技园设有分支机构的高科技工程公司。凭借符合国防工业标准的装备与经验丰富的工程师团队，我们在关键项目中发挥着引领作用。",
+            "p2": "凭借在水下技术、军标（MIL-STD）产品开发、硬件工程及嵌入式软件领域的专业积累，我们持续为本土自主系统的研发生产做出贡献。我们将继续成为未来创新项目最值得信赖的解决方案伙伴。",
+            "founded": "成立年份",
+            "projects": "已完成项目",
+            "timeline": {
+                "2019": "Aquatic 在科贾埃利成立",
+                "2020": "启动国防工业相关项目",
+                "2021": "拓展电子与自动化业务",
+                "2022": "参与国产黑匣子项目",
+                "2023": "伊斯坦布尔办公室开业",
+                "2024": "迈向国际化项目",
+                "2025": "业务增长与新技术投资"
+            }
+        },
+        "visionMission": {
+            "title": "愿景与使命",
+            "subtitle": "塑造未来的技术",
+            "desc": "我们致力于提升水下与国防工业领域的本土生产实力，成长为全球性企业。",
+            "visionTitle": "我们的愿景",
+            "visionText": "成为在水下与国防技术领域提供完全自主本土解决方案的世界级品牌。以创新为核心，成为为国家科技独立做出贡献的关键系统领先制造商。",
+            "missionTitle": "我们的使命",
+            "missionText": "以最契合客户需求的高质量、高可靠性工程解决方案，为国内外项目创造价值。"
+        },
+        "values": {
+            "title": "我们的质量理念",
+            "subtitle": "我们绝不妥协的价值观",
+            "innovation": "创新",
+            "innovationDesc": "通过持续的研发投入，紧跟行业最新技术。",
+            "reliability": "可靠",
+            "reliabilityDesc": "在每一个项目中确保按时交付与质量保证。",
+            "expertise": "专业",
+            "expertiseDesc": "凭借领域专家工程师团队，提供专业解决方案。",
+            "sustainability": "可持续",
+            "sustainabilityDesc": "坚持环保、可持续的生产流程理念。"
+        },
+        "bank": {
+            "title": "银行账户信息",
+            "subtitle": "库维特土耳其银行（Kuveyt Türk）账户",
+            "desc": "您可通过以下账户信息安全完成土耳其里拉、欧元及美元付款。",
+            "tlAccount": "土耳其里拉账户",
+            "eurAccount": "欧元账户",
+            "usdAccount": "美元账户",
+            "branchName": "支行名称",
+            "branchCode": "支行代码",
+            "copied": "已复制！"
+        },
+        "faq": {
+            "title": "常见问题",
+            "subtitle": "您可能想了解的内容",
+            "desc": "我们整理了关于服务范围、合作模式与售后支持中最常见的问题。",
+            "items": {
+                "1": {
+                    "question": "你们服务于哪些行业？",
+                    "answer": "我们主要为国防工业、电子与自动化、机械制造及航运等多个领域提供工程解决方案。"
+                },
+                "2": {
+                    "question": "你们的项目合作模式是怎样的？",
+                    "answer": "我们首先进行需求分析，随后完成可行性研究与设计阶段，再进入原型、测试与批量生产环节。整个过程中我们会定期向客户汇报进展。"
+                },
+                "3": {
+                    "question": "你们为产品和系统提供售后维护服务吗？",
+                    "answer": "是的。我们提供安装后的质保服务、定期维护，以及必要时的现场维修服务。"
+                },
+                "4": {
+                    "question": "你们是否承接海外项目？",
+                    "answer": "是的，在相关许可与法规框架下，我们也参与国际项目。"
+                }
+            }
+        }
+    },
+    "services": {
+        "title": "我们的服务类别",
+        "subtitle": "从航运到国防工业，从水下技术到工业自动化，我们提供全方位的工程服务。",
+        "denizcilik": {
+            "title": "Aquatic 航运",
+            "desc": "涵盖船舶电气、机械、液压气动及综合维保业务的航运行业技术服务体系。",
+            "items": {
+                "gemiElektrik": {
+                    "title": "船舶电气业务",
+                    "desc": "船舶电气系统的安装、维护与故障排除服务。",
+                    "detail": "对船舶主辅电气系统（配电盘、发电机同步系统、照明、电缆布线、接地及绝缘检测）进行安装、定期维护、故障诊断与维修。服务范围涵盖符合船级社及检验要求的电气测试、电缆敷设与配电盘大修工作。团队会根据船舶类型（商用、军用或特种用途）制定定制化电气维护方案。"
+                },
+                "gemiMakine": {
+                    "title": "船舶机械业务（主机、发电机维保）",
+                    "desc": "主机与发电机组的定期维护、大修及故障维修服务。",
+                    "detail": "提供船舶主机与发电机组的定期维护、大修（overhaul）、部件更换，以及基于油品分析的预防性维护规划与故障维修服务。同时涵盖喷油器、涡轮增压器、冷却系统、燃油系统及排气管路等关键子部件的检查与维护。目标是将船舶的运行连续性与机舱安全性保持在最高水平。"
+                },
+                "hidrolikPnomatik": {
+                    "title": "船舶液压气动系统维修",
+                    "desc": "船舶液压与气动系统的维护、维修及大修服务。",
+                    "detail": "对舵机、吊车、舱盖开闭系统、甲板机械等液压/气动驱动设备进行维护、密封检测、软管密封件更换、压力测试及故障维修。服务范围还包括液压泵、阀门、油缸大修，以及气动管路与压缩机系统的定期检查。"
+                },
+                "pnomatikMerdiven": {
+                    "title": "气动舷梯",
+                    "desc": "船舶使用的气动（充气式）舷梯系统。",
+                    "detail": "提供用于船舷上下的气动驱动舷梯系统的供货、安装与维护。该系统可快速安全部署，提升人员与船员通行的作业效率。产品目录可应要求提供；承重能力、展开时间、材料等级等技术参数将根据项目单独评估。"
+                },
+                "komplebakimOnarim": {
+                    "title": "船舶综合维保业务",
+                    "desc": "一站式的全方位船舶维保服务。",
+                    "detail": "提供整合电气、机械、液压气动、管路装配及舾装等领域的综合维保方案。从进坞到出坞，规划、工作分解结构（WBS）、备件采购、人力协调及最终检验测试均由 Aquatic 全程统一管理。该服务为船东提供单一对接窗口，节省协调时间与成本。"
+                },
+                "tecizMontajOnarim": {
+                    "title": "舾装、安装及维修业务",
+                    "desc": "船舶舾装设备的安装、调试与维修。",
+                    "detail": "在新建或改造项目中，负责船舶舾装设备（装置、设备、辅助系统）的安装、校准与调试（commissioning）工作。同时涵盖现有设备的故障排除、易损件更换及性能测试。"
+                },
+                "boruDonatim": {
+                    "title": "船舶管路装配业务",
+                    "desc": "船舶管路系统的制造、安装与装配。",
+                    "detail": "对燃油、润滑油、冷却水、舱底水、压载及消防等船舶管路系统按设计要求制造，依据等轴测图纸安装，并进行焊接与压力测试。选用耐腐蚀材料，施工工艺符合船级社认证标准。"
+                }
+            }
+        },
+        "savunmaSanayi": {
+            "title": "国防工业",
+            "desc": "为潜艇、声纳及鱼雷系统等关键国防工业应用提供专用电缆与连接器解决方案。",
+            "items": {
+                "ozelKonnektorler": {
+                    "title": "特种作战系统连接器",
+                    "desc": "为军用/海军国防系统专门设计的连接器解决方案。",
+                    "detail": "为需要高压密封、防水、电磁兼容（EMC）及抗冲击振动的国防工业应用设计并制造特种连接器。以符合相关军事标准（如 MIL-spec）的工程方法开发，满足潜艇、军舰及水下平台系统对不间断可靠连接的需求。"
+                },
+                "sonarKablolari": {
+                    "title": "声纳系统电缆",
+                    "desc": "为声纳系统专门制造的信号与电源电缆。",
+                    "detail": "针对声纳阵列对高精度信号传输的需求，制造低噪声、屏蔽且防水的电缆解决方案。采用耐深海压力及耐盐水环境的绝缘材料，确保信号完整性与长使用寿命。"
+                },
+                "torpidoKablolari": {
+                    "title": "鱼雷系统电缆",
+                    "desc": "用于鱼雷控制与发射系统的关键电缆解决方案。",
+                    "detail": "为鱼雷系统的控制、遥测及能源供给线路开发高可靠性、高容错性的特种电缆结构。其结构可抵御瞬时冲击、压力变化及电磁干扰，保障关键任务系统的持续运行。"
+                }
+            }
+        },
+        "sualtiTeknolojileri": {
+            "title": "水下技术",
+            "desc": "专为水下环境设计的电缆、摄像头与连接器产品系列——为ROV、AUV及水下平台提供基础设施解决方案。",
+            "items": {
+                "sualtiAkustik": {
+                    "title": "水下声学系统",
+                    "desc": "水下声学探测与通信系统的基础设施解决方案。",
+                    "detail": "为水下声学传感器阵列、水听器系统及声学通信平台提供电缆布线、连接器及集成服务。目标是确保系统在深海条件下的可靠信号传输与长期运行稳定性。"
+                },
+                "sualtiKablosu": {
+                    "title": "水下电缆",
+                    "desc": "适用于水下环境的专用电缆。",
+                    "detail": "为ROV/AUV系统、水下传感器及海洋基础设施项目提供高防水等级、耐压、防腐蚀的水下电缆。产品目录可应要求提供；深度等级、导线数量、截面积及护套材料等技术细节将根据项目单独评估。"
+                },
+                "kamera": {
+                    "title": "摄像头",
+                    "desc": "水下成像系统。",
+                    "detail": "提供用于船底检查、水下勘察、ROV集成及安防监控的高强度水下摄像头。低光条件下的高画质表现及耐深海压力的机身结构为其主要特点。分辨率、深度极限及接口信息将根据项目单独提供。"
+                },
+                "konnektor": {
+                    "title": "连接器",
+                    "desc": "适用于水下及海洋环境的专用连接器解决方案。",
+                    "detail": "提供确保水下设备与主系统安全连接的防水耐压连接器产品系列。关于针脚数量、IP/深度等级及材质选项，请参阅我们最新的产品目录及产品页面。"
+                }
+            }
+        },
+        "makina": {
+            "title": "Aquatic 机械",
+            "desc": "焊接加工、专用机械制造及精密加工服务。",
+            "items": {
+                "kaynakliImalat": {
+                    "title": "焊接加工与装配",
+                    "desc": "钢结构与金属零件的焊接加工及装配。",
+                    "detail": "按项目图纸要求完成金属部件的焊接加工、热处理、表面处理及最终装配。质量控制阶段对焊缝进行目视检查，必要时采用无损检测（NDT）方法进行检验。"
+                },
+                "ozelImalatMakinalar": {
+                    "title": "专用制造设备",
+                    "desc": "为客户量身定制的生产/自动化设备。",
+                    "detail": "针对标准设备无法满足的需求，以从零设计制造的方式开发专用设备。机械设计、自动化集成、样机制造及现场调试全流程一体化完成。"
+                },
+                "tasarim3d": {
+                    "title": "3D设计与实现",
+                    "desc": "三维工程设计及样机/零件制造。",
+                    "detail": "提供基于CAD的三维工程设计服务，并支持设计的物理实现（快速成型、转化为制造用技术图纸、逆向工程）。复杂几何形状零件的设计验证也在此服务范围内。"
+                },
+                "talasliImalat": {
+                    "title": "精密加工",
+                    "desc": "数控及常规精密加工服务。",
+                    "detail": "在车床、铣床及数控加工中心完成精密尺寸零件的制造。从样机到批量生产，各类规模的加工均严格按照技术图纸公差执行。"
+                }
+            }
+        },
+        "endustri": {
+            "title": "Aquatic 工业",
+            "desc": "工业维保、厂房建设、工厂基础设施及工业管路装配服务。",
+            "items": {
+                "konveyorler": {
+                    "title": "输送系统",
+                    "desc": "工业输送系统的设计与制造。",
+                    "detail": "为生产线设计、制造、安装并调试专用带式、链式或滚筒式输送系统。根据产能、输送物料类型及产线布局提供定制化方案；现有输送系统的维护与大修服务同样在此范围内。"
+                },
+                "trafoEkipmanlari": {
+                    "title": "变压器制造设备",
+                    "desc": "面向变压器生产线的设备与机械解决方案。",
+                    "detail": "为变压器生产设施所用的专用生产设备提供设计、制造与维护服务。结合行业技术要求，开发能够提升工艺效率的机械解决方案。"
+                },
+                "bobinSarimMakinalari": {
+                    "title": "绕线机及维修服务",
+                    "desc": "绕线机的制造及维保服务。",
+                    "detail": "为电机与变压器生产所用绕线机提供设计、制造、安装，以及现有设备的定期维护与维修服务。提供保障绕线精度与设备性能的技术支持。"
+                },
+                "bobinSarimManderelleri": {
+                    "title": "绕线芯轴",
+                    "desc": "绕线工艺中使用的芯轴（模具轴）制造。",
+                    "detail": "为不同规格与型号的线圈制造高精度公差的芯轴。可根据所需线圈几何形状进行定制化生产。"
+                },
+                "tesisBoruDonatim": {
+                    "title": "厂房管路装配及维修业务",
+                    "desc": "工业厂房内管路系统的制造、装配与维修。",
+                    "detail": "对工厂与厂房内的工艺管路（蒸汽、压缩空气、水、化学品输送等）按设计要求制造、安装、焊接并进行压力测试。同时提供针对现有管路故障、腐蚀或泄漏的维修服务。"
+                },
+                "tesisFabrikaKurulumu": {
+                    "title": "厂房 / 工厂建设",
+                    "desc": "交钥匙工程厂房及工厂建设服务。",
+                    "detail": "从新建生产设施的基础设施规划、设备安装，到管路电气装配及调试，提供一站式交钥匙建设服务。项目管理、现场协调及最终验收流程均由 Aquatic 工程团队负责。"
+                }
+            }
+        },
+        "elektronikOtomasyon": {
+            "title": "Aquatic 电子与自动化",
+            "desc": "电路板设计、制造及自动化解决方案。",
+            "items": {
+                "pcbTasarim": {
+                    "title": "PCB设计与制造",
+                    "desc": "印刷电路板（PCB）设计与制造服务。",
+                    "detail": "从原理图设计到布局规划，从样品制造到批量生产，提供PCB开发全流程服务。针对工业及国防工业应用中对高可靠性要求的电路板设计，优先保障信号完整性、电磁兼容性及耐用性。"
+                },
+                "elektronikTasarim": {
+                    "title": "电子设计",
+                    "desc": "电路及系统级电子工程设计。",
+                    "detail": "为客户定制开发电子电路及系统设计；从概念设计到样机制造，从测试到量产准备，提供全流程工程支持。"
+                },
+                "otomasyonEntegrasyon": {
+                    "title": "电子与自动化",
+                    "desc": "工业自动化及控制系统集成。",
+                    "detail": "为生产线、船舶系统及工业设施设计并部署自动化基础设施（PLC、SCADA、传感器集成、控制柜）。结合电子设计与自动化能力，提供全流程智能系统解决方案。"
+                }
+            }
+        },
+        "catalogs": {
+            "title": "产品目录",
+            "subtitle": "浏览并下载包含完整技术细节的最新产品目录。",
+            "downloadLabel": "查看 / 下载",
+            "items": {
+                "connectors": {
+                    "title": "水下连接器目录",
+                    "desc": "60页——涵盖所有连接器系列、技术参数表及零件编号。"
+                },
+                "lighting": {
+                    "title": "水下照明产品目录",
+                    "desc": "水下摄像头与照明产品系列的完整技术目录。"
+                }
+            },
+            "sectionLabel": "文档资料"
+        },
+        "viewLabel": "查看详情",
+        "detail": {
+            "talasli-imalat": {
+                "materials": ["铝", "不锈钢", "黄铜", "青铜", "钛", "POM（赛钢）"],
+                "materialsBody": "我们的车床与数控加工中心可对几乎所有金属及工程塑料进行高精度公差加工。材料选择根据零件工作环境（海水、高压、磨损）按项目单独确定。",
+                "capabilityBody": "从样机到批量生产，凭借高精度数控车床与铣床，我们完全按照技术图纸公差要求进行零件制造。每批产品均附带尺寸测量报告。"
+            },
+            "kaynakli-imalat": {
+                "materials": ["碳钢", "不锈钢（304/316L）", "铝", "镀锌钢板"],
+                "materialsBody": "采用TIG、MIG及电弧焊接工艺，对适用于船舶及工业应用的各类材料进行焊接加工。根据材料厚度与耐腐蚀性要求，采用相应的焊接工艺规范。",
+                "capabilityBody": "焊缝除目视检验外，必要时采用无损检测（NDT）方法进行检验。热处理、表面处理及最终装配流程统一管理。"
+            },
+            "ozel-imalat-makinalari": {
+                "materials": ["结构钢", "不锈钢", "铝型材", "工业电子元器件"],
+                "materialsBody": "专用机械机身采用具备结构强度的材料，自动化控制柜则采用符合工业标准的电子元器件。材料选择根据设备运行环境及生产速度进行优化。",
+                "capabilityBody": "从机械设计到自动化集成，从样机制造到现场调试，全流程由 Aquatic 工程团队统一负责。"
+            },
+            "3d-tasarim": {
+                "materials": ["PLA", "ABS", "PETG", "光敏树脂（SLA）", "尼龙（SLS）"],
+                "materialsBody": "针对概念验证及功能性样机，采用FDM与SLA技术，提供多种材料的三维打印服务。材料选择根据样机测试目的（外观、功能、耐热）确定。",
+                "capabilityBody": "从基于CAD的三维设计出发，通过快速成型与逆向工程流程，将创意转化为实际产品。为复杂几何形状零件提供设计验证支持。"
+            },
+            "gemi-elektrik": {
+                "materials": ["铜缆", "配电柜", "发电机设备", "绝缘材料"],
+                "materialsBody": "船舶电气系统采用经船级社认证、耐海水及潮湿环境的电缆与配电柜材料。材料选择根据船舶类型及电力负荷需求确定。",
+                "capabilityBody": "从主辅电气系统的安装到定期维护，从故障诊断到电缆敷设，整个流程均按检验及船级社要求执行。"
+            },
+            "gemi-makine": {
+                "materials": ["备件（原厂/等效件）", "发动机润滑油", "喷油器组件", "涡轮增压部件"],
+                "materialsBody": "主机与发电机维护采用原厂或等效OEM备件，维护材料根据油品分析结果确定。",
+                "capabilityBody": "提供定期维护、大修（overhaul）、基于油品分析的预防性维护规划及故障维修服务，涵盖喷油器、涡轮增压器、冷却及燃油系统。"
+            },
+            "hidrolik-pnomatik": {
+                "materials": ["液压软管", "密封件套装", "液压油", "气动阀门"],
+                "materialsBody": "舵机、吊车及甲板机械等液压/气动系统采用耐压软管、密封件及阀门材料。",
+                "capabilityBody": "提供密封检测、软管密封件更换、压力测试及液压泵/阀门/油缸大修在内的全流程维保服务。"
+            },
+            "pnomatik-merdiven": {
+                "materials": ["铝型材", "气动油缸", "橡胶防滑踏板覆层"],
+                "materialsBody": "气动舷梯系统采用轻质耐用的铝型材、耐腐蚀连接件及防滑踏板覆层。",
+                "capabilityBody": "根据项目单独评估承重能力、展开时间及材料等级，采购、安装及维护流程统一管理。"
+            },
+            "komple-bakim-onarim": {
+                "materials": ["电气、机械及管路装配材料", "备件物流"],
+                "materialsBody": "综合维保范围内，电气、机械、液压气动及管路装配领域的全部材料采购统一协调管理。",
+                "capabilityBody": "从进坞到出坞，规划、工作分解结构（WBS）、备件采购、人力协调及最终检验测试均由 Aquatic 全程统一管理。"
+            },
+            "teciz-montaj-onarim": {
+                "materials": ["船舶舾装设备", "安装连接件", "辅助系统部件"],
+                "materialsBody": "在新建及改造项目中，船舶舾装设备安装采用经船级社认证的连接件及辅助系统部件。",
+                "capabilityBody": "服务范围包括舾装设备安装、校准及调试（commissioning），以及现有设备的维修与性能测试。"
+            },
+            "boru-donatim": {
+                "materials": ["不锈钢/碳钢管", "焊接材料", "防腐涂层"],
+                "materialsBody": "燃油、润滑油、冷却水、舱底水、压载及消防等系统采用耐腐蚀管材及连接材料。",
+                "capabilityBody": "按等轴测图纸完成制造、安装、焊接及压力测试，施工工艺符合船级社认证标准。"
+            },
+            "ozel-konnektorler": {
+                "materials": ["316L不锈钢", "PEEK绝缘材料", "FKM O型圈"],
+                "materialsBody": "需要高压及电磁兼容性能的连接器采用不锈钢外壳及高性能绝缘材料。",
+                "capabilityBody": "以符合MIL-spec等军事标准的工程方法，为潜艇及水下平台开发不间断连接解决方案。"
+            },
+            "sonar-kablolari": {
+                "materials": ["屏蔽电缆", "低噪声导体", "防水绝缘层"],
+                "materialsBody": "为满足声纳阵列的精密信号传输需求，采用低噪声、屏蔽且耐深海压力的绝缘材料。",
+                "capabilityBody": "提供保障信号完整性与长使用寿命的专用电缆设计与制造服务。"
+            },
+            "torpido-kablolari": {
+                "materials": ["高强度导体", "抗冲击绝缘层"],
+                "materialsBody": "鱼雷系统控制与能源线路采用可承受瞬时冲击与压力变化的特种电缆结构。",
+                "capabilityBody": "提供保障关键任务系统持续运行的高可靠性电缆设计。"
+            },
+            "sualti-akustik": {
+                "materials": ["水听器", "声学传感器", "防水连接器"],
+                "materialsBody": "水下声学传感器阵列及水听器系统采用适应深海环境的材料与连接器。",
+                "capabilityBody": "通过电缆布线、连接器及集成服务，构建具备长期运行稳定性的声学系统。"
+            },
+            "sualti-kablosu": {
+                "materials": ["耐压护套", "防腐蚀导体"],
+                "materialsBody": "为ROV/AUV系统及海洋基础设施项目提供高防水等级、耐腐蚀的电缆。",
+                "capabilityBody": "根据项目单独评估深度等级、导线数量、截面积及护套材料，进行定制化生产。"
+            },
+            "kamera": {
+                "materials": ["钛/不锈钢机身", "蓝宝石光学镜头"],
+                "materialsBody": "水下摄像头采用耐深海压力的机身及低光条件下高画质表现的光学材料。",
+                "capabilityBody": "为船底检查、水下勘察及ROV集成提供高强度成像解决方案。"
+            },
+            "konnektor": {
+                "materials": ["防水连接器外壳", "双O型圈密封"],
+                "materialsBody": "水下设备的安全连接采用防水耐压的连接器产品系列。",
+                "capabilityBody": "根据项目需求确定针脚数量、IP/深度等级及材质选项，提供定制化连接器解决方案。"
+            },
+            "konveyorler": {
+                "materials": ["输送带/链条", "滚筒系统", "结构钢底座"],
+                "materialsBody": "根据输送物料类型，带式、链式或滚筒式输送系统采用相应耐磨材料。",
+                "capabilityBody": "根据产能及产线布局提供定制化设计、制造、安装及调试服务；现有系统的维护也在此范围内。"
+            },
+            "trafo-ekipmanlari": {
+                "materials": ["电工钢板", "铜导体", "绝缘材料"],
+                "materialsBody": "变压器生产设备采用符合行业技术要求的电工钢板及高导电性铜材料。",
+                "capabilityBody": "为变压器生产设施提供专用设备的设计、制造与维护服务。"
+            },
+            "bobin-sarim-makinalari": {
+                "materials": ["结构钢底座", "精密驱动电机", "控制电子元件"],
+                "materialsBody": "绕线机采用保障绕线精度的精密驱动系统及耐用结构材料。",
+                "capabilityBody": "为电机与变压器生产所用绕线机提供设计、制造、安装及维保服务。"
+            },
+            "bobin-sarim-manderelleri": {
+                "materials": ["淬硬钢", "高精度公差加工"],
+                "materialsBody": "芯轴制造采用保障尺寸稳定性与耐磨性的淬硬钢材料。",
+                "capabilityBody": "根据所需规格提供不同线圈型号的高精度公差芯轴定制生产。"
+            },
+            "tesis-boru-donatim": {
+                "materials": ["碳钢/不锈钢管", "蒸汽/压缩空气管路设备"],
+                "materialsBody": "工艺管路（蒸汽、压缩空气、水、化学品输送）根据管路压力及使用环境选择相应材料。",
+                "capabilityBody": "提供符合设计要求的制造、安装、焊接及压力测试，同时涵盖现有管路的故障与泄漏维修。"
+            },
+            "tesis-fabrika-kurulumu": {
+                "materials": ["结构钢", "电气及管路基础设施材料"],
+                "materialsBody": "交钥匙厂房建设采用符合项目工程要求的结构钢、电气及管路基础设施材料。",
+                "capabilityBody": "从基础设施规划到设备安装，直至调试，提供一站式交钥匙建设服务，项目管理由 Aquatic 工程团队负责。"
+            },
+            "pcb-tasarim": {
+                "materials": ["FR4印刷电路板", "铜层", "SMD/THT元器件"],
+                "materialsBody": "PCB制造根据应用可靠性要求，采用FR4及高品质铜层材料。",
+                "capabilityBody": "从原理图设计到布局规划，从样品制造到批量生产，以信号完整性与电磁兼容性为核心管理PCB开发流程。"
+            },
+            "elektronik-tasarim": {
+                "materials": ["工业电子元器件", "电路板材料"],
+                "materialsBody": "电子电路设计采用符合工业标准的定制化元器件。",
+                "capabilityBody": "从概念设计到样机制造，从测试到量产准备，提供全流程电子工程支持。"
+            },
+            "otomasyon-entegrasyon": {
+                "materials": ["PLC/SCADA硬件", "传感器", "控制柜"],
+                "materialsBody": "自动化基础设施根据应用控制需求选择PLC、SCADA硬件及工业传感器。",
+                "capabilityBody": "为生产线、船舶系统及工业设施设计并部署自动化基础设施，融合电子设计与自动化能力。"
+            }
+        },
+        "serviceDetail": {
+            "materialsTitle": "我们所用的材料",
+            "capabilityTitle": "生产能力",
+            "capabilityBtn": "立即开始",
+            "heroBtn": "联系我们",
+            "relatedTitle": "我们的专业制造服务",
+            "quoteTitle": "获取报价",
+            "quoteSubtitle": "分享您的项目详情，我们会尽快与您联系。",
+            "formName": "姓名",
+            "formEmail": "电子邮箱",
+            "formSubject": "主题",
+            "formDescription": "说明",
+            "formFile": "技术文件（PDF、DWG、STEP）",
+            "formFileHint": "最大40KB——更大的文件请通过电子邮件发送。",
+            "formSubmit": "获取报价",
+            "formSubmitting": "提交中…",
+            "formSuccess": "您的请求已收到，我们会尽快与您联系。",
+            "formError": "发生错误，请重试或直接给我们发送电子邮件。",
+            "backToServices": "返回服务列表"
+        }
+    },
+    "products": {
+        "title": "我们的产品",
+        "subtitle": "为关键任务而设计的高性能水下技术",
+        "descriptions": {
+            "lhc-370": "钛合金机身、蓝宝石镜头，配备10倍光学变焦，耐压深度达6000米的数字变焦摄像头。",
+            "lhc-350": "POM机身，分辨率1920×1440，耐压深度1000米的高清水下摄像头，支持自动对焦，适用于ROV及水下监控。",
+            "lhl-401": "功耗16W，照射角度100°，耐压深度1000米的紧凑型水下LED灯。",
+            "metal-shell-55-series": "为水下机器人打造的高可靠性金属外壳水下连接器，提供3、4、6、8针配置。",
+            "ie55-metal-shell-small": "提供4针及6针选项的紧凑型金属外壳水下连接器，具备适用于深水设备的压力平衡结构。",
+            "lh-m-fiber-optic": "适用于水下ROV电缆的多通道光纤连接器，IP68防护，陶瓷触点，数据速率超过1000 Mbit/s。",
+            "micro-low-profile-right-angle": "为AUV设计的节省空间的直角微型水下连接器，提供7、9、12针选项。",
+            "micro-lpm-678": "适用于多用途水下应用的低轮廓模压（LPM）连接器，提供6、7、8针配置。",
+            "rm-series-6": "标准橡胶模压系列连接器，6针配置，耐压深度4000米，电流容量10A。",
+            "rm-series-24": "用于基础电力传输的紧凑型RM系列连接器，提供2、3、4针选项。",
+            "fiber-optic-4f4e-2f6e": "可提供4光纤+4电源或2光纤+6电源连接的混合型连接器，支持ST/LC/FC/SC尾纤选项。"
+        },
+        "filterTitle": "产品分类",
+        "noProducts": "该分类下暂无产品。",
+        "viewMore": "查看详情",
+        "viewLess": "收起详情",
+        "specsTitle": "技术参数",
+        "categories": {
+            "all": "全部产品",
+            "kucukMikroDairesel": "小型 & 微型圆形连接器",
+            "standartDairesel": "标准圆形连接器",
+            "gucSerileri": "电源系列",
+            "yagDolgulu": "充油系列",
+            "ethernetKoaksiyel": "以太网与同轴系列",
+            "rmLpmSerisi": "RM & LPM 系列",
+            "dusukProfilli": "低轮廓系列",
+            "metalGovdeli": "金属外壳系列",
+            "fiberOptik": "光纤系列",
+            "konnektorAksesuarlari": "连接器配件",
+            "underwaterCameras": "水下摄像头",
+            "subseaLights": "水下照明与激光设备"
+        },
+        "items": {
+            "camera": {
+                "title": "水下摄像头",
+                "desc": "在恶劣水下环境中提供高分辨率成像的耐压工业摄像系统。",
+                "expandTitle": "水下摄像系统",
+                "viewMore": "查看详情",
+                "viewLess": "收起详情",
+                "subcategories": ["ROV摄像头", "监控摄像头", "立体/3D摄像头", "热成像"],
+                "specsTitle": "技术参数",
+                "specs": {
+                    "resolution": "分辨率",
+                    "sensor": "传感器",
+                    "depth": "耐压深度",
+                    "interface": "接口",
+                    "housing": "外壳"
+                }
+            },
+            "light": {
+                "title": "水下照明",
+                "desc": "专为深海作业设计的高流明、高能效LED照明设备。",
+                "expandTitle": "水下照明系统",
+                "viewMore": "查看详情",
+                "viewLess": "收起详情",
+                "subcategories": ["LED射灯", "广域照明", "频闪系统", "红外照明"],
+                "specsTitle": "技术参数",
+                "specs": {
+                    "depth": "耐压深度",
+                    "lumen": "光强",
+                    "power": "功率",
+                    "colorTemp": "色温",
+                    "housing": "外壳"
+                }
+            },
+            "monitor": {
+                "title": "操作员显示器",
+                "desc": "为ROV控制站设计的阳光下可读、防水防尘的工业显示器。",
+                "expandTitle": "操作员显示系统",
+                "viewMore": "查看详情",
+                "viewLess": "收起详情",
+                "subcategories": ["台式控制显示器", "机架式显示屏", "便携式面板电脑", "触控操作面板"],
+                "specsTitle": "技术参数",
+                "specs": {
+                    "size": "屏幕尺寸",
+                    "brightness": "亮度",
+                    "protection": "防护等级",
+                    "input": "输入",
+                    "temp": "工作温度"
+                }
+            },
+            "harness": {
+                "title": "连接与线束系统",
+                "desc": "为水下系统提供的高可靠性、耐压耐腐蚀专用线束。",
+                "expandTitle": "水下线束系统",
+                "viewMore": "查看详情",
+                "viewLess": "收起详情",
+                "subcategories": ["鱼雷连接器线束", "ROV脐带缆", "水下连接器", "定制线束组件"],
+                "specsTitle": "技术参数",
+                "specs": {
+                    "depth": "耐压深度",
+                    "conductors": "导线数量",
+                    "standard": "标准",
+                    "material": "护套材料",
+                    "temp": "工作温度"
+                }
+            },
+            "portableUnit": {
+                "title": "便携式控制单元",
+                "desc": "为水下设备现场作业提供的一体化显示屏、人性化设计的便携式控制箱。",
+                "expandTitle": "便携式控制系统",
+                "viewMore": "查看详情",
+                "viewLess": "收起详情",
+                "subcategories": ["ROV控制箱", "现场测试单元", "集成摇杆系统", "应急控制套件"],
+                "specsTitle": "技术参数",
+                "specs": {
+                    "display": "显示屏",
+                    "battery": "电池",
+                    "protection": "防护等级",
+                    "interface": "接口",
+                    "weight": "重量"
+                }
+            },
+            "pressureVessel": {
+                "title": "耐压舱",
+                "desc": "保护潜艇及ROV电子设备免受深水压力影响的特种合金密封耐压舱。",
+                "expandTitle": "耐压舱系统",
+                "viewMore": "查看详情",
+                "viewLess": "收起详情",
+                "subcategories": ["电子外壳筒体", "带连接器法兰的舱体", "定制尺寸外壳", "测试与校准舱"],
+                "specsTitle": "技术参数",
+                "specs": {
+                    "depth": "耐压深度",
+                    "material": "材料",
+                    "sealing": "密封性",
+                    "standard": "标准",
+                    "maxTemp": "最高温度"
+                }
+            }
+        },
+        "conceptNote": "此分类中的功率、光通量、尺寸及工作深度数值为概念设计目标；最终数值将在样机制造及认证测试后确定。"
+    },
+    "blackbox": {
+        "hero": {
+            "badge": "AQUATIC 黑匣子",
+            "title": "国产黑匣子",
+            "subtitle": "为土耳其航空、水面及水下平台在恶劣环境条件下打造的高强度数据记录系统。"
+        },
+        "title": "国产黑匣子",
+        "subtitle": "土耳其首台国产自主黑匣子",
+        "description": "Aquatic 参与了土耳其首台国产自主黑匣子项目，为国家国防工业自主化目标做出贡献。这项关键技术的设计能够承受最严苛的极限环境。",
+        "specTitle": "技术参数",
+        "specs": {
+            "temperature": {
+                "label": "耐温性能",
+                "value": "1100°C",
+                "desc": "持续30分钟"
+            },
+            "pressure": {
+                "label": "耐水压性能",
+                "value": "6000米",
+                "desc": "可承受海底压力"
+            },
+            "impact": {
+                "label": "抗冲击性能",
+                "value": "3400g",
+                "desc": "高强度抗冲击"
+            },
+            "recording": {
+                "label": "记录时长",
+                "value": "25小时",
+                "desc": "连续数据记录"
+            },
+            "beacon": {
+                "label": "水下信标发射器",
+                "value": "90天",
+                "desc": "定位器工作时长"
+            },
+            "standard": {
+                "label": "标准",
+                "value": "ED-112A",
+                "desc": "EUROCAE认证"
+            }
+        },
+        "features": {
+            "title": "核心特点",
+            "list": [
+                "完全自主本土设计",
+                "符合EUROCAE ED-112A标准",
+                "耐高温高压性能",
+                "长时间数据记录能力",
+                "水下定位系统",
+                "易于集成与维护"
+            ]
+        },
+        "cta": "如需详细信息，请联系我们"
+    },
+    "contact": {
+        "title": "联系我们",
+        "subtitle": "如有项目需求，欢迎与我们联系，我们会尽快回复您。",
+        "formTitle": "给我们留言",
+        "name": "姓名",
+        "email": "电子邮箱",
+        "phone": "电话号码",
+        "subject": "主题",
+        "message": "留言内容",
+        "send": "发送留言",
+        "sending": "发送中…",
+        "success": "您的留言已成功发送！",
+        "error": "发生错误，请重试。",
+        "emailInvalid": "无效的电子邮箱地址",
+        "required": "此项为必填项",
+        "address": "地址",
+        "hours": "工作时间",
+        "hoursValue": "周一至周五，09:00 – 18:00",
+        "locationsTitle": "我们的办公地点",
+        "kocaeli": {
+            "title": "科贾埃利办公室",
+            "address": "Şehitler Mah. Barbaros Hayrettin Cad. No:90/A Gölcük/Kocaeli/土耳其",
+            "phone": "+90 262 412 24 42",
+            "email": "bilgi@aquatic.com.tr"
+        },
+        "istanbul": {
+            "title": "伊斯坦布尔办公室",
+            "address": "伊斯坦布尔，土耳其",
+            "phone": "+90 542 308 41 42",
+            "email": "bilgi@aquatic.com.tr"
+        },
+        "almaty": {
+            "title": "阿拉木图办公室（哈萨克斯坦）",
+            "address": "阿拉木图市麦德乌区萨马尔2号区",
+            "phone": "+7 XXX XXX XX XX",
+            "email": "bilgi@aquatic.com.tr"
+        }
+    },
+    "whatsapp": {
+        "message": "您好，我想了解一下 Aquatic Elektronik 的相关信息。",
+        "ariaLabel": "通过WhatsApp联系我们",
+        "greeting": "您好！👋 有什么可以帮您的吗？",
+        "dismiss": "关闭"
+    },
+    "footer": {
+        "description": "在国防工业、电子、机械及航运领域提供创新工程解决方案。",
+        "quickLinks": "快速链接",
+        "contactInfo": "联系信息",
+        "rights": "版权所有。",
+        "address": "Şehitler Mah. Barbaros Hayrettin Cad. No:90/A Gölcük/Kocaeli",
+        "privacyPolicy": "隐私政策",
+        "cookiePreferences": "Cookie 偏好设置"
+    },
+    "brands": {
+        "title": "我们的合作品牌",
+        "subtitle": "我们在国防工业、工业及公共部门值得信赖的精选合作伙伴。",
+        "sectionLabel": "品牌与合作伙伴"
+    },
+    "milestones": {
+        "sectionLabel": "合作案例",
+        "title": "重要里程碑",
+        "subtitle": "产品发布、国际开拓与战略合作",
+        "items": {
+            "1": {
+                "title": "哈萨克斯坦开业",
+                "desc": "进入中亚市场并建立区域合作关系。"
+            },
+            "2": {
+                "title": "IDEF产品发布",
+                "desc": "新一代水下连接器系列的国际首发。"
+            },
+            "3": {
+                "title": "国产黑匣子",
+                "desc": "在土耳其首台国产黑匣子项目中承担核心设计与制造角色。"
+            },
+            "4": {
+                "title": "国际认证",
+                "desc": "产品系列获得国际标准符合性认证。"
+            },
+            "5": {
+                "title": "国防供应商",
+                "desc": "成为本土国防工业项目的战略供应商。"
+            },
+            "6": {
+                "title": "首套水下系统",
+                "desc": "为土耳其海军交付首套国产水下电子系统。"
+            }
+        }
+    },
+    "news": {
+        "sectionLabel": "新闻资讯",
+        "title": "最新动态",
+        "subtitle": "行业最新新闻与动态",
+        "readMore": "阅读全文",
+        "loading": "新闻加载中…",
+        "error": "新闻加载失败。"
+    },
+    "dropdown": {
+        "home": {
+            "stats": "统计数据",
+            "services": "服务",
+            "products": "热门产品",
+            "milestones": "重要里程碑",
+            "news": "最新资讯",
+            "brands": "品牌与合作伙伴",
+            "categoryShowcase": "分类展示"
+        },
+        "corporate": {
+            "history": "公司简介",
+            "vision": "愿景与使命",
+            "values": "我们的价值观",
+            "bank": "银行信息",
+            "faq": "常见问题"
+        },
+        "services": {
+            "denizcilik": "Aquatic 航运",
+            "savunmaSanayi": "国防工业",
+            "sualtiTeknolojileri": "水下技术",
+            "makina": "Aquatic 机械",
+            "endustri": "Aquatic 工业",
+            "elektronikOtomasyon": "电子与自动化"
+        }
+    },
+    "popularProducts": {
+        "sectionLabel": "我们的产品",
+        "title": "热门产品",
+        "subtitle": "国防工业、水下系统、电子及机械领域中最受欢迎的解决方案。",
+        "viewAll": "查看全部",
+        "topSeller": "畅销产品",
+        "items": {
+            "1": {
+                "name": "耐压舱",
+                "category": "耐压舱",
+                "description": "耐高压、经认证的耐压舱设计与制造。"
+            },
+            "2": {
+                "name": "便携式单元",
+                "category": "便携式单元",
+                "description": "为现场作业设计的紧凑耐用便携式电源与控制单元。"
+            },
+            "3": {
+                "name": "便携式单元 2",
+                "category": "便携式单元",
+                "description": "具备增强连接与监控功能的第二代便携式单元。"
+            },
+            "4": {
+                "name": "水下摄像头",
+                "category": "摄像头",
+                "description": "为深水作业设计的高分辨率水下摄像系统。"
+            },
+            "5": {
+                "name": "水下照明装置",
+                "category": "照明",
+                "description": "低功耗、高亮度的水下LED照明解决方案。"
+            },
+            "6": {
+                "name": "控制显示器",
+                "category": "显示器",
+                "description": "适用于水下系统及ROV控制的工业显示器。"
+            },
+            "7": {
+                "name": "安全带系统",
+                "category": "安全设备",
+                "description": "为水下操作人员设计的人性化安全带装置。"
+            }
+        }
+    },
+    "careers": {
+        "title": "招聘",
+        "subtitle": "加入 Aquatic 大家庭",
+        "whyJoin": {
+            "title": "为什么选择 Aquatic？",
+            "desc": "参与高科技项目，提升您的职业发展水平。让我们携手打造未来科技。"
+        },
+        "application": {
+            "title": "常规申请",
+            "desc": "即使目前没有合适的空缺职位，如果您对自己的能力充满信心，也欢迎投递简历。"
+        },
+        "steps": {
+            "title": "申请流程",
+            "apply": "填写申请表",
+            "cv": "上传简历",
+            "review": "初步筛选",
+            "interview": "面试"
+        },
+        "form": {
+            "notice": "您的申请将严格保密处理。",
+            "position": "职位 / 部门",
+            "cv": "上传简历",
+            "cvHint": "请上传PDF或DOCX格式文件（最大500KB）",
+            "cvError": "请上传您的简历文件",
+            "cvTypeError": "仅支持上传PDF或DOCX格式文件",
+            "cvSizeError": "文件大小应小于40KB"
+        },
+        "email": {
+            "subjectPrefix": "求职申请",
+            "positionLabel": "职位",
+            "messageLabel": "留言"
+        }
+    },
+    "categoryShowcase": {
+        "sectionLabel": "分类展示",
+        "title": "我们的服务与产品",
+        "subtitle": "从航运到国防工业，从水下技术到工业制造——每个领域的优势解决方案。",
+        "ctaLabel": "点击查看",
+        "quoteButton": "获取报价",
+        "prev": "上一个",
+        "next": "下一个"
+    },
+    "cookieConsent": {
+        "text": "我们使用Cookie来改善网站体验。仅在您同意后才会加载分析类Cookie。",
+        "link": "隐私政策",
+        "accept": "接受",
+        "reject": "拒绝"
+    },
+    "privacyPolicy": {
+        "title": "隐私政策",
+        "subtitle": "关于您的个人数据如何被收集与处理的说明。",
+        "updatedLabel": "最后更新",
+        "updatedDate": "2026年8月28日",
+        "sections": [
+            {
+                "title": "1. 数据控制者",
+                "body": "本网站由 Aquatic Elektronik Makina Otomasyon Sav. San. Tic. Ltd. Şti.（「Aquatic」）运营。地址：Şehitler Mah. Barbaros Hayrettin Cad. No:90/A, Gölcük/Kocaeli，土耳其。电子邮箱：bilgi@aquatic.com.tr。电话：+90 262 412 24 42。您的个人数据依据土耳其第6698号《个人数据保护法》（「KVKK」），由 Aquatic 作为数据控制者进行处理。"
+            },
+            {
+                "title": "2. 我们收集哪些数据？",
+                "body": "当您填写「联系我们」或「招聘」表单时，我们会收集您的姓名、电子邮箱、电话号码、留言内容，以及（在招聘表单中）您的简历文件。当您访问我们的网站并同意使用Cookie时，我们的分析工具会收集浏览器/设备信息、大致位置、访问页面及站内行为（点击、滚动）。若您未同意，则不会收集此类数据。"
+            },
+            {
+                "title": "3. Cookie与分析工具",
+                "body": "我们的网站使用 Google Analytics 4 及 Microsoft Clarity。这些工具仅在您点击页面底部Cookie提示条中的「接受」按钮后才会加载；若您选择「拒绝」或不做任何选择，这些工具将完全不会运行。您可以随时通过页面底部的「Cookie 偏好设置」链接更改您的选择。"
+            },
+            {
+                "title": "4. 我们为何处理您的数据？",
+                "body": "我们处理您的数据是为了回应您的咨询请求、评估求职申请、通过分析网站使用情况提升服务质量，以及履行我们的法律义务。"
+            },
+            {
+                "title": "5. 数据传输",
+                "body": "您通过表单提交的数据将通过 EmailJS 服务发送至 Aquatic 的电子邮箱。您同意收集的分析数据将在总部位于美国的 Google LLC 及 Microsoft Corporation 的服务器上处理。此类传输依据 KVKK 关于跨境数据传输的相关规定进行。"
+            },
+            {
+                "title": "6. 您在KVKK下享有的权利",
+                "body": "根据 KVKK 第11条，您有权了解您的个人数据是否被处理、要求获取相关信息、了解处理目的及是否按目的使用、了解数据在境内/境外被传输给哪些第三方、在数据处理不完整或错误时要求更正、要求删除或销毁数据，以及要求将上述操作通知已获得数据传输的第三方。您可将相关请求发送至 bilgi@aquatic.com.tr。"
+            },
+            {
+                "title": "7. 联系方式",
+                "body": "如对本隐私政策有任何疑问，请通过 bilgi@aquatic.com.tr 或 +90 262 412 24 42 与我们联系。"
+            }
+        ]
+    }
+}

@@ -13,7 +13,7 @@ const DEFAULT_DESCRIPTION =
 const BASE_URL = 'https://aquatic.com.tr';
 
 /* hreflang codes used in <link>/sitemap — 'kk' below is the ISO code for Kazakh */
-const HREFLANG_BY_LANG = { tr: 'tr', en: 'en', ru: 'ru', kk: 'kk' };
+const HREFLANG_BY_LANG = { tr: 'tr', en: 'en', ru: 'ru', kk: 'kk', zh: 'zh' };
 
 /**
  * PageSEO

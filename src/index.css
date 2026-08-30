@@ -94,6 +94,12 @@ html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Defense in depth alongside body's overflow-x:hidden below — on some
+       mobile browsers a horizontally-overflowing descendant can still widen
+       the scrollable document via html even when body itself clips it, which
+       throws off fixed-position elements (e.g. a right-edge drawer no longer
+       sitting flush against the true device edge). */
+    overflow-x: hidden;
 }
 
 body {
@@ -414,6 +420,20 @@ body {
 .ant-btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 24px rgba(10, 61, 98, 0.4) !important;
+}
+
+/* Mobile drawer language switcher — the global .ant-btn-primary rule above
+   (48px, 32px padding) only caught the active-language button (type="primary"),
+   while the inactive ones (type="default", size="small") kept antd's small
+   button height — the buttons rendered at wildly different sizes. Pin all of
+   them to the same compact size regardless of active state. */
+.drawer-lang-switcher .ant-btn {
+    height: 32px !important;
+    padding: 0 14px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    box-shadow: none !important;
+    transform: none !important;
 }
 
 /* --- Header Overrides --- */

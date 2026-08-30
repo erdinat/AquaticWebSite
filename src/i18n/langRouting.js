@@ -6,7 +6,7 @@
  * The URL (combined with the current hostname) is the single source of truth
  * for the active language (see LangSync).
  */
-export const SUPPORTED_LANGS = ['tr', 'en', 'ru', 'kk'];
+export const SUPPORTED_LANGS = ['tr', 'en', 'ru', 'kk', 'zh'];
 export const DEFAULT_LANG = 'tr';
 
 /** Each language's canonical "home" domain, used for SEO (canonical/hreflang) —
@@ -17,6 +17,7 @@ export const LANG_DOMAINS = {
     en: 'https://aquatic.com.tr',
     ru: 'https://aquatic.com.tr',
     kk: 'https://aquatic.kz',
+    zh: 'https://aquatic.com.tr',
 };
 
 function defaultLangForHostname(hostname) {

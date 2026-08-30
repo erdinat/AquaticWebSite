@@ -112,6 +112,18 @@ Kullanıcı iki görsel paylaştı: mavi bir su damlası + baloncuklar logosu, v
 
 **Düzeltme (aynı gün):** Kullanıcı "sım sıyah gözüküyor" dedi — haklıydı: `#0a3d62→#041f33` gradyanının ikisi de koyu lacivert/neredeyse siyah tonlarda, 32×32 gibi küçük bir favicon boyutunda ayrım kayboluyor, damla tamamen siyah bir blob gibi görünüyordu (gradyanlar zaten bu kadar küçük alanda pek fark edilmiyor, iki koyu ton arasındaki gradyan sadece "daha da koyu" okunuyor). Marka lacivertine bağlı kalma kararı bu yüzden geri alındı — gradyan `#5BA3E0 → #2E6E96` (açık-orta mavi) yapıldı, artık hem büyük hem gerçek boyutta net "açık mavi damla" olarak okunuyor.
 
+### 🐞 Mobilde menü kutusu ekran kenarına yaslanmıyordu — muhtemelen deploy edilmemiş eski build (30 Ağustos 2026)
+
+Kullanıcı raporu: mobil hamburger menüsü (Drawer) ekranın sağ kenarına tam yaslanmıyor, sağında bir boşluk kalıyor; ayrıca kart sıralarının mobilde alt alta dizilmediği/sayfayı esnettiği belirtildi. İnceleme: bu tarif, 27 Ağustos'ta zaten düzeltilmiş olan "CSS grid taşması" hatasının (`madde: sayfayı taşıran CSS grid hatası düzeltildi`) belirtileriyle birebir örtüşüyor — `git show HEAD` ile doğrulandı, düzeltme (`minmax(0, 1fr)`) zaten son commit'te (`fcec2a8`) mevcut, yani kod tarafı muhtemelen doğru ama kullanıcı hâlâ o commit'ten önceki eski build'i görüyor olabilir (GA4/Çince dil eklemesinden beri henüz yeniden deploy edilmedi). Sayfa `overflow-x` ile taştığında mobil tarayıcılarda `position:fixed` elemanların (sağdan sabitlenmiş Drawer gibi) gerçek ekran kenarına değil, taşan belge genişliğine göre konumlanması bilinen bir davranış — tek kök sebep her iki belirtiyi de açıklıyor.
+
+**Ek önlem:** `overflow-x:hidden` daha önce sadece `body`'de vardı, artık `html`'e de eklendi — bazı mobil tarayıcılarda `body`'nin `overflow-x:hidden`'ı tek başına yetmeyip taşan içerik `html` üzerinden belgeyi genişletebiliyor; bu ek güvenlik katmanı, henüz keşfedilmemiş bir taşma kaynağı olsa bile fixed-position elemanların kaymasını engeller.
+
+> ⚠️ Kesin doğrulama için siteyi yeniden deploy edip canlıda kontrol etmek gerekiyor — mevcut local build'de bu sorunun zaten çözülmüş olması bekleniyor.
+
+### 🐞 Mobil menüdeki dil butonları farklı boyutlardaydı (30 Ağustos 2026)
+
+Kullanıcı mobil ekran görüntüsü paylaştı: hamburger menüsündeki "Language" bölümünde aktif dil butonu (Türkçe) diğer üçünden (English, Қазақша, Русский) belirgin şekilde daha büyük/geniş görünüyordu. Kök sebep, çerez onayı butonlarında daha önce bulunanla birebir aynı: `AppHeader.jsx`'teki dil butonları aktif dilde `type="primary"`, diğerlerinde `type="default"` kullanıyor — `index.css`'teki global `.ant-btn-primary` kuralı (`height: 48px !important`) sadece aktif butonu etkiliyor, `default` tipindeki diğer üçü antd'nin küçük buton boyutunda (~24px) kalıyordu. `Space` sarmalayıcısına `drawer-lang-switcher` class'ı eklenip `index.css`'e tüm dil butonlarını (aktif/pasif fark etmeksizin) 32px'e sabitleyen bir kural eklendi.
+
 ### 🐞 Kategori banner'larındaki tekrar eden görseller + kart ızgarasındaki "kayıp" görseller düzeltildi (29 Ağustos 2026)
 
 47 görsel eklendikten hemen sonra iki ayrı kullanıcı raporu:

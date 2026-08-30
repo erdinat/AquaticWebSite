@@ -38,6 +38,7 @@ const languages = [
     { key: 'en', label: '🇬🇧 English' },
     { key: 'kk', label: '🇰🇿 Қазақша' },
     { key: 'ru', label: '🇷🇺 Русский' },
+    { key: 'zh', label: '🇨🇳 中文' },
 ];
 
 const AppHeader = () => {
@@ -381,7 +382,7 @@ const AppHeader = () => {
                     <p style={{ fontSize: 13, color: 'var(--color-text-muted)', marginBottom: 12 }}>
                         <GlobalOutlined /> Language
                     </p>
-                    <Space wrap>
+                    <Space wrap className="drawer-lang-switcher">
                         {languages.map((lang) => (
                             <Button
                                 key={lang.key}

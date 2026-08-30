@@ -7,12 +7,14 @@ import tr from './locales/tr.json';
 import en from './locales/en.json';
 import kk from './locales/kk.json';
 import ru from './locales/ru.json';
+import zh from './locales/zh.json';
 
 const resources = {
     tr: { translation: tr },
     en: { translation: en },
     kk: { translation: kk },
     ru: { translation: ru },
+    zh: { translation: zh },
 };
 
 // Initial guess before LangSync corrects it from the URL on mount (see
