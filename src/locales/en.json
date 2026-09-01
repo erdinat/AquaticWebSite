@@ -1091,5 +1091,11 @@
         "subtitle": "Highlights from our products, solutions, and fieldwork.",
         "openLabel": "Enlarge photo {{index}}",
         "closeLabel": "Close"
+    },
+    "kzVideo": {
+        "sectionLabel": "Introduction Video",
+        "title": "From Turkey to Kazakhstan",
+        "subtitle": "A short film introducing our bridge of experience and technology.",
+        "playLabel": "Play video"
     }
 }

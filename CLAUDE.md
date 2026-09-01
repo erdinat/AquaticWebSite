@@ -458,6 +458,18 @@ Kullanıcı geri bildirimi: madde listesi (kategori kartının altındaki 27 mad
 
 Kullanıcı isteği: üst menüde sadece Ana Sayfa, Kurumsal, Hizmetler, Ürünler direkt görünsün; İletişim/Kariyer/Milli Kara Kutu bir butonun arkasına gizlensin. `AppHeader.jsx`'e yeni bir "Diğer" (`nav.more`, 4 dilde) nav öğesi eklendi — kendi sayfası olmayan, sadece `moreDropdownItems` (İletişim/Kariyer/Kara Kutu) açan bir dropdown. Bu üç sayfa `navItems`'tan çıkarıldı. Yeni `dropdownOnly: true` bayrağı eklendi: normalde dropdown'lı nav öğelerine tıklamak o öğenin kendi sayfasına gider (Ana Sayfa/Kurumsal/Hizmetler için doğru), ama "Diğer"in kendi sayfası olmadığı için `dropdownOnly` bu davranışı bastırıyor (tıklama sadece flyout'u açıyor, hiçbir yere navigate etmiyor). Mobil Drawer'da zaten ek bir değişiklik gerekmedi — dropdown'lı öğeler orada zaten expand/collapse SubMenu olarak render ediliyor, üst öğeye tıklamak zaten navigate tetiklemiyordu.
 
+### 🎬 aquatic.kz'ye tanıtım videosu eklendi (1 Eylül 2026)
+
+Müşterinin Kazakistan hakkında bir tanıtım videosu ekletmek istemesi üzerine, kullanıcının masaüstünden `AQUATIC_KazDrill_3min_Kazakh_Female_Text_Between_Title_Web.mp4` sağlandı — 3 dakika, 1920×1080, H.264/AAC, Kazakça kadın seslendirmeli, 36 slaytlık anlatı temelli bir kurumsal video (kamera çekimi değil, altyazı/başlık geçişleri olan bir sunum videosu — "Ortak Tamır. Ortak Bolashaq." başlığıyla açılıyor, Türkiye-Kazakistan ortaklığını anlatıyor).
+
+**Yerleşim:** Ana sayfanın hero bölümünün hemen altına, istatistikler bölümünden önce yeni bir video bölümü eklendi — `isKzDomain()` ile sadece `.kz`'de gösteriliyor, `aquatic.com.tr`'de bu bölüm hiç render edilmiyor.
+
+**Uygulama:** Video 3 dakika ve sesli anlatım içerdiği için (arka plan/otomatik oynatan sessiz döngü değil) tıkla-oynat deseni kullanıldı — kapalıyken video'nun açılış karesinden alınmış bir poster + ortada büyük oynat butonu gösteriliyor, tıklanınca `<video controls autoPlay>` ile değiştiriliyor. Video dosyaları `ffmpeg -movflags +faststart` ile web için yeniden mux'landı (tarayıcı tam dosyayı indirmeden oynatmaya başlayabilsin diye, moov atomu dosya başına taşındı — kalite/boyut değişmedi).
+
+**Türkçe versiyon eklendi (aynı gün):** Kullanıcı ardından aynı videonun Türkçe seslendirmeli halini de sağladı (`AQUATIC_KazDrill_3min_Turkish_Female_Text_Between_Title_Web.mp4` — aynı 36 slayt, aynı süre/çözünürlük, sadece seslendirme dili farklı). Sadece 2 dilde seslendirme olduğu için (Kazakça + Türkçe, EN/RU/ZH için ayrı dublaj yok), `HomePage.jsx`'te `i18n.language === 'tr'` kontrolüyle iki dosya arasında seçim yapılıyor: `tr` ise Türkçe video (`aquatic-kazakhstan-tr.mp4`/`-tr-poster.webp`), diğer tüm diller (kk, en, ru, zh) için Kazakça video (`aquatic-kazakhstan-kk.mp4`/`-kk-poster.webp`) gösteriliyor — `.kz`'nin varsayılan dili zaten kk olduğu için bu, "eşleşen dublaj varsa onu, yoksa domain'in ana dilini" mantığına denk geliyor. `<video>` elementine `key={kzVideoSrc}` eklendi — kullanıcı video oynarken dil değiştirirse (örn. TR→EN) React'in elementi yeniden mount edip yeni `src`'i düzgün yüklemesi için (aksi halde tarayıcı `src` değişse bile eski videoyu göstermeye devam edebilir).
+
+> ⚠️ **Bilinçli sınır:** EN/RU/ZH dillerinde gezinen bir `.kz` ziyaretçisi Kazakça seslendirmeli videoyu görür (kendi dilinde dublaj yok). Bölüm başlığı/açıklaması yine de 5 dilde çevrildi (`kzVideo.*`).
+
 ### 🚫 aquatic.kz'de "Savunma Sanayi" kelimesi kaldırıldı (1 Eylül 2026)
 
 Kullanıcı: "kz kısmında savunma sanayı kısmı yani bu kelime geçmesin olmasın!" Kapsam netleştirildi (AskUserQuestion): sadece kategori/başlık seviyesi — özel-konnektörler/sonar-kabloları/torpido-kabloları gibi maddelerin TR ile ortak olan kendi detay sayfası metinlerine dokunulmadı.

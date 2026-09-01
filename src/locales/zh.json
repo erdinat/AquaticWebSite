@@ -1091,5 +1091,11 @@
         "subtitle": "来自我们产品、解决方案和现场工作的精彩瞬间。",
         "openLabel": "放大照片 {{index}}",
         "closeLabel": "关闭"
+    },
+    "kzVideo": {
+        "sectionLabel": "介绍视频",
+        "title": "从土耳其到哈萨克斯坦",
+        "subtitle": "介绍我们经验与技术桥梁的短片。",
+        "playLabel": "播放视频"
     }
 }

@@ -1091,5 +1091,11 @@
         "subtitle": "Ürünlerimiz, çözümlerimiz ve saha çalışmalarımızdan kareler.",
         "openLabel": "Fotoğraf {{index}}'i büyüt",
         "closeLabel": "Kapat"
+    },
+    "kzVideo": {
+        "sectionLabel": "Tanıtım Videosu",
+        "title": "Türkiye'den Kazakistan'a",
+        "subtitle": "Tecrübe ve teknoloji köprümüzü anlatan kısa tanıtım filmimiz.",
+        "playLabel": "Videoyu oynat"
     }
 }

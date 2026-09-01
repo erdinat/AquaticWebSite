@@ -23,6 +23,7 @@ import {
     DownloadOutlined,
     PictureOutlined,
     CloseOutlined,
+    PlayCircleOutlined,
 } from '@ant-design/icons';
 import productsData from '../data/products.json';
 import { getCategoryIcon } from '../data/productCategoryVisuals';
@@ -244,6 +245,15 @@ const HomePage = () => {
         { name: 'Reference 7', image: brandRef7 },
     ];
 
+    /* aquatic.kz intro video — poster until clicked, then swaps to <video>.
+       Only Kazakh and Turkish voiceover versions exist (no per-language dub
+       for EN/RU/ZH), so Turkish plays for the 'tr' UI language and Kazakh
+       plays for everyone else (including the .kz default 'kk'). */
+    const [kzVideoPlaying, setKzVideoPlaying] = useState(false);
+    const kzVideoLang = i18n.language === 'tr' ? 'tr' : 'kk';
+    const kzVideoSrc = `/videos/aquatic-kazakhstan-${kzVideoLang}.mp4`;
+    const kzVideoPoster = `/videos/aquatic-kazakhstan-${kzVideoLang}-poster.webp`;
+
     /* Photo album lightbox — null when closed, otherwise the open index */
     const [galleryIndex, setGalleryIndex] = useState(null);
 
@@ -451,6 +461,56 @@ const HomePage = () => {
                     <div className="scroll-line" />
                 </div>
             </section>
+
+            {/* ===== KAZAKHSTAN INTRO VIDEO (aquatic.kz only) ===== */}
+            {isKzDomain() && (
+                <section className="section kz-video-section">
+                    <div className="container">
+                        <span className="section-label reveal">
+                            <PlayCircleOutlined /> {t('kzVideo.sectionLabel')}
+                        </span>
+                        <h2
+                            className="section-title reveal"
+                            style={{ textAlign: 'left', marginBottom: 8 }}
+                        >
+                            {t('kzVideo.title')}
+                        </h2>
+                        <p
+                            className="section-subtitle reveal"
+                            style={{ textAlign: 'left', margin: '0 0 32px' }}
+                        >
+                            {t('kzVideo.subtitle')}
+                        </p>
+                        <div className="kz-video-wrap reveal">
+                            {kzVideoPlaying ? (
+                                <video
+                                    key={kzVideoSrc}
+                                    className="kz-video-player"
+                                    src={kzVideoSrc}
+                                    poster={kzVideoPoster}
+                                    controls
+                                    autoPlay
+                                />
+                            ) : (
+                                <button
+                                    type="button"
+                                    className="kz-video-poster"
+                                    style={{
+                                        backgroundImage: `url(${kzVideoPoster})`,
+                                    }}
+                                    onClick={() => setKzVideoPlaying(true)}
+                                    aria-label={t('kzVideo.playLabel')}
+                                >
+                                    <span className="kz-video-poster-overlay" aria-hidden="true" />
+                                    <span className="kz-video-play-btn">
+                                        <PlayCircleOutlined />
+                                    </span>
+                                </button>
+                            )}
+                        </div>
+                    </div>
+                </section>
+            )}
 
             {/* ===== STATS SECTION ===== */}
             <section id="home-stats" className="stats-section">
