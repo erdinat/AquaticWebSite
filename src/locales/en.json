@@ -599,6 +599,10 @@
             "boruDonatim": {
                 "title": "Industrial Complex Pipe Fitting",
                 "desc": "Fabrication, installation, and fitting of pipelines for industrial facilities and complexes."
+            },
+            "savunmaSanayiSualti": {
+                "title": "Defense Industry & Underwater Technologies",
+                "desc": "From submarine, sonar, and torpedo systems to ROV/AUV infrastructure — specialized cable, connector, and camera solutions for the defense industry and underwater technologies."
             }
         }
     },
@@ -1020,13 +1024,16 @@
             "sualtiTeknolojileri": "Underwater Technologies",
             "makina": "Aquatic Machinery",
             "endustri": "Aquatic Industry",
-            "elektronikOtomasyon": "Electronics and Automation"
+            "elektronikOtomasyon": "Electronics and Automation",
+            "savunmaSanayiSualti": "Defense & Underwater Tech"
         }
     },
     "categoryShowcase": {
         "sectionLabel": "Category Showcase",
         "title": "Our Services & Products",
+        "kzTitle": "Our Industry & Machinery Solutions",
         "subtitle": "From maritime to defense industry, from underwater technologies to industrial manufacturing — our leading solutions in every field.",
+        "kzSubtitle": "From complex industrial facilities to custom machinery manufacturing — powerful engineering solutions.",
         "ctaLabel": "CLICK!",
         "quoteButton": "GET A QUOTE",
         "prev": "Previous",
@@ -1073,5 +1080,12 @@
                 "body": "For questions about this privacy policy, contact us at bilgi@aquatic.com.tr or +90 262 412 24 42."
             }
         ]
+    },
+    "gallery": {
+        "sectionLabel": "Photo Album",
+        "title": "Our Photo Album",
+        "subtitle": "Highlights from our products, solutions, and fieldwork.",
+        "openLabel": "Enlarge photo {{index}}",
+        "closeLabel": "Close"
     }
 }

@@ -21,6 +21,8 @@ import {
     RightOutlined,
     FilePdfOutlined,
     DownloadOutlined,
+    PictureOutlined,
+    CloseOutlined,
 } from '@ant-design/icons';
 import productsData from '../data/products.json';
 import { getCategoryIcon } from '../data/productCategoryVisuals';
@@ -78,6 +80,13 @@ const CATALOGS = {
     other: [{ key: 'lighting', file: '/catalogs/aquatic-underwater-lighting-catalog-en.pdf' }],
 };
 
+/* Photo album — 22 marketing/product visuals supplied by the user (1 Eylül
+   2026), optimized to webp and placed at public/images/gallery/. */
+const GALLERY_IMAGES = Array.from(
+    { length: 22 },
+    (_, i) => `/images/gallery/gallery-${String(i + 1).padStart(2, '0')}.webp`
+);
+
 const HomePage = () => {
     const { t, i18n } = useTranslation();
     const navigate = useLocalizedNavigate();
@@ -96,15 +105,13 @@ const HomePage = () => {
         el.scrollBy({ left: direction * step, behavior: 'smooth' });
     };
 
-    /* News carousel — same step-by-step pattern as the category showcase
-       above, instead of an endless auto-scroll the visitor has no way to
-       stop. */
-    const newsCarouselRef = useRef(null);
-    const scrollNewsCarousel = (direction) => {
-        const el = newsCarouselRef.current;
+    /* Photo album carousel — same step-by-step pattern as the one above. */
+    const galleryTrackRef = useRef(null);
+    const scrollGalleryTrack = (direction) => {
+        const el = galleryTrackRef.current;
         if (!el) return;
-        const card = el.querySelector('.news-card, .news-skeleton');
-        const step = card ? card.offsetWidth + 24 : el.clientWidth * 0.8;
+        const card = el.querySelector('.home-gallery-card');
+        const step = card ? card.offsetWidth + 20 : el.clientWidth * 0.8;
         el.scrollBy({ left: direction * step, behavior: 'smooth' });
     };
 
@@ -229,6 +236,24 @@ const HomePage = () => {
         { name: 'Reference 5', image: brandRef5 },
         { name: 'Reference 7', image: brandRef7 },
     ];
+
+    /* Photo album lightbox — null when closed, otherwise the open index */
+    const [galleryIndex, setGalleryIndex] = useState(null);
+
+    useEffect(() => {
+        if (galleryIndex === null) return undefined;
+        const handleKeyDown = (e) => {
+            if (e.key === 'Escape') setGalleryIndex(null);
+            if (e.key === 'ArrowRight') {
+                setGalleryIndex((i) => (i + 1) % GALLERY_IMAGES.length);
+            }
+            if (e.key === 'ArrowLeft') {
+                setGalleryIndex((i) => (i - 1 + GALLERY_IMAGES.length) % GALLERY_IMAGES.length);
+            }
+        };
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [galleryIndex]);
 
     /* News — fetched from NewsData.io */
     const [newsItems, setNewsItems] = useState([]);
@@ -370,6 +395,12 @@ const HomePage = () => {
             .finally(() => setNewsLoading(false));
     }, []);
 
+    /* Featured + list split for the news section (see CLAUDE.md "Güncel
+       Haberler tasarımı" note) — first article is the large featured story,
+       the next up to 4 render as a compact list beside it. */
+    const featuredNewsItem = newsItems[0] || null;
+    const listNewsItems = newsItems.slice(1, 5);
+
     return (
         <div className="home-page">
             <PageSEO titleKey="nav.home" descriptionKey="hero.subtitle" path="/" />
@@ -446,110 +477,152 @@ const HomePage = () => {
                                 className="section-title"
                                 style={{ textAlign: 'left', marginBottom: 8 }}
                             >
-                                {t('categoryShowcase.title')}
+                                {t(
+                                    isKzDomain()
+                                        ? 'categoryShowcase.kzTitle'
+                                        : 'categoryShowcase.title'
+                                )}
                             </h2>
                             <p
                                 className="section-subtitle"
                                 style={{ textAlign: 'left', margin: 0, maxWidth: 560 }}
                             >
-                                {t('categoryShowcase.subtitle')}
+                                {t(
+                                    isKzDomain()
+                                        ? 'categoryShowcase.kzSubtitle'
+                                        : 'categoryShowcase.subtitle'
+                                )}
                             </p>
                         </div>
                     </div>
 
-                    <div className="cs-rows">
-                        {categoryShowcaseRows.map((row, rowIdx) => {
-                            if (!row.cards.length) return null;
-                            return (
-                                <div
-                                    className="cs-row reveal"
+                    {isKzDomain() ? (
+                        /* Launch/demo treatment for aquatic.kz (30 Ağustos 2026):
+                           no product carousel, just the 2 categories themselves
+                           as large, full-width, editorial showcase cards. */
+                        <div className="kz-showcase-grid">
+                            {categoryShowcaseRows.map((row, rowIdx) => (
+                                <button
                                     key={row.key}
-                                    style={{ animationDelay: `${rowIdx * 0.08}s` }}
+                                    className="kz-showcase-card reveal"
+                                    style={{
+                                        backgroundImage: `url(${row.image})`,
+                                        animationDelay: `${rowIdx * 0.1}s`,
+                                    }}
+                                    onClick={() => navigate(`/services/category/${row.key}`)}
                                 >
-                                    <button
-                                        className="cs-banner"
-                                        style={{
-                                            backgroundImage: `url(${row.image})`,
-                                            '--cs-color': row.color,
-                                        }}
-                                        onClick={() => navigate(`/services/category/${row.key}`)}
-                                    >
-                                        <span className="cs-banner-overlay" aria-hidden="true" />
-                                        <span className="cs-banner-icon">{row.icon}</span>
-                                        <span className="cs-banner-body">
-                                            <span className="cs-banner-title">
-                                                {t(`services.${row.key}.title`)}
-                                            </span>
-                                            <span className="cs-banner-cta">
-                                                {t('categoryShowcase.ctaLabel')}{' '}
-                                                <ArrowRightOutlined />
-                                            </span>
+                                    <span className="kz-showcase-overlay" aria-hidden="true" />
+                                    <span className="kz-showcase-icon">{row.icon}</span>
+                                    <span className="kz-showcase-body">
+                                        <span className="kz-showcase-title">
+                                            {t(`services.${row.key}.title`)}
                                         </span>
-                                    </button>
-
-                                    <div className="cs-carousel-wrap">
+                                        <span className="kz-showcase-desc">
+                                            {t(`services.${row.key}.desc`)}
+                                        </span>
+                                        <span className="kz-showcase-btn">
+                                            {t('categoryShowcase.ctaLabel')}{' '}
+                                            <ArrowRightOutlined />
+                                        </span>
+                                    </span>
+                                </button>
+                            ))}
+                        </div>
+                    ) : (
+                        <div className="cs-rows">
+                            {categoryShowcaseRows.map((row, rowIdx) => {
+                                if (!row.cards.length) return null;
+                                return (
+                                    <div
+                                        className="cs-row reveal"
+                                        key={row.key}
+                                        style={{ animationDelay: `${rowIdx * 0.08}s` }}
+                                    >
                                         <button
-                                            type="button"
-                                            className="cs-arrow cs-arrow--prev"
-                                            aria-label={t('categoryShowcase.prev')}
-                                            onClick={() => scrollCsCarousel(row.key, -1)}
-                                        >
-                                            <LeftOutlined />
-                                        </button>
-                                        <button
-                                            type="button"
-                                            className="cs-arrow cs-arrow--next"
-                                            aria-label={t('categoryShowcase.next')}
-                                            onClick={() => scrollCsCarousel(row.key, 1)}
-                                        >
-                                            <RightOutlined />
-                                        </button>
-
-                                        <div
-                                            className="cs-carousel"
-                                            ref={(el) => {
-                                                csCarouselRefs.current[row.key] = el;
+                                            className="cs-banner"
+                                            style={{
+                                                backgroundImage: `url(${row.image})`,
+                                                '--cs-color': row.color,
                                             }}
+                                            onClick={() => navigate(`/services/category/${row.key}`)}
                                         >
-                                            {row.cards.map((card) => (
-                                                <button
-                                                    key={card.key}
-                                                    className="cs-card"
-                                                    onClick={card.onClick}
-                                                >
-                                                    <div className="cs-card-image">
-                                                        {card.image ? (
-                                                            <img
-                                                                src={card.image}
-                                                                alt={card.title}
-                                                                loading="lazy"
-                                                            />
-                                                        ) : (
-                                                            <div
-                                                                className="cs-card-image-placeholder"
-                                                                style={{ color: row.color }}
-                                                                aria-hidden="true"
-                                                            >
-                                                                {getCategoryIcon(card.categoryId)}
-                                                            </div>
-                                                        )}
-                                                    </div>
-                                                    <div className="cs-card-body">
-                                                        <h4 className="cs-card-title">
-                                                            {card.title}
-                                                        </h4>
-                                                        <span className="cs-card-quote-btn">
-                                                            {t('categoryShowcase.quoteButton')}
-                                                        </span>
-                                                    </div>
-                                                </button>
-                                            ))}
+                                            <span className="cs-banner-overlay" aria-hidden="true" />
+                                            <span className="cs-banner-icon">{row.icon}</span>
+                                            <span className="cs-banner-body">
+                                                <span className="cs-banner-title">
+                                                    {t(`services.${row.key}.title`)}
+                                                </span>
+                                                <span className="cs-banner-cta">
+                                                    {t('categoryShowcase.ctaLabel')}{' '}
+                                                    <ArrowRightOutlined />
+                                                </span>
+                                            </span>
+                                        </button>
+
+                                        <div className="cs-carousel-wrap">
+                                            <button
+                                                type="button"
+                                                className="cs-arrow cs-arrow--prev"
+                                                aria-label={t('categoryShowcase.prev')}
+                                                onClick={() => scrollCsCarousel(row.key, -1)}
+                                            >
+                                                <LeftOutlined />
+                                            </button>
+                                            <button
+                                                type="button"
+                                                className="cs-arrow cs-arrow--next"
+                                                aria-label={t('categoryShowcase.next')}
+                                                onClick={() => scrollCsCarousel(row.key, 1)}
+                                            >
+                                                <RightOutlined />
+                                            </button>
+
+                                            <div
+                                                className="cs-carousel"
+                                                ref={(el) => {
+                                                    csCarouselRefs.current[row.key] = el;
+                                                }}
+                                            >
+                                                {row.cards.map((card) => (
+                                                    <button
+                                                        key={card.key}
+                                                        className="cs-card"
+                                                        onClick={card.onClick}
+                                                    >
+                                                        <div className="cs-card-image">
+                                                            {card.image ? (
+                                                                <img
+                                                                    src={card.image}
+                                                                    alt={card.title}
+                                                                    loading="lazy"
+                                                                />
+                                                            ) : (
+                                                                <div
+                                                                    className="cs-card-image-placeholder"
+                                                                    style={{ color: row.color }}
+                                                                    aria-hidden="true"
+                                                                >
+                                                                    {getCategoryIcon(card.categoryId)}
+                                                                </div>
+                                                            )}
+                                                        </div>
+                                                        <div className="cs-card-body">
+                                                            <h4 className="cs-card-title">
+                                                                {card.title}
+                                                            </h4>
+                                                            <span className="cs-card-quote-btn">
+                                                                {t('categoryShowcase.quoteButton')}
+                                                            </span>
+                                                        </div>
+                                                    </button>
+                                                ))}
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            );
-                        })}
-                    </div>
+                                );
+                            })}
+                        </div>
+                    )}
                 </div>
             </section>
 
@@ -601,6 +674,51 @@ const HomePage = () => {
                 </div>
             </section>
 
+            {/* ===== PHOTO ALBUM ===== */}
+            <section id="home-gallery" className="section home-gallery-section">
+                <div className="container">
+                    <span className="section-label reveal">
+                        <PictureOutlined /> {t('gallery.sectionLabel')}
+                    </span>
+                    <h2 className="section-title reveal" style={{ textAlign: 'left', marginBottom: 8 }}>
+                        {t('gallery.title')}
+                    </h2>
+                    <p className="section-subtitle reveal" style={{ textAlign: 'left', margin: '0 0 40px' }}>
+                        {t('gallery.subtitle')}
+                    </p>
+                    <div className="home-gallery-carousel-wrap reveal">
+                        <button
+                            type="button"
+                            className="cs-arrow cs-arrow--prev"
+                            aria-label={t('categoryShowcase.prev')}
+                            onClick={() => scrollGalleryTrack(-1)}
+                        >
+                            <LeftOutlined />
+                        </button>
+                        <button
+                            type="button"
+                            className="cs-arrow cs-arrow--next"
+                            aria-label={t('categoryShowcase.next')}
+                            onClick={() => scrollGalleryTrack(1)}
+                        >
+                            <RightOutlined />
+                        </button>
+                        <div className="home-gallery-track" ref={galleryTrackRef}>
+                            {GALLERY_IMAGES.map((src, idx) => (
+                                <button
+                                    key={src}
+                                    className="home-gallery-card"
+                                    onClick={() => setGalleryIndex(idx)}
+                                    aria-label={t('gallery.openLabel', { index: idx + 1 })}
+                                >
+                                    <img src={src} alt="" loading="lazy" />
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* ===== NEWS SECTION ===== */}
             <section id="home-news" className="section news-section">
                 <div className="container">
@@ -623,100 +741,154 @@ const HomePage = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="news-marquee-wrap" style={{ marginTop: 40 }}>
-                        {!newsLoading && !newsError && newsItems.length > 0 && (
-                            <>
-                                <button
-                                    type="button"
-                                    className="cs-arrow cs-arrow--prev"
-                                    aria-label={t('categoryShowcase.prev')}
-                                    onClick={() => scrollNewsCarousel(-1)}
-                                >
-                                    <LeftOutlined />
-                                </button>
-                                <button
-                                    type="button"
-                                    className="cs-arrow cs-arrow--next"
-                                    aria-label={t('categoryShowcase.next')}
-                                    onClick={() => scrollNewsCarousel(1)}
-                                >
-                                    <RightOutlined />
-                                </button>
-                            </>
-                        )}
-                        <div className="news-marquee-container">
+                    <div
+                        className={`news-featured-layout reveal${
+                            !newsLoading && listNewsItems.length === 0
+                                ? ' news-featured-layout--single'
+                                : ''
+                        }`}
+                        style={{ marginTop: 40 }}
+                    >
                         {newsLoading ? (
-                            <div className="news-marquee-track">
-                                {[0, 1, 2, 3].map((i) => (
-                                    <div className="news-skeleton" key={i}>
-                                        <div className="skeleton-line skeleton-tag" />
-                                        <div className="skeleton-line skeleton-date" />
-                                        <div className="skeleton-line skeleton-title" />
-                                        <div className="skeleton-line skeleton-title-short" />
-                                        <div className="skeleton-line skeleton-desc" />
-                                        <div className="skeleton-line skeleton-desc-short" />
-                                    </div>
-                                ))}
-                            </div>
-                        ) : newsError || newsItems.length === 0 ? (
+                            <>
+                                <div className="news-skeleton-featured">
+                                    <div className="skeleton-line news-skeleton-featured-image" />
+                                    <div className="skeleton-line skeleton-title" />
+                                    <div
+                                        className="skeleton-line skeleton-date"
+                                        style={{ width: '40%' }}
+                                    />
+                                    <div className="skeleton-line skeleton-desc" />
+                                    <div className="skeleton-line skeleton-desc-short" />
+                                </div>
+                                <div className="news-list">
+                                    {[0, 1, 2, 3].map((i) => (
+                                        <div className="news-skeleton-list-item" key={i}>
+                                            <div className="skeleton-line news-skeleton-list-thumb" />
+                                            <div className="news-skeleton-list-lines">
+                                                <div
+                                                    className="skeleton-line skeleton-date"
+                                                    style={{ width: '50%' }}
+                                                />
+                                                <div className="skeleton-line skeleton-title-short" />
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </>
+                        ) : newsError || !featuredNewsItem ? (
                             <p style={{ color: 'var(--color-text-muted)' }}>{t('news.error')}</p>
                         ) : (
-                            <div className="news-marquee-track" ref={newsCarouselRef}>
-                                {newsItems.map((item) => {
-                                    const Tag = item.url ? 'a' : 'div';
-                                    const linkProps = item.url
+                            <>
+                                {(() => {
+                                    const FeaturedTag = featuredNewsItem.url ? 'a' : 'div';
+                                    const featuredLinkProps = featuredNewsItem.url
                                         ? {
-                                              href: item.url,
+                                              href: featuredNewsItem.url,
                                               target: '_blank',
                                               rel: 'noopener noreferrer',
                                           }
                                         : {};
                                     return (
-                                        <Tag {...linkProps} className="news-card" key={item.id}>
-                                            {item.image && (
-                                                <div className="news-card-image">
+                                        <FeaturedTag
+                                            {...featuredLinkProps}
+                                            className="news-featured-card"
+                                        >
+                                            {featuredNewsItem.image && (
+                                                <div className="news-featured-image">
                                                     <img
-                                                        src={item.image}
-                                                        alt={item.title}
+                                                        src={featuredNewsItem.image}
+                                                        alt={featuredNewsItem.title}
                                                         loading="lazy"
                                                         onError={(e) => {
                                                             e.target.closest(
-                                                                '.news-card-image'
+                                                                '.news-featured-image'
                                                             ).style.display = 'none';
                                                         }}
                                                     />
-                                                    <div className="news-card-image-overlay" />
-                                                    <span className="news-card-tag">
-                                                        {item.tag}
-                                                    </span>
                                                 </div>
                                             )}
-                                            <div className="news-card-inner">
-                                                {!item.image && (
-                                                    <span className="news-card-tag">
-                                                        {item.tag}
-                                                    </span>
-                                                )}
-                                                {item.source && (
-                                                    <div className="news-card-source">
-                                                        {item.source}
-                                                    </div>
-                                                )}
-                                                <div className="news-card-date">{item.date}</div>
-                                                <h3 className="news-card-title">{item.title}</h3>
-                                                <p className="news-card-desc">{item.desc}</p>
-                                                {item.url && (
-                                                    <div className="news-card-arrow">
+                                            <div className="news-featured-body">
+                                                <h3 className="news-featured-title">
+                                                    {featuredNewsItem.title}
+                                                </h3>
+                                                <div className="news-featured-meta">
+                                                    {featuredNewsItem.source && (
+                                                        <span>{featuredNewsItem.source}</span>
+                                                    )}
+                                                    {featuredNewsItem.date && (
+                                                        <span>{featuredNewsItem.date}</span>
+                                                    )}
+                                                    {featuredNewsItem.tag && (
+                                                        <span className="news-featured-tag">
+                                                            {featuredNewsItem.tag}
+                                                        </span>
+                                                    )}
+                                                </div>
+                                                <p className="news-featured-desc">
+                                                    {featuredNewsItem.desc}
+                                                </p>
+                                                {featuredNewsItem.url && (
+                                                    <div className="news-featured-arrow">
                                                         <ArrowRightOutlined /> {t('news.readMore')}
                                                     </div>
                                                 )}
                                             </div>
-                                        </Tag>
+                                        </FeaturedTag>
                                     );
-                                })}
-                            </div>
+                                })()}
+
+                                {listNewsItems.length > 0 && (
+                                    <div className="news-list">
+                                        {listNewsItems.map((item) => {
+                                            const Tag = item.url ? 'a' : 'div';
+                                            const linkProps = item.url
+                                                ? {
+                                                      href: item.url,
+                                                      target: '_blank',
+                                                      rel: 'noopener noreferrer',
+                                                  }
+                                                : {};
+                                            return (
+                                                <Tag
+                                                    {...linkProps}
+                                                    className="news-list-item"
+                                                    key={item.id}
+                                                >
+                                                    <div className="news-list-thumb">
+                                                        {item.image ? (
+                                                            <img
+                                                                src={item.image}
+                                                                alt=""
+                                                                loading="lazy"
+                                                                onError={(e) => {
+                                                                    e.target.closest(
+                                                                        '.news-list-thumb'
+                                                                    ).classList.add(
+                                                                        'news-list-thumb--empty'
+                                                                    );
+                                                                    e.target.remove();
+                                                                }}
+                                                            />
+                                                        ) : (
+                                                            <FileTextOutlined />
+                                                        )}
+                                                    </div>
+                                                    <div className="news-list-body">
+                                                        <div className="news-list-date">
+                                                            {item.date}
+                                                        </div>
+                                                        <h4 className="news-list-title">
+                                                            {item.title}
+                                                        </h4>
+                                                    </div>
+                                                </Tag>
+                                            );
+                                        })}
+                                    </div>
+                                )}
+                            </>
                         )}
-                        </div>
                     </div>
                 </div>
             </section>
@@ -755,6 +927,54 @@ const HomePage = () => {
                     </div>
                 </div>
             </section>
+
+            {/* ===== PHOTO ALBUM LIGHTBOX ===== */}
+            {galleryIndex !== null && (
+                <div
+                    className="home-gallery-lightbox"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-label={t('gallery.title')}
+                    onClick={() => setGalleryIndex(null)}
+                >
+                    <button
+                        type="button"
+                        className="home-gallery-lightbox-close"
+                        aria-label={t('gallery.closeLabel')}
+                        onClick={() => setGalleryIndex(null)}
+                    >
+                        <CloseOutlined />
+                    </button>
+                    <button
+                        type="button"
+                        className="home-gallery-lightbox-arrow home-gallery-lightbox-arrow--prev"
+                        aria-label={t('categoryShowcase.prev')}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            setGalleryIndex((i) => (i - 1 + GALLERY_IMAGES.length) % GALLERY_IMAGES.length);
+                        }}
+                    >
+                        <LeftOutlined />
+                    </button>
+                    <img
+                        src={GALLERY_IMAGES[galleryIndex]}
+                        alt=""
+                        className="home-gallery-lightbox-img"
+                        onClick={(e) => e.stopPropagation()}
+                    />
+                    <button
+                        type="button"
+                        className="home-gallery-lightbox-arrow home-gallery-lightbox-arrow--next"
+                        aria-label={t('categoryShowcase.next')}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            setGalleryIndex((i) => (i + 1) % GALLERY_IMAGES.length);
+                        }}
+                    >
+                        <RightOutlined />
+                    </button>
+                </div>
+            )}
         </div>
     );
 };

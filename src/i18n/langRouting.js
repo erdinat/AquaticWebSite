@@ -36,7 +36,11 @@ export function getDomainDefaultLang() {
  * that must never affect aquatic.com.tr. */
 export function isKzDomain() {
     if (typeof window === 'undefined') return false;
-    return window.location.hostname.endsWith('.kz');
+    if (window.location.hostname.endsWith('.kz')) return true;
+    // Dev-only escape hatch: localhost never matches the .kz hostname check
+    // above, so there's no way to preview KZ-only design/content locally
+    // without this — visit e.g. http://localhost:3000/?kz=1
+    return new URLSearchParams(window.location.search).get('kz') === '1';
 }
 
 /** Split a pathname into { lang, barePath }. barePath never carries a lang prefix. */

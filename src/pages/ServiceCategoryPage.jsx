@@ -36,8 +36,8 @@ const ServiceCategoryPage = () => {
     return (
         <div className="service-category-page">
             <PageSEO
-                titleKey={`services.${group.key}.title`}
-                descriptionKey={`services.${group.key}.desc`}
+                titleKey={group.titleKey || `services.${group.key}.title`}
+                descriptionKey={group.descKey || `services.${group.key}.desc`}
                 path={`/services/category/${group.key}`}
             />
 
@@ -47,8 +47,12 @@ const ServiceCategoryPage = () => {
                     <div className="scp-banner-left">
                         <span className="scp-banner-icon">{group.icon}</span>
                         <div className="scp-banner-text">
-                            <h1 className="scp-banner-title">{t(`services.${group.key}.title`)}</h1>
-                            <p className="scp-banner-desc">{t(`services.${group.key}.desc`)}</p>
+                            <h1 className="scp-banner-title">
+                                {t(group.titleKey || `services.${group.key}.title`)}
+                            </h1>
+                            <p className="scp-banner-desc">
+                                {t(group.descKey || `services.${group.key}.desc`)}
+                            </p>
                         </div>
                     </div>
                     <button className="scp-banner-cta" onClick={() => navigate('/contact')}>

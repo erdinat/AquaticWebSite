@@ -599,6 +599,10 @@
             "boruDonatim": {
                 "title": "Kompleks Boru Donatım Faaliyetleri",
                 "desc": "Endüstriyel tesis ve kompleks boru hatlarının imalatı, montajı ve donatımı."
+            },
+            "savunmaSanayiSualti": {
+                "title": "Savunma Sanayi & Sualtı Teknolojileri",
+                "desc": "Denizaltı, sonar ve torpido sistemlerinden ROV/AUV altyapısına — savunma sanayii ve sualtı teknolojileri için özel kablo, konnektör ve kamera çözümleri."
             }
         }
     },
@@ -943,7 +947,8 @@
             "sualtiTeknolojileri": "Sualtı Teknolojileri",
             "makina": "Aquatic Makina",
             "endustri": "Aquatic Endüstri",
-            "elektronikOtomasyon": "Elektronik ve Otomasyon"
+            "elektronikOtomasyon": "Elektronik ve Otomasyon",
+            "savunmaSanayiSualti": "Savunma Sanayi & Sualtı Teknolojileri"
         }
     },
     "popularProducts": {
@@ -1026,7 +1031,9 @@
     "categoryShowcase": {
         "sectionLabel": "Kategori Vitrini",
         "title": "Hizmetlerimiz ve Ürünlerimiz",
+        "kzTitle": "Endüstri ve Makina Çözümlerimiz",
         "subtitle": "Denizcilikten savunma sanayiine, sualtı teknolojilerinden endüstriyel üretime — her alanda öne çıkan çözümlerimiz.",
+        "kzSubtitle": "Kompleks endüstriyel tesislerden özel makina imalatına — güçlü mühendislik çözümlerimiz.",
         "ctaLabel": "TIKLA!",
         "quoteButton": "TEKLİF AL",
         "prev": "Önceki",
@@ -1073,5 +1080,12 @@
                 "body": "Gizlilik politikamızla ilgili sorularınız için bilgi@aquatic.com.tr veya +90 262 412 24 42 üzerinden bize ulaşabilirsiniz."
             }
         ]
+    },
+    "gallery": {
+        "sectionLabel": "Foto Albüm",
+        "title": "Fotoğraf Albümümüz",
+        "subtitle": "Ürünlerimiz, çözümlerimiz ve saha çalışmalarımızdan kareler.",
+        "openLabel": "Fotoğraf {{index}}'i büyüt",
+        "closeLabel": "Kapat"
     }
 }

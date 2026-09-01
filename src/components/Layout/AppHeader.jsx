@@ -26,7 +26,6 @@ import {
     RocketOutlined,
     CompassOutlined,
     ThunderboltOutlined,
-    EllipsisOutlined,
 } from '@ant-design/icons';
 import AquaticLogo from '../../assets/images/logo.webp';
 
@@ -114,15 +113,24 @@ const AppHeader = () => {
         },
     }));
 
-    /* Services dropdown — aquatic.kz shows only Makina + Endüstri (see
-       serviceGroups.jsx's getActiveServiceGroups for the full .kz reshuffle;
-       this mirrors the same 2-category scope so the nav stays consistent
-       with what /services and the homepage actually show there). */
+    /* Services dropdown — aquatic.kz shows the reshuffled 4-category list
+       (see serviceGroups.jsx's getActiveServiceGroups), everywhere else the
+       full original 6 categories. */
     const servicesDropdownItems = (
         isKzDomain()
             ? [
+                  {
+                      key: 'savunmaSanayiSualti',
+                      icon: <RocketOutlined />,
+                      label: t('dropdown.services.savunmaSanayiSualti'),
+                  },
                   { key: 'makina', icon: <ToolOutlined />, label: t('dropdown.services.makina') },
                   { key: 'endustri', icon: <BankOutlined />, label: t('dropdown.services.endustri') },
+                  {
+                      key: 'elektronikOtomasyon',
+                      icon: <ThunderboltOutlined />,
+                      label: t('dropdown.services.elektronikOtomasyon'),
+                  },
               ]
             : [
                   {
@@ -156,29 +164,9 @@ const AppHeader = () => {
         },
     }));
 
-    /* "More" dropdown — secondary pages tucked behind a single nav entry
-       (contact, careers, blackbox) so the primary nav stays to 4 items */
-    const moreDropdownItems = [
-        { key: 'more-contact', path: '/contact', icon: <MailOutlined />, label: t('nav.contact') },
-        { key: 'more-careers', path: '/careers', icon: <TeamOutlined />, label: t('nav.careers') },
-        {
-            key: 'more-blackbox',
-            path: '/blackbox',
-            icon: <SafetyCertificateOutlined />,
-            label: t('nav.blackbox'),
-        },
-    ].map((item) => ({
-        ...item,
-        onClick: ({ domEvent }) => {
-            domEvent.stopPropagation();
-            navigate(localizePath(currentLang, item.path));
-        },
-    }));
-
-    /* Navigation items — only Home/Corporate/Services/Products show directly;
-       Contact/Careers/BlackBox live under the "More" dropdown (dropdownOnly:
-       true means the parent item itself isn't a real page, so clicking it
-       shouldn't navigate — it only opens the flyout). */
+    /* Navigation items — Contact and Black Box show directly again (no longer
+       tucked under a "More" dropdown). Careers has no nav entry here — it's
+       reachable via the footer's Quick Links (see AppFooter.jsx). */
     const navItems = [
         { key: '/', label: t('nav.home'), icon: <HomeOutlined />, dropdown: homeDropdownItems },
         {
@@ -194,13 +182,8 @@ const AppHeader = () => {
             dropdown: servicesDropdownItems,
         },
         { key: '/products', label: t('nav.products'), icon: <ShoppingOutlined /> },
-        {
-            key: 'more',
-            label: t('nav.more'),
-            icon: <EllipsisOutlined />,
-            dropdown: moreDropdownItems,
-            dropdownOnly: true,
-        },
+        { key: '/contact', label: t('nav.contact'), icon: <MailOutlined /> },
+        { key: '/blackbox', label: t('nav.blackbox'), icon: <SafetyCertificateOutlined /> },
     ];
 
     /* Language dropdown items */
@@ -414,9 +397,28 @@ const AppHeader = () => {
                 </div>
             </Drawer>
 
-            {/* Responsive CSS for header */}
+            {/* Responsive CSS for header.
+                Breakpoint raised from 768px to 1300px (1 Eylül 2026): with
+                6 direct nav items (İletişim + Kara Kutu moved back out of the
+                old "Diğer" dropdown) + the language switcher, antd's
+                horizontal <Menu> was silently collapsing the last couple of
+                items into its own hidden "..." overflow submenu on anything
+                narrower than roughly ~1300px — items weren't actually gone,
+                just swept into an easy-to-miss indicator. Switching to the
+                mobile drawer earlier avoids that half-broken "desktop" zone
+                entirely, at the cost of the drawer appearing on some tablet
+                widths that used to still get the horizontal menu. */}
             <style>{`
-        @media (max-width: 768px) {
+        /* Tighter item spacing buys extra safety margin against the same
+           antd horizontal-Menu overflow-collapse issue, especially for
+           languages whose nav labels run longer than Turkish (RU/KK). */
+        .desktop-nav .ant-menu-item,
+        .desktop-nav .ant-menu-submenu-title {
+          padding-left: 14px !important;
+          padding-right: 14px !important;
+        }
+
+        @media (max-width: 1300px) {
           .desktop-nav {
             display: none !important;
           }

@@ -599,6 +599,10 @@
             "boruDonatim": {
                 "title": "工业综合体管道装配业务",
                 "desc": "为工业设施和综合体提供管道的制造、安装与装配。"
+            },
+            "savunmaSanayiSualti": {
+                "title": "国防工业与水下技术",
+                "desc": "从潜艇、声纳和鱼雷系统到ROV/AUV基础设施——为国防工业和水下技术提供专用电缆、连接器和摄像头解决方案。"
             }
         }
     },
@@ -943,7 +947,8 @@
             "sualtiTeknolojileri": "水下技术",
             "makina": "Aquatic 机械",
             "endustri": "Aquatic 工业",
-            "elektronikOtomasyon": "电子与自动化"
+            "elektronikOtomasyon": "电子与自动化",
+            "savunmaSanayiSualti": "国防与水下技术"
         }
     },
     "popularProducts": {
@@ -1026,7 +1031,9 @@
     "categoryShowcase": {
         "sectionLabel": "分类展示",
         "title": "我们的服务与产品",
+        "kzTitle": "我们的工业与机械解决方案",
         "subtitle": "从航运到国防工业，从水下技术到工业制造——每个领域的优势解决方案。",
+        "kzSubtitle": "从复杂的工业设施到定制机械制造——强大的工程解决方案。",
         "ctaLabel": "点击查看",
         "quoteButton": "获取报价",
         "prev": "上一个",
@@ -1073,5 +1080,12 @@
                 "body": "如对本隐私政策有任何疑问，请通过 bilgi@aquatic.com.tr 或 +90 262 412 24 42 与我们联系。"
             }
         ]
+    },
+    "gallery": {
+        "sectionLabel": "相册",
+        "title": "我们的相册",
+        "subtitle": "来自我们产品、解决方案和现场工作的精彩瞬间。",
+        "openLabel": "放大照片 {{index}}",
+        "closeLabel": "关闭"
     }
 }

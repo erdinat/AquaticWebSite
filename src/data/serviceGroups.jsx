@@ -116,11 +116,11 @@ export const SERVICE_GROUPS = [
 export const VALID_SERVICE_KEYS = SERVICE_GROUPS.map((g) => g.key);
 
 /* ── aquatic.kz-only category reshuffle ──────────────────────────────────
-   Client request (30 Ağustos 2026): for Kazakhstan meetings, aquatic.kz's
-   homepage/services should show only 2 categories — Aquatic Endüstri and
-   Aquatic Makina — with Denizcilik's 7 items absorbed into Endüstri, and
-   Endüstri's 4 equipment-manufacturing items (konveyorler, trafoEkipmanlari,
-   bobinSarimMakinalari, bobinSarimManderelleri) moved to the front of Makina.
+   Client request (30 Ağu – 1 Eylül 2026): for Kazakhstan meetings, aquatic.kz
+   should show — on both the homepage AND /services + its subpages —
+   Denizcilik's 7 items absorbed into Endüstri, Endüstri's 4 equipment-
+   manufacturing items moved to the front of Makina, Savunma Sanayi merged
+   with Sualtı Teknolojileri into one category, and boru-donatim relabeled.
    aquatic.com.tr must render byte-identical to before — this only ever
    activates behind isKzDomain(), never touches SERVICE_GROUPS itself. */
 const KZ_MAKINA_FRONT_KEYS = [
@@ -140,10 +140,15 @@ export const KZ_ITEM_LABEL_OVERRIDES = {
     },
 };
 
+const KZ_MERGED_DEFENCE_KEY = 'savunmaSanayiSualti';
+
 function buildKzServiceGroups() {
     const denizcilik = SERVICE_GROUPS.find((g) => g.key === 'denizcilik');
     const makina = SERVICE_GROUPS.find((g) => g.key === 'makina');
     const endustri = SERVICE_GROUPS.find((g) => g.key === 'endustri');
+    const savunmaSanayi = SERVICE_GROUPS.find((g) => g.key === 'savunmaSanayi');
+    const sualtiTeknolojileri = SERVICE_GROUPS.find((g) => g.key === 'sualtiTeknolojileri');
+    const elektronikOtomasyon = SERVICE_GROUPS.find((g) => g.key === 'elektronikOtomasyon');
 
     const endustriKept = endustri.items.filter((i) => !KZ_MAKINA_FRONT_KEYS.includes(i.key));
     const endustriItemsMovedToMakina = endustri.items
@@ -160,14 +165,30 @@ function buildKzServiceGroups() {
         return moved;
     });
 
+    const mergedDefence = {
+        key: KZ_MERGED_DEFENCE_KEY,
+        icon: savunmaSanayi.icon,
+        color: savunmaSanayi.color,
+        gradient: savunmaSanayi.gradient,
+        image: savunmaSanayi.image,
+        titleKey: 'services.kzOverrides.savunmaSanayiSualti.title',
+        descKey: 'services.kzOverrides.savunmaSanayiSualti.desc',
+        items: [
+            ...savunmaSanayi.items.map((i) => ({ ...i, i18nCategoryKey: 'savunmaSanayi' })),
+            ...sualtiTeknolojileri.items.map((i) => ({ ...i, i18nCategoryKey: 'sualtiTeknolojileri' })),
+        ],
+    };
+
     return [
-        { ...endustri, items: [...endustriKept, ...denizcilikItemsMovedToEndustri] },
+        mergedDefence,
         { ...makina, items: [...endustriItemsMovedToMakina, ...makina.items] },
+        { ...endustri, items: [...endustriKept, ...denizcilikItemsMovedToEndustri] },
+        elektronikOtomasyon,
     ];
 }
 
 /** The category list to actually render — identical to SERVICE_GROUPS
- * everywhere except aquatic.kz, where it's the reshuffled 2-category version
+ * everywhere except aquatic.kz, where it's the reshuffled 4-category version
  * above. Always call this instead of importing SERVICE_GROUPS directly in
  * page components, so the .kz behavior stays centralized in one place. */
 export function getActiveServiceGroups() {
