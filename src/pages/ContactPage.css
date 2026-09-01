@@ -133,6 +133,15 @@
     line-height: 1.45;
 }
 
+.contact-info-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.contact-info-link:hover {
+    text-decoration: underline;
+}
+
 /* ===== RIGHT FORM PANEL ===== */
 .contact-form-panel {
     background: #ffffff;

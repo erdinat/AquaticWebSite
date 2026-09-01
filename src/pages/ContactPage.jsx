@@ -12,10 +12,11 @@ import {
     MailOutlined,
     LoadingOutlined,
     BuildOutlined,
-    HomeOutlined,
-    GlobalOutlined,
+    ExperimentOutlined,
+    ToolOutlined,
     ClockCircleOutlined,
 } from '@ant-design/icons';
+import { isKzDomain } from '../i18n/langRouting';
 import imgHero from '../assets/images/iletisim.webp';
 import './ContactPage.css';
 
@@ -60,35 +61,35 @@ const ContactPage = () => {
         }
     };
 
+    /* Office cards show name+address only — phone numbers aren't tied to a
+       specific office, they're shown once as a shared block in the sidebar
+       (see contact.telFax/contact.mobile below). */
     const locations = [
         {
-            key: 'kocaeli',
+            key: 'headOffice',
             icon: <BuildOutlined />,
             color: 'var(--color-primary)',
-            title: t('contact.kocaeli.title'),
-            address: t('contact.kocaeli.address'),
-            phone: t('contact.kocaeli.phone'),
-            email: t('contact.kocaeli.email'),
+            title: t('contact.headOffice.title'),
+            address: t('contact.headOffice.address'),
         },
         {
-            key: 'istanbul',
-            icon: <HomeOutlined />,
+            key: 'rdOffice',
+            icon: <ExperimentOutlined />,
             color: 'var(--color-primary-dark)',
-            title: t('contact.istanbul.title'),
-            address: t('contact.istanbul.address'),
-            phone: t('contact.istanbul.phone'),
-            email: t('contact.istanbul.email'),
+            title: t('contact.rdOffice.title'),
+            address: t('contact.rdOffice.address'),
         },
         {
-            key: 'almaty',
-            icon: <GlobalOutlined />,
+            key: 'factory',
+            icon: <ToolOutlined />,
             color: 'var(--color-accent-dark)',
-            title: t('contact.almaty.title'),
-            address: t('contact.almaty.address'),
-            phone: t('contact.almaty.phone'),
-            email: t('contact.almaty.email'),
+            title: t('contact.factory.title'),
+            address: t('contact.factory.address'),
         },
     ];
+
+    /* aquatic.kz shows the Kazakhstan email instead of the TR one. */
+    const contactEmail = isKzDomain() ? 'bilgi@aquatic.com.kz' : 'bilgi@aquatic.com.tr';
 
     return (
         <div className="contact-page">
@@ -113,24 +114,58 @@ const ContactPage = () => {
                                 <p className="contact-sidebar-desc">{t('contact.subtitle')}</p>
 
                                 <div className="contact-info-list">
-                                    <a
-                                        href={`tel:${t('contact.kocaeli.phone')}`}
-                                        className="contact-info-item"
-                                    >
+                                    <div className="contact-info-item">
                                         <div className="contact-info-icon">
                                             <PhoneOutlined />
                                         </div>
                                         <div>
                                             <div className="contact-info-label">
-                                                {t('contact.phone')}
+                                                {t('contact.telFaxLabel')}
                                             </div>
                                             <div className="contact-info-value">
-                                                {t('contact.kocaeli.phone')}
+                                                {t('contact.telFax', {
+                                                    returnObjects: true,
+                                                }).map((num, i) => (
+                                                    <span key={num}>
+                                                        {i > 0 && ' / '}
+                                                        <a
+                                                            href={`tel:${num.replace(/\s/g, '')}`}
+                                                            className="contact-info-link"
+                                                        >
+                                                            {num}
+                                                        </a>
+                                                    </span>
+                                                ))}
                                             </div>
                                         </div>
-                                    </a>
+                                    </div>
+                                    <div className="contact-info-item">
+                                        <div className="contact-info-icon">
+                                            <PhoneOutlined />
+                                        </div>
+                                        <div>
+                                            <div className="contact-info-label">
+                                                {t('contact.mobileLabel')}
+                                            </div>
+                                            <div className="contact-info-value">
+                                                {t('contact.mobile', {
+                                                    returnObjects: true,
+                                                }).map((num, i) => (
+                                                    <span key={num}>
+                                                        {i > 0 && ' / '}
+                                                        <a
+                                                            href={`tel:${num.replace(/\s/g, '')}`}
+                                                            className="contact-info-link"
+                                                        >
+                                                            {num}
+                                                        </a>
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    </div>
                                     <a
-                                        href={`mailto:${t('contact.kocaeli.email')}`}
+                                        href={`mailto:${contactEmail}`}
                                         className="contact-info-item"
                                     >
                                         <div className="contact-info-icon">
@@ -141,7 +176,7 @@ const ContactPage = () => {
                                                 {t('contact.email')}
                                             </div>
                                             <div className="contact-info-value">
-                                                {t('contact.kocaeli.email')}
+                                                {contactEmail}
                                             </div>
                                         </div>
                                     </a>
@@ -154,7 +189,7 @@ const ContactPage = () => {
                                                 {t('contact.address')}
                                             </div>
                                             <div className="contact-info-value">
-                                                {t('contact.kocaeli.address')}
+                                                {t('contact.headOffice.address')}
                                             </div>
                                         </div>
                                     </div>
@@ -309,18 +344,6 @@ const ContactPage = () => {
                                         <div className="office-detail">
                                             <EnvironmentOutlined className="office-detail-icon" />
                                             <span>{loc.address}</span>
-                                        </div>
-                                        <div className="office-detail">
-                                            <PhoneOutlined className="office-detail-icon" />
-                                            <a href={`tel:${loc.phone}`} className="office-link">
-                                                {loc.phone}
-                                            </a>
-                                        </div>
-                                        <div className="office-detail">
-                                            <MailOutlined className="office-detail-icon" />
-                                            <a href={`mailto:${loc.email}`} className="office-link">
-                                                {loc.email}
-                                            </a>
                                         </div>
                                     </div>
                                 </div>

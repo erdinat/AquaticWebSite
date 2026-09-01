@@ -850,24 +850,28 @@
         "hours": "Working Hours",
         "hoursValue": "Mon – Fri, 09:00 – 18:00",
         "locationsTitle": "Our Locations",
-        "kocaeli": {
-            "title": "Kocaeli Office",
-            "address": "Şehitler Mah. Barbaros Hayrettin Cad. No:90/A Gölcük/Kocaeli/Turkey",
-            "phone": "+90 262 412 24 42",
-            "email": "bilgi@aquatic.com.tr"
+        "headOffice": {
+            "title": "Head Office",
+            "address": "Merkez Mah. 39. Sok. Donanma İş Merkezi Blok No:2/39 Gölcük/Kocaeli"
         },
-        "istanbul": {
-            "title": "Istanbul Office",
-            "address": "Istanbul, Turkey",
-            "phone": "+90 542 308 41 42",
-            "email": "bilgi@aquatic.com.tr"
+        "rdOffice": {
+            "title": "R&D Office",
+            "address": "Barbaros Hayrettin Cad. No:90/A Gölcük/Kocaeli"
         },
-        "almaty": {
-            "title": "Almaty Office (Kazakhstan)",
-            "address": "Almaty city, Medeu district, Samal-2 neighborhood",
-            "phone": "+7 XXX XXX XX XX",
-            "email": "bilgi@aquatic.com.tr"
-        }
+        "factory": {
+            "title": "Factory",
+            "address": "Karadenizliler Mah. İlim Sok. No:15/1 Başiskele/Kocaeli"
+        },
+        "telFaxLabel": "Tel & Fax",
+        "telFax": [
+            "+90 262 335 17 72",
+            "+90 262 412 24 42"
+        ],
+        "mobileLabel": "Mobile",
+        "mobile": [
+            "+90 533 558 12 83",
+            "+90 542 308 41 42"
+        ]
     },
     "whatsapp": {
         "message": "Hello, I would like to get information about Aquatic Elektronik.",
@@ -880,7 +884,7 @@
         "quickLinks": "Quick Links",
         "contactInfo": "Contact Information",
         "rights": "All rights reserved.",
-        "address": "Şehitler Mah. Barbaros Hayrettin Cad. No:90/A Gölcük/Kocaeli",
+        "address": "Merkez Mah. 39. Sok. Donanma İş Merkezi Blok No:2/39 Gölcük/Kocaeli",
         "privacyPolicy": "Privacy Policy",
         "cookiePreferences": "Cookie Preferences"
     },
@@ -1057,7 +1061,7 @@
         "sections": [
             {
                 "title": "1. Data Controller",
-                "body": "This website is operated by Aquatic Elektronik Makina Otomasyon Sav. San. Tic. Ltd. Şti. (\"Aquatic\"). Address: Şehitler Mah. Barbaros Hayrettin Cad. No:90/A, Gölcük/Kocaeli, Türkiye. Email: bilgi@aquatic.com.tr. Phone: +90 262 412 24 42. Your personal data is processed by Aquatic as the data controller under Turkish Law No. 6698 on the Protection of Personal Data (\"KVKK\")."
+                "body": "This website is operated by Aquatic Elektronik Makina Otomasyon Sav. San. Tic. Ltd. Şti. (\"Aquatic\"). Address: Merkez Mah. 39. Sok. Donanma İş Merkezi Blok No:2/39, Gölcük/Kocaeli, Türkiye. Email: bilgi@aquatic.com.tr. Phone: +90 262 412 24 42. Your personal data is processed by Aquatic as the data controller under Turkish Law No. 6698 on the Protection of Personal Data (\"KVKK\")."
             },
             {
                 "title": "2. What Data Do We Collect?",

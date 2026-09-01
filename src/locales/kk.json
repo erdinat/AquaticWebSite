@@ -850,24 +850,28 @@
         "required": "Бұл өріс міндетті",
         "emailInvalid": "Жарамсыз электрондық пошта",
         "locationsTitle": "Біздің Орналасқан Жерлеріміз",
-        "kocaeli": {
-            "title": "Коджаэли Кеңсесі",
-            "address": "Şehitler Mah. Barbaros Hayrettin Cad. No:90/A Гельджюк/Коджаэли/Түркия",
-            "phone": "+90 262 412 24 42",
-            "email": "bilgi@aquatic.com.tr"
+        "headOffice": {
+            "title": "Бас кеңсе",
+            "address": "Merkez Mah. 39. Sok. Donanma İş Merkezi Blok No:2/39 Gölcük/Kocaeli"
         },
-        "istanbul": {
-            "title": "Стамбұл Кеңсесі",
-            "address": "Стамбұл, Түркия",
-            "phone": "+90 542 308 41 42",
-            "email": "bilgi@aquatic.com.tr"
+        "rdOffice": {
+            "title": "Ғылыми-зерттеу кеңсесі",
+            "address": "Barbaros Hayrettin Cad. No:90/A Gölcük/Kocaeli"
         },
-        "almaty": {
-            "title": "Алматы кеңсесі (Қазақстан)",
-            "address": "Алматы қаласы, Медеу ауданы, Самал-2 ықшамауданы",
-            "phone": "+7 XXX XXX XX XX",
-            "email": "bilgi@aquatic.com.tr"
-        }
+        "factory": {
+            "title": "Зауыт",
+            "address": "Karadenizliler Mah. İlim Sok. No:15/1 Başiskele/Kocaeli"
+        },
+        "telFaxLabel": "Тел. және факс",
+        "telFax": [
+            "+90 262 335 17 72",
+            "+90 262 412 24 42"
+        ],
+        "mobileLabel": "Ұялы телефон",
+        "mobile": [
+            "+90 533 558 12 83",
+            "+90 542 308 41 42"
+        ]
     },
     "whatsapp": {
         "message": "Сәлеметсіз бе, Aquatic Elektronik туралы ақпарат алғым келеді.",
@@ -880,7 +884,7 @@
         "quickLinks": "Жылдам Сілтемелер",
         "contactInfo": "Байланыс Ақпараты",
         "rights": "Барлық құқықтар қорғалған.",
-        "address": "Şehitler Mah. Barbaros Hayrettin Cad. No:90/A Гельджюк/Коджаэли",
+        "address": "Merkez Mah. 39. Sok. Donanma İş Merkezi Blok No:2/39 Gölcük/Kocaeli",
         "privacyPolicy": "Құпиялылық саясаты",
         "cookiePreferences": "Cookie параметрлері"
     },
@@ -1057,7 +1061,7 @@
         "sections": [
             {
                 "title": "1. Дерек иесі",
-                "body": "Бұл веб-сайтты Aquatic Elektronik Makina Otomasyon Sav. San. Tic. Ltd. Şti. («Aquatic») басқарады. Мекенжай: Şehitler Mah. Barbaros Hayrettin Cad. No:90/A, Gölcük/Kocaeli, Түркия. Электрондық пошта: bilgi@aquatic.com.tr. Телефон: +90 262 412 24 42. Жеке деректеріңіз Түркияның 6698 санды Жеке деректерді қорғау туралы заңына («KVKK») сәйкес Aquatic компаниясы тарапынан дерек иесі ретінде өңделеді."
+                "body": "Бұл веб-сайтты Aquatic Elektronik Makina Otomasyon Sav. San. Tic. Ltd. Şti. («Aquatic») басқарады. Мекенжай: Merkez Mah. 39. Sok. Donanma İş Merkezi Blok No:2/39, Gölcük/Kocaeli, Түркия. Электрондық пошта: bilgi@aquatic.com.tr. Телефон: +90 262 412 24 42. Жеке деректеріңіз Түркияның 6698 санды Жеке деректерді қорғау туралы заңына («KVKK») сәйкес Aquatic компаниясы тарапынан дерек иесі ретінде өңделеді."
             },
             {
                 "title": "2. Қандай деректерді жинаймыз?",

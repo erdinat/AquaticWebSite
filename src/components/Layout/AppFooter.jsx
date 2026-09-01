@@ -3,10 +3,12 @@ import { useTranslation } from 'react-i18next';
 import LocalizedLink from '../common/LocalizedLink';
 import { Row, Col, Space, Divider } from 'antd';
 import { EnvironmentOutlined, PhoneOutlined, MailOutlined, RightOutlined } from '@ant-design/icons';
+import { isKzDomain } from '../../i18n/langRouting';
 import AquaticLogo from '../../assets/images/logo.webp';
 
 const AppFooter = () => {
     const { t } = useTranslation();
+    const contactEmail = isKzDomain() ? 'bilgi@aquatic.com.kz' : 'bilgi@aquatic.com.tr';
 
     const quickLinks = [
         { label: t('nav.home'), path: '/' },
@@ -124,7 +126,7 @@ const AppFooter = () => {
                                 }}
                             >
                                 <PhoneOutlined style={{ color: 'var(--color-accent-light)' }} />
-                                <span>+90 262 412 24 42</span>
+                                <span>+90 262 335 17 72 / +90 262 412 24 42</span>
                             </div>
                             <div
                                 style={{
@@ -136,7 +138,7 @@ const AppFooter = () => {
                                 }}
                             >
                                 <MailOutlined style={{ color: 'var(--color-accent-light)' }} />
-                                <span>bilgi@aquatic.com.tr</span>
+                                <span>{contactEmail}</span>
                             </div>
                         </Space>
                     </Col>

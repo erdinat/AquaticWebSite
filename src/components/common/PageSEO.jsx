@@ -52,7 +52,7 @@ const PageSEO = ({
         telephone: '+90 262 412 24 42',
         address: {
             '@type': 'PostalAddress',
-            streetAddress: 'Şehitler Mah. Barbaros Hayrettin Cad. No:90/A',
+            streetAddress: 'Merkez Mah. 39. Sok. Donanma İş Merkezi Blok No:2/39',
             addressLocality: 'Gölcük/Kocaeli',
             addressCountry: 'TR',
         },
