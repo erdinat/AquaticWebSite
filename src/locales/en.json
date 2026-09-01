@@ -32,6 +32,10 @@
             "makina": {
                 "slogan": "Precision Manufacturing in Industry",
                 "subtitle": "End-to-end engineering in welded fabrication, CNC machining, and custom machine production."
+            },
+            "savunmaKz": {
+                "slogan": "Precision in Underwater Technology",
+                "subtitle": "Special-type connector and cable solutions for submarines and underwater platforms."
             }
         }
     },
@@ -601,8 +605,8 @@
                 "desc": "Fabrication, installation, and fitting of pipelines for industrial facilities and complexes."
             },
             "savunmaSanayiSualti": {
-                "title": "Defense Industry & Underwater Technologies",
-                "desc": "From submarine, sonar, and torpedo systems to ROV/AUV infrastructure — specialized cable, connector, and camera solutions for the defense industry and underwater technologies."
+                "title": "Underwater Technologies",
+                "desc": "From submarine, sonar, and torpedo systems to ROV/AUV infrastructure — specialized cable, connector, and camera solutions for underwater technologies."
             }
         }
     },
@@ -1025,7 +1029,7 @@
             "makina": "Aquatic Machinery",
             "endustri": "Aquatic Industry",
             "elektronikOtomasyon": "Electronics and Automation",
-            "savunmaSanayiSualti": "Defense & Underwater Tech"
+            "savunmaSanayiSualti": "Underwater Technologies"
         }
     },
     "categoryShowcase": {

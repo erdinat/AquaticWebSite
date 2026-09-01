@@ -124,12 +124,19 @@ const HomePage = () => {
         return () => clearInterval(id);
     }, []);
     const activeSlideKey = HERO_SLIDES[heroSlide].i18nKey;
+    // aquatic.kz avoids the literal "Savunma Sanayi" (Defense Industry)
+    // wording in the hero rotation — same background photo, different
+    // slogan/subtitle text (see CLAUDE.md).
+    const heroSlideI18nKey =
+        activeSlideKey === 'savunma' && isKzDomain() ? 'savunmaKz' : activeSlideKey;
     const heroSlogan =
-        activeSlideKey === 'default' ? t('hero.slogan') : t(`hero.slides.${activeSlideKey}.slogan`);
+        heroSlideI18nKey === 'default'
+            ? t('hero.slogan')
+            : t(`hero.slides.${heroSlideI18nKey}.slogan`);
     const heroSubtitle =
-        activeSlideKey === 'default'
+        heroSlideI18nKey === 'default'
             ? t('hero.subtitle')
-            : t(`hero.slides.${activeSlideKey}.subtitle`);
+            : t(`hero.slides.${heroSlideI18nKey}.subtitle`);
 
     /* Category Showcase — combines services + products in one row per
        category. Which content a row shows depends on what actually has real

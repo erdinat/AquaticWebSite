@@ -32,6 +32,10 @@
             "makina": {
                 "slogan": "工业领域的精密制造",
                 "subtitle": "焊接加工、数控加工与专用机械制造的全流程工程服务。"
+            },
+            "savunmaKz": {
+                "slogan": "水下技术中的精密之作",
+                "subtitle": "为潜艇与水下平台提供专用连接器与电缆解决方案。"
             }
         }
     },
@@ -601,8 +605,8 @@
                 "desc": "为工业设施和综合体提供管道的制造、安装与装配。"
             },
             "savunmaSanayiSualti": {
-                "title": "国防工业与水下技术",
-                "desc": "从潜艇、声纳和鱼雷系统到ROV/AUV基础设施——为国防工业和水下技术提供专用电缆、连接器和摄像头解决方案。"
+                "title": "水下技术",
+                "desc": "从潜艇、声纳和鱼雷系统到ROV/AUV基础设施——为水下技术提供专用电缆、连接器和摄像头解决方案。"
             }
         }
     },
@@ -948,7 +952,7 @@
             "makina": "Aquatic 机械",
             "endustri": "Aquatic 工业",
             "elektronikOtomasyon": "电子与自动化",
-            "savunmaSanayiSualti": "国防与水下技术"
+            "savunmaSanayiSualti": "水下技术"
         }
     },
     "popularProducts": {

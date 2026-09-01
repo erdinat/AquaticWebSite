@@ -32,6 +32,10 @@
             "makina": {
                 "slogan": "Endüstride Hassas Üretim",
                 "subtitle": "Kaynaklı imalat, CNC işleme ve özel makine üretiminde uçtan uca mühendislik."
+            },
+            "savunmaKz": {
+                "slogan": "Sualtı Teknolojilerinde Hassasiyet",
+                "subtitle": "Denizaltı ve sualtı platformları için özel tip konnektör ve kablo çözümleri."
             }
         }
     },
@@ -601,8 +605,8 @@
                 "desc": "Endüstriyel tesis ve kompleks boru hatlarının imalatı, montajı ve donatımı."
             },
             "savunmaSanayiSualti": {
-                "title": "Savunma Sanayi & Sualtı Teknolojileri",
-                "desc": "Denizaltı, sonar ve torpido sistemlerinden ROV/AUV altyapısına — savunma sanayii ve sualtı teknolojileri için özel kablo, konnektör ve kamera çözümleri."
+                "title": "Sualtı Teknolojileri",
+                "desc": "Denizaltı, sonar ve torpido sistemlerinden ROV/AUV altyapısına — sualtı teknolojileri için özel kablo, konnektör ve kamera çözümleri."
             }
         }
     },
@@ -948,7 +952,7 @@
             "makina": "Aquatic Makina",
             "endustri": "Aquatic Endüstri",
             "elektronikOtomasyon": "Elektronik ve Otomasyon",
-            "savunmaSanayiSualti": "Savunma Sanayi & Sualtı Teknolojileri"
+            "savunmaSanayiSualti": "Sualtı Teknolojileri"
         }
     },
     "popularProducts": {
