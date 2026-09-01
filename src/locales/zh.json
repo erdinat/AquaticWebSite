@@ -331,137 +331,246 @@
         "viewLabel": "查看详情",
         "detail": {
             "talasli-imalat": {
-                "materials": ["铝", "不锈钢", "黄铜", "青铜", "钛", "POM（赛钢）"],
+                "materials": [
+                    "铝",
+                    "不锈钢",
+                    "黄铜",
+                    "青铜",
+                    "钛",
+                    "POM（赛钢）"
+                ],
                 "materialsBody": "我们的车床与数控加工中心可对几乎所有金属及工程塑料进行高精度公差加工。材料选择根据零件工作环境（海水、高压、磨损）按项目单独确定。",
                 "capabilityBody": "从样机到批量生产，凭借高精度数控车床与铣床，我们完全按照技术图纸公差要求进行零件制造。每批产品均附带尺寸测量报告。"
             },
             "kaynakli-imalat": {
-                "materials": ["碳钢", "不锈钢（304/316L）", "铝", "镀锌钢板"],
+                "materials": [
+                    "碳钢",
+                    "不锈钢（304/316L）",
+                    "铝",
+                    "镀锌钢板"
+                ],
                 "materialsBody": "采用TIG、MIG及电弧焊接工艺，对适用于船舶及工业应用的各类材料进行焊接加工。根据材料厚度与耐腐蚀性要求，采用相应的焊接工艺规范。",
                 "capabilityBody": "焊缝除目视检验外，必要时采用无损检测（NDT）方法进行检验。热处理、表面处理及最终装配流程统一管理。"
             },
             "ozel-imalat-makinalari": {
-                "materials": ["结构钢", "不锈钢", "铝型材", "工业电子元器件"],
+                "materials": [
+                    "结构钢",
+                    "不锈钢",
+                    "铝型材",
+                    "工业电子元器件"
+                ],
                 "materialsBody": "专用机械机身采用具备结构强度的材料，自动化控制柜则采用符合工业标准的电子元器件。材料选择根据设备运行环境及生产速度进行优化。",
                 "capabilityBody": "从机械设计到自动化集成，从样机制造到现场调试，全流程由 Aquatic 工程团队统一负责。"
             },
             "3d-tasarim": {
-                "materials": ["PLA", "ABS", "PETG", "光敏树脂（SLA）", "尼龙（SLS）"],
+                "materials": [
+                    "PLA",
+                    "ABS",
+                    "PETG",
+                    "光敏树脂（SLA）",
+                    "尼龙（SLS）"
+                ],
                 "materialsBody": "针对概念验证及功能性样机，采用FDM与SLA技术，提供多种材料的三维打印服务。材料选择根据样机测试目的（外观、功能、耐热）确定。",
                 "capabilityBody": "从基于CAD的三维设计出发，通过快速成型与逆向工程流程，将创意转化为实际产品。为复杂几何形状零件提供设计验证支持。"
             },
             "gemi-elektrik": {
-                "materials": ["铜缆", "配电柜", "发电机设备", "绝缘材料"],
+                "materials": [
+                    "铜缆",
+                    "配电柜",
+                    "发电机设备",
+                    "绝缘材料"
+                ],
                 "materialsBody": "船舶电气系统采用经船级社认证、耐海水及潮湿环境的电缆与配电柜材料。材料选择根据船舶类型及电力负荷需求确定。",
                 "capabilityBody": "从主辅电气系统的安装到定期维护，从故障诊断到电缆敷设，整个流程均按检验及船级社要求执行。"
             },
             "gemi-makine": {
-                "materials": ["备件（原厂/等效件）", "发动机润滑油", "喷油器组件", "涡轮增压部件"],
+                "materials": [
+                    "备件（原厂/等效件）",
+                    "发动机润滑油",
+                    "喷油器组件",
+                    "涡轮增压部件"
+                ],
                 "materialsBody": "主机与发电机维护采用原厂或等效OEM备件，维护材料根据油品分析结果确定。",
                 "capabilityBody": "提供定期维护、大修（overhaul）、基于油品分析的预防性维护规划及故障维修服务，涵盖喷油器、涡轮增压器、冷却及燃油系统。"
             },
             "hidrolik-pnomatik": {
-                "materials": ["液压软管", "密封件套装", "液压油", "气动阀门"],
+                "materials": [
+                    "液压软管",
+                    "密封件套装",
+                    "液压油",
+                    "气动阀门"
+                ],
                 "materialsBody": "舵机、吊车及甲板机械等液压/气动系统采用耐压软管、密封件及阀门材料。",
                 "capabilityBody": "提供密封检测、软管密封件更换、压力测试及液压泵/阀门/油缸大修在内的全流程维保服务。"
             },
             "pnomatik-merdiven": {
-                "materials": ["铝型材", "气动油缸", "橡胶防滑踏板覆层"],
+                "materials": [
+                    "铝型材",
+                    "气动油缸",
+                    "橡胶防滑踏板覆层"
+                ],
                 "materialsBody": "气动舷梯系统采用轻质耐用的铝型材、耐腐蚀连接件及防滑踏板覆层。",
                 "capabilityBody": "根据项目单独评估承重能力、展开时间及材料等级，采购、安装及维护流程统一管理。"
             },
             "komple-bakim-onarim": {
-                "materials": ["电气、机械及管路装配材料", "备件物流"],
+                "materials": [
+                    "电气、机械及管路装配材料",
+                    "备件物流"
+                ],
                 "materialsBody": "综合维保范围内，电气、机械、液压气动及管路装配领域的全部材料采购统一协调管理。",
                 "capabilityBody": "从进坞到出坞，规划、工作分解结构（WBS）、备件采购、人力协调及最终检验测试均由 Aquatic 全程统一管理。"
             },
             "teciz-montaj-onarim": {
-                "materials": ["船舶舾装设备", "安装连接件", "辅助系统部件"],
+                "materials": [
+                    "船舶舾装设备",
+                    "安装连接件",
+                    "辅助系统部件"
+                ],
                 "materialsBody": "在新建及改造项目中，船舶舾装设备安装采用经船级社认证的连接件及辅助系统部件。",
                 "capabilityBody": "服务范围包括舾装设备安装、校准及调试（commissioning），以及现有设备的维修与性能测试。"
             },
             "boru-donatim": {
-                "materials": ["不锈钢/碳钢管", "焊接材料", "防腐涂层"],
+                "materials": [
+                    "不锈钢/碳钢管",
+                    "焊接材料",
+                    "防腐涂层"
+                ],
                 "materialsBody": "燃油、润滑油、冷却水、舱底水、压载及消防等系统采用耐腐蚀管材及连接材料。",
                 "capabilityBody": "按等轴测图纸完成制造、安装、焊接及压力测试，施工工艺符合船级社认证标准。"
             },
             "ozel-konnektorler": {
-                "materials": ["316L不锈钢", "PEEK绝缘材料", "FKM O型圈"],
+                "materials": [
+                    "316L不锈钢",
+                    "PEEK绝缘材料",
+                    "FKM O型圈"
+                ],
                 "materialsBody": "需要高压及电磁兼容性能的连接器采用不锈钢外壳及高性能绝缘材料。",
                 "capabilityBody": "以符合MIL-spec等军事标准的工程方法，为潜艇及水下平台开发不间断连接解决方案。"
             },
             "sonar-kablolari": {
-                "materials": ["屏蔽电缆", "低噪声导体", "防水绝缘层"],
+                "materials": [
+                    "屏蔽电缆",
+                    "低噪声导体",
+                    "防水绝缘层"
+                ],
                 "materialsBody": "为满足声纳阵列的精密信号传输需求，采用低噪声、屏蔽且耐深海压力的绝缘材料。",
                 "capabilityBody": "提供保障信号完整性与长使用寿命的专用电缆设计与制造服务。"
             },
             "torpido-kablolari": {
-                "materials": ["高强度导体", "抗冲击绝缘层"],
+                "materials": [
+                    "高强度导体",
+                    "抗冲击绝缘层"
+                ],
                 "materialsBody": "鱼雷系统控制与能源线路采用可承受瞬时冲击与压力变化的特种电缆结构。",
                 "capabilityBody": "提供保障关键任务系统持续运行的高可靠性电缆设计。"
             },
             "sualti-akustik": {
-                "materials": ["水听器", "声学传感器", "防水连接器"],
+                "materials": [
+                    "水听器",
+                    "声学传感器",
+                    "防水连接器"
+                ],
                 "materialsBody": "水下声学传感器阵列及水听器系统采用适应深海环境的材料与连接器。",
                 "capabilityBody": "通过电缆布线、连接器及集成服务，构建具备长期运行稳定性的声学系统。"
             },
             "sualti-kablosu": {
-                "materials": ["耐压护套", "防腐蚀导体"],
+                "materials": [
+                    "耐压护套",
+                    "防腐蚀导体"
+                ],
                 "materialsBody": "为ROV/AUV系统及海洋基础设施项目提供高防水等级、耐腐蚀的电缆。",
                 "capabilityBody": "根据项目单独评估深度等级、导线数量、截面积及护套材料，进行定制化生产。"
             },
             "kamera": {
-                "materials": ["钛/不锈钢机身", "蓝宝石光学镜头"],
+                "materials": [
+                    "钛/不锈钢机身",
+                    "蓝宝石光学镜头"
+                ],
                 "materialsBody": "水下摄像头采用耐深海压力的机身及低光条件下高画质表现的光学材料。",
                 "capabilityBody": "为船底检查、水下勘察及ROV集成提供高强度成像解决方案。"
             },
             "konnektor": {
-                "materials": ["防水连接器外壳", "双O型圈密封"],
+                "materials": [
+                    "防水连接器外壳",
+                    "双O型圈密封"
+                ],
                 "materialsBody": "水下设备的安全连接采用防水耐压的连接器产品系列。",
                 "capabilityBody": "根据项目需求确定针脚数量、IP/深度等级及材质选项，提供定制化连接器解决方案。"
             },
             "konveyorler": {
-                "materials": ["输送带/链条", "滚筒系统", "结构钢底座"],
+                "materials": [
+                    "输送带/链条",
+                    "滚筒系统",
+                    "结构钢底座"
+                ],
                 "materialsBody": "根据输送物料类型，带式、链式或滚筒式输送系统采用相应耐磨材料。",
                 "capabilityBody": "根据产能及产线布局提供定制化设计、制造、安装及调试服务；现有系统的维护也在此范围内。"
             },
             "trafo-ekipmanlari": {
-                "materials": ["电工钢板", "铜导体", "绝缘材料"],
+                "materials": [
+                    "电工钢板",
+                    "铜导体",
+                    "绝缘材料"
+                ],
                 "materialsBody": "变压器生产设备采用符合行业技术要求的电工钢板及高导电性铜材料。",
                 "capabilityBody": "为变压器生产设施提供专用设备的设计、制造与维护服务。"
             },
             "bobin-sarim-makinalari": {
-                "materials": ["结构钢底座", "精密驱动电机", "控制电子元件"],
+                "materials": [
+                    "结构钢底座",
+                    "精密驱动电机",
+                    "控制电子元件"
+                ],
                 "materialsBody": "绕线机采用保障绕线精度的精密驱动系统及耐用结构材料。",
                 "capabilityBody": "为电机与变压器生产所用绕线机提供设计、制造、安装及维保服务。"
             },
             "bobin-sarim-manderelleri": {
-                "materials": ["淬硬钢", "高精度公差加工"],
+                "materials": [
+                    "淬硬钢",
+                    "高精度公差加工"
+                ],
                 "materialsBody": "芯轴制造采用保障尺寸稳定性与耐磨性的淬硬钢材料。",
                 "capabilityBody": "根据所需规格提供不同线圈型号的高精度公差芯轴定制生产。"
             },
             "tesis-boru-donatim": {
-                "materials": ["碳钢/不锈钢管", "蒸汽/压缩空气管路设备"],
+                "materials": [
+                    "碳钢/不锈钢管",
+                    "蒸汽/压缩空气管路设备"
+                ],
                 "materialsBody": "工艺管路（蒸汽、压缩空气、水、化学品输送）根据管路压力及使用环境选择相应材料。",
                 "capabilityBody": "提供符合设计要求的制造、安装、焊接及压力测试，同时涵盖现有管路的故障与泄漏维修。"
             },
             "tesis-fabrika-kurulumu": {
-                "materials": ["结构钢", "电气及管路基础设施材料"],
+                "materials": [
+                    "结构钢",
+                    "电气及管路基础设施材料"
+                ],
                 "materialsBody": "交钥匙厂房建设采用符合项目工程要求的结构钢、电气及管路基础设施材料。",
                 "capabilityBody": "从基础设施规划到设备安装，直至调试，提供一站式交钥匙建设服务，项目管理由 Aquatic 工程团队负责。"
             },
             "pcb-tasarim": {
-                "materials": ["FR4印刷电路板", "铜层", "SMD/THT元器件"],
+                "materials": [
+                    "FR4印刷电路板",
+                    "铜层",
+                    "SMD/THT元器件"
+                ],
                 "materialsBody": "PCB制造根据应用可靠性要求，采用FR4及高品质铜层材料。",
                 "capabilityBody": "从原理图设计到布局规划，从样品制造到批量生产，以信号完整性与电磁兼容性为核心管理PCB开发流程。"
             },
             "elektronik-tasarim": {
-                "materials": ["工业电子元器件", "电路板材料"],
+                "materials": [
+                    "工业电子元器件",
+                    "电路板材料"
+                ],
                 "materialsBody": "电子电路设计采用符合工业标准的定制化元器件。",
                 "capabilityBody": "从概念设计到样机制造，从测试到量产准备，提供全流程电子工程支持。"
             },
             "otomasyon-entegrasyon": {
-                "materials": ["PLC/SCADA硬件", "传感器", "控制柜"],
+                "materials": [
+                    "PLC/SCADA硬件",
+                    "传感器",
+                    "控制柜"
+                ],
                 "materialsBody": "自动化基础设施根据应用控制需求选择PLC、SCADA硬件及工业传感器。",
                 "capabilityBody": "为生产线、船舶系统及工业设施设计并部署自动化基础设施，融合电子设计与自动化能力。"
             }
@@ -485,6 +594,12 @@
             "formSuccess": "您的请求已收到，我们会尽快与您联系。",
             "formError": "发生错误，请重试或直接给我们发送电子邮件。",
             "backToServices": "返回服务列表"
+        },
+        "kzOverrides": {
+            "boruDonatim": {
+                "title": "工业综合体管道装配业务",
+                "desc": "为工业设施和综合体提供管道的制造、安装与装配。"
+            }
         }
     },
     "products": {
@@ -530,7 +645,12 @@
                 "expandTitle": "水下摄像系统",
                 "viewMore": "查看详情",
                 "viewLess": "收起详情",
-                "subcategories": ["ROV摄像头", "监控摄像头", "立体/3D摄像头", "热成像"],
+                "subcategories": [
+                    "ROV摄像头",
+                    "监控摄像头",
+                    "立体/3D摄像头",
+                    "热成像"
+                ],
                 "specsTitle": "技术参数",
                 "specs": {
                     "resolution": "分辨率",
@@ -546,7 +666,12 @@
                 "expandTitle": "水下照明系统",
                 "viewMore": "查看详情",
                 "viewLess": "收起详情",
-                "subcategories": ["LED射灯", "广域照明", "频闪系统", "红外照明"],
+                "subcategories": [
+                    "LED射灯",
+                    "广域照明",
+                    "频闪系统",
+                    "红外照明"
+                ],
                 "specsTitle": "技术参数",
                 "specs": {
                     "depth": "耐压深度",
@@ -562,7 +687,12 @@
                 "expandTitle": "操作员显示系统",
                 "viewMore": "查看详情",
                 "viewLess": "收起详情",
-                "subcategories": ["台式控制显示器", "机架式显示屏", "便携式面板电脑", "触控操作面板"],
+                "subcategories": [
+                    "台式控制显示器",
+                    "机架式显示屏",
+                    "便携式面板电脑",
+                    "触控操作面板"
+                ],
                 "specsTitle": "技术参数",
                 "specs": {
                     "size": "屏幕尺寸",
@@ -578,7 +708,12 @@
                 "expandTitle": "水下线束系统",
                 "viewMore": "查看详情",
                 "viewLess": "收起详情",
-                "subcategories": ["鱼雷连接器线束", "ROV脐带缆", "水下连接器", "定制线束组件"],
+                "subcategories": [
+                    "鱼雷连接器线束",
+                    "ROV脐带缆",
+                    "水下连接器",
+                    "定制线束组件"
+                ],
                 "specsTitle": "技术参数",
                 "specs": {
                     "depth": "耐压深度",
@@ -594,7 +729,12 @@
                 "expandTitle": "便携式控制系统",
                 "viewMore": "查看详情",
                 "viewLess": "收起详情",
-                "subcategories": ["ROV控制箱", "现场测试单元", "集成摇杆系统", "应急控制套件"],
+                "subcategories": [
+                    "ROV控制箱",
+                    "现场测试单元",
+                    "集成摇杆系统",
+                    "应急控制套件"
+                ],
                 "specsTitle": "技术参数",
                 "specs": {
                     "display": "显示屏",
@@ -610,7 +750,12 @@
                 "expandTitle": "耐压舱系统",
                 "viewMore": "查看详情",
                 "viewLess": "收起详情",
-                "subcategories": ["电子外壳筒体", "带连接器法兰的舱体", "定制尺寸外壳", "测试与校准舱"],
+                "subcategories": [
+                    "电子外壳筒体",
+                    "带连接器法兰的舱体",
+                    "定制尺寸外壳",
+                    "测试与校准舱"
+                ],
                 "specsTitle": "技术参数",
                 "specs": {
                     "depth": "耐压深度",

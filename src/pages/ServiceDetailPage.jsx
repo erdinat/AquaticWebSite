@@ -15,6 +15,8 @@ import { useLocalizedNavigate } from '../hooks/useLocalizedNavigate';
 import LocalizedLink from '../components/common/LocalizedLink';
 import { useRevealAnimation } from '../hooks/useRevealAnimation';
 import { DETAIL_DATA, SLUGS } from '../data/serviceDetailContent';
+import { KZ_ITEM_LABEL_OVERRIDES } from '../data/serviceGroups';
+import { isKzDomain } from '../i18n/langRouting';
 import './ServiceDetailPage.css';
 
 const { TextArea } = Input;
@@ -56,7 +58,7 @@ const ServiceDetailPage = () => {
                 {
                     from_name: values.name,
                     from_email: values.email,
-                    subject: `${t(`services.${entry.categoryKey}.items.${entry.itemKey}.title`)}: ${values.subject}`,
+                    subject: `${title}: ${values.subject}`,
                     message: values.description,
                     cv_file: fileData,
                 },
@@ -84,8 +86,13 @@ const ServiceDetailPage = () => {
     }
 
     const { itemKey, categoryKey } = entry;
-    const titleKey = `services.${categoryKey}.items.${itemKey}.title`;
-    const descKey = `services.${categoryKey}.items.${itemKey}.desc`;
+    // aquatic.kz files boru-donatim under Endüstri instead of Denizcilik and
+    // relabels it (see serviceGroups.jsx) — this page is reached directly by
+    // slug/DETAIL_DATA (independent of that category reshuffle), so it needs
+    // its own override lookup to stay consistent with the category listing.
+    const kzOverride = isKzDomain() ? KZ_ITEM_LABEL_OVERRIDES[slug] : null;
+    const titleKey = kzOverride?.titleKey || `services.${categoryKey}.items.${itemKey}.title`;
+    const descKey = kzOverride?.descKey || `services.${categoryKey}.items.${itemKey}.desc`;
     const title = t(titleKey);
     const desc = t(descKey);
     const detail = t(`services.${categoryKey}.items.${itemKey}.detail`);
@@ -95,6 +102,10 @@ const ServiceDetailPage = () => {
     // Related = other items in the same category (falls back to any other
     // detail page if the category only has this one item, so the grid is
     // never empty).
+    // ⚠️ Known aquatic.kz limitation: this still groups by DETAIL_DATA's
+    // original categoryKey, not the .kz-reshuffled one — boru-donatim's
+    // "related" cards will show other Denizcilik items rather than its new
+    // Endüstri siblings. Accepted for now; revisit if it's noticed live.
     const sameCategory = SLUGS.filter((s) => s !== slug && DETAIL_DATA[s].categoryKey === categoryKey);
     const relatedSlugs = (sameCategory.length ? sameCategory : SLUGS.filter((s) => s !== slug)).slice(
         0,
@@ -203,8 +214,10 @@ const ServiceDetailPage = () => {
                     <div className="svcd-related-grid">
                         {relatedSlugs.map((relSlug, idx) => {
                             const relEntry = DETAIL_DATA[relSlug];
+                            const relOverride = isKzDomain() ? KZ_ITEM_LABEL_OVERRIDES[relSlug] : null;
                             const relTitle = t(
-                                `services.${relEntry.categoryKey}.items.${relEntry.itemKey}.title`
+                                relOverride?.titleKey ||
+                                    `services.${relEntry.categoryKey}.items.${relEntry.itemKey}.title`
                             );
                             return (
                                 <button

@@ -5,7 +5,7 @@ import { useRevealAnimation } from '../hooks/useRevealAnimation';
 import PageSEO from '../components/common/PageSEO';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import imgHero from '../assets/images/hizmetler.webp';
-import { SERVICE_GROUPS } from '../data/serviceGroups';
+import { getActiveServiceGroups } from '../data/serviceGroups';
 import './ServicesPage.css';
 
 const ServicesPage = () => {
@@ -13,6 +13,8 @@ const ServicesPage = () => {
     const navigate = useLocalizedNavigate();
 
     useRevealAnimation();
+
+    const serviceGroups = getActiveServiceGroups();
 
     return (
         <div className="services-page">
@@ -31,7 +33,7 @@ const ServicesPage = () => {
                 <div className="container">
                     {/* ── Category Grid — each card routes to its own Category Detail page ── */}
                     <div className="svc-category-grid reveal">
-                        {SERVICE_GROUPS.map((group) => (
+                        {serviceGroups.map((group) => (
                             <button
                                 key={group.key}
                                 className="svc-category-card"

@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Layout, Menu, Button, Drawer, Dropdown, Space } from 'antd';
 import LocalizedLink from '../common/LocalizedLink';
-import { splitLangFromPath, localizePath } from '../../i18n/langRouting';
+import { splitLangFromPath, localizePath, isKzDomain } from '../../i18n/langRouting';
 import {
     MenuOutlined,
     CloseOutlined,
@@ -114,27 +114,41 @@ const AppHeader = () => {
         },
     }));
 
-    /* Services dropdown */
-    const servicesDropdownItems = [
-        { key: 'denizcilik', icon: <CompassOutlined />, label: t('dropdown.services.denizcilik') },
-        {
-            key: 'savunmaSanayi',
-            icon: <RocketOutlined />,
-            label: t('dropdown.services.savunmaSanayi'),
-        },
-        {
-            key: 'sualtiTeknolojileri',
-            icon: <GlobalOutlined />,
-            label: t('dropdown.services.sualtiTeknolojileri'),
-        },
-        { key: 'makina', icon: <ToolOutlined />, label: t('dropdown.services.makina') },
-        { key: 'endustri', icon: <BankOutlined />, label: t('dropdown.services.endustri') },
-        {
-            key: 'elektronikOtomasyon',
-            icon: <ThunderboltOutlined />,
-            label: t('dropdown.services.elektronikOtomasyon'),
-        },
-    ].map((item) => ({
+    /* Services dropdown — aquatic.kz shows only Makina + Endüstri (see
+       serviceGroups.jsx's getActiveServiceGroups for the full .kz reshuffle;
+       this mirrors the same 2-category scope so the nav stays consistent
+       with what /services and the homepage actually show there). */
+    const servicesDropdownItems = (
+        isKzDomain()
+            ? [
+                  { key: 'makina', icon: <ToolOutlined />, label: t('dropdown.services.makina') },
+                  { key: 'endustri', icon: <BankOutlined />, label: t('dropdown.services.endustri') },
+              ]
+            : [
+                  {
+                      key: 'denizcilik',
+                      icon: <CompassOutlined />,
+                      label: t('dropdown.services.denizcilik'),
+                  },
+                  {
+                      key: 'savunmaSanayi',
+                      icon: <RocketOutlined />,
+                      label: t('dropdown.services.savunmaSanayi'),
+                  },
+                  {
+                      key: 'sualtiTeknolojileri',
+                      icon: <GlobalOutlined />,
+                      label: t('dropdown.services.sualtiTeknolojileri'),
+                  },
+                  { key: 'makina', icon: <ToolOutlined />, label: t('dropdown.services.makina') },
+                  { key: 'endustri', icon: <BankOutlined />, label: t('dropdown.services.endustri') },
+                  {
+                      key: 'elektronikOtomasyon',
+                      icon: <ThunderboltOutlined />,
+                      label: t('dropdown.services.elektronikOtomasyon'),
+                  },
+              ]
+    ).map((item) => ({
         ...item,
         onClick: ({ domEvent }) => {
             domEvent.stopPropagation();

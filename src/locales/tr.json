@@ -594,6 +594,12 @@
             "formSuccess": "Talebiniz alındı, en kısa sürede dönüş yapacağız.",
             "formError": "Bir hata oluştu, lütfen tekrar deneyin ya da bize doğrudan e-posta gönderin.",
             "backToServices": "Hizmetlere Dön"
+        },
+        "kzOverrides": {
+            "boruDonatim": {
+                "title": "Kompleks Boru Donatım Faaliyetleri",
+                "desc": "Endüstriyel tesis ve kompleks boru hatlarının imalatı, montajı ve donatımı."
+            }
         }
     },
     "products": {

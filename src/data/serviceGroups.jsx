@@ -27,6 +27,7 @@ import imgDefence from '../assets/images/savunmasanayi.webp';
 import imgElectronics from '../assets/images/elektrik.webp';
 import imgMachinery from '../assets/images/makina.webp';
 import imgMaritime from '../assets/images/denizcilik.webp';
+import { isKzDomain } from '../i18n/langRouting';
 
 export const SERVICE_GROUPS = [
     {
@@ -113,3 +114,62 @@ export const SERVICE_GROUPS = [
 ];
 
 export const VALID_SERVICE_KEYS = SERVICE_GROUPS.map((g) => g.key);
+
+/* ── aquatic.kz-only category reshuffle ──────────────────────────────────
+   Client request (30 Ağustos 2026): for Kazakhstan meetings, aquatic.kz's
+   homepage/services should show only 2 categories — Aquatic Endüstri and
+   Aquatic Makina — with Denizcilik's 7 items absorbed into Endüstri, and
+   Endüstri's 4 equipment-manufacturing items (konveyorler, trafoEkipmanlari,
+   bobinSarimMakinalari, bobinSarimManderelleri) moved to the front of Makina.
+   aquatic.com.tr must render byte-identical to before — this only ever
+   activates behind isKzDomain(), never touches SERVICE_GROUPS itself. */
+const KZ_MAKINA_FRONT_KEYS = [
+    'konveyorler',
+    'trafoEkipmanlari',
+    'bobinSarimMakinalari',
+    'bobinSarimManderelleri',
+];
+
+/* Only the boru-donatim item's label changes for KZ (ship-specific "Gemi
+   Boru Donatım" no longer fits once it's filed under Endüstri) — everything
+   else keeps its original TR-authored title/desc, just regrouped. */
+export const KZ_ITEM_LABEL_OVERRIDES = {
+    'boru-donatim': {
+        titleKey: 'services.kzOverrides.boruDonatim.title',
+        descKey: 'services.kzOverrides.boruDonatim.desc',
+    },
+};
+
+function buildKzServiceGroups() {
+    const denizcilik = SERVICE_GROUPS.find((g) => g.key === 'denizcilik');
+    const makina = SERVICE_GROUPS.find((g) => g.key === 'makina');
+    const endustri = SERVICE_GROUPS.find((g) => g.key === 'endustri');
+
+    const endustriKept = endustri.items.filter((i) => !KZ_MAKINA_FRONT_KEYS.includes(i.key));
+    const endustriItemsMovedToMakina = endustri.items
+        .filter((i) => KZ_MAKINA_FRONT_KEYS.includes(i.key))
+        .map((i) => ({ ...i, i18nCategoryKey: 'endustri' }));
+
+    const denizcilikItemsMovedToEndustri = denizcilik.items.map((item) => {
+        const moved = { ...item, i18nCategoryKey: 'denizcilik' };
+        const override = KZ_ITEM_LABEL_OVERRIDES[item.slug];
+        if (override) {
+            moved.titleKey = override.titleKey;
+            moved.descKey = override.descKey;
+        }
+        return moved;
+    });
+
+    return [
+        { ...endustri, items: [...endustriKept, ...denizcilikItemsMovedToEndustri] },
+        { ...makina, items: [...endustriItemsMovedToMakina, ...makina.items] },
+    ];
+}
+
+/** The category list to actually render — identical to SERVICE_GROUPS
+ * everywhere except aquatic.kz, where it's the reshuffled 2-category version
+ * above. Always call this instead of importing SERVICE_GROUPS directly in
+ * page components, so the .kz behavior stays centralized in one place. */
+export function getActiveServiceGroups() {
+    return isKzDomain() ? buildKzServiceGroups() : SERVICE_GROUPS;
+}

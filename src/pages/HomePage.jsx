@@ -24,6 +24,7 @@ import {
 } from '@ant-design/icons';
 import productsData from '../data/products.json';
 import { getCategoryIcon } from '../data/productCategoryVisuals';
+import { isKzDomain } from '../i18n/langRouting';
 import './HomePage.css';
 
 /* Optimized images */
@@ -181,7 +182,14 @@ const HomePage = () => {
         },
     ];
 
-    const categoryShowcaseRows = CATEGORY_SHOWCASE.map((row) => {
+    // Client request (30 Ağustos 2026): aquatic.kz's homepage should only
+    // showcase Makina + Endüstri (their Dubai/Kazakhstan meeting focus) —
+    // aquatic.com.tr keeps showing all 6 rows, unchanged.
+    const activeCategoryShowcase = isKzDomain()
+        ? CATEGORY_SHOWCASE.filter((row) => row.key === 'makina' || row.key === 'endustri')
+        : CATEGORY_SHOWCASE;
+
+    const categoryShowcaseRows = activeCategoryShowcase.map((row) => {
         const cards = productsData
             .filter((p) => row.productCategoryIds.includes(p.categoryId))
             .slice(0, 9)

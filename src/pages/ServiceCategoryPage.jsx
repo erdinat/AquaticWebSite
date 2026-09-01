@@ -6,7 +6,7 @@ import PageSEO from '../components/common/PageSEO';
 import LocalizedLink from '../components/common/LocalizedLink';
 import { useLocalizedNavigate } from '../hooks/useLocalizedNavigate';
 import { useRevealAnimation } from '../hooks/useRevealAnimation';
-import { SERVICE_GROUPS } from '../data/serviceGroups';
+import { getActiveServiceGroups } from '../data/serviceGroups';
 import { DETAIL_DATA } from '../data/serviceDetailContent';
 import './ServiceCategoryPage.css';
 
@@ -18,7 +18,7 @@ const ServiceCategoryPage = () => {
 
     useRevealAnimation();
 
-    const group = SERVICE_GROUPS.find((g) => g.key === categoryKey);
+    const group = getActiveServiceGroups().find((g) => g.key === categoryKey);
 
     if (!group) {
         return (
@@ -92,10 +92,16 @@ const ServiceCategoryPage = () => {
                                 )}
                                 <div className="scp-card-body">
                                     <h3 className="scp-card-title">
-                                        {t(`services.${group.key}.items.${item.key}.title`)}
+                                        {t(
+                                            item.titleKey ||
+                                                `services.${item.i18nCategoryKey || group.key}.items.${item.key}.title`
+                                        )}
                                     </h3>
                                     <p className="scp-card-desc">
-                                        {t(`services.${group.key}.items.${item.key}.desc`)}
+                                        {t(
+                                            item.descKey ||
+                                                `services.${item.i18nCategoryKey || group.key}.items.${item.key}.desc`
+                                        )}
                                     </p>
                                     <span className="scp-card-btn">
                                         {t('services.viewLabel')} <ArrowRightOutlined />

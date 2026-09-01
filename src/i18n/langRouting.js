@@ -31,6 +31,14 @@ export function getDomainDefaultLang() {
     return defaultLangForHostname(window.location.hostname);
 }
 
+/** True when the current page is served from the Kazakhstan domain — used to
+ * gate the .kz-only service-category reshuffle (see src/data/serviceGroups.jsx)
+ * that must never affect aquatic.com.tr. */
+export function isKzDomain() {
+    if (typeof window === 'undefined') return false;
+    return window.location.hostname.endsWith('.kz');
+}
+
 /** Split a pathname into { lang, barePath }. barePath never carries a lang prefix. */
 export function splitLangFromPath(pathname) {
     const domainDefault = getDomainDefaultLang();
