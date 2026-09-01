@@ -163,7 +163,7 @@ export const DETAIL_DATA = {
     'bobin-sarim-manderelleri': {
         categoryKey: 'endustri',
         itemKey: 'bobinSarimManderelleri',
-        heroImage: '/images/services/detail/makina-bobinSarimManderelleri.webp',
+        heroImage: '/images/services/detail/makina-bobinSarimManderelleri.webp?v=2',
         materialsImage: '/images/services/quote/bobin-sarim-manderelleri-materials.webp',
         capabilityImage: '/images/services/quote/bobin-sarim-manderelleri-capability.webp',
     },
