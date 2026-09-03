@@ -6,7 +6,9 @@
         "categoryId": "underwater-cameras",
         "shortDescription": "6000m depth-rated digital zoom camera with titanium housing, sapphire lens and 10× optical zoom for deep-sea ROV operations.",
         "isPremium": true,
-        "images": ["/images/products/LHC-370-Underwater-Digital-Zooming.jpg"],
+        "images": [
+            "/images/products/LHC-370-Underwater-Digital-Zooming.jpg"
+        ],
         "specs": {
             "Depth Rating": "6000m",
             "Resolution": "2560×1440",
@@ -25,7 +27,9 @@
         "categoryId": "underwater-cameras",
         "shortDescription": "1000m depth HD underwater camera with POM housing and 1920×1440 resolution. Autofocus enabled, suitable for ROV and subsea surveillance.",
         "isPremium": false,
-        "images": ["/images/products/LHC-350-High.jpg"],
+        "images": [
+            "/images/products/LHC-350-High.jpg"
+        ],
         "specs": {
             "Depth Rating": "1000m",
             "Resolution": "1920×1440",
@@ -43,7 +47,9 @@
         "categoryId": "subsea-lights-lasers",
         "shortDescription": "Compact 1000m-rated subsea LED light with 16W power consumption and 100° coverage angle for underwater applications.",
         "isPremium": false,
-        "images": ["/images/products/LHL-401-Underwater-light.jpg"],
+        "images": [
+            "/images/products/LHL-401-Underwater-light.jpg"
+        ],
         "specs": {
             "Depth Rating": "1000m",
             "Power Consumption": "16W",
@@ -61,7 +67,9 @@
         "categoryId": "kucuk-mikro-dairesel",
         "shortDescription": "Hat tipi, panel tipi, kör konnektör ve dik açılı seçenekleriyle 2-6 kontaklı küçük dairesel sualtı konnektörü.",
         "isPremium": false,
-        "images": [],
+        "images": [
+            "/images/products/kucuk-dairesel-2-6.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-SMCIL6F/M, AQ-SMCBH6FSS/MSS, AQ-SMCDC6F/M, AQ-SMCDLSF/M, AQ-SMCBHRA6MSS",
             "Kontak Sayısı": "2, 3, 4, 5, 6",
@@ -84,7 +92,9 @@
         "categoryId": "kucuk-mikro-dairesel",
         "shortDescription": "Hat tipi, yağ dolgulu (PBOF), panel tipi ve çift O-ring seçenekli 2-8 kontaklı mikro dairesel konnektör.",
         "isPremium": false,
-        "images": [],
+        "images": [
+            "/images/products/mikro-dairesel-2-8.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-MCIL8F/M, MCPBOF8F/M, AQ-MCOM8F/M, AQ-MCOMB, AQ-MCDC8F/M, AQ-MCBH8FSS/MSS",
             "Kontak Sayısı": "2, 3, 4, 5, 6, 8",
@@ -106,7 +116,9 @@
         "categoryId": "kucuk-mikro-dairesel",
         "shortDescription": "M8, 7/16\" ve 1/2\" diş ölçülerinde, özelleştirilebilir kontak sayılı tek uçlu su geçirmez penetratör.",
         "isPremium": false,
-        "images": [],
+        "images": [
+            "/images/products/penetrator.webp"
+        ],
         "specs": {
             "Parça Numaraları": "M8 Penetratör, 7/16 Penetratör, 1/2 Penetratör Tek Uçlu Su Geçirmez",
             "Kontak Sayısı": "Özelleştirilebilir",
@@ -126,7 +138,9 @@
         "categoryId": "kucuk-mikro-dairesel",
         "shortDescription": "9, 10, 12 ve 16 kontak seçenekli, dik açılı ve panel tipi dahil mikro dairesel Tip A konnektör serisi.",
         "isPremium": false,
-        "images": [],
+        "images": [
+            "/images/products/mikro-dairesel-9-16.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-MCIL16F/M, AQ-MCBH16FSS/MSS, AQ-MCDC16F/M, AQ-DLSA-F/M, AQ-MCBHRA16MSS",
             "Kontak Sayısı": "9, 10, 12, 16",
@@ -148,7 +162,9 @@
         "categoryId": "kucuk-mikro-dairesel",
         "shortDescription": "21 kontaklı yüksek yoğunluklu mikro dairesel Tip B konnektör, hat, panel ve kör tip seçenekleriyle.",
         "isPremium": false,
-        "images": [],
+        "images": [
+            "/images/products/mikro-dairesel-21.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-MCIL21F/M, AQ-MCBH21FSS/MSS, AQ-MCDC21F/M, AQ-DLSB-F/M",
             "Kontak Sayısı": "21",
@@ -170,7 +186,9 @@
         "categoryId": "standart-dairesel",
         "shortDescription": "Yüksek akım kapasiteli (600V@6-15Amp), 2-5 kontaklı standart dairesel Tip A konnektör.",
         "isPremium": true,
-        "images": [],
+        "images": [
+            "/images/products/standart-dairesel-2-5.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-IL5F/M, AQ-BH5FSS/BHSMSS, AQ-DC5F/M, AQ-DLSA-F/M",
             "Kontak Sayısı": "2, 3, 4, 5",
@@ -192,7 +210,9 @@
         "categoryId": "standart-dairesel",
         "shortDescription": "6, 8 ve 10 kontaklı, 600V@6-15Amp elektriksel kapasiteli standart dairesel Tip B konnektör.",
         "isPremium": false,
-        "images": [],
+        "images": [
+            "/images/products/standart-dairesel-6-10.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-IL10F/M, AQ-BH10FSS/MSS, AQ-DC10F/M, AQ-DLSB-F/M",
             "Kontak Sayısı": "6, 8, 10",
@@ -214,7 +234,9 @@
         "categoryId": "standart-dairesel",
         "shortDescription": "12, 16 ve 25 kontak seçenekli yüksek yoğunluklu standart dairesel Tip C konnektör serisi.",
         "isPremium": true,
-        "images": [],
+        "images": [
+            "/images/products/standart-dairesel-tip-c.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-IL25F/M, AQ-BH25FSS/MSS, AQ-DC25F/M, AQ-DLSC-F/M",
             "Kontak Sayısı": "12, 16, 25",
@@ -237,7 +259,9 @@
         "categoryId": "guc-serileri",
         "shortDescription": "600V@25-40Amp yüksek akım kapasiteli, 2-4 kontaklı güç iletim konnektörü.",
         "isPremium": true,
-        "images": [],
+        "images": [
+            "/images/products/yuksek-guc-2-4.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-ILB4F/M, AQ-BHB4FSS/MSS, AQ-DCB4F/M, AQ-DLSB-F/M",
             "Kontak Sayısı": "2, 3, 4",
@@ -259,7 +283,9 @@
         "categoryId": "guc-serileri",
         "shortDescription": "600V@50Amp yüksek güç iletimine uygun 4 kontaklı Tip C konnektör.",
         "isPremium": true,
-        "images": [],
+        "images": [
+            "/images/products/guc-serisi-4-tip-c.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-HPIL4F/M, AQ-HPBH4FSS/MSS, AQ-HPDC4F/M, AQ-DLSC-F/M",
             "Kontak Sayısı": "4",
@@ -280,7 +306,9 @@
         "categoryId": "yag-dolgulu",
         "shortDescription": "1/2\" Tygon tüplü yağ dolgulu (oil-filled) mikro dairesel konnektör, 2-16 kontak aralığında.",
         "isPremium": false,
-        "images": [],
+        "images": [
+            "/images/products/yag-dolgulu-mikro.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-MCPBOF(2-8)F/M, AQ-MCPBOF(10-16)F/M, AQ-PBOF(2-5)F/M",
             "Kontak Sayısı": "2, 3, 4, 5, 8, 10, 12, 16",
@@ -302,7 +330,9 @@
         "categoryId": "yag-dolgulu",
         "shortDescription": "6, 8, 10, 12 ve 25 kontaklı yağ dolgulu standart Tip B konnektör, 1\" Tygon tüplü versiyon dahil.",
         "isPremium": false,
-        "images": [],
+        "images": [
+            "/images/products/yag-dolgulu-standart.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-PBOF(6-10)F/M, AQ-PBOF(12-25)F/M",
             "Kontak Sayısı": "6, 8, 10, 12, 25",
@@ -324,7 +354,9 @@
         "categoryId": "ethernet-koaksiyel",
         "shortDescription": "1 Gbit/s iletim hızlı, 23AWG twisted pair kablolu 8 kontaklı mikro dairesel Ethernet konnektörü.",
         "isPremium": true,
-        "images": [],
+        "images": [
+            "/images/products/mikro-dairesel-ethernet-8.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-MCIL8F/M-E, AQ-MCBH8FSS/MSS-E, AQ-MCDC8F/M, AQ-MCBHRA8MSS-E",
             "Kontak Sayısı": "8",
@@ -347,7 +379,9 @@
         "categoryId": "ethernet-koaksiyel",
         "shortDescription": "1 Gbit/s iletim hızlı standart Tip A Ethernet konnektörü, 23AWG CAT6E kablo uyumlu.",
         "isPremium": false,
-        "images": [],
+        "images": [
+            "/images/products/ethernet-8-tip-a.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-DIL8F/M, AQ-DBH8F/M, AQ-DDC8F/M, AQ-DLSA-F/M",
             "Kontak Sayısı": "8",
@@ -369,7 +403,9 @@
         "categoryId": "ethernet-koaksiyel",
         "shortDescription": "4x18AWG twisted pair + opsiyonel güç kablosu, 300 VDC elektriksel kapasiteli 13 kontaklı Ethernet konnektörü.",
         "isPremium": true,
-        "images": [],
+        "images": [
+            "/images/products/mikro-dairesel-ethernet-13.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-DIL13F/M, DBH13FSS/MSS, AQ-DDC13F/M, AQ-DLSA-F/M",
             "Kontak Sayısı": "13",
@@ -391,7 +427,9 @@
         "categoryId": "ethernet-koaksiyel",
         "shortDescription": "RG316/RG400 koaksiyel kablo uyumlu, 3 GHz maksimum frekanslı 50 Ohm tek kontaklı koaksiyel konnektör.",
         "isPremium": false,
-        "images": [],
+        "images": [
+            "/images/products/koaksiyel-50ohm-tek.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-1501/1502/1503-50C-00/11, AQ-15R2-50C-11, AQ-MCDLSF/M",
             "Kontak Sayısı": "1",
@@ -413,7 +451,9 @@
         "categoryId": "ethernet-koaksiyel",
         "shortDescription": "RG179 75Ω koaksiyel hat + 6 güç kontağı kombinasyonlu hibrit konnektör, 3 GHz maksimum frekans.",
         "isPremium": false,
-        "images": [],
+        "images": [
+            "/images/products/koaksiyel-1-6.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-2501/2502/2503-1C6-00/11, AQ-25R2-1C6-11, AQ-DLSA-F/M",
             "Kontak Sayısı": "1 Koaksiyel + 6",
@@ -435,7 +475,9 @@
         "categoryId": "ethernet-koaksiyel",
         "shortDescription": "4 segmentli özel tasarım, 20, 24 ve 32 kontak seçenekli bölünebilir yüksek yoğunluklu konnektör.",
         "isPremium": true,
-        "images": [],
+        "images": [
+            "/images/products/bolunebilir-dairesel.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-4101/4102/4103-8/32-00/11, AQ-DLSC-F/M",
             "Kontak Sayısı": "20, 24, 32",
@@ -457,7 +499,9 @@
         "categoryId": "rm-lpm-serisi",
         "shortDescription": "BCL uyumlu, hat/panel/dik açılı çeşitleriyle 2-4 kontaklı kompakt Kauçuk Kalıplı (RM) konnektör.",
         "isPremium": false,
-        "images": [],
+        "images": [
+            "/images/products/rm-serisi-2-4.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-RMG4FS/MP/FSD/MPD, AQ-XSG-4-BCL, VMG4FS/FSD, G-FLS-D, G-MLS-D",
             "Kontak Sayısı": "2, 3, 4",
@@ -479,7 +523,9 @@
         "categoryId": "rm-lpm-serisi",
         "shortDescription": "AQ-AG306-HP-SS yüksek güç varyantı dahil, 6 kontaklı RM serisi konnektör.",
         "isPremium": false,
-        "images": [],
+        "images": [
+            "/images/products/rm-serisi-6.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-RMG6FS/MP/FSD/MPD, AQ-XSG-6-BCL, AQ-AG206-FS, AQ-AG306-HP-SS",
             "Kontak Sayısı": "6",
@@ -501,7 +547,9 @@
         "categoryId": "rm-lpm-serisi",
         "shortDescription": "600V@120Amp yüksek akım kapasiteli, 50mm² kablo uyumlu tek kontaklı güç konnektörü.",
         "isPremium": true,
-        "images": [],
+        "images": [
+            "/images/products/rm-serisi-1.webp"
+        ],
         "specs": {
             "Parça Numaraları": "RMK1FS/MP/FSD/MPD, XSK-1-BCL, K-FLS-D, K-MLS-D",
             "Kontak Sayısı": "1",
@@ -524,7 +572,9 @@
         "categoryId": "rm-lpm-serisi",
         "shortDescription": "18AWG kablo uyumlu, 300V@3-6Amp elektriksel kapasiteli 5 kontaklı RM serisi konnektör.",
         "isPremium": false,
-        "images": [],
+        "images": [
+            "/images/products/rm-serisi-5.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-RMKSMP/MPD, RMK5FS/FSD, AQ-XSK-5-BCL, K-FLS-D, AQ-K-MLS-D",
             "Kontak Sayısı": "5",
@@ -546,7 +596,9 @@
         "categoryId": "rm-lpm-serisi",
         "shortDescription": "Halka kulplu (loop) tasarımlı, 6, 7 ve 8 kontaklı Düşük Profilli Kalıplı (LPM) konnektör.",
         "isPremium": false,
-        "images": [],
+        "images": [
+            "/images/products/lpm-serisi-6-8.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-LPMIL8F, AQ-LPMBH8MSS, AQ-LPMDC8F",
             "Kontak Sayısı": "6, 7, 8",
@@ -568,7 +620,9 @@
         "categoryId": "dusuk-profilli",
         "shortDescription": "LPA kayış (strap) aksesuarlı, 7, 9 ve 12 kontaklı mikro düşük profilli konnektör.",
         "isPremium": false,
-        "images": [],
+        "images": [
+            "/images/products/mikro-dusuk-profilli-7-12.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-MCLPIL12F/M, AQ-MCLPBH12FSS/MSS, AQ-MCLPDC12F/M, LPA STRAP",
             "Kontak Sayısı": "7, 9, 12",
@@ -590,7 +644,9 @@
         "categoryId": "dusuk-profilli",
         "shortDescription": "500V@6Amp elektriksel kapasiteli, 3, 4 ve 5 kontaklı standart düşük profilli konnektör.",
         "isPremium": false,
-        "images": [],
+        "images": [
+            "/images/products/standart-dusuk-profilli-3-5.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-LPIL4F/M, AQ-LPBH4FSS/MSS, AQ-LPDC4F/M, LPA STRAP",
             "Kontak Sayısı": "3, 4, 5",
@@ -612,7 +668,9 @@
         "categoryId": "dusuk-profilli",
         "shortDescription": "300V@3-6Amp elektriksel kapasiteli, 7 kontaklı düşük profilli konnektör, LPB kayış aksesuarlı.",
         "isPremium": false,
-        "images": [],
+        "images": [
+            "/images/products/standart-dusuk-profilli-7.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-LPIL7F/M, AQ-LPBH7FSS/MSS, AQ-LPDC7F/M, LPB STRAP",
             "Kontak Sayısı": "7",
@@ -634,7 +692,9 @@
         "categoryId": "dusuk-profilli",
         "shortDescription": "300V@3-6Amp elektriksel kapasiteli, 9 kontaklı düşük profilli konnektör serisi.",
         "isPremium": false,
-        "images": [],
+        "images": [
+            "/images/products/standart-dusuk-profilli-9.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-LPILOF, AQ-LPIL9M, AQ-LPBH9FSS/MSS, AQ-LPDC9F/M, LPB STRAP",
             "Kontak Sayısı": "9",
@@ -678,7 +738,9 @@
         "categoryId": "dusuk-profilli",
         "shortDescription": "300V@3-6Amp elektriksel kapasiteli, 24 kontaklı en yüksek yoğunluklu düşük profilli konnektör.",
         "isPremium": true,
-        "images": [],
+        "images": [
+            "/images/products/standart-dusuk-profilli-24.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-LPIL24F/M, AQ-LPBH24FSS/MSS, AQ-LPDC24F/M, LPC STRAP",
             "Kontak Sayısı": "24",
@@ -700,7 +762,9 @@
         "categoryId": "metal-govdeli",
         "shortDescription": "AT/BCR/CCP/FCR/DSP/DSR tip seçenekli, 2000m derinlik kapasiteli kompakt metal gövdeli konnektör.",
         "isPremium": false,
-        "images": [],
+        "images": [
+            "/images/products/metal-govdeli-kucuk-55.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-IE55-1206-AT/BCR/CCP/FCR/DSP/CCR/DSR",
             "Kontak Sayısı": "4, 6",
@@ -722,7 +786,9 @@
         "categoryId": "metal-govdeli",
         "shortDescription": "3, 4, 6 ve 8 kontaklı, hat/panel/dik açılı seçenekli metal gövdeli 55 serisi konnektör.",
         "isPremium": true,
-        "images": [],
+        "images": [
+            "/images/products/metal-govdeli-55-3-8.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-5501/5502-1508-0000/0002, AQ-55A1-1508, AQ-5507-1500/1508, AQ-55R1-1508-0002",
             "Kontak Sayısı": "3, 4, 6, 8",
@@ -744,7 +810,9 @@
         "categoryId": "metal-govdeli",
         "shortDescription": "500V@10-20Amp (8 kontak) ve 500V@6-10Amp (13 kontak) elektriksel kapasiteli, Güç+Ethernet kablo seçenekli.",
         "isPremium": true,
-        "images": [],
+        "images": [
+            "/images/products/metal-govdeli-55-8-13.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-55A1-2008, AQ-5507-2008-0001, AQ-5506-2008-0001, AQ-5507-2000, AQ-55R1-2008-0002",
             "Kontak Sayısı": "8, 13",
@@ -766,7 +834,9 @@
         "categoryId": "metal-govdeli",
         "shortDescription": "500V@6-10Amp elektriksel kapasiteli, 12 ve 20 kontaklı yüksek yoğunluklu metal gövdeli konnektör.",
         "isPremium": true,
-        "images": [],
+        "images": [
+            "/images/products/metal-govdeli-55-12-20.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-55A1-2420, AQ-5501/5507-2420-0000/0002, AQ-5506-2420-0001, AQ-55R1-2420-0002",
             "Kontak Sayısı": "12, 20",
@@ -787,7 +857,9 @@
         "categoryId": "metal-govdeli",
         "shortDescription": "3000V@40Amp yüksek gerilim kapasiteli, 6mm² kablolu 4 kontaklı metal gövdeli konnektör.",
         "isPremium": true,
-        "images": [],
+        "images": [
+            "/images/products/metal-govdeli-yg-4-55.webp"
+        ],
         "specs": {
             "Parça Numaraları": "55A1-3204, 5501-3204-0000/0002, 5506-3204-0001, 5507-3200/3204-0001, 55R1-3204-0002",
             "Kontak Sayısı": "4",
@@ -810,7 +882,9 @@
         "categoryId": "metal-govdeli",
         "shortDescription": "3000V@40Amp yüksek gerilim kapasiteli 66 serisi metal gövdeli konnektör, 55 serisiyle aynı elektriksel sınıf.",
         "isPremium": true,
-        "images": [],
+        "images": [
+            "/images/products/metal-govdeli-66-4.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-66A1-3204, AQ-6601-3204-0000/0002, AQ-6606-3204-0001, AQ-6607-3200/3204-0001, AQ-66R1-3204-0002",
             "Kontak Sayısı": "4",
@@ -833,7 +907,9 @@
         "categoryId": "metal-govdeli",
         "shortDescription": "500V@2-5Amp elektriksel kapasiteli, 39 kontaklı serinin en yüksek yoğunluklu metal gövdeli konnektörü.",
         "isPremium": true,
-        "images": [],
+        "images": [
+            "/images/products/metal-govdeli-55-39.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-55A1-3239, AQ-5501-3239-0000/0002, AQ-5506-3239-0001, AQ-5507-3239/3239-0001, AQ-55R1-3239-0000",
             "Kontak Sayısı": "39",
@@ -855,7 +931,9 @@
         "categoryId": "metal-govdeli",
         "shortDescription": "Face Seal ve dik açılı (RA) seçenekli, güçlendirilmiş PPS yalıtımlı 2 ve 6 kontaklı MSSG serisi konnektör.",
         "isPremium": false,
-        "images": [],
+        "images": [
+            "/images/products/metal-govdeli-mssg-2-6.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-MSSG-6-CCP/CCR/BCR/DSP/DSR/BCR-RA",
             "Kontak Sayısı": "2, 6",
@@ -879,7 +957,9 @@
         "categoryId": "metal-govdeli",
         "shortDescription": "8 çift Ethernet kablosu seçenekli, 2-18 kontak aralığında güçlendirilmiş PPS yalıtımlı MSSL serisi konnektör.",
         "isPremium": true,
-        "images": [],
+        "images": [
+            "/images/products/metal-govdeli-mssl-2-18.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-MSSL-18-CCP/CCR/BCR/DSP/DSR/BCR-RA",
             "Kontak Sayısı": "2, 4, 6, 8, 12, 16, 18",
@@ -903,7 +983,9 @@
         "categoryId": "metal-govdeli",
         "shortDescription": "20, 24, 30, 40 ve 48 kontak seçenekli, serinin en yüksek yoğunluklu MSSA metal gövdeli konnektörü.",
         "isPremium": true,
-        "images": [],
+        "images": [
+            "/images/products/metal-govdeli-mssa-20-48.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-MSSA-48-CCP/CCR/BCR/DSR/BCR-RA",
             "Kontak Sayısı": "20, 24, 30, 40, 48",
@@ -926,7 +1008,9 @@
         "categoryId": "metal-govdeli",
         "shortDescription": "500V@20-40Amp elektriksel kapasiteli, PEEK yalıtımlı yüksek gerilim MSSM serisi konnektör.",
         "isPremium": true,
-        "images": [],
+        "images": [
+            "/images/products/metal-govdeli-mssm-yg-4.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-MSSM-4-CCP/DSP/BCR/FCR/RA",
             "Kontak Sayısı": "4",
@@ -948,7 +1032,9 @@
         "categoryId": "metal-govdeli",
         "shortDescription": "5000V@15-100Amp çok yüksek gerilim/akım kapasiteli MSSQ serisi konnektör, dik açılı (RA) seçenekli.",
         "isPremium": true,
-        "images": [],
+        "images": [
+            "/images/products/metal-govdeli-mssq-yg-4.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-MSSQ-4-CCP/CCR/BCR/FCR/DSR, AQ-MSSQ-4-CCP-RA",
             "Kontak Sayısı": "4 (1-3 kontak alt tipleri mevcut)",
@@ -970,7 +1056,9 @@
         "categoryId": "metal-govdeli",
         "shortDescription": "2000V@20Amp elektriksel kapasiteli, PEEK yalıtımlı 10 kontaklı yüksek gerilim MSSN serisi konnektör.",
         "isPremium": true,
-        "images": [],
+        "images": [
+            "/images/products/mssn-yg-10.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-MSSN-10-CCP/DSP/BCR/DSR, AQ-MSSN-10-CCP-RA",
             "Kontak Sayısı": "10",
@@ -992,7 +1080,9 @@
         "categoryId": "fiber-optik",
         "shortDescription": "Tek modlu/çok modlu opsiyonlu, ST/LC/FC/SC pigtail uyumlu tek kontaklı fiber optik konnektör.",
         "isPremium": true,
-        "images": [],
+        "images": [
+            "/images/products/fiber-optik-1-kontak.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-LHOPT-B-CCP/BCR/FCR/DSP/DSR",
             "Kontak Sayısı": "1",
@@ -1014,7 +1104,9 @@
         "categoryId": "fiber-optik",
         "shortDescription": "2 fiber optik + 2 güç kontağı kombinasyonlu hibrit fiber optik konnektör.",
         "isPremium": true,
-        "images": [],
+        "images": [
+            "/images/products/fiber-optik-2-4-kontak.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-LHOPT-04B-CCP/BCR/FCR/DSP/DSR",
             "Kontak Sayısı": "2 Fiber + 2 Güç",
@@ -1036,7 +1128,9 @@
         "categoryId": "fiber-optik",
         "shortDescription": "4 fiber optik kanal + 4 güç kontağı, 500V nominal voltaj ve 6-15A akım kapasiteli hibrit konnektör.",
         "isPremium": true,
-        "images": [],
+        "images": [
+            "/images/products/fiber-optik-hibrit-4f4e.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-OPT-4F-4E-CCP/BCR/FCR/DSP/DSR",
             "Kontak Sayısı": "4 Fiber + 4 Güç",
@@ -1058,7 +1152,9 @@
         "categoryId": "konnektor-aksesuarlari",
         "shortDescription": "6 kontaklı, dik açılı (Ra) seçenekli PEEK gövdeli standart panel tipi konnektör.",
         "isPremium": false,
-        "images": [],
+        "images": [
+            "/images/products/tritech-6.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-Tritech-6, AQ-Tritech-6-Ra",
             "Kontak Sayısı": "6",
@@ -1079,7 +1175,9 @@
         "categoryId": "konnektor-aksesuarlari",
         "shortDescription": "7/16\", 1/2\", 5/8\", 3/4\" ve 7/8\" diş ölçülerinde, kullanılmayan konnektör girişlerini sızdırmaz şekilde kapatan kör tapa.",
         "isPremium": false,
-        "images": [],
+        "images": [
+            "/images/products/kor-tapa.webp"
+        ],
         "specs": {
             "Parça Numaraları": "7/16, 1/2, 5/8, 3/4, 7/8 diş ölçüsü seçenekleri",
             "Malzeme": "Paslanmaz Çelik",
@@ -1095,7 +1193,9 @@
         "categoryId": "konnektor-aksesuarlari",
         "shortDescription": "Mikro dairesel Tip A/B/C serileri için özel sıkma anahtarları ve toz kapağı kilitleme kovanları.",
         "isPremium": false,
-        "images": [],
+        "images": [
+            "/images/products/anahtarlar-kilitleme-kovanlari.webp"
+        ],
         "specs": {
             "Parça Numaraları": "Mikro Tip A (2-5 kontak), AQ-MSSL Tip A (9-16 kontak), Tip B, Tip C, AQ-MCDLSFD, AQ-MCDLSMD",
             "Kullanım Amacı": "Konnektör sıkma anahtarı ve toz/su koruma kapağı",
@@ -1109,7 +1209,9 @@
         "categoryId": "subsea-lights-lasers",
         "shortDescription": "Baş omuzluğu, kıç köşe ve kompakt gövde alanları için yuvarlak kompakt sualtı LED armatürü.",
         "isPremium": false,
-        "images": ["/images/products/aq-1004-compact.webp"],
+        "images": [
+            "/images/products/aq-1004-compact.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-UWL-1004-S (AISI 316L) / AQ-UWL-1004-B (C95800 Ni-Al bronz)",
             "Gövde": "AISI 316L paslanmaz veya C95800 Ni-Al bronz",
@@ -1134,7 +1236,9 @@
         "categoryId": "subsea-lights-lasers",
         "shortDescription": "Mega yat kıçı ve borda altı mimari aydınlatma için yuvarlak klasik sualtı LED armatürü.",
         "isPremium": false,
-        "images": ["/images/products/aq-2507-bronze.webp"],
+        "images": [
+            "/images/products/aq-2507-bronze.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-UWL-2507-B (C95800 Ni-Al bronz) / AQ-UWL-2507-S (AISI 316L)",
             "Gövde": "C95800 Ni-Al bronz veya AISI 316L paslanmaz",
@@ -1159,7 +1263,9 @@
         "categoryId": "subsea-lights-lasers",
         "shortDescription": "Orta gövde, dip aydınlatması ve genel sualtı görüşü için yuvarlak profesyonel sualtı LED armatürü.",
         "isPremium": false,
-        "images": ["/images/products/aq-4012-pro.webp"],
+        "images": [
+            "/images/products/aq-4012-pro.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-UWL-4012-S (AISI 316L) / AQ-UWL-4012-B (C95800 Ni-Al bronz)",
             "Gövde": "AISI 316L paslanmaz veya C95800 Ni-Al bronz",
@@ -1184,7 +1290,9 @@
         "categoryId": "subsea-lights-lasers",
         "shortDescription": "Yüzme platformu altı ve geniş açılı kıç aydınlatması için yuvarlak geniş açı sualtı LED armatürü.",
         "isPremium": false,
-        "images": ["/images/products/aq-6516-wide.webp"],
+        "images": [
+            "/images/products/aq-6516-wide.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-UWL-6516-B (C95800 Ni-Al bronz) / AQ-UWL-6516-S (AISI 316L)",
             "Gövde": "C95800 Ni-Al bronz veya AISI 316L paslanmaz",
@@ -1209,7 +1317,9 @@
         "categoryId": "subsea-lights-lasers",
         "shortDescription": "Mega yat transomu ve yüksek güçlü panoramik aydınlatma için dikdörtgen hibrit sualtı LED armatürü.",
         "isPremium": true,
-        "images": ["/images/products/aq-9028-signature.webp"],
+        "images": [
+            "/images/products/aq-9028-signature.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-UWL-9028-H (316L + C95800 hibrit) / AQ-UWL-9028-D (Super Duplex 2507)",
             "Gövde": "316L + C95800 hibrit veya Super Duplex 2507",
@@ -1234,7 +1344,9 @@
         "categoryId": "subsea-lights-lasers",
         "shortDescription": "Vurgu, basamak altı ve dar gövde bölgeleri için tek LED kompakt sualtı LED armatürü.",
         "isPremium": false,
-        "images": ["/images/products/aq-0501-nano.webp"],
+        "images": [
+            "/images/products/aq-0501-nano.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-UWL-0501-S (AISI 316L) / AQ-UWL-0501-B (C95800 Ni-Al bronz)",
             "Gövde": "AISI 316L paslanmaz veya C95800 Ni-Al bronz",
@@ -1259,7 +1371,9 @@
         "categoryId": "subsea-lights-lasers",
         "shortDescription": "Gövde çenesi, kıç hattı ve doğrusal su perdesi için doğrusal kapsül sualtı LED armatürü.",
         "isPremium": false,
-        "images": ["/images/products/aq-1806-slim.webp"],
+        "images": [
+            "/images/products/aq-1806-slim.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-UWL-1806-B (C95800 Ni-Al bronz) / AQ-UWL-1806-S (AISI 316L)",
             "Gövde": "C95800 Ni-Al bronz veya AISI 316L paslanmaz",
@@ -1284,7 +1398,9 @@
         "categoryId": "subsea-lights-lasers",
         "shortDescription": "Stabilizer, pervane ve teknik gözlem aydınlatması için altıgen görev tipi sualtı LED armatürü.",
         "isPremium": false,
-        "images": ["/images/products/aq-3009-vector.webp"],
+        "images": [
+            "/images/products/aq-3009-vector.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-UWL-3009-D (Super Duplex 2507) / AQ-UWL-3009-B (C95800 Ni-Al bronz)",
             "Gövde": "Super Duplex 2507 veya C95800 Ni-Al bronz",
@@ -1309,7 +1425,9 @@
         "categoryId": "subsea-lights-lasers",
         "shortDescription": "Derin su, omurga altı ve uzun menzilli ışık huzmesi için dikey oval derin su sualtı LED armatürü.",
         "isPremium": true,
-        "images": ["/images/products/aq-7018-deep.webp"],
+        "images": [
+            "/images/products/aq-7018-deep.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-UWL-7018-B (C95800 Ni-Al bronz) / AQ-UWL-7018-S (AISI 316L)",
             "Gövde": "C95800 Ni-Al bronz veya AISI 316L paslanmaz",
@@ -1334,7 +1452,9 @@
         "categoryId": "subsea-lights-lasers",
         "shortDescription": "Geniş transom ve yüksek hacimli mega yat sualtı sahnesi için kavisli geniş panel sualtı LED armatürü.",
         "isPremium": true,
-        "images": ["/images/products/aq-15036-panorama.webp"],
+        "images": [
+            "/images/products/aq-15036-panorama.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-UWL-15036-H (316L + C95800 hibrit) / AQ-UWL-15036-D (Super Duplex 2507)",
             "Gövde": "316L + C95800 hibrit veya Super Duplex 2507",
@@ -1359,7 +1479,9 @@
         "categoryId": "subsea-lights-lasers",
         "shortDescription": "Kıç köşeleri ve üçlü vurgu ışığı için yuvarlatılmış üçgen sualtı LED armatürü.",
         "isPremium": false,
-        "images": ["/images/products/aq-t0303-trio.webp"],
+        "images": [
+            "/images/products/aq-t0303-trio.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-UWL-T0303-B (C95800 Ni-Al bronz) / AQ-UWL-T0303-S (AISI 316L)",
             "Gövde": "C95800 Ni-Al bronz veya AISI 316L paslanmaz",
@@ -1384,7 +1506,9 @@
         "categoryId": "subsea-lights-lasers",
         "shortDescription": "Pervane çevresi ve aşağı yönlü ışık yelpazesi için ters üçgen sualtı LED armatürü.",
         "isPremium": false,
-        "images": ["/images/products/aq-t1206-delta.webp"],
+        "images": [
+            "/images/products/aq-t1206-delta.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-UWL-T1206-S (AISI 316L) / AQ-UWL-T1206-B (C95800 Ni-Al bronz)",
             "Gövde": "AISI 316L paslanmaz veya C95800 Ni-Al bronz",
@@ -1409,7 +1533,9 @@
         "categoryId": "subsea-lights-lasers",
         "shortDescription": "Borda altı mimari RGBW aydınlatma için kavisli üçgen sualtı LED armatürü.",
         "isPremium": false,
-        "images": ["/images/products/aq-t2510-trident.webp"],
+        "images": [
+            "/images/products/aq-t2510-trident.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-UWL-T2510-B (C95800 Ni-Al bronz) / AQ-UWL-T2510-S (AISI 316L)",
             "Gövde": "C95800 Ni-Al bronz veya AISI 316L paslanmaz",
@@ -1434,7 +1560,9 @@
         "categoryId": "subsea-lights-lasers",
         "shortDescription": "Derin su ve yüksek güçlü görev aydınlatması için keskin üçgen görev tipi sualtı LED armatürü.",
         "isPremium": true,
-        "images": ["/images/products/aq-t4515-razor.webp"],
+        "images": [
+            "/images/products/aq-t4515-razor.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-UWL-T4515-D (Super Duplex 2507) / AQ-UWL-T4515-B (C95800 Ni-Al bronz)",
             "Gövde": "Super Duplex 2507 veya C95800 Ni-Al bronz",
@@ -1459,7 +1587,9 @@
         "categoryId": "subsea-lights-lasers",
         "shortDescription": "Mega yat kıç merkezinde amiral seviye ışık sahnesi için büyük hibrit üçgen sualtı LED armatürü.",
         "isPremium": true,
-        "images": ["/images/products/aq-t9828-apex.webp"],
+        "images": [
+            "/images/products/aq-t9828-apex.webp"
+        ],
         "specs": {
             "Parça Numaraları": "AQ-UWL-T9828-H (316L + C95800 hibrit) / AQ-UWL-T9828-D (Super Duplex 2507)",
             "Gövde": "316L + C95800 hibrit veya Super Duplex 2507",

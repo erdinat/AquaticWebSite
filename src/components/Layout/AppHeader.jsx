@@ -15,7 +15,6 @@ import {
     SafetyCertificateOutlined,
     MailOutlined,
     BarChartOutlined,
-    ToolOutlined,
     FileTextOutlined,
     TeamOutlined,
     HistoryOutlined,
@@ -23,10 +22,10 @@ import {
     TrophyOutlined,
     QuestionCircleOutlined,
     DownOutlined,
-    RocketOutlined,
-    CompassOutlined,
-    ThunderboltOutlined,
+    PlayCircleOutlined,
+    PictureOutlined,
 } from '@ant-design/icons';
+import { getActiveServiceGroups } from '../../data/serviceGroups';
 import AquaticLogo from '../../assets/images/logo.webp';
 
 const { Header } = Layout;
@@ -63,21 +62,31 @@ const AppHeader = () => {
         navigate(localizePath(lang, barePath));
     };
 
-    /* Scroll to section helper */
+    /* Scroll to section helper. When navigating from another page first,
+       the target page is lazy-loaded (React.lazy) — a fixed setTimeout could
+       fire before its chunk finishes loading and the section element exists,
+       silently landing the user at the top of the page instead. Polling for
+       the element (up to ~3s) is robust to that variable load time. */
     const scrollToSection = (path, hash) => {
-        if (barePath === path) {
+        const tryScroll = (attemptsLeft) => {
             const el = document.getElementById(hash);
-            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else if (attemptsLeft > 0) {
+                setTimeout(() => tryScroll(attemptsLeft - 1), 150);
+            }
+        };
+        if (barePath === path) {
+            tryScroll(0);
         } else {
             navigate(localizePath(currentLang, path));
-            setTimeout(() => {
-                const el = document.getElementById(hash);
-                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 400);
+            setTimeout(() => tryScroll(20), 150);
         }
     };
 
-    /* Home dropdown sections */
+    /* Home dropdown sections — kept in sync with HomePage.jsx's actual
+       <section id="..."> ids (this list drifted stale before: catalogs and
+       gallery sections existed on the page but were missing here). */
     const homeDropdownItems = [
         { key: 'home-stats', icon: <BarChartOutlined />, label: t('dropdown.home.stats') },
         {
@@ -85,6 +94,17 @@ const AppHeader = () => {
             icon: <ShoppingOutlined />,
             label: t('dropdown.home.categoryShowcase'),
         },
+        ...(isKzDomain()
+            ? [
+                  {
+                      key: 'home-kz-video',
+                      icon: <PlayCircleOutlined />,
+                      label: t('dropdown.home.kzVideo'),
+                  },
+              ]
+            : []),
+        { key: 'home-catalogs', icon: <FileTextOutlined />, label: t('dropdown.home.catalogs') },
+        { key: 'home-gallery', icon: <PictureOutlined />, label: t('dropdown.home.gallery') },
         { key: 'home-news', icon: <FileTextOutlined />, label: t('dropdown.home.news') },
         { key: 'home-brands', icon: <TeamOutlined />, label: t('dropdown.home.brands') },
     ].map((item) => ({
@@ -113,56 +133,51 @@ const AppHeader = () => {
         },
     }));
 
-    /* Services dropdown — aquatic.kz shows the reshuffled 4-category list
-       (see serviceGroups.jsx's getActiveServiceGroups), everywhere else the
-       full original 6 categories. */
-    const servicesDropdownItems = (
-        isKzDomain()
-            ? [
-                  {
-                      key: 'savunmaSanayiSualti',
-                      icon: <RocketOutlined />,
-                      label: t('dropdown.services.savunmaSanayiSualti'),
-                  },
-                  { key: 'makina', icon: <ToolOutlined />, label: t('dropdown.services.makina') },
-                  { key: 'endustri', icon: <BankOutlined />, label: t('dropdown.services.endustri') },
-                  {
-                      key: 'elektronikOtomasyon',
-                      icon: <ThunderboltOutlined />,
-                      label: t('dropdown.services.elektronikOtomasyon'),
-                  },
-              ]
-            : [
-                  {
-                      key: 'denizcilik',
-                      icon: <CompassOutlined />,
-                      label: t('dropdown.services.denizcilik'),
-                  },
-                  {
-                      key: 'savunmaSanayi',
-                      icon: <RocketOutlined />,
-                      label: t('dropdown.services.savunmaSanayi'),
-                  },
-                  {
-                      key: 'sualtiTeknolojileri',
-                      icon: <GlobalOutlined />,
-                      label: t('dropdown.services.sualtiTeknolojileri'),
-                  },
-                  { key: 'makina', icon: <ToolOutlined />, label: t('dropdown.services.makina') },
-                  { key: 'endustri', icon: <BankOutlined />, label: t('dropdown.services.endustri') },
-                  {
-                      key: 'elektronikOtomasyon',
-                      icon: <ThunderboltOutlined />,
-                      label: t('dropdown.services.elektronikOtomasyon'),
-                  },
-              ]
-    ).map((item) => ({
-        ...item,
-        onClick: ({ domEvent }) => {
+    /* Services dropdown — built directly from getActiveServiceGroups() (the
+       same source ServicesPage.jsx/ServiceCategoryPage.jsx use), instead of
+       a hand-maintained category list here that had already drifted out of
+       sync once. aquatic.kz automatically gets its reshuffled 4-category
+       list, everywhere else the full 6 categories — no separate branching
+       needed here anymore.
+
+       Each category now also lists its own items as a nested flyout (hover
+       over "Sualtı Teknolojileri" to see its items) — antd doesn't reliably
+       fire onClick on a SubMenu's own title, so a "view category" leaf is
+       added at the top of each flyout as the guaranteed way to still reach
+       the category page itself. */
+    const servicesDropdownItems = getActiveServiceGroups().map((group) => {
+        const groupTitleKey = group.titleKey || `services.${group.key}.title`;
+        const goToCategory = ({ domEvent }) => {
             domEvent.stopPropagation();
-            navigate(localizePath(currentLang, `/services/category/${item.key}`));
-        },
-    }));
+            navigate(localizePath(currentLang, `/services/category/${group.key}`));
+        };
+        return {
+            key: group.key,
+            icon: group.icon,
+            label: t(groupTitleKey),
+            onClick: goToCategory,
+            children: [
+                {
+                    key: `${group.key}-overview`,
+                    label: <strong>{t('services.viewLabel')}</strong>,
+                    onClick: goToCategory,
+                },
+                { type: 'divider' },
+                ...group.items.map((item) => ({
+                    key: item.slug,
+                    icon: item.icon,
+                    label: t(
+                        item.titleKey ||
+                            `services.${item.i18nCategoryKey || group.key}.items.${item.key}.title`
+                    ),
+                    onClick: ({ domEvent }) => {
+                        domEvent.stopPropagation();
+                        navigate(localizePath(currentLang, `/services/${item.slug}`));
+                    },
+                })),
+            ],
+        };
+    });
 
     /* Navigation items — Contact and Black Box show directly again (no longer
        tucked under a "More" dropdown). Careers has no nav entry here — it's
@@ -352,15 +367,36 @@ const AppHeader = () => {
                                 key: item.key,
                                 icon: item.icon,
                                 label: item.label,
-                                children: item.dropdown.map((sub) => ({
-                                    key: sub.key,
-                                    icon: sub.icon,
-                                    label: sub.label,
-                                    onClick: (info) => {
-                                        sub.onClick(info);
-                                        setDrawerOpen(false);
-                                    },
-                                })),
+                                // Services categories carry their own nested
+                                // items (sub.children) — inline Menu supports
+                                // arbitrary nesting natively, so a category
+                                // becomes a second expandable level here too.
+                                children: item.dropdown.map((sub) => {
+                                    if (sub.type === 'divider') return sub;
+                                    return {
+                                        key: sub.key,
+                                        icon: sub.icon,
+                                        label: sub.label,
+                                        onClick: sub.children
+                                            ? undefined
+                                            : (info) => {
+                                                  sub.onClick(info);
+                                                  setDrawerOpen(false);
+                                              },
+                                        children: sub.children?.map((leaf) => {
+                                            if (leaf.type === 'divider') return leaf;
+                                            return {
+                                                key: leaf.key,
+                                                icon: leaf.icon,
+                                                label: leaf.label,
+                                                onClick: (info) => {
+                                                    leaf.onClick(info);
+                                                    setDrawerOpen(false);
+                                                },
+                                            };
+                                        }),
+                                    };
+                                }),
                             };
                         }
                         return {

@@ -464,7 +464,7 @@ const HomePage = () => {
 
             {/* ===== KAZAKHSTAN INTRO VIDEO (aquatic.kz only) ===== */}
             {isKzDomain() && (
-                <section className="section kz-video-section">
+                <section id="home-kz-video" className="section kz-video-section">
                     <div className="container">
                         <span className="section-label reveal">
                             <PlayCircleOutlined /> {t('kzVideo.sectionLabel')}

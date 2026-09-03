@@ -871,7 +871,11 @@
         "mobile": [
             "+90 533 558 12 83",
             "+90 542 308 41 42"
-        ]
+        ],
+        "almaty": {
+            "title": "Almatı Ofisi (Kazakistan)",
+            "address": "Almatı, Medeu İlçesi, Samal-2 Mahallesi, 58 Nolu Bina, Daire 96, Kazakistan, Posta Kodu: 050000"
+        }
     },
     "whatsapp": {
         "message": "Merhaba, Aquatic Elektronik hakkında bilgi almak istiyorum.",
@@ -940,7 +944,10 @@
             "milestones": "Kilometre Taşları",
             "news": "Son Haberler",
             "brands": "Markalar & Referanslar",
-            "categoryShowcase": "Kategori Vitrini"
+            "categoryShowcase": "Kategori Vitrini",
+            "catalogs": "Kataloglarımız",
+            "gallery": "Foto Albüm",
+            "kzVideo": "Tanıtım Videosu"
         },
         "corporate": {
             "history": "Tarihçemiz",

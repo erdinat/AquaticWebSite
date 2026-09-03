@@ -14,6 +14,7 @@ import {
     BuildOutlined,
     ExperimentOutlined,
     ToolOutlined,
+    GlobalOutlined,
     ClockCircleOutlined,
 } from '@ant-design/icons';
 import { isKzDomain } from '../i18n/langRouting';
@@ -85,6 +86,13 @@ const ContactPage = () => {
             color: 'var(--color-accent-dark)',
             title: t('contact.factory.title'),
             address: t('contact.factory.address'),
+        },
+        {
+            key: 'almaty',
+            icon: <GlobalOutlined />,
+            color: 'var(--color-accent)',
+            title: t('contact.almaty.title'),
+            address: t('contact.almaty.address'),
         },
     ];
 
@@ -326,7 +334,7 @@ const ContactPage = () => {
                     </div>
                     <Row gutter={[24, 24]}>
                         {locations.map((loc, idx) => (
-                            <Col xs={24} md={8} key={loc.key}>
+                            <Col xs={24} sm={12} md={6} key={loc.key}>
                                 <div
                                     className="office-card reveal"
                                     style={{ animationDelay: `${idx * 0.1}s` }}
@@ -359,7 +367,7 @@ const ContactPage = () => {
                     <div className="map-wrapper">
                         <iframe
                             title="Aquatic Location Map"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.7712318461715!2d29.837330775670876!3d40.72299863693721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cb4fe15affffff%3A0xcbbb012d9c0db04b!2sAquatic%20Elektronik%20Makina%20Otomasyon%20Sav.%20San.%20Tic.%20Ltd.%20%C5%9Eti.!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str"
+                            src="https://www.google.com/maps?q=Karadenizliler+Mah.+%C4%B0lim+Sok.+No%3A15%2F1+Ba%C5%9Fiskele%2FKocaeli&output=embed"
                             width="100%"
                             height="420"
                             style={{ border: 0, display: 'block' }}

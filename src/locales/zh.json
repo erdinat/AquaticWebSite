@@ -871,7 +871,11 @@
         "mobile": [
             "+90 533 558 12 83",
             "+90 542 308 41 42"
-        ]
+        ],
+        "almaty": {
+            "title": "阿拉木图办公室（哈萨克斯坦）",
+            "address": "哈萨克斯坦，阿拉木图市，麦德乌区，萨马尔2号区，58号楼96室，邮政编码050000"
+        }
     },
     "whatsapp": {
         "message": "您好，我想了解一下 Aquatic Elektronik 的相关信息。",
@@ -940,7 +944,10 @@
             "milestones": "重要里程碑",
             "news": "最新资讯",
             "brands": "品牌与合作伙伴",
-            "categoryShowcase": "分类展示"
+            "categoryShowcase": "分类展示",
+            "catalogs": "我们的产品目录",
+            "gallery": "相册",
+            "kzVideo": "介绍视频"
         },
         "corporate": {
             "history": "公司简介",

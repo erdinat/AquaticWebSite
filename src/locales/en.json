@@ -871,7 +871,11 @@
         "mobile": [
             "+90 533 558 12 83",
             "+90 542 308 41 42"
-        ]
+        ],
+        "almaty": {
+            "title": "Almaty Office (Kazakhstan)",
+            "address": "Almaty, Medeu District, Samal-2 Neighborhood, Building 58, Apt 96, Kazakhstan, Postal Code 050000"
+        }
     },
     "whatsapp": {
         "message": "Hello, I would like to get information about Aquatic Elektronik.",
@@ -1017,7 +1021,10 @@
             "milestones": "Milestones",
             "news": "Latest News",
             "brands": "Brands & References",
-            "categoryShowcase": "Category Showcase"
+            "categoryShowcase": "Category Showcase",
+            "catalogs": "Our Catalogs",
+            "gallery": "Photo Album",
+            "kzVideo": "Intro Video"
         },
         "corporate": {
             "history": "About Us",
