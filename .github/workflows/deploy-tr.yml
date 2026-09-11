@@ -32,5 +32,5 @@ jobs:
         username: ${{ secrets.TR_FTP_USERNAME }}
         password: ${{ secrets.TR_FTP_PASSWORD }}
         local-dir: ./dist/
-        server-dir: httpdocs/
+        server-dir: public_html/
         dangerous-clean-slate: false
